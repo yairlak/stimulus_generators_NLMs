@@ -1,0 +1,62 @@
+% start S
+
+# Template 1 :
+# pronoun  / full-subject
+# main number
+# main gender
+# tense
+# verb type
+
+#######################
+# Grammar Productions #
+#######################
+S -> sNP[NUM=?n] VP[NUM=?n]
+
+# subject
+sNP[NUM=?n, GEN=?g] -> PropN[NUM=?n, GEN=?g]
+sNP[NUM=?n] -> Det[NUM=?n] sN[NUM=?n]
+sNP[NUM=?n, GEN=?g] -> sPRO[NUM=?n, GEN=?g]
+
+# verb
+VP[TENSE=?t, NUM=?n] -> IV[TENSE=?t, NUM=?n]
+VP[TENSE=?t, NUM=?n] -> TV[TENSE=?t, NUM=?n] oNP
+IV[TENSE=future] -> modalV V
+
+# object
+oNP[NUM=?n] -> PropN[NUM=?n, GEN=?g]
+oNP[NUM=?n] -> Det[NUM=?n] oN[NUM=?n]
+oNP[NUM=?n] -> oPRO[NUM=?n, GEN=?g]
+
+#######################
+# Lexical Productions #
+#######################
+Det[NUM=sg] -> 'this'
+Det[NUM=pl] -> 'these'
+Det -> 'the'
+
+sPRO[Num=sg, GEN=m]->'he'
+sPRO[Num=sg, GEN=f]->'she'
+sPRO[Num=pl, GEN=u]->'they'
+
+oPRO[Num=sg, GEN=m]->'him'
+oPRO[Num=sg, GEN=f]->'her'
+oPRO[Num=pl, GEN=u]->'them'
+
+PropN[NUM=sg, GEN=f]-> 'Alice'
+PropN[NUM=sg, GEN=m]-> 'Bob'
+
+sN[NUM=sg] -> 'boy'|'girl'
+sN[NUM=pl] -> 'boys'|'girls'
+oN[NUM=sg] -> 'dog'|'car'
+oN[NUM=pl] -> 'dogs'|'cars'
+
+IV[TENSE=pres,  NUM=sg] -> 'walks'|'smiles'
+IV[TENSE=pres,  NUM=pl] -> 'walk'|'smile'
+IV[TENSE=past] -> 'walked'|'smiled'
+
+TV[TENSE=pres, NUM=sg] -> 'sees'
+TV[TENSE=pres, NUM=pl] -> 'see'
+TV[TENSE=past] -> 'saw'
+
+V -> 'walk'|'smile'
+modalV -> 'will'
