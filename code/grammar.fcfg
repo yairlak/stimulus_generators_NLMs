@@ -20,7 +20,7 @@ subjNP[NUM=?n, GEN=?g] -> subj_PRO[NUM=?n, GEN=?g]
 # verb
 VP[TENSE=?t, NUM=?n] -> verb_I[TENSE=?t, NUM=?n]
 VP[TENSE=?t, NUM=?n] -> verb_T[TENSE=?t, NUM=?n] objNP
-verb_I[TENSE=future] -> verb_Mod[TENSE=future] Inf
+verb_I[TENSE=future] -> verb_Mod[TENSE=future] inf_I
 
 # object
 objNP[NUM=?n] -> obj_PropN[NUM=?n, GEN=?g]
@@ -40,11 +40,13 @@ subj_PRO[NUM=sg, GEN=m]->'he'
 subj_PRO[NUM=sg, GEN=f]->'she'
 subj_PRO[NUM=pl, GEN=u]->'they'
 
-subj_N[NUM=sg] -> 'boy'|'girl'
-subj_N[NUM=pl] -> 'boys'|'girls'
+subj_N[NUM=sg, GEN=m] -> 'boy'|'man'
+subj_N[NUM=sg, GEN=f] -> 'man'|'woman'
+subj_N[NUM=pl, GEN=m] -> 'boys'|'men'
+subj_N[NUM=pl, GEN=f] -> 'girls'|'women'
 
-subj_PropN[NUM=sg, GEN=f]-> 'Alice'
-subj_PropN[NUM=sg, GEN=m]-> 'Bob'
+subj_PropN[NUM=sg, GEN=f]-> 'Alice'|'Mary'
+subj_PropN[NUM=sg, GEN=m]-> 'Bob'|'John'
 
 # object
 obj_PRO[NUM=sg, GEN=m]->'him'
@@ -54,17 +56,17 @@ obj_PRO[NUM=pl, GEN=u]->'them'
 obj_N[NUM=sg] -> 'dog'|'car'
 obj_N[NUM=pl] -> 'dogs'|'cars'
 
-obj_PropN[NUM=sg, GEN=f]-> 'Alice'
-obj_PropN[NUM=sg, GEN=m]-> 'Bob'
+obj_PropN[NUM=sg, GEN=f]-> 'Alice'|'Mary'
+obj_PropN[NUM=sg, GEN=m]-> 'Bob'|'John'
 
 # verb
-verb_I[TENSE=pres,  NUM=sg] -> 'walks'|'smiles'
-verb_I[TENSE=pres,  NUM=pl] -> 'walk'|'smile'
-verb_I[TENSE=past] -> 'walked'|'smiled'
+verb_I[TENSE=pres,  NUM=sg] -> 'walks'|'smiles'|'cries'
+verb_I[TENSE=pres,  NUM=pl] -> 'walk'|'smile'|'cry'
+verb_I[TENSE=past] -> 'walked'|'smiled'|'cried'
 
-verb_T[TENSE=pres, NUM=sg] -> 'sees'
-verb_T[TENSE=pres, NUM=pl] -> 'see'
-verb_T[TENSE=past] -> 'saw'
+verb_T[TENSE=pres, NUM=sg] -> 'sees'|'watches'
+verb_T[TENSE=pres, NUM=pl] -> 'see'|'watch'
+verb_T[TENSE=past] -> 'saw'|'watched'
 
-Inf -> 'walk'|'smile'
+inf_I -> 'walk'|'smile'|'cry'
 verb_Mod[TENSE=future] -> 'will'
