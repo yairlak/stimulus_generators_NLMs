@@ -1,392 +1,1675 @@
 ,sentence,obj_GEN,obj_NUM,obj_type,subj_GEN,subj_NUM,subj_type,verb_NUM,verb_TENSE
 0,Alice will walk,,,,f,sg,PropN,,future
 1,Alice will smile,,,,f,sg,PropN,,future
-2,Alice walks,,,,f,sg,PropN,sg,pres
-3,Alice smiles,,,,f,sg,PropN,sg,pres
+2,Alice will cry,,,,f,sg,PropN,,future
+3,Alice walks,,,,f,sg,PropN,sg,pres
 4,Alice smiles,,,,f,sg,PropN,sg,pres
-5,Alice smiles,,,,f,sg,PropN,sg,pres
-6,Alice walked,,,,f,sg,PropN,,past
-7,Alice smiled,,,,f,sg,PropN,,past
-8,Alice sees Alice,f,sg,PropN,f,sg,PropN,sg,pres
-9,Alice sees Bob,m,sg,PropN,f,sg,PropN,sg,pres
-10,Alice sees him,m,sg,PRO,f,sg,PropN,sg,pres
-11,Alice sees her,f,sg,PRO,f,sg,PropN,sg,pres
-12,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
-13,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
-14,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
-15,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
-16,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
-17,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
-18,Alice saw Alice,f,sg,PropN,f,sg,PropN,,past
-19,Alice saw Bob,m,sg,PropN,f,sg,PropN,,past
-20,Alice saw him,m,sg,PRO,f,sg,PropN,,past
-21,Alice saw her,f,sg,PRO,f,sg,PropN,,past
-22,Alice saw them,u,pl,PRO,f,sg,PropN,,past
-23,Bob will walk,,,,m,sg,PropN,,future
-24,Bob will smile,,,,m,sg,PropN,,future
-25,Bob walks,,,,m,sg,PropN,sg,pres
-26,Bob smiles,,,,m,sg,PropN,sg,pres
-27,Bob smiles,,,,m,sg,PropN,sg,pres
-28,Bob smiles,,,,m,sg,PropN,sg,pres
-29,Bob walked,,,,m,sg,PropN,,past
-30,Bob smiled,,,,m,sg,PropN,,past
-31,Bob sees Alice,f,sg,PropN,m,sg,PropN,sg,pres
-32,Bob sees Bob,m,sg,PropN,m,sg,PropN,sg,pres
-33,Bob sees him,m,sg,PRO,m,sg,PropN,sg,pres
-34,Bob sees her,f,sg,PRO,m,sg,PropN,sg,pres
-35,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
-36,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
-37,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
-38,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
-39,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
-40,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
-41,Bob saw Alice,f,sg,PropN,m,sg,PropN,,past
-42,Bob saw Bob,m,sg,PropN,m,sg,PropN,,past
-43,Bob saw him,m,sg,PRO,m,sg,PropN,,past
-44,Bob saw her,f,sg,PRO,m,sg,PropN,,past
-45,Bob saw them,u,pl,PRO,m,sg,PropN,,past
-46,this boy will walk,,,,,sg,N,,future
-47,this boy will smile,,,,,sg,N,,future
-48,this boy walks,,,,,sg,N,sg,pres
-49,this boy smiles,,,,,sg,N,sg,pres
-50,this boy smiles,,,,,sg,N,sg,pres
-51,this boy smiles,,,,,sg,N,sg,pres
-52,this boy walked,,,,,sg,N,,past
-53,this boy smiled,,,,,sg,N,,past
-54,this boy sees Alice,f,sg,PropN,,sg,N,sg,pres
-55,this boy sees Bob,m,sg,PropN,,sg,N,sg,pres
-56,this boy sees him,m,sg,PRO,,sg,N,sg,pres
-57,this boy sees her,f,sg,PRO,,sg,N,sg,pres
-58,this boy sees them,u,pl,PRO,,sg,N,sg,pres
-59,this boy sees them,u,pl,PRO,,sg,N,sg,pres
-60,this boy sees them,u,pl,PRO,,sg,N,sg,pres
-61,this boy sees them,u,pl,PRO,,sg,N,sg,pres
-62,this boy sees them,u,pl,PRO,,sg,N,sg,pres
-63,this boy sees them,u,pl,PRO,,sg,N,sg,pres
-64,this boy saw Alice,f,sg,PropN,,sg,N,,past
-65,this boy saw Bob,m,sg,PropN,,sg,N,,past
-66,this boy saw him,m,sg,PRO,,sg,N,,past
-67,this boy saw her,f,sg,PRO,,sg,N,,past
-68,this boy saw them,u,pl,PRO,,sg,N,,past
-69,this girl will walk,,,,,sg,N,,future
-70,this girl will smile,,,,,sg,N,,future
-71,this girl walks,,,,,sg,N,sg,pres
-72,this girl smiles,,,,,sg,N,sg,pres
-73,this girl smiles,,,,,sg,N,sg,pres
-74,this girl smiles,,,,,sg,N,sg,pres
-75,this girl walked,,,,,sg,N,,past
-76,this girl smiled,,,,,sg,N,,past
-77,this girl sees Alice,f,sg,PropN,,sg,N,sg,pres
-78,this girl sees Bob,m,sg,PropN,,sg,N,sg,pres
-79,this girl sees him,m,sg,PRO,,sg,N,sg,pres
-80,this girl sees her,f,sg,PRO,,sg,N,sg,pres
-81,this girl sees them,u,pl,PRO,,sg,N,sg,pres
-82,this girl sees them,u,pl,PRO,,sg,N,sg,pres
-83,this girl sees them,u,pl,PRO,,sg,N,sg,pres
-84,this girl sees them,u,pl,PRO,,sg,N,sg,pres
-85,this girl sees them,u,pl,PRO,,sg,N,sg,pres
-86,this girl sees them,u,pl,PRO,,sg,N,sg,pres
-87,this girl saw Alice,f,sg,PropN,,sg,N,,past
-88,this girl saw Bob,m,sg,PropN,,sg,N,,past
-89,this girl saw him,m,sg,PRO,,sg,N,,past
-90,this girl saw her,f,sg,PRO,,sg,N,,past
-91,this girl saw them,u,pl,PRO,,sg,N,,past
-92,this girl saw them,u,pl,PRO,,sg,N,,past
-93,this girl saw them,u,pl,PRO,,sg,N,,past
-94,this girl saw them,u,pl,PRO,,sg,N,,past
-95,this girl saw them,u,pl,PRO,,sg,N,,past
-96,this girl saw them,u,pl,PRO,,sg,N,,past
-97,this girl saw them,u,pl,PRO,,sg,N,,past
-98,this girl saw them,u,pl,PRO,,sg,N,,past
-99,this girl saw them,u,pl,PRO,,sg,N,,past
-100,this girl saw them,u,pl,PRO,,sg,N,,past
-101,this girl saw them,u,pl,PRO,,sg,N,,past
-102,this girl saw them,u,pl,PRO,,sg,N,,past
-103,this girl saw them,u,pl,PRO,,sg,N,,past
-104,this girl saw them,u,pl,PRO,,sg,N,,past
-105,this girl saw them,u,pl,PRO,,sg,N,,past
-106,this girl saw them,u,pl,PRO,,sg,N,,past
-107,this girl saw them,u,pl,PRO,,sg,N,,past
-108,this girl saw them,u,pl,PRO,,sg,N,,past
-109,this girl saw them,u,pl,PRO,,sg,N,,past
-110,this girl saw them,u,pl,PRO,,sg,N,,past
-111,this girl saw them,u,pl,PRO,,sg,N,,past
-112,this girl saw them,u,pl,PRO,,sg,N,,past
-113,this girl saw them,u,pl,PRO,,sg,N,,past
-114,this girl saw them,u,pl,PRO,,sg,N,,past
-115,this girl saw them,u,pl,PRO,,sg,N,,past
-116,this girl saw them,u,pl,PRO,,sg,N,,past
-117,this girl saw them,u,pl,PRO,,sg,N,,past
-118,this girl saw them,u,pl,PRO,,sg,N,,past
-119,this girl saw them,u,pl,PRO,,sg,N,,past
-120,this girl saw them,u,pl,PRO,,sg,N,,past
-121,this girl saw them,u,pl,PRO,,sg,N,,past
-122,this girl saw them,u,pl,PRO,,sg,N,,past
-123,this girl saw them,u,pl,PRO,,sg,N,,past
-124,this girl saw them,u,pl,PRO,,sg,N,,past
-125,this girl saw them,u,pl,PRO,,sg,N,,past
-126,this girl saw them,u,pl,PRO,,sg,N,,past
-127,this girl saw them,u,pl,PRO,,sg,N,,past
-128,this girl saw them,u,pl,PRO,,sg,N,,past
-129,this girl saw them,u,pl,PRO,,sg,N,,past
-130,this girl saw them,u,pl,PRO,,sg,N,,past
-131,this girl saw them,u,pl,PRO,,sg,N,,past
-132,this girl saw them,u,pl,PRO,,sg,N,,past
-133,this girl saw them,u,pl,PRO,,sg,N,,past
-134,this girl saw them,u,pl,PRO,,sg,N,,past
-135,this girl saw them,u,pl,PRO,,sg,N,,past
-136,this girl saw them,u,pl,PRO,,sg,N,,past
-137,this girl saw them,u,pl,PRO,,sg,N,,past
-138,this girl saw them,u,pl,PRO,,sg,N,,past
-139,this girl saw them,u,pl,PRO,,sg,N,,past
-140,this girl saw them,u,pl,PRO,,sg,N,,past
-141,this girl saw them,u,pl,PRO,,sg,N,,past
-142,this girl saw them,u,pl,PRO,,sg,N,,past
-143,this girl saw them,u,pl,PRO,,sg,N,,past
-144,this girl saw them,u,pl,PRO,,sg,N,,past
-145,this girl saw them,u,pl,PRO,,sg,N,,past
-146,this girl saw them,u,pl,PRO,,sg,N,,past
-147,this girl saw them,u,pl,PRO,,sg,N,,past
-148,this girl saw them,u,pl,PRO,,sg,N,,past
-149,this girl saw them,u,pl,PRO,,sg,N,,past
-150,this girl saw them,u,pl,PRO,,sg,N,,past
-151,this girl saw them,u,pl,PRO,,sg,N,,past
-152,this girl saw them,u,pl,PRO,,sg,N,,past
-153,this girl saw them,u,pl,PRO,,sg,N,,past
-154,this girl saw them,u,pl,PRO,,sg,N,,past
-155,this girl saw them,u,pl,PRO,,sg,N,,past
-156,this girl saw them,u,pl,PRO,,sg,N,,past
-157,this girl saw them,u,pl,PRO,,sg,N,,past
-158,this girl saw them,u,pl,PRO,,sg,N,,past
-159,this girl saw them,u,pl,PRO,,sg,N,,past
-160,this girl saw them,u,pl,PRO,,sg,N,,past
-161,this girl saw them,u,pl,PRO,,sg,N,,past
-162,this girl saw them,u,pl,PRO,,sg,N,,past
-163,this girl saw them,u,pl,PRO,,sg,N,,past
-164,this girl saw them,u,pl,PRO,,sg,N,,past
-165,this girl saw them,u,pl,PRO,,sg,N,,past
-166,this girl saw them,u,pl,PRO,,sg,N,,past
-167,this girl saw them,u,pl,PRO,,sg,N,,past
-168,this girl saw them,u,pl,PRO,,sg,N,,past
-169,this girl saw them,u,pl,PRO,,sg,N,,past
-170,this girl saw them,u,pl,PRO,,sg,N,,past
-171,this girl saw them,u,pl,PRO,,sg,N,,past
-172,this girl saw them,u,pl,PRO,,sg,N,,past
-173,this girl saw them,u,pl,PRO,,sg,N,,past
-174,this girl saw them,u,pl,PRO,,sg,N,,past
-175,this girl saw them,u,pl,PRO,,sg,N,,past
-176,this girl saw them,u,pl,PRO,,sg,N,,past
-177,this girl saw them,u,pl,PRO,,sg,N,,past
-178,this girl saw them,u,pl,PRO,,sg,N,,past
-179,this girl saw them,u,pl,PRO,,sg,N,,past
-180,this girl saw them,u,pl,PRO,,sg,N,,past
-181,this girl saw them,u,pl,PRO,,sg,N,,past
-182,this girl saw them,u,pl,PRO,,sg,N,,past
-183,this girl saw them,u,pl,PRO,,sg,N,,past
-184,these boys will walk,,,,,pl,N,,future
-185,these boys will smile,,,,,pl,N,,future
-186,these boys will smile,,,,,pl,N,,future
-187,these boys will smile,,,,,pl,N,,future
-188,these boys walk,,,,,pl,N,pl,pres
-189,these boys smile,,,,,pl,N,pl,pres
-190,these boys walked,,,,,pl,N,,past
-191,these boys smiled,,,,,pl,N,,past
-192,these boys smiled,,,,,pl,N,,past
-193,these boys smiled,,,,,pl,N,,past
-194,these boys smiled,,,,,pl,N,,past
-195,these boys smiled,,,,,pl,N,,past
-196,these boys smiled,,,,,pl,N,,past
-197,these boys see Alice,f,sg,PropN,,pl,N,pl,pres
-198,these boys see Bob,m,sg,PropN,,pl,N,pl,pres
-199,these boys see him,m,sg,PRO,,pl,N,pl,pres
-200,these boys see her,f,sg,PRO,,pl,N,pl,pres
-201,these boys see them,u,pl,PRO,,pl,N,pl,pres
-202,these boys saw Alice,f,sg,PropN,,pl,N,,past
-203,these boys saw Bob,m,sg,PropN,,pl,N,,past
-204,these boys saw him,m,sg,PRO,,pl,N,,past
-205,these boys saw her,f,sg,PRO,,pl,N,,past
-206,these boys saw them,u,pl,PRO,,pl,N,,past
-207,these girls will walk,,,,,pl,N,,future
-208,these girls will smile,,,,,pl,N,,future
-209,these girls will smile,,,,,pl,N,,future
-210,these girls will smile,,,,,pl,N,,future
-211,these girls walk,,,,,pl,N,pl,pres
-212,these girls smile,,,,,pl,N,pl,pres
-213,these girls walked,,,,,pl,N,,past
-214,these girls smiled,,,,,pl,N,,past
-215,these girls smiled,,,,,pl,N,,past
-216,these girls smiled,,,,,pl,N,,past
-217,these girls smiled,,,,,pl,N,,past
-218,these girls smiled,,,,,pl,N,,past
-219,these girls smiled,,,,,pl,N,,past
-220,these girls see Alice,f,sg,PropN,,pl,N,pl,pres
-221,these girls see Bob,m,sg,PropN,,pl,N,pl,pres
-222,these girls see him,m,sg,PRO,,pl,N,pl,pres
-223,these girls see her,f,sg,PRO,,pl,N,pl,pres
-224,these girls see them,u,pl,PRO,,pl,N,pl,pres
-225,these girls saw Alice,f,sg,PropN,,pl,N,,past
-226,these girls saw Bob,m,sg,PropN,,pl,N,,past
-227,these girls saw him,m,sg,PRO,,pl,N,,past
-228,these girls saw her,f,sg,PRO,,pl,N,,past
-229,these girls saw them,u,pl,PRO,,pl,N,,past
-230,the boy will walk,,,,,sg,N,,future
-231,the boy will smile,,,,,sg,N,,future
-232,the boy walks,,,,,sg,N,sg,pres
-233,the boy smiles,,,,,sg,N,sg,pres
-234,the boy smiles,,,,,sg,N,sg,pres
-235,the boy smiles,,,,,sg,N,sg,pres
-236,the boy walked,,,,,sg,N,,past
-237,the boy smiled,,,,,sg,N,,past
-238,the boy sees Alice,f,sg,PropN,,sg,N,sg,pres
-239,the boy sees Bob,m,sg,PropN,,sg,N,sg,pres
-240,the boy sees him,m,sg,PRO,,sg,N,sg,pres
-241,the boy sees her,f,sg,PRO,,sg,N,sg,pres
-242,the boy sees them,u,pl,PRO,,sg,N,sg,pres
-243,the boy sees them,u,pl,PRO,,sg,N,sg,pres
-244,the boy sees them,u,pl,PRO,,sg,N,sg,pres
-245,the boy sees them,u,pl,PRO,,sg,N,sg,pres
-246,the boy sees them,u,pl,PRO,,sg,N,sg,pres
-247,the boy sees them,u,pl,PRO,,sg,N,sg,pres
-248,the boy saw Alice,f,sg,PropN,,sg,N,,past
-249,the boy saw Bob,m,sg,PropN,,sg,N,,past
-250,the boy saw him,m,sg,PRO,,sg,N,,past
-251,the boy saw her,f,sg,PRO,,sg,N,,past
-252,the boy saw them,u,pl,PRO,,sg,N,,past
-253,the girl will walk,,,,,sg,N,,future
-254,the girl will smile,,,,,sg,N,,future
-255,the girl walks,,,,,sg,N,sg,pres
-256,the girl smiles,,,,,sg,N,sg,pres
-257,the girl smiles,,,,,sg,N,sg,pres
-258,the girl smiles,,,,,sg,N,sg,pres
-259,the girl walked,,,,,sg,N,,past
-260,the girl smiled,,,,,sg,N,,past
-261,the girl sees Alice,f,sg,PropN,,sg,N,sg,pres
-262,the girl sees Bob,m,sg,PropN,,sg,N,sg,pres
-263,the girl sees him,m,sg,PRO,,sg,N,sg,pres
-264,the girl sees her,f,sg,PRO,,sg,N,sg,pres
-265,the girl sees them,u,pl,PRO,,sg,N,sg,pres
-266,the girl sees them,u,pl,PRO,,sg,N,sg,pres
-267,the girl sees them,u,pl,PRO,,sg,N,sg,pres
-268,the girl sees them,u,pl,PRO,,sg,N,sg,pres
-269,the girl sees them,u,pl,PRO,,sg,N,sg,pres
-270,the girl sees them,u,pl,PRO,,sg,N,sg,pres
-271,the girl saw Alice,f,sg,PropN,,sg,N,,past
-272,the girl saw Bob,m,sg,PropN,,sg,N,,past
-273,the girl saw him,m,sg,PRO,,sg,N,,past
-274,the girl saw her,f,sg,PRO,,sg,N,,past
-275,the girl saw them,u,pl,PRO,,sg,N,,past
-276,the boys will walk,,,,,pl,N,,future
-277,the boys will smile,,,,,pl,N,,future
-278,the boys will smile,,,,,pl,N,,future
-279,the boys will smile,,,,,pl,N,,future
-280,the boys walk,,,,,pl,N,pl,pres
-281,the boys smile,,,,,pl,N,pl,pres
-282,the boys walked,,,,,pl,N,,past
-283,the boys smiled,,,,,pl,N,,past
-284,the boys smiled,,,,,pl,N,,past
-285,the boys smiled,,,,,pl,N,,past
-286,the boys smiled,,,,,pl,N,,past
-287,the boys smiled,,,,,pl,N,,past
-288,the boys smiled,,,,,pl,N,,past
-289,the boys see Alice,f,sg,PropN,,pl,N,pl,pres
-290,the boys see Bob,m,sg,PropN,,pl,N,pl,pres
-291,the boys see him,m,sg,PRO,,pl,N,pl,pres
-292,the boys see her,f,sg,PRO,,pl,N,pl,pres
-293,the boys see them,u,pl,PRO,,pl,N,pl,pres
-294,the boys saw Alice,f,sg,PropN,,pl,N,,past
-295,the boys saw Bob,m,sg,PropN,,pl,N,,past
-296,the boys saw him,m,sg,PRO,,pl,N,,past
-297,the boys saw her,f,sg,PRO,,pl,N,,past
-298,the boys saw them,u,pl,PRO,,pl,N,,past
-299,the girls will walk,,,,,pl,N,,future
-300,the girls will smile,,,,,pl,N,,future
-301,the girls will smile,,,,,pl,N,,future
-302,the girls will smile,,,,,pl,N,,future
-303,the girls walk,,,,,pl,N,pl,pres
-304,the girls smile,,,,,pl,N,pl,pres
-305,the girls walked,,,,,pl,N,,past
-306,the girls smiled,,,,,pl,N,,past
-307,the girls smiled,,,,,pl,N,,past
-308,the girls smiled,,,,,pl,N,,past
-309,the girls smiled,,,,,pl,N,,past
-310,the girls smiled,,,,,pl,N,,past
-311,the girls smiled,,,,,pl,N,,past
-312,the girls see Alice,f,sg,PropN,,pl,N,pl,pres
-313,the girls see Bob,m,sg,PropN,,pl,N,pl,pres
-314,the girls see him,m,sg,PRO,,pl,N,pl,pres
-315,the girls see her,f,sg,PRO,,pl,N,pl,pres
-316,the girls see them,u,pl,PRO,,pl,N,pl,pres
-317,the girls saw Alice,f,sg,PropN,,pl,N,,past
-318,the girls saw Bob,m,sg,PropN,,pl,N,,past
-319,the girls saw him,m,sg,PRO,,pl,N,,past
-320,the girls saw her,f,sg,PRO,,pl,N,,past
-321,the girls saw them,u,pl,PRO,,pl,N,,past
-322,he will walk,,,,m,sg,PRO,,future
-323,he will smile,,,,m,sg,PRO,,future
-324,he walks,,,,m,sg,PRO,sg,pres
-325,he smiles,,,,m,sg,PRO,sg,pres
-326,he smiles,,,,m,sg,PRO,sg,pres
-327,he smiles,,,,m,sg,PRO,sg,pres
-328,he walked,,,,m,sg,PRO,,past
-329,he smiled,,,,m,sg,PRO,,past
-330,he sees Alice,f,sg,PropN,m,sg,PRO,sg,pres
-331,he sees Bob,m,sg,PropN,m,sg,PRO,sg,pres
-332,he sees him,m,sg,PRO,m,sg,PRO,sg,pres
-333,he sees her,f,sg,PRO,m,sg,PRO,sg,pres
-334,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
-335,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
-336,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
-337,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
-338,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
-339,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
-340,he saw Alice,f,sg,PropN,m,sg,PRO,,past
-341,he saw Bob,m,sg,PropN,m,sg,PRO,,past
-342,he saw him,m,sg,PRO,m,sg,PRO,,past
-343,he saw her,f,sg,PRO,m,sg,PRO,,past
-344,he saw them,u,pl,PRO,m,sg,PRO,,past
-345,she will walk,,,,f,sg,PRO,,future
-346,she will smile,,,,f,sg,PRO,,future
-347,she walks,,,,f,sg,PRO,sg,pres
-348,she smiles,,,,f,sg,PRO,sg,pres
-349,she smiles,,,,f,sg,PRO,sg,pres
-350,she smiles,,,,f,sg,PRO,sg,pres
-351,she walked,,,,f,sg,PRO,,past
-352,she smiled,,,,f,sg,PRO,,past
-353,she sees Alice,f,sg,PropN,f,sg,PRO,sg,pres
-354,she sees Bob,m,sg,PropN,f,sg,PRO,sg,pres
-355,she sees him,m,sg,PRO,f,sg,PRO,sg,pres
-356,she sees her,f,sg,PRO,f,sg,PRO,sg,pres
-357,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
-358,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
-359,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
-360,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
-361,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
-362,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
-363,she saw Alice,f,sg,PropN,f,sg,PRO,,past
-364,she saw Bob,m,sg,PropN,f,sg,PRO,,past
-365,she saw him,m,sg,PRO,f,sg,PRO,,past
-366,she saw her,f,sg,PRO,f,sg,PRO,,past
-367,she saw them,u,pl,PRO,f,sg,PRO,,past
-368,they will walk,,,,u,pl,PRO,,future
-369,they will smile,,,,u,pl,PRO,,future
-370,they will smile,,,,u,pl,PRO,,future
-371,they will smile,,,,u,pl,PRO,,future
-372,they walk,,,,u,pl,PRO,pl,pres
-373,they smile,,,,u,pl,PRO,pl,pres
-374,they walked,,,,u,pl,PRO,,past
-375,they smiled,,,,u,pl,PRO,,past
-376,they smiled,,,,u,pl,PRO,,past
-377,they smiled,,,,u,pl,PRO,,past
-378,they smiled,,,,u,pl,PRO,,past
-379,they smiled,,,,u,pl,PRO,,past
-380,they smiled,,,,u,pl,PRO,,past
-381,they see Alice,f,sg,PropN,u,pl,PRO,pl,pres
-382,they see Bob,m,sg,PropN,u,pl,PRO,pl,pres
-383,they see him,m,sg,PRO,u,pl,PRO,pl,pres
-384,they see her,f,sg,PRO,u,pl,PRO,pl,pres
-385,they see them,u,pl,PRO,u,pl,PRO,pl,pres
-386,they saw Alice,f,sg,PropN,u,pl,PRO,,past
-387,they saw Bob,m,sg,PropN,u,pl,PRO,,past
-388,they saw him,m,sg,PRO,u,pl,PRO,,past
-389,they saw her,f,sg,PRO,u,pl,PRO,,past
-390,they saw them,u,pl,PRO,u,pl,PRO,,past
+5,Alice cries,,,,f,sg,PropN,sg,pres
+6,Alice cries,,,,f,sg,PropN,sg,pres
+7,Alice cries,,,,f,sg,PropN,sg,pres
+8,Alice cries,,,,f,sg,PropN,sg,pres
+9,Alice walked,,,,f,sg,PropN,,past
+10,Alice smiled,,,,f,sg,PropN,,past
+11,Alice cried,,,,f,sg,PropN,,past
+12,Alice sees Alice,f,sg,PropN,f,sg,PropN,sg,pres
+13,Alice sees Mary,f,sg,PropN,f,sg,PropN,sg,pres
+14,Alice sees Bob,m,sg,PropN,f,sg,PropN,sg,pres
+15,Alice sees John,m,sg,PropN,f,sg,PropN,sg,pres
+16,Alice sees him,m,sg,PRO,f,sg,PropN,sg,pres
+17,Alice sees her,f,sg,PRO,f,sg,PropN,sg,pres
+18,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+19,Alice watches Alice,f,sg,PropN,f,sg,PropN,sg,pres
+20,Alice watches Mary,f,sg,PropN,f,sg,PropN,sg,pres
+21,Alice watches Bob,m,sg,PropN,f,sg,PropN,sg,pres
+22,Alice watches John,m,sg,PropN,f,sg,PropN,sg,pres
+23,Alice watches him,m,sg,PRO,f,sg,PropN,sg,pres
+24,Alice watches her,f,sg,PRO,f,sg,PropN,sg,pres
+25,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+26,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+27,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+28,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+29,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+30,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+31,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+32,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+33,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+34,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+35,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+36,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+37,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+38,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+39,Alice watches them,u,pl,PRO,f,sg,PropN,sg,pres
+40,Alice saw Alice,f,sg,PropN,f,sg,PropN,,past
+41,Alice saw Mary,f,sg,PropN,f,sg,PropN,,past
+42,Alice saw Bob,m,sg,PropN,f,sg,PropN,,past
+43,Alice saw John,m,sg,PropN,f,sg,PropN,,past
+44,Alice saw him,m,sg,PRO,f,sg,PropN,,past
+45,Alice saw her,f,sg,PRO,f,sg,PropN,,past
+46,Alice saw them,u,pl,PRO,f,sg,PropN,,past
+47,Alice watched Alice,f,sg,PropN,f,sg,PropN,,past
+48,Alice watched Mary,f,sg,PropN,f,sg,PropN,,past
+49,Alice watched Bob,m,sg,PropN,f,sg,PropN,,past
+50,Alice watched John,m,sg,PropN,f,sg,PropN,,past
+51,Alice watched him,m,sg,PRO,f,sg,PropN,,past
+52,Alice watched her,f,sg,PRO,f,sg,PropN,,past
+53,Alice watched them,u,pl,PRO,f,sg,PropN,,past
+54,Mary will walk,,,,f,sg,PropN,,future
+55,Mary will smile,,,,f,sg,PropN,,future
+56,Mary will cry,,,,f,sg,PropN,,future
+57,Mary walks,,,,f,sg,PropN,sg,pres
+58,Mary smiles,,,,f,sg,PropN,sg,pres
+59,Mary cries,,,,f,sg,PropN,sg,pres
+60,Mary cries,,,,f,sg,PropN,sg,pres
+61,Mary cries,,,,f,sg,PropN,sg,pres
+62,Mary cries,,,,f,sg,PropN,sg,pres
+63,Mary walked,,,,f,sg,PropN,,past
+64,Mary smiled,,,,f,sg,PropN,,past
+65,Mary cried,,,,f,sg,PropN,,past
+66,Mary sees Alice,f,sg,PropN,f,sg,PropN,sg,pres
+67,Mary sees Mary,f,sg,PropN,f,sg,PropN,sg,pres
+68,Mary sees Bob,m,sg,PropN,f,sg,PropN,sg,pres
+69,Mary sees John,m,sg,PropN,f,sg,PropN,sg,pres
+70,Mary sees him,m,sg,PRO,f,sg,PropN,sg,pres
+71,Mary sees her,f,sg,PRO,f,sg,PropN,sg,pres
+72,Mary sees them,u,pl,PRO,f,sg,PropN,sg,pres
+73,Mary watches Alice,f,sg,PropN,f,sg,PropN,sg,pres
+74,Mary watches Mary,f,sg,PropN,f,sg,PropN,sg,pres
+75,Mary watches Bob,m,sg,PropN,f,sg,PropN,sg,pres
+76,Mary watches John,m,sg,PropN,f,sg,PropN,sg,pres
+77,Mary watches him,m,sg,PRO,f,sg,PropN,sg,pres
+78,Mary watches her,f,sg,PRO,f,sg,PropN,sg,pres
+79,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+80,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+81,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+82,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+83,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+84,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+85,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+86,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+87,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+88,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+89,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+90,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+91,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+92,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+93,Mary watches them,u,pl,PRO,f,sg,PropN,sg,pres
+94,Mary saw Alice,f,sg,PropN,f,sg,PropN,,past
+95,Mary saw Mary,f,sg,PropN,f,sg,PropN,,past
+96,Mary saw Bob,m,sg,PropN,f,sg,PropN,,past
+97,Mary saw John,m,sg,PropN,f,sg,PropN,,past
+98,Mary saw him,m,sg,PRO,f,sg,PropN,,past
+99,Mary saw her,f,sg,PRO,f,sg,PropN,,past
+100,Mary saw them,u,pl,PRO,f,sg,PropN,,past
+101,Mary watched Alice,f,sg,PropN,f,sg,PropN,,past
+102,Mary watched Mary,f,sg,PropN,f,sg,PropN,,past
+103,Mary watched Bob,m,sg,PropN,f,sg,PropN,,past
+104,Mary watched John,m,sg,PropN,f,sg,PropN,,past
+105,Mary watched him,m,sg,PRO,f,sg,PropN,,past
+106,Mary watched her,f,sg,PRO,f,sg,PropN,,past
+107,Mary watched them,u,pl,PRO,f,sg,PropN,,past
+108,Bob will walk,,,,m,sg,PropN,,future
+109,Bob will smile,,,,m,sg,PropN,,future
+110,Bob will cry,,,,m,sg,PropN,,future
+111,Bob walks,,,,m,sg,PropN,sg,pres
+112,Bob smiles,,,,m,sg,PropN,sg,pres
+113,Bob cries,,,,m,sg,PropN,sg,pres
+114,Bob cries,,,,m,sg,PropN,sg,pres
+115,Bob cries,,,,m,sg,PropN,sg,pres
+116,Bob cries,,,,m,sg,PropN,sg,pres
+117,Bob walked,,,,m,sg,PropN,,past
+118,Bob smiled,,,,m,sg,PropN,,past
+119,Bob cried,,,,m,sg,PropN,,past
+120,Bob sees Alice,f,sg,PropN,m,sg,PropN,sg,pres
+121,Bob sees Mary,f,sg,PropN,m,sg,PropN,sg,pres
+122,Bob sees Bob,m,sg,PropN,m,sg,PropN,sg,pres
+123,Bob sees John,m,sg,PropN,m,sg,PropN,sg,pres
+124,Bob sees him,m,sg,PRO,m,sg,PropN,sg,pres
+125,Bob sees her,f,sg,PRO,m,sg,PropN,sg,pres
+126,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+127,Bob watches Alice,f,sg,PropN,m,sg,PropN,sg,pres
+128,Bob watches Mary,f,sg,PropN,m,sg,PropN,sg,pres
+129,Bob watches Bob,m,sg,PropN,m,sg,PropN,sg,pres
+130,Bob watches John,m,sg,PropN,m,sg,PropN,sg,pres
+131,Bob watches him,m,sg,PRO,m,sg,PropN,sg,pres
+132,Bob watches her,f,sg,PRO,m,sg,PropN,sg,pres
+133,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+134,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+135,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+136,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+137,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+138,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+139,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+140,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+141,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+142,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+143,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+144,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+145,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+146,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+147,Bob watches them,u,pl,PRO,m,sg,PropN,sg,pres
+148,Bob saw Alice,f,sg,PropN,m,sg,PropN,,past
+149,Bob saw Mary,f,sg,PropN,m,sg,PropN,,past
+150,Bob saw Bob,m,sg,PropN,m,sg,PropN,,past
+151,Bob saw John,m,sg,PropN,m,sg,PropN,,past
+152,Bob saw him,m,sg,PRO,m,sg,PropN,,past
+153,Bob saw her,f,sg,PRO,m,sg,PropN,,past
+154,Bob saw them,u,pl,PRO,m,sg,PropN,,past
+155,Bob watched Alice,f,sg,PropN,m,sg,PropN,,past
+156,Bob watched Mary,f,sg,PropN,m,sg,PropN,,past
+157,Bob watched Bob,m,sg,PropN,m,sg,PropN,,past
+158,Bob watched John,m,sg,PropN,m,sg,PropN,,past
+159,Bob watched him,m,sg,PRO,m,sg,PropN,,past
+160,Bob watched her,f,sg,PRO,m,sg,PropN,,past
+161,Bob watched them,u,pl,PRO,m,sg,PropN,,past
+162,John will walk,,,,m,sg,PropN,,future
+163,John will smile,,,,m,sg,PropN,,future
+164,John will cry,,,,m,sg,PropN,,future
+165,John walks,,,,m,sg,PropN,sg,pres
+166,John smiles,,,,m,sg,PropN,sg,pres
+167,John cries,,,,m,sg,PropN,sg,pres
+168,John cries,,,,m,sg,PropN,sg,pres
+169,John cries,,,,m,sg,PropN,sg,pres
+170,John cries,,,,m,sg,PropN,sg,pres
+171,John walked,,,,m,sg,PropN,,past
+172,John smiled,,,,m,sg,PropN,,past
+173,John cried,,,,m,sg,PropN,,past
+174,John sees Alice,f,sg,PropN,m,sg,PropN,sg,pres
+175,John sees Mary,f,sg,PropN,m,sg,PropN,sg,pres
+176,John sees Bob,m,sg,PropN,m,sg,PropN,sg,pres
+177,John sees John,m,sg,PropN,m,sg,PropN,sg,pres
+178,John sees him,m,sg,PRO,m,sg,PropN,sg,pres
+179,John sees her,f,sg,PRO,m,sg,PropN,sg,pres
+180,John sees them,u,pl,PRO,m,sg,PropN,sg,pres
+181,John watches Alice,f,sg,PropN,m,sg,PropN,sg,pres
+182,John watches Mary,f,sg,PropN,m,sg,PropN,sg,pres
+183,John watches Bob,m,sg,PropN,m,sg,PropN,sg,pres
+184,John watches John,m,sg,PropN,m,sg,PropN,sg,pres
+185,John watches him,m,sg,PRO,m,sg,PropN,sg,pres
+186,John watches her,f,sg,PRO,m,sg,PropN,sg,pres
+187,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+188,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+189,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+190,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+191,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+192,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+193,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+194,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+195,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+196,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+197,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+198,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+199,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+200,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+201,John watches them,u,pl,PRO,m,sg,PropN,sg,pres
+202,John saw Alice,f,sg,PropN,m,sg,PropN,,past
+203,John saw Mary,f,sg,PropN,m,sg,PropN,,past
+204,John saw Bob,m,sg,PropN,m,sg,PropN,,past
+205,John saw John,m,sg,PropN,m,sg,PropN,,past
+206,John saw him,m,sg,PRO,m,sg,PropN,,past
+207,John saw her,f,sg,PRO,m,sg,PropN,,past
+208,John saw them,u,pl,PRO,m,sg,PropN,,past
+209,John watched Alice,f,sg,PropN,m,sg,PropN,,past
+210,John watched Mary,f,sg,PropN,m,sg,PropN,,past
+211,John watched Bob,m,sg,PropN,m,sg,PropN,,past
+212,John watched John,m,sg,PropN,m,sg,PropN,,past
+213,John watched him,m,sg,PRO,m,sg,PropN,,past
+214,John watched her,f,sg,PRO,m,sg,PropN,,past
+215,John watched them,u,pl,PRO,m,sg,PropN,,past
+216,this boy will walk,,,,m,sg,N,,future
+217,this boy will smile,,,,m,sg,N,,future
+218,this boy will cry,,,,m,sg,N,,future
+219,this boy walks,,,,m,sg,N,sg,pres
+220,this boy smiles,,,,m,sg,N,sg,pres
+221,this boy cries,,,,m,sg,N,sg,pres
+222,this boy cries,,,,m,sg,N,sg,pres
+223,this boy cries,,,,m,sg,N,sg,pres
+224,this boy cries,,,,m,sg,N,sg,pres
+225,this boy walked,,,,m,sg,N,,past
+226,this boy smiled,,,,m,sg,N,,past
+227,this boy cried,,,,m,sg,N,,past
+228,this boy sees Alice,f,sg,PropN,m,sg,N,sg,pres
+229,this boy sees Mary,f,sg,PropN,m,sg,N,sg,pres
+230,this boy sees Bob,m,sg,PropN,m,sg,N,sg,pres
+231,this boy sees John,m,sg,PropN,m,sg,N,sg,pres
+232,this boy sees him,m,sg,PRO,m,sg,N,sg,pres
+233,this boy sees her,f,sg,PRO,m,sg,N,sg,pres
+234,this boy sees them,u,pl,PRO,m,sg,N,sg,pres
+235,this boy watches Alice,f,sg,PropN,m,sg,N,sg,pres
+236,this boy watches Mary,f,sg,PropN,m,sg,N,sg,pres
+237,this boy watches Bob,m,sg,PropN,m,sg,N,sg,pres
+238,this boy watches John,m,sg,PropN,m,sg,N,sg,pres
+239,this boy watches him,m,sg,PRO,m,sg,N,sg,pres
+240,this boy watches her,f,sg,PRO,m,sg,N,sg,pres
+241,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+242,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+243,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+244,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+245,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+246,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+247,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+248,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+249,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+250,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+251,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+252,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+253,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+254,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+255,this boy watches them,u,pl,PRO,m,sg,N,sg,pres
+256,this boy saw Alice,f,sg,PropN,m,sg,N,,past
+257,this boy saw Mary,f,sg,PropN,m,sg,N,,past
+258,this boy saw Bob,m,sg,PropN,m,sg,N,,past
+259,this boy saw John,m,sg,PropN,m,sg,N,,past
+260,this boy saw him,m,sg,PRO,m,sg,N,,past
+261,this boy saw her,f,sg,PRO,m,sg,N,,past
+262,this boy saw them,u,pl,PRO,m,sg,N,,past
+263,this boy watched Alice,f,sg,PropN,m,sg,N,,past
+264,this boy watched Mary,f,sg,PropN,m,sg,N,,past
+265,this boy watched Bob,m,sg,PropN,m,sg,N,,past
+266,this boy watched John,m,sg,PropN,m,sg,N,,past
+267,this boy watched him,m,sg,PRO,m,sg,N,,past
+268,this boy watched her,f,sg,PRO,m,sg,N,,past
+269,this boy watched them,u,pl,PRO,m,sg,N,,past
+270,this man will walk,,,,m,sg,N,,future
+271,this man will smile,,,,m,sg,N,,future
+272,this man will cry,,,,m,sg,N,,future
+273,this man walks,,,,m,sg,N,sg,pres
+274,this man smiles,,,,m,sg,N,sg,pres
+275,this man cries,,,,m,sg,N,sg,pres
+276,this man cries,,,,m,sg,N,sg,pres
+277,this man cries,,,,m,sg,N,sg,pres
+278,this man cries,,,,m,sg,N,sg,pres
+279,this man walked,,,,m,sg,N,,past
+280,this man smiled,,,,m,sg,N,,past
+281,this man cried,,,,m,sg,N,,past
+282,this man sees Alice,f,sg,PropN,m,sg,N,sg,pres
+283,this man sees Mary,f,sg,PropN,m,sg,N,sg,pres
+284,this man sees Bob,m,sg,PropN,m,sg,N,sg,pres
+285,this man sees John,m,sg,PropN,m,sg,N,sg,pres
+286,this man sees him,m,sg,PRO,m,sg,N,sg,pres
+287,this man sees her,f,sg,PRO,m,sg,N,sg,pres
+288,this man sees them,u,pl,PRO,m,sg,N,sg,pres
+289,this man watches Alice,f,sg,PropN,m,sg,N,sg,pres
+290,this man watches Mary,f,sg,PropN,m,sg,N,sg,pres
+291,this man watches Bob,m,sg,PropN,m,sg,N,sg,pres
+292,this man watches John,m,sg,PropN,m,sg,N,sg,pres
+293,this man watches him,m,sg,PRO,m,sg,N,sg,pres
+294,this man watches her,f,sg,PRO,m,sg,N,sg,pres
+295,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+296,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+297,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+298,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+299,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+300,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+301,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+302,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+303,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+304,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+305,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+306,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+307,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+308,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+309,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+310,this man saw Alice,f,sg,PropN,m,sg,N,,past
+311,this man saw Mary,f,sg,PropN,m,sg,N,,past
+312,this man saw Bob,m,sg,PropN,m,sg,N,,past
+313,this man saw John,m,sg,PropN,m,sg,N,,past
+314,this man saw him,m,sg,PRO,m,sg,N,,past
+315,this man saw her,f,sg,PRO,m,sg,N,,past
+316,this man saw them,u,pl,PRO,m,sg,N,,past
+317,this man watched Alice,f,sg,PropN,m,sg,N,,past
+318,this man watched Mary,f,sg,PropN,m,sg,N,,past
+319,this man watched Bob,m,sg,PropN,m,sg,N,,past
+320,this man watched John,m,sg,PropN,m,sg,N,,past
+321,this man watched him,m,sg,PRO,m,sg,N,,past
+322,this man watched her,f,sg,PRO,m,sg,N,,past
+323,this man watched them,u,pl,PRO,m,sg,N,,past
+324,this man will walk,,,,m,sg,N,,future
+325,this man will smile,,,,m,sg,N,,future
+326,this man will cry,,,,m,sg,N,,future
+327,this man walks,,,,m,sg,N,sg,pres
+328,this man smiles,,,,m,sg,N,sg,pres
+329,this man cries,,,,m,sg,N,sg,pres
+330,this man cries,,,,m,sg,N,sg,pres
+331,this man cries,,,,m,sg,N,sg,pres
+332,this man cries,,,,m,sg,N,sg,pres
+333,this man walked,,,,m,sg,N,,past
+334,this man smiled,,,,m,sg,N,,past
+335,this man cried,,,,m,sg,N,,past
+336,this man sees Alice,f,sg,PropN,m,sg,N,sg,pres
+337,this man sees Mary,f,sg,PropN,m,sg,N,sg,pres
+338,this man sees Bob,m,sg,PropN,m,sg,N,sg,pres
+339,this man sees John,m,sg,PropN,m,sg,N,sg,pres
+340,this man sees him,m,sg,PRO,m,sg,N,sg,pres
+341,this man sees her,f,sg,PRO,m,sg,N,sg,pres
+342,this man sees them,u,pl,PRO,m,sg,N,sg,pres
+343,this man watches Alice,f,sg,PropN,m,sg,N,sg,pres
+344,this man watches Mary,f,sg,PropN,m,sg,N,sg,pres
+345,this man watches Bob,m,sg,PropN,m,sg,N,sg,pres
+346,this man watches John,m,sg,PropN,m,sg,N,sg,pres
+347,this man watches him,m,sg,PRO,m,sg,N,sg,pres
+348,this man watches her,f,sg,PRO,m,sg,N,sg,pres
+349,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+350,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+351,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+352,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+353,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+354,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+355,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+356,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+357,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+358,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+359,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+360,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+361,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+362,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+363,this man watches them,u,pl,PRO,m,sg,N,sg,pres
+364,this man saw Alice,f,sg,PropN,m,sg,N,,past
+365,this man saw Mary,f,sg,PropN,m,sg,N,,past
+366,this man saw Bob,m,sg,PropN,m,sg,N,,past
+367,this man saw John,m,sg,PropN,m,sg,N,,past
+368,this man saw him,m,sg,PRO,m,sg,N,,past
+369,this man saw her,f,sg,PRO,m,sg,N,,past
+370,this man saw them,u,pl,PRO,m,sg,N,,past
+371,this man watched Alice,f,sg,PropN,m,sg,N,,past
+372,this man watched Mary,f,sg,PropN,m,sg,N,,past
+373,this man watched Bob,m,sg,PropN,m,sg,N,,past
+374,this man watched John,m,sg,PropN,m,sg,N,,past
+375,this man watched him,m,sg,PRO,m,sg,N,,past
+376,this man watched her,f,sg,PRO,m,sg,N,,past
+377,this man watched them,u,pl,PRO,m,sg,N,,past
+378,this woman will walk,,,,f,sg,N,,future
+379,this woman will smile,,,,f,sg,N,,future
+380,this woman will cry,,,,f,sg,N,,future
+381,this woman walks,,,,f,sg,N,sg,pres
+382,this woman smiles,,,,f,sg,N,sg,pres
+383,this woman cries,,,,f,sg,N,sg,pres
+384,this woman cries,,,,f,sg,N,sg,pres
+385,this woman cries,,,,f,sg,N,sg,pres
+386,this woman cries,,,,f,sg,N,sg,pres
+387,this woman walked,,,,f,sg,N,,past
+388,this woman smiled,,,,f,sg,N,,past
+389,this woman cried,,,,f,sg,N,,past
+390,this woman sees Alice,f,sg,PropN,f,sg,N,sg,pres
+391,this woman sees Mary,f,sg,PropN,f,sg,N,sg,pres
+392,this woman sees Bob,m,sg,PropN,f,sg,N,sg,pres
+393,this woman sees John,m,sg,PropN,f,sg,N,sg,pres
+394,this woman sees him,m,sg,PRO,f,sg,N,sg,pres
+395,this woman sees her,f,sg,PRO,f,sg,N,sg,pres
+396,this woman sees them,u,pl,PRO,f,sg,N,sg,pres
+397,this woman watches Alice,f,sg,PropN,f,sg,N,sg,pres
+398,this woman watches Mary,f,sg,PropN,f,sg,N,sg,pres
+399,this woman watches Bob,m,sg,PropN,f,sg,N,sg,pres
+400,this woman watches John,m,sg,PropN,f,sg,N,sg,pres
+401,this woman watches him,m,sg,PRO,f,sg,N,sg,pres
+402,this woman watches her,f,sg,PRO,f,sg,N,sg,pres
+403,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+404,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+405,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+406,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+407,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+408,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+409,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+410,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+411,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+412,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+413,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+414,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+415,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+416,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+417,this woman watches them,u,pl,PRO,f,sg,N,sg,pres
+418,this woman saw Alice,f,sg,PropN,f,sg,N,,past
+419,this woman saw Mary,f,sg,PropN,f,sg,N,,past
+420,this woman saw Bob,m,sg,PropN,f,sg,N,,past
+421,this woman saw John,m,sg,PropN,f,sg,N,,past
+422,this woman saw him,m,sg,PRO,f,sg,N,,past
+423,this woman saw her,f,sg,PRO,f,sg,N,,past
+424,this woman saw them,u,pl,PRO,f,sg,N,,past
+425,this woman watched Alice,f,sg,PropN,f,sg,N,,past
+426,this woman watched Mary,f,sg,PropN,f,sg,N,,past
+427,this woman watched Bob,m,sg,PropN,f,sg,N,,past
+428,this woman watched John,m,sg,PropN,f,sg,N,,past
+429,this woman watched him,m,sg,PRO,f,sg,N,,past
+430,this woman watched her,f,sg,PRO,f,sg,N,,past
+431,this woman watched them,u,pl,PRO,f,sg,N,,past
+432,this woman watched them,u,pl,PRO,f,sg,N,,past
+433,this woman watched them,u,pl,PRO,f,sg,N,,past
+434,this woman watched them,u,pl,PRO,f,sg,N,,past
+435,this woman watched them,u,pl,PRO,f,sg,N,,past
+436,this woman watched them,u,pl,PRO,f,sg,N,,past
+437,this woman watched them,u,pl,PRO,f,sg,N,,past
+438,this woman watched them,u,pl,PRO,f,sg,N,,past
+439,this woman watched them,u,pl,PRO,f,sg,N,,past
+440,this woman watched them,u,pl,PRO,f,sg,N,,past
+441,this woman watched them,u,pl,PRO,f,sg,N,,past
+442,this woman watched them,u,pl,PRO,f,sg,N,,past
+443,this woman watched them,u,pl,PRO,f,sg,N,,past
+444,this woman watched them,u,pl,PRO,f,sg,N,,past
+445,this woman watched them,u,pl,PRO,f,sg,N,,past
+446,this woman watched them,u,pl,PRO,f,sg,N,,past
+447,this woman watched them,u,pl,PRO,f,sg,N,,past
+448,this woman watched them,u,pl,PRO,f,sg,N,,past
+449,this woman watched them,u,pl,PRO,f,sg,N,,past
+450,this woman watched them,u,pl,PRO,f,sg,N,,past
+451,this woman watched them,u,pl,PRO,f,sg,N,,past
+452,this woman watched them,u,pl,PRO,f,sg,N,,past
+453,this woman watched them,u,pl,PRO,f,sg,N,,past
+454,this woman watched them,u,pl,PRO,f,sg,N,,past
+455,this woman watched them,u,pl,PRO,f,sg,N,,past
+456,this woman watched them,u,pl,PRO,f,sg,N,,past
+457,this woman watched them,u,pl,PRO,f,sg,N,,past
+458,this woman watched them,u,pl,PRO,f,sg,N,,past
+459,this woman watched them,u,pl,PRO,f,sg,N,,past
+460,this woman watched them,u,pl,PRO,f,sg,N,,past
+461,this woman watched them,u,pl,PRO,f,sg,N,,past
+462,this woman watched them,u,pl,PRO,f,sg,N,,past
+463,this woman watched them,u,pl,PRO,f,sg,N,,past
+464,this woman watched them,u,pl,PRO,f,sg,N,,past
+465,this woman watched them,u,pl,PRO,f,sg,N,,past
+466,this woman watched them,u,pl,PRO,f,sg,N,,past
+467,this woman watched them,u,pl,PRO,f,sg,N,,past
+468,this woman watched them,u,pl,PRO,f,sg,N,,past
+469,this woman watched them,u,pl,PRO,f,sg,N,,past
+470,this woman watched them,u,pl,PRO,f,sg,N,,past
+471,this woman watched them,u,pl,PRO,f,sg,N,,past
+472,this woman watched them,u,pl,PRO,f,sg,N,,past
+473,this woman watched them,u,pl,PRO,f,sg,N,,past
+474,this woman watched them,u,pl,PRO,f,sg,N,,past
+475,this woman watched them,u,pl,PRO,f,sg,N,,past
+476,this woman watched them,u,pl,PRO,f,sg,N,,past
+477,this woman watched them,u,pl,PRO,f,sg,N,,past
+478,this woman watched them,u,pl,PRO,f,sg,N,,past
+479,this woman watched them,u,pl,PRO,f,sg,N,,past
+480,this woman watched them,u,pl,PRO,f,sg,N,,past
+481,this woman watched them,u,pl,PRO,f,sg,N,,past
+482,this woman watched them,u,pl,PRO,f,sg,N,,past
+483,this woman watched them,u,pl,PRO,f,sg,N,,past
+484,this woman watched them,u,pl,PRO,f,sg,N,,past
+485,this woman watched them,u,pl,PRO,f,sg,N,,past
+486,this woman watched them,u,pl,PRO,f,sg,N,,past
+487,this woman watched them,u,pl,PRO,f,sg,N,,past
+488,this woman watched them,u,pl,PRO,f,sg,N,,past
+489,this woman watched them,u,pl,PRO,f,sg,N,,past
+490,this woman watched them,u,pl,PRO,f,sg,N,,past
+491,this woman watched them,u,pl,PRO,f,sg,N,,past
+492,this woman watched them,u,pl,PRO,f,sg,N,,past
+493,this woman watched them,u,pl,PRO,f,sg,N,,past
+494,this woman watched them,u,pl,PRO,f,sg,N,,past
+495,this woman watched them,u,pl,PRO,f,sg,N,,past
+496,this woman watched them,u,pl,PRO,f,sg,N,,past
+497,this woman watched them,u,pl,PRO,f,sg,N,,past
+498,this woman watched them,u,pl,PRO,f,sg,N,,past
+499,this woman watched them,u,pl,PRO,f,sg,N,,past
+500,this woman watched them,u,pl,PRO,f,sg,N,,past
+501,this woman watched them,u,pl,PRO,f,sg,N,,past
+502,this woman watched them,u,pl,PRO,f,sg,N,,past
+503,this woman watched them,u,pl,PRO,f,sg,N,,past
+504,this woman watched them,u,pl,PRO,f,sg,N,,past
+505,this woman watched them,u,pl,PRO,f,sg,N,,past
+506,this woman watched them,u,pl,PRO,f,sg,N,,past
+507,this woman watched them,u,pl,PRO,f,sg,N,,past
+508,this woman watched them,u,pl,PRO,f,sg,N,,past
+509,this woman watched them,u,pl,PRO,f,sg,N,,past
+510,this woman watched them,u,pl,PRO,f,sg,N,,past
+511,this woman watched them,u,pl,PRO,f,sg,N,,past
+512,this woman watched them,u,pl,PRO,f,sg,N,,past
+513,this woman watched them,u,pl,PRO,f,sg,N,,past
+514,this woman watched them,u,pl,PRO,f,sg,N,,past
+515,this woman watched them,u,pl,PRO,f,sg,N,,past
+516,this woman watched them,u,pl,PRO,f,sg,N,,past
+517,this woman watched them,u,pl,PRO,f,sg,N,,past
+518,this woman watched them,u,pl,PRO,f,sg,N,,past
+519,this woman watched them,u,pl,PRO,f,sg,N,,past
+520,this woman watched them,u,pl,PRO,f,sg,N,,past
+521,this woman watched them,u,pl,PRO,f,sg,N,,past
+522,this woman watched them,u,pl,PRO,f,sg,N,,past
+523,this woman watched them,u,pl,PRO,f,sg,N,,past
+524,this woman watched them,u,pl,PRO,f,sg,N,,past
+525,this woman watched them,u,pl,PRO,f,sg,N,,past
+526,this woman watched them,u,pl,PRO,f,sg,N,,past
+527,this woman watched them,u,pl,PRO,f,sg,N,,past
+528,this woman watched them,u,pl,PRO,f,sg,N,,past
+529,this woman watched them,u,pl,PRO,f,sg,N,,past
+530,this woman watched them,u,pl,PRO,f,sg,N,,past
+531,this woman watched them,u,pl,PRO,f,sg,N,,past
+532,this woman watched them,u,pl,PRO,f,sg,N,,past
+533,this woman watched them,u,pl,PRO,f,sg,N,,past
+534,this woman watched them,u,pl,PRO,f,sg,N,,past
+535,this woman watched them,u,pl,PRO,f,sg,N,,past
+536,this woman watched them,u,pl,PRO,f,sg,N,,past
+537,this woman watched them,u,pl,PRO,f,sg,N,,past
+538,this woman watched them,u,pl,PRO,f,sg,N,,past
+539,this woman watched them,u,pl,PRO,f,sg,N,,past
+540,this woman watched them,u,pl,PRO,f,sg,N,,past
+541,this woman watched them,u,pl,PRO,f,sg,N,,past
+542,this woman watched them,u,pl,PRO,f,sg,N,,past
+543,this woman watched them,u,pl,PRO,f,sg,N,,past
+544,this woman watched them,u,pl,PRO,f,sg,N,,past
+545,this woman watched them,u,pl,PRO,f,sg,N,,past
+546,this woman watched them,u,pl,PRO,f,sg,N,,past
+547,this woman watched them,u,pl,PRO,f,sg,N,,past
+548,this woman watched them,u,pl,PRO,f,sg,N,,past
+549,this woman watched them,u,pl,PRO,f,sg,N,,past
+550,this woman watched them,u,pl,PRO,f,sg,N,,past
+551,this woman watched them,u,pl,PRO,f,sg,N,,past
+552,this woman watched them,u,pl,PRO,f,sg,N,,past
+553,this woman watched them,u,pl,PRO,f,sg,N,,past
+554,this woman watched them,u,pl,PRO,f,sg,N,,past
+555,this woman watched them,u,pl,PRO,f,sg,N,,past
+556,this woman watched them,u,pl,PRO,f,sg,N,,past
+557,this woman watched them,u,pl,PRO,f,sg,N,,past
+558,this woman watched them,u,pl,PRO,f,sg,N,,past
+559,this woman watched them,u,pl,PRO,f,sg,N,,past
+560,this woman watched them,u,pl,PRO,f,sg,N,,past
+561,this woman watched them,u,pl,PRO,f,sg,N,,past
+562,this woman watched them,u,pl,PRO,f,sg,N,,past
+563,this woman watched them,u,pl,PRO,f,sg,N,,past
+564,this woman watched them,u,pl,PRO,f,sg,N,,past
+565,this woman watched them,u,pl,PRO,f,sg,N,,past
+566,this woman watched them,u,pl,PRO,f,sg,N,,past
+567,this woman watched them,u,pl,PRO,f,sg,N,,past
+568,this woman watched them,u,pl,PRO,f,sg,N,,past
+569,this woman watched them,u,pl,PRO,f,sg,N,,past
+570,this woman watched them,u,pl,PRO,f,sg,N,,past
+571,this woman watched them,u,pl,PRO,f,sg,N,,past
+572,this woman watched them,u,pl,PRO,f,sg,N,,past
+573,this woman watched them,u,pl,PRO,f,sg,N,,past
+574,this woman watched them,u,pl,PRO,f,sg,N,,past
+575,this woman watched them,u,pl,PRO,f,sg,N,,past
+576,this woman watched them,u,pl,PRO,f,sg,N,,past
+577,this woman watched them,u,pl,PRO,f,sg,N,,past
+578,this woman watched them,u,pl,PRO,f,sg,N,,past
+579,this woman watched them,u,pl,PRO,f,sg,N,,past
+580,this woman watched them,u,pl,PRO,f,sg,N,,past
+581,this woman watched them,u,pl,PRO,f,sg,N,,past
+582,this woman watched them,u,pl,PRO,f,sg,N,,past
+583,this woman watched them,u,pl,PRO,f,sg,N,,past
+584,this woman watched them,u,pl,PRO,f,sg,N,,past
+585,this woman watched them,u,pl,PRO,f,sg,N,,past
+586,this woman watched them,u,pl,PRO,f,sg,N,,past
+587,this woman watched them,u,pl,PRO,f,sg,N,,past
+588,this woman watched them,u,pl,PRO,f,sg,N,,past
+589,this woman watched them,u,pl,PRO,f,sg,N,,past
+590,this woman watched them,u,pl,PRO,f,sg,N,,past
+591,this woman watched them,u,pl,PRO,f,sg,N,,past
+592,this woman watched them,u,pl,PRO,f,sg,N,,past
+593,this woman watched them,u,pl,PRO,f,sg,N,,past
+594,this woman watched them,u,pl,PRO,f,sg,N,,past
+595,this woman watched them,u,pl,PRO,f,sg,N,,past
+596,this woman watched them,u,pl,PRO,f,sg,N,,past
+597,this woman watched them,u,pl,PRO,f,sg,N,,past
+598,this woman watched them,u,pl,PRO,f,sg,N,,past
+599,this woman watched them,u,pl,PRO,f,sg,N,,past
+600,this woman watched them,u,pl,PRO,f,sg,N,,past
+601,this woman watched them,u,pl,PRO,f,sg,N,,past
+602,this woman watched them,u,pl,PRO,f,sg,N,,past
+603,this woman watched them,u,pl,PRO,f,sg,N,,past
+604,this woman watched them,u,pl,PRO,f,sg,N,,past
+605,this woman watched them,u,pl,PRO,f,sg,N,,past
+606,this woman watched them,u,pl,PRO,f,sg,N,,past
+607,this woman watched them,u,pl,PRO,f,sg,N,,past
+608,this woman watched them,u,pl,PRO,f,sg,N,,past
+609,this woman watched them,u,pl,PRO,f,sg,N,,past
+610,this woman watched them,u,pl,PRO,f,sg,N,,past
+611,this woman watched them,u,pl,PRO,f,sg,N,,past
+612,this woman watched them,u,pl,PRO,f,sg,N,,past
+613,this woman watched them,u,pl,PRO,f,sg,N,,past
+614,this woman watched them,u,pl,PRO,f,sg,N,,past
+615,this woman watched them,u,pl,PRO,f,sg,N,,past
+616,this woman watched them,u,pl,PRO,f,sg,N,,past
+617,this woman watched them,u,pl,PRO,f,sg,N,,past
+618,this woman watched them,u,pl,PRO,f,sg,N,,past
+619,this woman watched them,u,pl,PRO,f,sg,N,,past
+620,this woman watched them,u,pl,PRO,f,sg,N,,past
+621,this woman watched them,u,pl,PRO,f,sg,N,,past
+622,this woman watched them,u,pl,PRO,f,sg,N,,past
+623,this woman watched them,u,pl,PRO,f,sg,N,,past
+624,this woman watched them,u,pl,PRO,f,sg,N,,past
+625,this woman watched them,u,pl,PRO,f,sg,N,,past
+626,this woman watched them,u,pl,PRO,f,sg,N,,past
+627,this woman watched them,u,pl,PRO,f,sg,N,,past
+628,this woman watched them,u,pl,PRO,f,sg,N,,past
+629,this woman watched them,u,pl,PRO,f,sg,N,,past
+630,this woman watched them,u,pl,PRO,f,sg,N,,past
+631,this woman watched them,u,pl,PRO,f,sg,N,,past
+632,this woman watched them,u,pl,PRO,f,sg,N,,past
+633,this woman watched them,u,pl,PRO,f,sg,N,,past
+634,this woman watched them,u,pl,PRO,f,sg,N,,past
+635,this woman watched them,u,pl,PRO,f,sg,N,,past
+636,this woman watched them,u,pl,PRO,f,sg,N,,past
+637,this woman watched them,u,pl,PRO,f,sg,N,,past
+638,this woman watched them,u,pl,PRO,f,sg,N,,past
+639,this woman watched them,u,pl,PRO,f,sg,N,,past
+640,this woman watched them,u,pl,PRO,f,sg,N,,past
+641,this woman watched them,u,pl,PRO,f,sg,N,,past
+642,this woman watched them,u,pl,PRO,f,sg,N,,past
+643,this woman watched them,u,pl,PRO,f,sg,N,,past
+644,this woman watched them,u,pl,PRO,f,sg,N,,past
+645,this woman watched them,u,pl,PRO,f,sg,N,,past
+646,this woman watched them,u,pl,PRO,f,sg,N,,past
+647,this woman watched them,u,pl,PRO,f,sg,N,,past
+648,this woman watched them,u,pl,PRO,f,sg,N,,past
+649,this woman watched them,u,pl,PRO,f,sg,N,,past
+650,this woman watched them,u,pl,PRO,f,sg,N,,past
+651,this woman watched them,u,pl,PRO,f,sg,N,,past
+652,this woman watched them,u,pl,PRO,f,sg,N,,past
+653,this woman watched them,u,pl,PRO,f,sg,N,,past
+654,this woman watched them,u,pl,PRO,f,sg,N,,past
+655,this woman watched them,u,pl,PRO,f,sg,N,,past
+656,this woman watched them,u,pl,PRO,f,sg,N,,past
+657,this woman watched them,u,pl,PRO,f,sg,N,,past
+658,this woman watched them,u,pl,PRO,f,sg,N,,past
+659,this woman watched them,u,pl,PRO,f,sg,N,,past
+660,this woman watched them,u,pl,PRO,f,sg,N,,past
+661,this woman watched them,u,pl,PRO,f,sg,N,,past
+662,this woman watched them,u,pl,PRO,f,sg,N,,past
+663,this woman watched them,u,pl,PRO,f,sg,N,,past
+664,this woman watched them,u,pl,PRO,f,sg,N,,past
+665,this woman watched them,u,pl,PRO,f,sg,N,,past
+666,this woman watched them,u,pl,PRO,f,sg,N,,past
+667,this woman watched them,u,pl,PRO,f,sg,N,,past
+668,this woman watched them,u,pl,PRO,f,sg,N,,past
+669,this woman watched them,u,pl,PRO,f,sg,N,,past
+670,this woman watched them,u,pl,PRO,f,sg,N,,past
+671,this woman watched them,u,pl,PRO,f,sg,N,,past
+672,this woman watched them,u,pl,PRO,f,sg,N,,past
+673,this woman watched them,u,pl,PRO,f,sg,N,,past
+674,this woman watched them,u,pl,PRO,f,sg,N,,past
+675,this woman watched them,u,pl,PRO,f,sg,N,,past
+676,this woman watched them,u,pl,PRO,f,sg,N,,past
+677,this woman watched them,u,pl,PRO,f,sg,N,,past
+678,this woman watched them,u,pl,PRO,f,sg,N,,past
+679,this woman watched them,u,pl,PRO,f,sg,N,,past
+680,this woman watched them,u,pl,PRO,f,sg,N,,past
+681,this woman watched them,u,pl,PRO,f,sg,N,,past
+682,this woman watched them,u,pl,PRO,f,sg,N,,past
+683,this woman watched them,u,pl,PRO,f,sg,N,,past
+684,this woman watched them,u,pl,PRO,f,sg,N,,past
+685,this woman watched them,u,pl,PRO,f,sg,N,,past
+686,this woman watched them,u,pl,PRO,f,sg,N,,past
+687,this woman watched them,u,pl,PRO,f,sg,N,,past
+688,this woman watched them,u,pl,PRO,f,sg,N,,past
+689,this woman watched them,u,pl,PRO,f,sg,N,,past
+690,this woman watched them,u,pl,PRO,f,sg,N,,past
+691,this woman watched them,u,pl,PRO,f,sg,N,,past
+692,this woman watched them,u,pl,PRO,f,sg,N,,past
+693,this woman watched them,u,pl,PRO,f,sg,N,,past
+694,this woman watched them,u,pl,PRO,f,sg,N,,past
+695,this woman watched them,u,pl,PRO,f,sg,N,,past
+696,this woman watched them,u,pl,PRO,f,sg,N,,past
+697,this woman watched them,u,pl,PRO,f,sg,N,,past
+698,this woman watched them,u,pl,PRO,f,sg,N,,past
+699,this woman watched them,u,pl,PRO,f,sg,N,,past
+700,this woman watched them,u,pl,PRO,f,sg,N,,past
+701,this woman watched them,u,pl,PRO,f,sg,N,,past
+702,this woman watched them,u,pl,PRO,f,sg,N,,past
+703,this woman watched them,u,pl,PRO,f,sg,N,,past
+704,this woman watched them,u,pl,PRO,f,sg,N,,past
+705,this woman watched them,u,pl,PRO,f,sg,N,,past
+706,this woman watched them,u,pl,PRO,f,sg,N,,past
+707,this woman watched them,u,pl,PRO,f,sg,N,,past
+708,this woman watched them,u,pl,PRO,f,sg,N,,past
+709,this woman watched them,u,pl,PRO,f,sg,N,,past
+710,this woman watched them,u,pl,PRO,f,sg,N,,past
+711,this woman watched them,u,pl,PRO,f,sg,N,,past
+712,this woman watched them,u,pl,PRO,f,sg,N,,past
+713,this woman watched them,u,pl,PRO,f,sg,N,,past
+714,this woman watched them,u,pl,PRO,f,sg,N,,past
+715,this woman watched them,u,pl,PRO,f,sg,N,,past
+716,this woman watched them,u,pl,PRO,f,sg,N,,past
+717,this woman watched them,u,pl,PRO,f,sg,N,,past
+718,this woman watched them,u,pl,PRO,f,sg,N,,past
+719,this woman watched them,u,pl,PRO,f,sg,N,,past
+720,this woman watched them,u,pl,PRO,f,sg,N,,past
+721,this woman watched them,u,pl,PRO,f,sg,N,,past
+722,this woman watched them,u,pl,PRO,f,sg,N,,past
+723,this woman watched them,u,pl,PRO,f,sg,N,,past
+724,this woman watched them,u,pl,PRO,f,sg,N,,past
+725,this woman watched them,u,pl,PRO,f,sg,N,,past
+726,this woman watched them,u,pl,PRO,f,sg,N,,past
+727,this woman watched them,u,pl,PRO,f,sg,N,,past
+728,this woman watched them,u,pl,PRO,f,sg,N,,past
+729,this woman watched them,u,pl,PRO,f,sg,N,,past
+730,this woman watched them,u,pl,PRO,f,sg,N,,past
+731,this woman watched them,u,pl,PRO,f,sg,N,,past
+732,this woman watched them,u,pl,PRO,f,sg,N,,past
+733,this woman watched them,u,pl,PRO,f,sg,N,,past
+734,this woman watched them,u,pl,PRO,f,sg,N,,past
+735,this woman watched them,u,pl,PRO,f,sg,N,,past
+736,this woman watched them,u,pl,PRO,f,sg,N,,past
+737,this woman watched them,u,pl,PRO,f,sg,N,,past
+738,this woman watched them,u,pl,PRO,f,sg,N,,past
+739,this woman watched them,u,pl,PRO,f,sg,N,,past
+740,this woman watched them,u,pl,PRO,f,sg,N,,past
+741,this woman watched them,u,pl,PRO,f,sg,N,,past
+742,this woman watched them,u,pl,PRO,f,sg,N,,past
+743,this woman watched them,u,pl,PRO,f,sg,N,,past
+744,this woman watched them,u,pl,PRO,f,sg,N,,past
+745,this woman watched them,u,pl,PRO,f,sg,N,,past
+746,this woman watched them,u,pl,PRO,f,sg,N,,past
+747,this woman watched them,u,pl,PRO,f,sg,N,,past
+748,this woman watched them,u,pl,PRO,f,sg,N,,past
+749,this woman watched them,u,pl,PRO,f,sg,N,,past
+750,this woman watched them,u,pl,PRO,f,sg,N,,past
+751,this woman watched them,u,pl,PRO,f,sg,N,,past
+752,this woman watched them,u,pl,PRO,f,sg,N,,past
+753,this woman watched them,u,pl,PRO,f,sg,N,,past
+754,this woman watched them,u,pl,PRO,f,sg,N,,past
+755,this woman watched them,u,pl,PRO,f,sg,N,,past
+756,this woman watched them,u,pl,PRO,f,sg,N,,past
+757,this woman watched them,u,pl,PRO,f,sg,N,,past
+758,this woman watched them,u,pl,PRO,f,sg,N,,past
+759,this woman watched them,u,pl,PRO,f,sg,N,,past
+760,this woman watched them,u,pl,PRO,f,sg,N,,past
+761,this woman watched them,u,pl,PRO,f,sg,N,,past
+762,this woman watched them,u,pl,PRO,f,sg,N,,past
+763,this woman watched them,u,pl,PRO,f,sg,N,,past
+764,this woman watched them,u,pl,PRO,f,sg,N,,past
+765,this woman watched them,u,pl,PRO,f,sg,N,,past
+766,this woman watched them,u,pl,PRO,f,sg,N,,past
+767,this woman watched them,u,pl,PRO,f,sg,N,,past
+768,this woman watched them,u,pl,PRO,f,sg,N,,past
+769,this woman watched them,u,pl,PRO,f,sg,N,,past
+770,this woman watched them,u,pl,PRO,f,sg,N,,past
+771,this woman watched them,u,pl,PRO,f,sg,N,,past
+772,this woman watched them,u,pl,PRO,f,sg,N,,past
+773,this woman watched them,u,pl,PRO,f,sg,N,,past
+774,this woman watched them,u,pl,PRO,f,sg,N,,past
+775,this woman watched them,u,pl,PRO,f,sg,N,,past
+776,this woman watched them,u,pl,PRO,f,sg,N,,past
+777,this woman watched them,u,pl,PRO,f,sg,N,,past
+778,this woman watched them,u,pl,PRO,f,sg,N,,past
+779,this woman watched them,u,pl,PRO,f,sg,N,,past
+780,this woman watched them,u,pl,PRO,f,sg,N,,past
+781,this woman watched them,u,pl,PRO,f,sg,N,,past
+782,this woman watched them,u,pl,PRO,f,sg,N,,past
+783,this woman watched them,u,pl,PRO,f,sg,N,,past
+784,this woman watched them,u,pl,PRO,f,sg,N,,past
+785,this woman watched them,u,pl,PRO,f,sg,N,,past
+786,this woman watched them,u,pl,PRO,f,sg,N,,past
+787,this woman watched them,u,pl,PRO,f,sg,N,,past
+788,this woman watched them,u,pl,PRO,f,sg,N,,past
+789,this woman watched them,u,pl,PRO,f,sg,N,,past
+790,this woman watched them,u,pl,PRO,f,sg,N,,past
+791,this woman watched them,u,pl,PRO,f,sg,N,,past
+792,this woman watched them,u,pl,PRO,f,sg,N,,past
+793,this woman watched them,u,pl,PRO,f,sg,N,,past
+794,this woman watched them,u,pl,PRO,f,sg,N,,past
+795,this woman watched them,u,pl,PRO,f,sg,N,,past
+796,this woman watched them,u,pl,PRO,f,sg,N,,past
+797,this woman watched them,u,pl,PRO,f,sg,N,,past
+798,this woman watched them,u,pl,PRO,f,sg,N,,past
+799,this woman watched them,u,pl,PRO,f,sg,N,,past
+800,this woman watched them,u,pl,PRO,f,sg,N,,past
+801,this woman watched them,u,pl,PRO,f,sg,N,,past
+802,this woman watched them,u,pl,PRO,f,sg,N,,past
+803,this woman watched them,u,pl,PRO,f,sg,N,,past
+804,this woman watched them,u,pl,PRO,f,sg,N,,past
+805,this woman watched them,u,pl,PRO,f,sg,N,,past
+806,this woman watched them,u,pl,PRO,f,sg,N,,past
+807,this woman watched them,u,pl,PRO,f,sg,N,,past
+808,this woman watched them,u,pl,PRO,f,sg,N,,past
+809,this woman watched them,u,pl,PRO,f,sg,N,,past
+810,this woman watched them,u,pl,PRO,f,sg,N,,past
+811,this woman watched them,u,pl,PRO,f,sg,N,,past
+812,this woman watched them,u,pl,PRO,f,sg,N,,past
+813,this woman watched them,u,pl,PRO,f,sg,N,,past
+814,this woman watched them,u,pl,PRO,f,sg,N,,past
+815,this woman watched them,u,pl,PRO,f,sg,N,,past
+816,this woman watched them,u,pl,PRO,f,sg,N,,past
+817,this woman watched them,u,pl,PRO,f,sg,N,,past
+818,this woman watched them,u,pl,PRO,f,sg,N,,past
+819,this woman watched them,u,pl,PRO,f,sg,N,,past
+820,this woman watched them,u,pl,PRO,f,sg,N,,past
+821,this woman watched them,u,pl,PRO,f,sg,N,,past
+822,this woman watched them,u,pl,PRO,f,sg,N,,past
+823,this woman watched them,u,pl,PRO,f,sg,N,,past
+824,this woman watched them,u,pl,PRO,f,sg,N,,past
+825,this woman watched them,u,pl,PRO,f,sg,N,,past
+826,this woman watched them,u,pl,PRO,f,sg,N,,past
+827,this woman watched them,u,pl,PRO,f,sg,N,,past
+828,this woman watched them,u,pl,PRO,f,sg,N,,past
+829,this woman watched them,u,pl,PRO,f,sg,N,,past
+830,this woman watched them,u,pl,PRO,f,sg,N,,past
+831,this woman watched them,u,pl,PRO,f,sg,N,,past
+832,this woman watched them,u,pl,PRO,f,sg,N,,past
+833,this woman watched them,u,pl,PRO,f,sg,N,,past
+834,this woman watched them,u,pl,PRO,f,sg,N,,past
+835,this woman watched them,u,pl,PRO,f,sg,N,,past
+836,this woman watched them,u,pl,PRO,f,sg,N,,past
+837,this woman watched them,u,pl,PRO,f,sg,N,,past
+838,this woman watched them,u,pl,PRO,f,sg,N,,past
+839,this woman watched them,u,pl,PRO,f,sg,N,,past
+840,this woman watched them,u,pl,PRO,f,sg,N,,past
+841,this woman watched them,u,pl,PRO,f,sg,N,,past
+842,this woman watched them,u,pl,PRO,f,sg,N,,past
+843,this woman watched them,u,pl,PRO,f,sg,N,,past
+844,this woman watched them,u,pl,PRO,f,sg,N,,past
+845,this woman watched them,u,pl,PRO,f,sg,N,,past
+846,this woman watched them,u,pl,PRO,f,sg,N,,past
+847,this woman watched them,u,pl,PRO,f,sg,N,,past
+848,this woman watched them,u,pl,PRO,f,sg,N,,past
+849,this woman watched them,u,pl,PRO,f,sg,N,,past
+850,this woman watched them,u,pl,PRO,f,sg,N,,past
+851,this woman watched them,u,pl,PRO,f,sg,N,,past
+852,this woman watched them,u,pl,PRO,f,sg,N,,past
+853,this woman watched them,u,pl,PRO,f,sg,N,,past
+854,this woman watched them,u,pl,PRO,f,sg,N,,past
+855,this woman watched them,u,pl,PRO,f,sg,N,,past
+856,this woman watched them,u,pl,PRO,f,sg,N,,past
+857,this woman watched them,u,pl,PRO,f,sg,N,,past
+858,this woman watched them,u,pl,PRO,f,sg,N,,past
+859,this woman watched them,u,pl,PRO,f,sg,N,,past
+860,this woman watched them,u,pl,PRO,f,sg,N,,past
+861,this woman watched them,u,pl,PRO,f,sg,N,,past
+862,this woman watched them,u,pl,PRO,f,sg,N,,past
+863,this woman watched them,u,pl,PRO,f,sg,N,,past
+864,these boys will walk,,,,m,pl,N,,future
+865,these boys will smile,,,,m,pl,N,,future
+866,these boys will cry,,,,m,pl,N,,future
+867,these boys will cry,,,,m,pl,N,,future
+868,these boys will cry,,,,m,pl,N,,future
+869,these boys will cry,,,,m,pl,N,,future
+870,these boys walk,,,,m,pl,N,pl,pres
+871,these boys smile,,,,m,pl,N,pl,pres
+872,these boys cry,,,,m,pl,N,pl,pres
+873,these boys walked,,,,m,pl,N,,past
+874,these boys smiled,,,,m,pl,N,,past
+875,these boys cried,,,,m,pl,N,,past
+876,these boys cried,,,,m,pl,N,,past
+877,these boys cried,,,,m,pl,N,,past
+878,these boys cried,,,,m,pl,N,,past
+879,these boys cried,,,,m,pl,N,,past
+880,these boys cried,,,,m,pl,N,,past
+881,these boys cried,,,,m,pl,N,,past
+882,these boys cried,,,,m,pl,N,,past
+883,these boys cried,,,,m,pl,N,,past
+884,these boys cried,,,,m,pl,N,,past
+885,these boys cried,,,,m,pl,N,,past
+886,these boys cried,,,,m,pl,N,,past
+887,these boys cried,,,,m,pl,N,,past
+888,these boys cried,,,,m,pl,N,,past
+889,these boys cried,,,,m,pl,N,,past
+890,these boys see Alice,f,sg,PropN,m,pl,N,pl,pres
+891,these boys see Mary,f,sg,PropN,m,pl,N,pl,pres
+892,these boys see Bob,m,sg,PropN,m,pl,N,pl,pres
+893,these boys see John,m,sg,PropN,m,pl,N,pl,pres
+894,these boys see him,m,sg,PRO,m,pl,N,pl,pres
+895,these boys see her,f,sg,PRO,m,pl,N,pl,pres
+896,these boys see them,u,pl,PRO,m,pl,N,pl,pres
+897,these boys watch Alice,f,sg,PropN,m,pl,N,pl,pres
+898,these boys watch Mary,f,sg,PropN,m,pl,N,pl,pres
+899,these boys watch Bob,m,sg,PropN,m,pl,N,pl,pres
+900,these boys watch John,m,sg,PropN,m,pl,N,pl,pres
+901,these boys watch him,m,sg,PRO,m,pl,N,pl,pres
+902,these boys watch her,f,sg,PRO,m,pl,N,pl,pres
+903,these boys watch them,u,pl,PRO,m,pl,N,pl,pres
+904,these boys saw Alice,f,sg,PropN,m,pl,N,,past
+905,these boys saw Mary,f,sg,PropN,m,pl,N,,past
+906,these boys saw Bob,m,sg,PropN,m,pl,N,,past
+907,these boys saw John,m,sg,PropN,m,pl,N,,past
+908,these boys saw him,m,sg,PRO,m,pl,N,,past
+909,these boys saw her,f,sg,PRO,m,pl,N,,past
+910,these boys saw them,u,pl,PRO,m,pl,N,,past
+911,these boys watched Alice,f,sg,PropN,m,pl,N,,past
+912,these boys watched Mary,f,sg,PropN,m,pl,N,,past
+913,these boys watched Bob,m,sg,PropN,m,pl,N,,past
+914,these boys watched John,m,sg,PropN,m,pl,N,,past
+915,these boys watched him,m,sg,PRO,m,pl,N,,past
+916,these boys watched her,f,sg,PRO,m,pl,N,,past
+917,these boys watched them,u,pl,PRO,m,pl,N,,past
+918,these men will walk,,,,m,pl,N,,future
+919,these men will smile,,,,m,pl,N,,future
+920,these men will cry,,,,m,pl,N,,future
+921,these men will cry,,,,m,pl,N,,future
+922,these men will cry,,,,m,pl,N,,future
+923,these men will cry,,,,m,pl,N,,future
+924,these men walk,,,,m,pl,N,pl,pres
+925,these men smile,,,,m,pl,N,pl,pres
+926,these men cry,,,,m,pl,N,pl,pres
+927,these men walked,,,,m,pl,N,,past
+928,these men smiled,,,,m,pl,N,,past
+929,these men cried,,,,m,pl,N,,past
+930,these men cried,,,,m,pl,N,,past
+931,these men cried,,,,m,pl,N,,past
+932,these men cried,,,,m,pl,N,,past
+933,these men cried,,,,m,pl,N,,past
+934,these men cried,,,,m,pl,N,,past
+935,these men cried,,,,m,pl,N,,past
+936,these men cried,,,,m,pl,N,,past
+937,these men cried,,,,m,pl,N,,past
+938,these men cried,,,,m,pl,N,,past
+939,these men cried,,,,m,pl,N,,past
+940,these men cried,,,,m,pl,N,,past
+941,these men cried,,,,m,pl,N,,past
+942,these men cried,,,,m,pl,N,,past
+943,these men cried,,,,m,pl,N,,past
+944,these men see Alice,f,sg,PropN,m,pl,N,pl,pres
+945,these men see Mary,f,sg,PropN,m,pl,N,pl,pres
+946,these men see Bob,m,sg,PropN,m,pl,N,pl,pres
+947,these men see John,m,sg,PropN,m,pl,N,pl,pres
+948,these men see him,m,sg,PRO,m,pl,N,pl,pres
+949,these men see her,f,sg,PRO,m,pl,N,pl,pres
+950,these men see them,u,pl,PRO,m,pl,N,pl,pres
+951,these men watch Alice,f,sg,PropN,m,pl,N,pl,pres
+952,these men watch Mary,f,sg,PropN,m,pl,N,pl,pres
+953,these men watch Bob,m,sg,PropN,m,pl,N,pl,pres
+954,these men watch John,m,sg,PropN,m,pl,N,pl,pres
+955,these men watch him,m,sg,PRO,m,pl,N,pl,pres
+956,these men watch her,f,sg,PRO,m,pl,N,pl,pres
+957,these men watch them,u,pl,PRO,m,pl,N,pl,pres
+958,these men saw Alice,f,sg,PropN,m,pl,N,,past
+959,these men saw Mary,f,sg,PropN,m,pl,N,,past
+960,these men saw Bob,m,sg,PropN,m,pl,N,,past
+961,these men saw John,m,sg,PropN,m,pl,N,,past
+962,these men saw him,m,sg,PRO,m,pl,N,,past
+963,these men saw her,f,sg,PRO,m,pl,N,,past
+964,these men saw them,u,pl,PRO,m,pl,N,,past
+965,these men watched Alice,f,sg,PropN,m,pl,N,,past
+966,these men watched Mary,f,sg,PropN,m,pl,N,,past
+967,these men watched Bob,m,sg,PropN,m,pl,N,,past
+968,these men watched John,m,sg,PropN,m,pl,N,,past
+969,these men watched him,m,sg,PRO,m,pl,N,,past
+970,these men watched her,f,sg,PRO,m,pl,N,,past
+971,these men watched them,u,pl,PRO,m,pl,N,,past
+972,these girls will walk,,,,f,pl,N,,future
+973,these girls will smile,,,,f,pl,N,,future
+974,these girls will cry,,,,f,pl,N,,future
+975,these girls will cry,,,,f,pl,N,,future
+976,these girls will cry,,,,f,pl,N,,future
+977,these girls will cry,,,,f,pl,N,,future
+978,these girls walk,,,,f,pl,N,pl,pres
+979,these girls smile,,,,f,pl,N,pl,pres
+980,these girls cry,,,,f,pl,N,pl,pres
+981,these girls walked,,,,f,pl,N,,past
+982,these girls smiled,,,,f,pl,N,,past
+983,these girls cried,,,,f,pl,N,,past
+984,these girls cried,,,,f,pl,N,,past
+985,these girls cried,,,,f,pl,N,,past
+986,these girls cried,,,,f,pl,N,,past
+987,these girls cried,,,,f,pl,N,,past
+988,these girls cried,,,,f,pl,N,,past
+989,these girls cried,,,,f,pl,N,,past
+990,these girls cried,,,,f,pl,N,,past
+991,these girls cried,,,,f,pl,N,,past
+992,these girls cried,,,,f,pl,N,,past
+993,these girls cried,,,,f,pl,N,,past
+994,these girls cried,,,,f,pl,N,,past
+995,these girls cried,,,,f,pl,N,,past
+996,these girls cried,,,,f,pl,N,,past
+997,these girls cried,,,,f,pl,N,,past
+998,these girls see Alice,f,sg,PropN,f,pl,N,pl,pres
+999,these girls see Mary,f,sg,PropN,f,pl,N,pl,pres
+1000,these girls see Bob,m,sg,PropN,f,pl,N,pl,pres
+1001,these girls see John,m,sg,PropN,f,pl,N,pl,pres
+1002,these girls see him,m,sg,PRO,f,pl,N,pl,pres
+1003,these girls see her,f,sg,PRO,f,pl,N,pl,pres
+1004,these girls see them,u,pl,PRO,f,pl,N,pl,pres
+1005,these girls watch Alice,f,sg,PropN,f,pl,N,pl,pres
+1006,these girls watch Mary,f,sg,PropN,f,pl,N,pl,pres
+1007,these girls watch Bob,m,sg,PropN,f,pl,N,pl,pres
+1008,these girls watch John,m,sg,PropN,f,pl,N,pl,pres
+1009,these girls watch him,m,sg,PRO,f,pl,N,pl,pres
+1010,these girls watch her,f,sg,PRO,f,pl,N,pl,pres
+1011,these girls watch them,u,pl,PRO,f,pl,N,pl,pres
+1012,these girls saw Alice,f,sg,PropN,f,pl,N,,past
+1013,these girls saw Mary,f,sg,PropN,f,pl,N,,past
+1014,these girls saw Bob,m,sg,PropN,f,pl,N,,past
+1015,these girls saw John,m,sg,PropN,f,pl,N,,past
+1016,these girls saw him,m,sg,PRO,f,pl,N,,past
+1017,these girls saw her,f,sg,PRO,f,pl,N,,past
+1018,these girls saw them,u,pl,PRO,f,pl,N,,past
+1019,these girls watched Alice,f,sg,PropN,f,pl,N,,past
+1020,these girls watched Mary,f,sg,PropN,f,pl,N,,past
+1021,these girls watched Bob,m,sg,PropN,f,pl,N,,past
+1022,these girls watched John,m,sg,PropN,f,pl,N,,past
+1023,these girls watched him,m,sg,PRO,f,pl,N,,past
+1024,these girls watched her,f,sg,PRO,f,pl,N,,past
+1025,these girls watched them,u,pl,PRO,f,pl,N,,past
+1026,these women will walk,,,,f,pl,N,,future
+1027,these women will smile,,,,f,pl,N,,future
+1028,these women will cry,,,,f,pl,N,,future
+1029,these women will cry,,,,f,pl,N,,future
+1030,these women will cry,,,,f,pl,N,,future
+1031,these women will cry,,,,f,pl,N,,future
+1032,these women walk,,,,f,pl,N,pl,pres
+1033,these women smile,,,,f,pl,N,pl,pres
+1034,these women cry,,,,f,pl,N,pl,pres
+1035,these women walked,,,,f,pl,N,,past
+1036,these women smiled,,,,f,pl,N,,past
+1037,these women cried,,,,f,pl,N,,past
+1038,these women cried,,,,f,pl,N,,past
+1039,these women cried,,,,f,pl,N,,past
+1040,these women cried,,,,f,pl,N,,past
+1041,these women cried,,,,f,pl,N,,past
+1042,these women cried,,,,f,pl,N,,past
+1043,these women cried,,,,f,pl,N,,past
+1044,these women cried,,,,f,pl,N,,past
+1045,these women cried,,,,f,pl,N,,past
+1046,these women cried,,,,f,pl,N,,past
+1047,these women cried,,,,f,pl,N,,past
+1048,these women cried,,,,f,pl,N,,past
+1049,these women cried,,,,f,pl,N,,past
+1050,these women cried,,,,f,pl,N,,past
+1051,these women cried,,,,f,pl,N,,past
+1052,these women see Alice,f,sg,PropN,f,pl,N,pl,pres
+1053,these women see Mary,f,sg,PropN,f,pl,N,pl,pres
+1054,these women see Bob,m,sg,PropN,f,pl,N,pl,pres
+1055,these women see John,m,sg,PropN,f,pl,N,pl,pres
+1056,these women see him,m,sg,PRO,f,pl,N,pl,pres
+1057,these women see her,f,sg,PRO,f,pl,N,pl,pres
+1058,these women see them,u,pl,PRO,f,pl,N,pl,pres
+1059,these women watch Alice,f,sg,PropN,f,pl,N,pl,pres
+1060,these women watch Mary,f,sg,PropN,f,pl,N,pl,pres
+1061,these women watch Bob,m,sg,PropN,f,pl,N,pl,pres
+1062,these women watch John,m,sg,PropN,f,pl,N,pl,pres
+1063,these women watch him,m,sg,PRO,f,pl,N,pl,pres
+1064,these women watch her,f,sg,PRO,f,pl,N,pl,pres
+1065,these women watch them,u,pl,PRO,f,pl,N,pl,pres
+1066,these women saw Alice,f,sg,PropN,f,pl,N,,past
+1067,these women saw Mary,f,sg,PropN,f,pl,N,,past
+1068,these women saw Bob,m,sg,PropN,f,pl,N,,past
+1069,these women saw John,m,sg,PropN,f,pl,N,,past
+1070,these women saw him,m,sg,PRO,f,pl,N,,past
+1071,these women saw her,f,sg,PRO,f,pl,N,,past
+1072,these women saw them,u,pl,PRO,f,pl,N,,past
+1073,these women watched Alice,f,sg,PropN,f,pl,N,,past
+1074,these women watched Mary,f,sg,PropN,f,pl,N,,past
+1075,these women watched Bob,m,sg,PropN,f,pl,N,,past
+1076,these women watched John,m,sg,PropN,f,pl,N,,past
+1077,these women watched him,m,sg,PRO,f,pl,N,,past
+1078,these women watched her,f,sg,PRO,f,pl,N,,past
+1079,these women watched them,u,pl,PRO,f,pl,N,,past
+1080,the boy will walk,,,,m,sg,N,,future
+1081,the boy will smile,,,,m,sg,N,,future
+1082,the boy will cry,,,,m,sg,N,,future
+1083,the boy walks,,,,m,sg,N,sg,pres
+1084,the boy smiles,,,,m,sg,N,sg,pres
+1085,the boy cries,,,,m,sg,N,sg,pres
+1086,the boy cries,,,,m,sg,N,sg,pres
+1087,the boy cries,,,,m,sg,N,sg,pres
+1088,the boy cries,,,,m,sg,N,sg,pres
+1089,the boy walked,,,,m,sg,N,,past
+1090,the boy smiled,,,,m,sg,N,,past
+1091,the boy cried,,,,m,sg,N,,past
+1092,the boy sees Alice,f,sg,PropN,m,sg,N,sg,pres
+1093,the boy sees Mary,f,sg,PropN,m,sg,N,sg,pres
+1094,the boy sees Bob,m,sg,PropN,m,sg,N,sg,pres
+1095,the boy sees John,m,sg,PropN,m,sg,N,sg,pres
+1096,the boy sees him,m,sg,PRO,m,sg,N,sg,pres
+1097,the boy sees her,f,sg,PRO,m,sg,N,sg,pres
+1098,the boy sees them,u,pl,PRO,m,sg,N,sg,pres
+1099,the boy watches Alice,f,sg,PropN,m,sg,N,sg,pres
+1100,the boy watches Mary,f,sg,PropN,m,sg,N,sg,pres
+1101,the boy watches Bob,m,sg,PropN,m,sg,N,sg,pres
+1102,the boy watches John,m,sg,PropN,m,sg,N,sg,pres
+1103,the boy watches him,m,sg,PRO,m,sg,N,sg,pres
+1104,the boy watches her,f,sg,PRO,m,sg,N,sg,pres
+1105,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1106,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1107,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1108,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1109,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1110,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1111,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1112,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1113,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1114,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1115,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1116,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1117,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1118,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1119,the boy watches them,u,pl,PRO,m,sg,N,sg,pres
+1120,the boy saw Alice,f,sg,PropN,m,sg,N,,past
+1121,the boy saw Mary,f,sg,PropN,m,sg,N,,past
+1122,the boy saw Bob,m,sg,PropN,m,sg,N,,past
+1123,the boy saw John,m,sg,PropN,m,sg,N,,past
+1124,the boy saw him,m,sg,PRO,m,sg,N,,past
+1125,the boy saw her,f,sg,PRO,m,sg,N,,past
+1126,the boy saw them,u,pl,PRO,m,sg,N,,past
+1127,the boy watched Alice,f,sg,PropN,m,sg,N,,past
+1128,the boy watched Mary,f,sg,PropN,m,sg,N,,past
+1129,the boy watched Bob,m,sg,PropN,m,sg,N,,past
+1130,the boy watched John,m,sg,PropN,m,sg,N,,past
+1131,the boy watched him,m,sg,PRO,m,sg,N,,past
+1132,the boy watched her,f,sg,PRO,m,sg,N,,past
+1133,the boy watched them,u,pl,PRO,m,sg,N,,past
+1134,the man will walk,,,,m,sg,N,,future
+1135,the man will smile,,,,m,sg,N,,future
+1136,the man will cry,,,,m,sg,N,,future
+1137,the man walks,,,,m,sg,N,sg,pres
+1138,the man smiles,,,,m,sg,N,sg,pres
+1139,the man cries,,,,m,sg,N,sg,pres
+1140,the man cries,,,,m,sg,N,sg,pres
+1141,the man cries,,,,m,sg,N,sg,pres
+1142,the man cries,,,,m,sg,N,sg,pres
+1143,the man walked,,,,m,sg,N,,past
+1144,the man smiled,,,,m,sg,N,,past
+1145,the man cried,,,,m,sg,N,,past
+1146,the man sees Alice,f,sg,PropN,m,sg,N,sg,pres
+1147,the man sees Mary,f,sg,PropN,m,sg,N,sg,pres
+1148,the man sees Bob,m,sg,PropN,m,sg,N,sg,pres
+1149,the man sees John,m,sg,PropN,m,sg,N,sg,pres
+1150,the man sees him,m,sg,PRO,m,sg,N,sg,pres
+1151,the man sees her,f,sg,PRO,m,sg,N,sg,pres
+1152,the man sees them,u,pl,PRO,m,sg,N,sg,pres
+1153,the man watches Alice,f,sg,PropN,m,sg,N,sg,pres
+1154,the man watches Mary,f,sg,PropN,m,sg,N,sg,pres
+1155,the man watches Bob,m,sg,PropN,m,sg,N,sg,pres
+1156,the man watches John,m,sg,PropN,m,sg,N,sg,pres
+1157,the man watches him,m,sg,PRO,m,sg,N,sg,pres
+1158,the man watches her,f,sg,PRO,m,sg,N,sg,pres
+1159,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1160,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1161,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1162,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1163,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1164,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1165,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1166,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1167,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1168,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1169,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1170,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1171,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1172,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1173,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1174,the man saw Alice,f,sg,PropN,m,sg,N,,past
+1175,the man saw Mary,f,sg,PropN,m,sg,N,,past
+1176,the man saw Bob,m,sg,PropN,m,sg,N,,past
+1177,the man saw John,m,sg,PropN,m,sg,N,,past
+1178,the man saw him,m,sg,PRO,m,sg,N,,past
+1179,the man saw her,f,sg,PRO,m,sg,N,,past
+1180,the man saw them,u,pl,PRO,m,sg,N,,past
+1181,the man watched Alice,f,sg,PropN,m,sg,N,,past
+1182,the man watched Mary,f,sg,PropN,m,sg,N,,past
+1183,the man watched Bob,m,sg,PropN,m,sg,N,,past
+1184,the man watched John,m,sg,PropN,m,sg,N,,past
+1185,the man watched him,m,sg,PRO,m,sg,N,,past
+1186,the man watched her,f,sg,PRO,m,sg,N,,past
+1187,the man watched them,u,pl,PRO,m,sg,N,,past
+1188,the man will walk,,,,m,sg,N,,future
+1189,the man will smile,,,,m,sg,N,,future
+1190,the man will cry,,,,m,sg,N,,future
+1191,the man walks,,,,m,sg,N,sg,pres
+1192,the man smiles,,,,m,sg,N,sg,pres
+1193,the man cries,,,,m,sg,N,sg,pres
+1194,the man cries,,,,m,sg,N,sg,pres
+1195,the man cries,,,,m,sg,N,sg,pres
+1196,the man cries,,,,m,sg,N,sg,pres
+1197,the man walked,,,,m,sg,N,,past
+1198,the man smiled,,,,m,sg,N,,past
+1199,the man cried,,,,m,sg,N,,past
+1200,the man sees Alice,f,sg,PropN,m,sg,N,sg,pres
+1201,the man sees Mary,f,sg,PropN,m,sg,N,sg,pres
+1202,the man sees Bob,m,sg,PropN,m,sg,N,sg,pres
+1203,the man sees John,m,sg,PropN,m,sg,N,sg,pres
+1204,the man sees him,m,sg,PRO,m,sg,N,sg,pres
+1205,the man sees her,f,sg,PRO,m,sg,N,sg,pres
+1206,the man sees them,u,pl,PRO,m,sg,N,sg,pres
+1207,the man watches Alice,f,sg,PropN,m,sg,N,sg,pres
+1208,the man watches Mary,f,sg,PropN,m,sg,N,sg,pres
+1209,the man watches Bob,m,sg,PropN,m,sg,N,sg,pres
+1210,the man watches John,m,sg,PropN,m,sg,N,sg,pres
+1211,the man watches him,m,sg,PRO,m,sg,N,sg,pres
+1212,the man watches her,f,sg,PRO,m,sg,N,sg,pres
+1213,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1214,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1215,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1216,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1217,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1218,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1219,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1220,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1221,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1222,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1223,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1224,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1225,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1226,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1227,the man watches them,u,pl,PRO,m,sg,N,sg,pres
+1228,the man saw Alice,f,sg,PropN,m,sg,N,,past
+1229,the man saw Mary,f,sg,PropN,m,sg,N,,past
+1230,the man saw Bob,m,sg,PropN,m,sg,N,,past
+1231,the man saw John,m,sg,PropN,m,sg,N,,past
+1232,the man saw him,m,sg,PRO,m,sg,N,,past
+1233,the man saw her,f,sg,PRO,m,sg,N,,past
+1234,the man saw them,u,pl,PRO,m,sg,N,,past
+1235,the man watched Alice,f,sg,PropN,m,sg,N,,past
+1236,the man watched Mary,f,sg,PropN,m,sg,N,,past
+1237,the man watched Bob,m,sg,PropN,m,sg,N,,past
+1238,the man watched John,m,sg,PropN,m,sg,N,,past
+1239,the man watched him,m,sg,PRO,m,sg,N,,past
+1240,the man watched her,f,sg,PRO,m,sg,N,,past
+1241,the man watched them,u,pl,PRO,m,sg,N,,past
+1242,the woman will walk,,,,f,sg,N,,future
+1243,the woman will smile,,,,f,sg,N,,future
+1244,the woman will cry,,,,f,sg,N,,future
+1245,the woman walks,,,,f,sg,N,sg,pres
+1246,the woman smiles,,,,f,sg,N,sg,pres
+1247,the woman cries,,,,f,sg,N,sg,pres
+1248,the woman cries,,,,f,sg,N,sg,pres
+1249,the woman cries,,,,f,sg,N,sg,pres
+1250,the woman cries,,,,f,sg,N,sg,pres
+1251,the woman walked,,,,f,sg,N,,past
+1252,the woman smiled,,,,f,sg,N,,past
+1253,the woman cried,,,,f,sg,N,,past
+1254,the woman sees Alice,f,sg,PropN,f,sg,N,sg,pres
+1255,the woman sees Mary,f,sg,PropN,f,sg,N,sg,pres
+1256,the woman sees Bob,m,sg,PropN,f,sg,N,sg,pres
+1257,the woman sees John,m,sg,PropN,f,sg,N,sg,pres
+1258,the woman sees him,m,sg,PRO,f,sg,N,sg,pres
+1259,the woman sees her,f,sg,PRO,f,sg,N,sg,pres
+1260,the woman sees them,u,pl,PRO,f,sg,N,sg,pres
+1261,the woman watches Alice,f,sg,PropN,f,sg,N,sg,pres
+1262,the woman watches Mary,f,sg,PropN,f,sg,N,sg,pres
+1263,the woman watches Bob,m,sg,PropN,f,sg,N,sg,pres
+1264,the woman watches John,m,sg,PropN,f,sg,N,sg,pres
+1265,the woman watches him,m,sg,PRO,f,sg,N,sg,pres
+1266,the woman watches her,f,sg,PRO,f,sg,N,sg,pres
+1267,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1268,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1269,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1270,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1271,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1272,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1273,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1274,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1275,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1276,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1277,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1278,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1279,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1280,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1281,the woman watches them,u,pl,PRO,f,sg,N,sg,pres
+1282,the woman saw Alice,f,sg,PropN,f,sg,N,,past
+1283,the woman saw Mary,f,sg,PropN,f,sg,N,,past
+1284,the woman saw Bob,m,sg,PropN,f,sg,N,,past
+1285,the woman saw John,m,sg,PropN,f,sg,N,,past
+1286,the woman saw him,m,sg,PRO,f,sg,N,,past
+1287,the woman saw her,f,sg,PRO,f,sg,N,,past
+1288,the woman saw them,u,pl,PRO,f,sg,N,,past
+1289,the woman watched Alice,f,sg,PropN,f,sg,N,,past
+1290,the woman watched Mary,f,sg,PropN,f,sg,N,,past
+1291,the woman watched Bob,m,sg,PropN,f,sg,N,,past
+1292,the woman watched John,m,sg,PropN,f,sg,N,,past
+1293,the woman watched him,m,sg,PRO,f,sg,N,,past
+1294,the woman watched her,f,sg,PRO,f,sg,N,,past
+1295,the woman watched them,u,pl,PRO,f,sg,N,,past
+1296,the boys will walk,,,,m,pl,N,,future
+1297,the boys will smile,,,,m,pl,N,,future
+1298,the boys will cry,,,,m,pl,N,,future
+1299,the boys will cry,,,,m,pl,N,,future
+1300,the boys will cry,,,,m,pl,N,,future
+1301,the boys will cry,,,,m,pl,N,,future
+1302,the boys walk,,,,m,pl,N,pl,pres
+1303,the boys smile,,,,m,pl,N,pl,pres
+1304,the boys cry,,,,m,pl,N,pl,pres
+1305,the boys walked,,,,m,pl,N,,past
+1306,the boys smiled,,,,m,pl,N,,past
+1307,the boys cried,,,,m,pl,N,,past
+1308,the boys cried,,,,m,pl,N,,past
+1309,the boys cried,,,,m,pl,N,,past
+1310,the boys cried,,,,m,pl,N,,past
+1311,the boys cried,,,,m,pl,N,,past
+1312,the boys cried,,,,m,pl,N,,past
+1313,the boys cried,,,,m,pl,N,,past
+1314,the boys cried,,,,m,pl,N,,past
+1315,the boys cried,,,,m,pl,N,,past
+1316,the boys cried,,,,m,pl,N,,past
+1317,the boys cried,,,,m,pl,N,,past
+1318,the boys cried,,,,m,pl,N,,past
+1319,the boys cried,,,,m,pl,N,,past
+1320,the boys cried,,,,m,pl,N,,past
+1321,the boys cried,,,,m,pl,N,,past
+1322,the boys see Alice,f,sg,PropN,m,pl,N,pl,pres
+1323,the boys see Mary,f,sg,PropN,m,pl,N,pl,pres
+1324,the boys see Bob,m,sg,PropN,m,pl,N,pl,pres
+1325,the boys see John,m,sg,PropN,m,pl,N,pl,pres
+1326,the boys see him,m,sg,PRO,m,pl,N,pl,pres
+1327,the boys see her,f,sg,PRO,m,pl,N,pl,pres
+1328,the boys see them,u,pl,PRO,m,pl,N,pl,pres
+1329,the boys watch Alice,f,sg,PropN,m,pl,N,pl,pres
+1330,the boys watch Mary,f,sg,PropN,m,pl,N,pl,pres
+1331,the boys watch Bob,m,sg,PropN,m,pl,N,pl,pres
+1332,the boys watch John,m,sg,PropN,m,pl,N,pl,pres
+1333,the boys watch him,m,sg,PRO,m,pl,N,pl,pres
+1334,the boys watch her,f,sg,PRO,m,pl,N,pl,pres
+1335,the boys watch them,u,pl,PRO,m,pl,N,pl,pres
+1336,the boys saw Alice,f,sg,PropN,m,pl,N,,past
+1337,the boys saw Mary,f,sg,PropN,m,pl,N,,past
+1338,the boys saw Bob,m,sg,PropN,m,pl,N,,past
+1339,the boys saw John,m,sg,PropN,m,pl,N,,past
+1340,the boys saw him,m,sg,PRO,m,pl,N,,past
+1341,the boys saw her,f,sg,PRO,m,pl,N,,past
+1342,the boys saw them,u,pl,PRO,m,pl,N,,past
+1343,the boys watched Alice,f,sg,PropN,m,pl,N,,past
+1344,the boys watched Mary,f,sg,PropN,m,pl,N,,past
+1345,the boys watched Bob,m,sg,PropN,m,pl,N,,past
+1346,the boys watched John,m,sg,PropN,m,pl,N,,past
+1347,the boys watched him,m,sg,PRO,m,pl,N,,past
+1348,the boys watched her,f,sg,PRO,m,pl,N,,past
+1349,the boys watched them,u,pl,PRO,m,pl,N,,past
+1350,the men will walk,,,,m,pl,N,,future
+1351,the men will smile,,,,m,pl,N,,future
+1352,the men will cry,,,,m,pl,N,,future
+1353,the men will cry,,,,m,pl,N,,future
+1354,the men will cry,,,,m,pl,N,,future
+1355,the men will cry,,,,m,pl,N,,future
+1356,the men walk,,,,m,pl,N,pl,pres
+1357,the men smile,,,,m,pl,N,pl,pres
+1358,the men cry,,,,m,pl,N,pl,pres
+1359,the men walked,,,,m,pl,N,,past
+1360,the men smiled,,,,m,pl,N,,past
+1361,the men cried,,,,m,pl,N,,past
+1362,the men cried,,,,m,pl,N,,past
+1363,the men cried,,,,m,pl,N,,past
+1364,the men cried,,,,m,pl,N,,past
+1365,the men cried,,,,m,pl,N,,past
+1366,the men cried,,,,m,pl,N,,past
+1367,the men cried,,,,m,pl,N,,past
+1368,the men cried,,,,m,pl,N,,past
+1369,the men cried,,,,m,pl,N,,past
+1370,the men cried,,,,m,pl,N,,past
+1371,the men cried,,,,m,pl,N,,past
+1372,the men cried,,,,m,pl,N,,past
+1373,the men cried,,,,m,pl,N,,past
+1374,the men cried,,,,m,pl,N,,past
+1375,the men cried,,,,m,pl,N,,past
+1376,the men see Alice,f,sg,PropN,m,pl,N,pl,pres
+1377,the men see Mary,f,sg,PropN,m,pl,N,pl,pres
+1378,the men see Bob,m,sg,PropN,m,pl,N,pl,pres
+1379,the men see John,m,sg,PropN,m,pl,N,pl,pres
+1380,the men see him,m,sg,PRO,m,pl,N,pl,pres
+1381,the men see her,f,sg,PRO,m,pl,N,pl,pres
+1382,the men see them,u,pl,PRO,m,pl,N,pl,pres
+1383,the men watch Alice,f,sg,PropN,m,pl,N,pl,pres
+1384,the men watch Mary,f,sg,PropN,m,pl,N,pl,pres
+1385,the men watch Bob,m,sg,PropN,m,pl,N,pl,pres
+1386,the men watch John,m,sg,PropN,m,pl,N,pl,pres
+1387,the men watch him,m,sg,PRO,m,pl,N,pl,pres
+1388,the men watch her,f,sg,PRO,m,pl,N,pl,pres
+1389,the men watch them,u,pl,PRO,m,pl,N,pl,pres
+1390,the men saw Alice,f,sg,PropN,m,pl,N,,past
+1391,the men saw Mary,f,sg,PropN,m,pl,N,,past
+1392,the men saw Bob,m,sg,PropN,m,pl,N,,past
+1393,the men saw John,m,sg,PropN,m,pl,N,,past
+1394,the men saw him,m,sg,PRO,m,pl,N,,past
+1395,the men saw her,f,sg,PRO,m,pl,N,,past
+1396,the men saw them,u,pl,PRO,m,pl,N,,past
+1397,the men watched Alice,f,sg,PropN,m,pl,N,,past
+1398,the men watched Mary,f,sg,PropN,m,pl,N,,past
+1399,the men watched Bob,m,sg,PropN,m,pl,N,,past
+1400,the men watched John,m,sg,PropN,m,pl,N,,past
+1401,the men watched him,m,sg,PRO,m,pl,N,,past
+1402,the men watched her,f,sg,PRO,m,pl,N,,past
+1403,the men watched them,u,pl,PRO,m,pl,N,,past
+1404,the girls will walk,,,,f,pl,N,,future
+1405,the girls will smile,,,,f,pl,N,,future
+1406,the girls will cry,,,,f,pl,N,,future
+1407,the girls will cry,,,,f,pl,N,,future
+1408,the girls will cry,,,,f,pl,N,,future
+1409,the girls will cry,,,,f,pl,N,,future
+1410,the girls walk,,,,f,pl,N,pl,pres
+1411,the girls smile,,,,f,pl,N,pl,pres
+1412,the girls cry,,,,f,pl,N,pl,pres
+1413,the girls walked,,,,f,pl,N,,past
+1414,the girls smiled,,,,f,pl,N,,past
+1415,the girls cried,,,,f,pl,N,,past
+1416,the girls cried,,,,f,pl,N,,past
+1417,the girls cried,,,,f,pl,N,,past
+1418,the girls cried,,,,f,pl,N,,past
+1419,the girls cried,,,,f,pl,N,,past
+1420,the girls cried,,,,f,pl,N,,past
+1421,the girls cried,,,,f,pl,N,,past
+1422,the girls cried,,,,f,pl,N,,past
+1423,the girls cried,,,,f,pl,N,,past
+1424,the girls cried,,,,f,pl,N,,past
+1425,the girls cried,,,,f,pl,N,,past
+1426,the girls cried,,,,f,pl,N,,past
+1427,the girls cried,,,,f,pl,N,,past
+1428,the girls cried,,,,f,pl,N,,past
+1429,the girls cried,,,,f,pl,N,,past
+1430,the girls see Alice,f,sg,PropN,f,pl,N,pl,pres
+1431,the girls see Mary,f,sg,PropN,f,pl,N,pl,pres
+1432,the girls see Bob,m,sg,PropN,f,pl,N,pl,pres
+1433,the girls see John,m,sg,PropN,f,pl,N,pl,pres
+1434,the girls see him,m,sg,PRO,f,pl,N,pl,pres
+1435,the girls see her,f,sg,PRO,f,pl,N,pl,pres
+1436,the girls see them,u,pl,PRO,f,pl,N,pl,pres
+1437,the girls watch Alice,f,sg,PropN,f,pl,N,pl,pres
+1438,the girls watch Mary,f,sg,PropN,f,pl,N,pl,pres
+1439,the girls watch Bob,m,sg,PropN,f,pl,N,pl,pres
+1440,the girls watch John,m,sg,PropN,f,pl,N,pl,pres
+1441,the girls watch him,m,sg,PRO,f,pl,N,pl,pres
+1442,the girls watch her,f,sg,PRO,f,pl,N,pl,pres
+1443,the girls watch them,u,pl,PRO,f,pl,N,pl,pres
+1444,the girls saw Alice,f,sg,PropN,f,pl,N,,past
+1445,the girls saw Mary,f,sg,PropN,f,pl,N,,past
+1446,the girls saw Bob,m,sg,PropN,f,pl,N,,past
+1447,the girls saw John,m,sg,PropN,f,pl,N,,past
+1448,the girls saw him,m,sg,PRO,f,pl,N,,past
+1449,the girls saw her,f,sg,PRO,f,pl,N,,past
+1450,the girls saw them,u,pl,PRO,f,pl,N,,past
+1451,the girls watched Alice,f,sg,PropN,f,pl,N,,past
+1452,the girls watched Mary,f,sg,PropN,f,pl,N,,past
+1453,the girls watched Bob,m,sg,PropN,f,pl,N,,past
+1454,the girls watched John,m,sg,PropN,f,pl,N,,past
+1455,the girls watched him,m,sg,PRO,f,pl,N,,past
+1456,the girls watched her,f,sg,PRO,f,pl,N,,past
+1457,the girls watched them,u,pl,PRO,f,pl,N,,past
+1458,the women will walk,,,,f,pl,N,,future
+1459,the women will smile,,,,f,pl,N,,future
+1460,the women will cry,,,,f,pl,N,,future
+1461,the women will cry,,,,f,pl,N,,future
+1462,the women will cry,,,,f,pl,N,,future
+1463,the women will cry,,,,f,pl,N,,future
+1464,the women walk,,,,f,pl,N,pl,pres
+1465,the women smile,,,,f,pl,N,pl,pres
+1466,the women cry,,,,f,pl,N,pl,pres
+1467,the women walked,,,,f,pl,N,,past
+1468,the women smiled,,,,f,pl,N,,past
+1469,the women cried,,,,f,pl,N,,past
+1470,the women cried,,,,f,pl,N,,past
+1471,the women cried,,,,f,pl,N,,past
+1472,the women cried,,,,f,pl,N,,past
+1473,the women cried,,,,f,pl,N,,past
+1474,the women cried,,,,f,pl,N,,past
+1475,the women cried,,,,f,pl,N,,past
+1476,the women cried,,,,f,pl,N,,past
+1477,the women cried,,,,f,pl,N,,past
+1478,the women cried,,,,f,pl,N,,past
+1479,the women cried,,,,f,pl,N,,past
+1480,the women cried,,,,f,pl,N,,past
+1481,the women cried,,,,f,pl,N,,past
+1482,the women cried,,,,f,pl,N,,past
+1483,the women cried,,,,f,pl,N,,past
+1484,the women see Alice,f,sg,PropN,f,pl,N,pl,pres
+1485,the women see Mary,f,sg,PropN,f,pl,N,pl,pres
+1486,the women see Bob,m,sg,PropN,f,pl,N,pl,pres
+1487,the women see John,m,sg,PropN,f,pl,N,pl,pres
+1488,the women see him,m,sg,PRO,f,pl,N,pl,pres
+1489,the women see her,f,sg,PRO,f,pl,N,pl,pres
+1490,the women see them,u,pl,PRO,f,pl,N,pl,pres
+1491,the women watch Alice,f,sg,PropN,f,pl,N,pl,pres
+1492,the women watch Mary,f,sg,PropN,f,pl,N,pl,pres
+1493,the women watch Bob,m,sg,PropN,f,pl,N,pl,pres
+1494,the women watch John,m,sg,PropN,f,pl,N,pl,pres
+1495,the women watch him,m,sg,PRO,f,pl,N,pl,pres
+1496,the women watch her,f,sg,PRO,f,pl,N,pl,pres
+1497,the women watch them,u,pl,PRO,f,pl,N,pl,pres
+1498,the women saw Alice,f,sg,PropN,f,pl,N,,past
+1499,the women saw Mary,f,sg,PropN,f,pl,N,,past
+1500,the women saw Bob,m,sg,PropN,f,pl,N,,past
+1501,the women saw John,m,sg,PropN,f,pl,N,,past
+1502,the women saw him,m,sg,PRO,f,pl,N,,past
+1503,the women saw her,f,sg,PRO,f,pl,N,,past
+1504,the women saw them,u,pl,PRO,f,pl,N,,past
+1505,the women watched Alice,f,sg,PropN,f,pl,N,,past
+1506,the women watched Mary,f,sg,PropN,f,pl,N,,past
+1507,the women watched Bob,m,sg,PropN,f,pl,N,,past
+1508,the women watched John,m,sg,PropN,f,pl,N,,past
+1509,the women watched him,m,sg,PRO,f,pl,N,,past
+1510,the women watched her,f,sg,PRO,f,pl,N,,past
+1511,the women watched them,u,pl,PRO,f,pl,N,,past
+1512,he will walk,,,,m,sg,PRO,,future
+1513,he will smile,,,,m,sg,PRO,,future
+1514,he will cry,,,,m,sg,PRO,,future
+1515,he walks,,,,m,sg,PRO,sg,pres
+1516,he smiles,,,,m,sg,PRO,sg,pres
+1517,he cries,,,,m,sg,PRO,sg,pres
+1518,he cries,,,,m,sg,PRO,sg,pres
+1519,he cries,,,,m,sg,PRO,sg,pres
+1520,he cries,,,,m,sg,PRO,sg,pres
+1521,he walked,,,,m,sg,PRO,,past
+1522,he smiled,,,,m,sg,PRO,,past
+1523,he cried,,,,m,sg,PRO,,past
+1524,he sees Alice,f,sg,PropN,m,sg,PRO,sg,pres
+1525,he sees Mary,f,sg,PropN,m,sg,PRO,sg,pres
+1526,he sees Bob,m,sg,PropN,m,sg,PRO,sg,pres
+1527,he sees John,m,sg,PropN,m,sg,PRO,sg,pres
+1528,he sees him,m,sg,PRO,m,sg,PRO,sg,pres
+1529,he sees her,f,sg,PRO,m,sg,PRO,sg,pres
+1530,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+1531,he watches Alice,f,sg,PropN,m,sg,PRO,sg,pres
+1532,he watches Mary,f,sg,PropN,m,sg,PRO,sg,pres
+1533,he watches Bob,m,sg,PropN,m,sg,PRO,sg,pres
+1534,he watches John,m,sg,PropN,m,sg,PRO,sg,pres
+1535,he watches him,m,sg,PRO,m,sg,PRO,sg,pres
+1536,he watches her,f,sg,PRO,m,sg,PRO,sg,pres
+1537,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1538,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1539,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1540,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1541,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1542,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1543,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1544,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1545,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1546,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1547,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1548,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1549,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1550,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1551,he watches them,u,pl,PRO,m,sg,PRO,sg,pres
+1552,he saw Alice,f,sg,PropN,m,sg,PRO,,past
+1553,he saw Mary,f,sg,PropN,m,sg,PRO,,past
+1554,he saw Bob,m,sg,PropN,m,sg,PRO,,past
+1555,he saw John,m,sg,PropN,m,sg,PRO,,past
+1556,he saw him,m,sg,PRO,m,sg,PRO,,past
+1557,he saw her,f,sg,PRO,m,sg,PRO,,past
+1558,he saw them,u,pl,PRO,m,sg,PRO,,past
+1559,he watched Alice,f,sg,PropN,m,sg,PRO,,past
+1560,he watched Mary,f,sg,PropN,m,sg,PRO,,past
+1561,he watched Bob,m,sg,PropN,m,sg,PRO,,past
+1562,he watched John,m,sg,PropN,m,sg,PRO,,past
+1563,he watched him,m,sg,PRO,m,sg,PRO,,past
+1564,he watched her,f,sg,PRO,m,sg,PRO,,past
+1565,he watched them,u,pl,PRO,m,sg,PRO,,past
+1566,she will walk,,,,f,sg,PRO,,future
+1567,she will smile,,,,f,sg,PRO,,future
+1568,she will cry,,,,f,sg,PRO,,future
+1569,she walks,,,,f,sg,PRO,sg,pres
+1570,she smiles,,,,f,sg,PRO,sg,pres
+1571,she cries,,,,f,sg,PRO,sg,pres
+1572,she cries,,,,f,sg,PRO,sg,pres
+1573,she cries,,,,f,sg,PRO,sg,pres
+1574,she cries,,,,f,sg,PRO,sg,pres
+1575,she walked,,,,f,sg,PRO,,past
+1576,she smiled,,,,f,sg,PRO,,past
+1577,she cried,,,,f,sg,PRO,,past
+1578,she sees Alice,f,sg,PropN,f,sg,PRO,sg,pres
+1579,she sees Mary,f,sg,PropN,f,sg,PRO,sg,pres
+1580,she sees Bob,m,sg,PropN,f,sg,PRO,sg,pres
+1581,she sees John,m,sg,PropN,f,sg,PRO,sg,pres
+1582,she sees him,m,sg,PRO,f,sg,PRO,sg,pres
+1583,she sees her,f,sg,PRO,f,sg,PRO,sg,pres
+1584,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+1585,she watches Alice,f,sg,PropN,f,sg,PRO,sg,pres
+1586,she watches Mary,f,sg,PropN,f,sg,PRO,sg,pres
+1587,she watches Bob,m,sg,PropN,f,sg,PRO,sg,pres
+1588,she watches John,m,sg,PropN,f,sg,PRO,sg,pres
+1589,she watches him,m,sg,PRO,f,sg,PRO,sg,pres
+1590,she watches her,f,sg,PRO,f,sg,PRO,sg,pres
+1591,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1592,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1593,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1594,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1595,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1596,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1597,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1598,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1599,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1600,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1601,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1602,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1603,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1604,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1605,she watches them,u,pl,PRO,f,sg,PRO,sg,pres
+1606,she saw Alice,f,sg,PropN,f,sg,PRO,,past
+1607,she saw Mary,f,sg,PropN,f,sg,PRO,,past
+1608,she saw Bob,m,sg,PropN,f,sg,PRO,,past
+1609,she saw John,m,sg,PropN,f,sg,PRO,,past
+1610,she saw him,m,sg,PRO,f,sg,PRO,,past
+1611,she saw her,f,sg,PRO,f,sg,PRO,,past
+1612,she saw them,u,pl,PRO,f,sg,PRO,,past
+1613,she watched Alice,f,sg,PropN,f,sg,PRO,,past
+1614,she watched Mary,f,sg,PropN,f,sg,PRO,,past
+1615,she watched Bob,m,sg,PropN,f,sg,PRO,,past
+1616,she watched John,m,sg,PropN,f,sg,PRO,,past
+1617,she watched him,m,sg,PRO,f,sg,PRO,,past
+1618,she watched her,f,sg,PRO,f,sg,PRO,,past
+1619,she watched them,u,pl,PRO,f,sg,PRO,,past
+1620,they will walk,,,,u,pl,PRO,,future
+1621,they will smile,,,,u,pl,PRO,,future
+1622,they will cry,,,,u,pl,PRO,,future
+1623,they will cry,,,,u,pl,PRO,,future
+1624,they will cry,,,,u,pl,PRO,,future
+1625,they will cry,,,,u,pl,PRO,,future
+1626,they walk,,,,u,pl,PRO,pl,pres
+1627,they smile,,,,u,pl,PRO,pl,pres
+1628,they cry,,,,u,pl,PRO,pl,pres
+1629,they walked,,,,u,pl,PRO,,past
+1630,they smiled,,,,u,pl,PRO,,past
+1631,they cried,,,,u,pl,PRO,,past
+1632,they cried,,,,u,pl,PRO,,past
+1633,they cried,,,,u,pl,PRO,,past
+1634,they cried,,,,u,pl,PRO,,past
+1635,they cried,,,,u,pl,PRO,,past
+1636,they cried,,,,u,pl,PRO,,past
+1637,they cried,,,,u,pl,PRO,,past
+1638,they cried,,,,u,pl,PRO,,past
+1639,they cried,,,,u,pl,PRO,,past
+1640,they cried,,,,u,pl,PRO,,past
+1641,they cried,,,,u,pl,PRO,,past
+1642,they cried,,,,u,pl,PRO,,past
+1643,they cried,,,,u,pl,PRO,,past
+1644,they cried,,,,u,pl,PRO,,past
+1645,they cried,,,,u,pl,PRO,,past
+1646,they see Alice,f,sg,PropN,u,pl,PRO,pl,pres
+1647,they see Mary,f,sg,PropN,u,pl,PRO,pl,pres
+1648,they see Bob,m,sg,PropN,u,pl,PRO,pl,pres
+1649,they see John,m,sg,PropN,u,pl,PRO,pl,pres
+1650,they see him,m,sg,PRO,u,pl,PRO,pl,pres
+1651,they see her,f,sg,PRO,u,pl,PRO,pl,pres
+1652,they see them,u,pl,PRO,u,pl,PRO,pl,pres
+1653,they watch Alice,f,sg,PropN,u,pl,PRO,pl,pres
+1654,they watch Mary,f,sg,PropN,u,pl,PRO,pl,pres
+1655,they watch Bob,m,sg,PropN,u,pl,PRO,pl,pres
+1656,they watch John,m,sg,PropN,u,pl,PRO,pl,pres
+1657,they watch him,m,sg,PRO,u,pl,PRO,pl,pres
+1658,they watch her,f,sg,PRO,u,pl,PRO,pl,pres
+1659,they watch them,u,pl,PRO,u,pl,PRO,pl,pres
+1660,they saw Alice,f,sg,PropN,u,pl,PRO,,past
+1661,they saw Mary,f,sg,PropN,u,pl,PRO,,past
+1662,they saw Bob,m,sg,PropN,u,pl,PRO,,past
+1663,they saw John,m,sg,PropN,u,pl,PRO,,past
+1664,they saw him,m,sg,PRO,u,pl,PRO,,past
+1665,they saw her,f,sg,PRO,u,pl,PRO,,past
+1666,they saw them,u,pl,PRO,u,pl,PRO,,past
+1667,they watched Alice,f,sg,PropN,u,pl,PRO,,past
+1668,they watched Mary,f,sg,PropN,u,pl,PRO,,past
+1669,they watched Bob,m,sg,PropN,u,pl,PRO,,past
+1670,they watched John,m,sg,PropN,u,pl,PRO,,past
+1671,they watched him,m,sg,PRO,u,pl,PRO,,past
+1672,they watched her,f,sg,PRO,u,pl,PRO,,past
+1673,they watched them,u,pl,PRO,u,pl,PRO,,past
