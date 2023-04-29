@@ -1,461 +1,392 @@
-Alice will walk
-Alice will smile
-Alice walks
-Alice smiles
-Alice walked
-Alice smiled
-Alice sees Alice
-Alice sees Bob
-Alice sees this dog
-Alice sees this car
-Alice sees these dogs
-Alice sees these cars
-Alice sees the dog
-Alice sees the car
-Alice sees the dogs
-Alice sees the cars
-Alice sees him
-Alice sees her
-Alice sees them
-Alice saw Alice
-Alice saw Bob
-Alice saw this dog
-Alice saw this car
-Alice saw these dogs
-Alice saw these cars
-Alice saw the dog
-Alice saw the car
-Alice saw the dogs
-Alice saw the cars
-Alice saw him
-Alice saw her
-Alice saw them
-Bob will walk
-Bob will smile
-Bob walks
-Bob smiles
-Bob walked
-Bob smiled
-Bob sees Alice
-Bob sees Bob
-Bob sees this dog
-Bob sees this car
-Bob sees these dogs
-Bob sees these cars
-Bob sees the dog
-Bob sees the car
-Bob sees the dogs
-Bob sees the cars
-Bob sees him
-Bob sees her
-Bob sees them
-Bob saw Alice
-Bob saw Bob
-Bob saw this dog
-Bob saw this car
-Bob saw these dogs
-Bob saw these cars
-Bob saw the dog
-Bob saw the car
-Bob saw the dogs
-Bob saw the cars
-Bob saw him
-Bob saw her
-Bob saw them
-this boy will walk
-this boy will smile
-this boy walks
-this boy smiles
-this boy walked
-this boy smiled
-this boy sees Alice
-this boy sees Bob
-this boy sees this dog
-this boy sees this car
-this boy sees these dogs
-this boy sees these cars
-this boy sees the dog
-this boy sees the car
-this boy sees the dogs
-this boy sees the cars
-this boy sees him
-this boy sees her
-this boy sees them
-this boy saw Alice
-this boy saw Bob
-this boy saw this dog
-this boy saw this car
-this boy saw these dogs
-this boy saw these cars
-this boy saw the dog
-this boy saw the car
-this boy saw the dogs
-this boy saw the cars
-this boy saw him
-this boy saw her
-this boy saw them
-this girl will walk
-this girl will smile
-this girl walks
-this girl smiles
-this girl walked
-this girl smiled
-this girl sees Alice
-this girl sees Bob
-this girl sees this dog
-this girl sees this car
-this girl sees these dogs
-this girl sees these cars
-this girl sees the dog
-this girl sees the car
-this girl sees the dogs
-this girl sees the cars
-this girl sees him
-this girl sees her
-this girl sees them
-this girl saw Alice
-this girl saw Bob
-this girl saw this dog
-this girl saw this car
-this girl saw these dogs
-this girl saw these cars
-this girl saw the dog
-this girl saw the car
-this girl saw the dogs
-this girl saw the cars
-this girl saw him
-this girl saw her
-this girl saw them
-these boys will walk
-these boys will smile
-these boys walk
-these boys smile
-these boys walked
-these boys smiled
-these boys see Alice
-these boys see Bob
-these boys see this dog
-these boys see this car
-these boys see these dogs
-these boys see these cars
-these boys see the dog
-these boys see the car
-these boys see the dogs
-these boys see the cars
-these boys see him
-these boys see her
-these boys see them
-these boys saw Alice
-these boys saw Bob
-these boys saw this dog
-these boys saw this car
-these boys saw these dogs
-these boys saw these cars
-these boys saw the dog
-these boys saw the car
-these boys saw the dogs
-these boys saw the cars
-these boys saw him
-these boys saw her
-these boys saw them
-these girls will walk
-these girls will smile
-these girls walk
-these girls smile
-these girls walked
-these girls smiled
-these girls see Alice
-these girls see Bob
-these girls see this dog
-these girls see this car
-these girls see these dogs
-these girls see these cars
-these girls see the dog
-these girls see the car
-these girls see the dogs
-these girls see the cars
-these girls see him
-these girls see her
-these girls see them
-these girls saw Alice
-these girls saw Bob
-these girls saw this dog
-these girls saw this car
-these girls saw these dogs
-these girls saw these cars
-these girls saw the dog
-these girls saw the car
-these girls saw the dogs
-these girls saw the cars
-these girls saw him
-these girls saw her
-these girls saw them
-the boy will walk
-the boy will smile
-the boy walks
-the boy smiles
-the boy walked
-the boy smiled
-the boy sees Alice
-the boy sees Bob
-the boy sees this dog
-the boy sees this car
-the boy sees these dogs
-the boy sees these cars
-the boy sees the dog
-the boy sees the car
-the boy sees the dogs
-the boy sees the cars
-the boy sees him
-the boy sees her
-the boy sees them
-the boy saw Alice
-the boy saw Bob
-the boy saw this dog
-the boy saw this car
-the boy saw these dogs
-the boy saw these cars
-the boy saw the dog
-the boy saw the car
-the boy saw the dogs
-the boy saw the cars
-the boy saw him
-the boy saw her
-the boy saw them
-the girl will walk
-the girl will smile
-the girl walks
-the girl smiles
-the girl walked
-the girl smiled
-the girl sees Alice
-the girl sees Bob
-the girl sees this dog
-the girl sees this car
-the girl sees these dogs
-the girl sees these cars
-the girl sees the dog
-the girl sees the car
-the girl sees the dogs
-the girl sees the cars
-the girl sees him
-the girl sees her
-the girl sees them
-the girl saw Alice
-the girl saw Bob
-the girl saw this dog
-the girl saw this car
-the girl saw these dogs
-the girl saw these cars
-the girl saw the dog
-the girl saw the car
-the girl saw the dogs
-the girl saw the cars
-the girl saw him
-the girl saw her
-the girl saw them
-the boys will walk
-the boys will smile
-the boys walk
-the boys smile
-the boys walked
-the boys smiled
-the boys see Alice
-the boys see Bob
-the boys see this dog
-the boys see this car
-the boys see these dogs
-the boys see these cars
-the boys see the dog
-the boys see the car
-the boys see the dogs
-the boys see the cars
-the boys see him
-the boys see her
-the boys see them
-the boys saw Alice
-the boys saw Bob
-the boys saw this dog
-the boys saw this car
-the boys saw these dogs
-the boys saw these cars
-the boys saw the dog
-the boys saw the car
-the boys saw the dogs
-the boys saw the cars
-the boys saw him
-the boys saw her
-the boys saw them
-the girls will walk
-the girls will smile
-the girls walk
-the girls smile
-the girls walked
-the girls smiled
-the girls see Alice
-the girls see Bob
-the girls see this dog
-the girls see this car
-the girls see these dogs
-the girls see these cars
-the girls see the dog
-the girls see the car
-the girls see the dogs
-the girls see the cars
-the girls see him
-the girls see her
-the girls see them
-the girls saw Alice
-the girls saw Bob
-the girls saw this dog
-the girls saw this car
-the girls saw these dogs
-the girls saw these cars
-the girls saw the dog
-the girls saw the car
-the girls saw the dogs
-the girls saw the cars
-the girls saw him
-the girls saw her
-the girls saw them
-he will walk
-he will smile
-he walks
-he smiles
-he walk
-he smile
-he walked
-he smiled
-he sees Alice
-he sees Bob
-he sees this dog
-he sees this car
-he sees these dogs
-he sees these cars
-he sees the dog
-he sees the car
-he sees the dogs
-he sees the cars
-he sees him
-he sees her
-he sees them
-he see Alice
-he see Bob
-he see this dog
-he see this car
-he see these dogs
-he see these cars
-he see the dog
-he see the car
-he see the dogs
-he see the cars
-he see him
-he see her
-he see them
-he saw Alice
-he saw Bob
-he saw this dog
-he saw this car
-he saw these dogs
-he saw these cars
-he saw the dog
-he saw the car
-he saw the dogs
-he saw the cars
-he saw him
-he saw her
-he saw them
-she will walk
-she will smile
-she walks
-she smiles
-she walk
-she smile
-she walked
-she smiled
-she sees Alice
-she sees Bob
-she sees this dog
-she sees this car
-she sees these dogs
-she sees these cars
-she sees the dog
-she sees the car
-she sees the dogs
-she sees the cars
-she sees him
-she sees her
-she sees them
-she see Alice
-she see Bob
-she see this dog
-she see this car
-she see these dogs
-she see these cars
-she see the dog
-she see the car
-she see the dogs
-she see the cars
-she see him
-she see her
-she see them
-she saw Alice
-she saw Bob
-she saw this dog
-she saw this car
-she saw these dogs
-she saw these cars
-she saw the dog
-she saw the car
-she saw the dogs
-she saw the cars
-she saw him
-she saw her
-she saw them
-they will walk
-they will smile
-they walks
-they smiles
-they walk
-they smile
-they walked
-they smiled
-they sees Alice
-they sees Bob
-they sees this dog
-they sees this car
-they sees these dogs
-they sees these cars
-they sees the dog
-they sees the car
-they sees the dogs
-they sees the cars
-they sees him
-they sees her
-they sees them
-they see Alice
-they see Bob
-they see this dog
-they see this car
-they see these dogs
-they see these cars
-they see the dog
-they see the car
-they see the dogs
-they see the cars
-they see him
-they see her
-they see them
-they saw Alice
-they saw Bob
-they saw this dog
-they saw this car
-they saw these dogs
-they saw these cars
-they saw the dog
-they saw the car
-they saw the dogs
-they saw the cars
-they saw him
-they saw her
-they saw them
+,sentence,obj_GEN,obj_NUM,obj_type,subj_GEN,subj_NUM,subj_type,verb_NUM,verb_TENSE
+0,Alice will walk,,,,f,sg,PropN,,future
+1,Alice will smile,,,,f,sg,PropN,,future
+2,Alice walks,,,,f,sg,PropN,sg,pres
+3,Alice smiles,,,,f,sg,PropN,sg,pres
+4,Alice smiles,,,,f,sg,PropN,sg,pres
+5,Alice smiles,,,,f,sg,PropN,sg,pres
+6,Alice walked,,,,f,sg,PropN,,past
+7,Alice smiled,,,,f,sg,PropN,,past
+8,Alice sees Alice,f,sg,PropN,f,sg,PropN,sg,pres
+9,Alice sees Bob,m,sg,PropN,f,sg,PropN,sg,pres
+10,Alice sees him,m,sg,PRO,f,sg,PropN,sg,pres
+11,Alice sees her,f,sg,PRO,f,sg,PropN,sg,pres
+12,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+13,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+14,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+15,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+16,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+17,Alice sees them,u,pl,PRO,f,sg,PropN,sg,pres
+18,Alice saw Alice,f,sg,PropN,f,sg,PropN,,past
+19,Alice saw Bob,m,sg,PropN,f,sg,PropN,,past
+20,Alice saw him,m,sg,PRO,f,sg,PropN,,past
+21,Alice saw her,f,sg,PRO,f,sg,PropN,,past
+22,Alice saw them,u,pl,PRO,f,sg,PropN,,past
+23,Bob will walk,,,,m,sg,PropN,,future
+24,Bob will smile,,,,m,sg,PropN,,future
+25,Bob walks,,,,m,sg,PropN,sg,pres
+26,Bob smiles,,,,m,sg,PropN,sg,pres
+27,Bob smiles,,,,m,sg,PropN,sg,pres
+28,Bob smiles,,,,m,sg,PropN,sg,pres
+29,Bob walked,,,,m,sg,PropN,,past
+30,Bob smiled,,,,m,sg,PropN,,past
+31,Bob sees Alice,f,sg,PropN,m,sg,PropN,sg,pres
+32,Bob sees Bob,m,sg,PropN,m,sg,PropN,sg,pres
+33,Bob sees him,m,sg,PRO,m,sg,PropN,sg,pres
+34,Bob sees her,f,sg,PRO,m,sg,PropN,sg,pres
+35,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+36,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+37,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+38,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+39,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+40,Bob sees them,u,pl,PRO,m,sg,PropN,sg,pres
+41,Bob saw Alice,f,sg,PropN,m,sg,PropN,,past
+42,Bob saw Bob,m,sg,PropN,m,sg,PropN,,past
+43,Bob saw him,m,sg,PRO,m,sg,PropN,,past
+44,Bob saw her,f,sg,PRO,m,sg,PropN,,past
+45,Bob saw them,u,pl,PRO,m,sg,PropN,,past
+46,this boy will walk,,,,,sg,N,,future
+47,this boy will smile,,,,,sg,N,,future
+48,this boy walks,,,,,sg,N,sg,pres
+49,this boy smiles,,,,,sg,N,sg,pres
+50,this boy smiles,,,,,sg,N,sg,pres
+51,this boy smiles,,,,,sg,N,sg,pres
+52,this boy walked,,,,,sg,N,,past
+53,this boy smiled,,,,,sg,N,,past
+54,this boy sees Alice,f,sg,PropN,,sg,N,sg,pres
+55,this boy sees Bob,m,sg,PropN,,sg,N,sg,pres
+56,this boy sees him,m,sg,PRO,,sg,N,sg,pres
+57,this boy sees her,f,sg,PRO,,sg,N,sg,pres
+58,this boy sees them,u,pl,PRO,,sg,N,sg,pres
+59,this boy sees them,u,pl,PRO,,sg,N,sg,pres
+60,this boy sees them,u,pl,PRO,,sg,N,sg,pres
+61,this boy sees them,u,pl,PRO,,sg,N,sg,pres
+62,this boy sees them,u,pl,PRO,,sg,N,sg,pres
+63,this boy sees them,u,pl,PRO,,sg,N,sg,pres
+64,this boy saw Alice,f,sg,PropN,,sg,N,,past
+65,this boy saw Bob,m,sg,PropN,,sg,N,,past
+66,this boy saw him,m,sg,PRO,,sg,N,,past
+67,this boy saw her,f,sg,PRO,,sg,N,,past
+68,this boy saw them,u,pl,PRO,,sg,N,,past
+69,this girl will walk,,,,,sg,N,,future
+70,this girl will smile,,,,,sg,N,,future
+71,this girl walks,,,,,sg,N,sg,pres
+72,this girl smiles,,,,,sg,N,sg,pres
+73,this girl smiles,,,,,sg,N,sg,pres
+74,this girl smiles,,,,,sg,N,sg,pres
+75,this girl walked,,,,,sg,N,,past
+76,this girl smiled,,,,,sg,N,,past
+77,this girl sees Alice,f,sg,PropN,,sg,N,sg,pres
+78,this girl sees Bob,m,sg,PropN,,sg,N,sg,pres
+79,this girl sees him,m,sg,PRO,,sg,N,sg,pres
+80,this girl sees her,f,sg,PRO,,sg,N,sg,pres
+81,this girl sees them,u,pl,PRO,,sg,N,sg,pres
+82,this girl sees them,u,pl,PRO,,sg,N,sg,pres
+83,this girl sees them,u,pl,PRO,,sg,N,sg,pres
+84,this girl sees them,u,pl,PRO,,sg,N,sg,pres
+85,this girl sees them,u,pl,PRO,,sg,N,sg,pres
+86,this girl sees them,u,pl,PRO,,sg,N,sg,pres
+87,this girl saw Alice,f,sg,PropN,,sg,N,,past
+88,this girl saw Bob,m,sg,PropN,,sg,N,,past
+89,this girl saw him,m,sg,PRO,,sg,N,,past
+90,this girl saw her,f,sg,PRO,,sg,N,,past
+91,this girl saw them,u,pl,PRO,,sg,N,,past
+92,this girl saw them,u,pl,PRO,,sg,N,,past
+93,this girl saw them,u,pl,PRO,,sg,N,,past
+94,this girl saw them,u,pl,PRO,,sg,N,,past
+95,this girl saw them,u,pl,PRO,,sg,N,,past
+96,this girl saw them,u,pl,PRO,,sg,N,,past
+97,this girl saw them,u,pl,PRO,,sg,N,,past
+98,this girl saw them,u,pl,PRO,,sg,N,,past
+99,this girl saw them,u,pl,PRO,,sg,N,,past
+100,this girl saw them,u,pl,PRO,,sg,N,,past
+101,this girl saw them,u,pl,PRO,,sg,N,,past
+102,this girl saw them,u,pl,PRO,,sg,N,,past
+103,this girl saw them,u,pl,PRO,,sg,N,,past
+104,this girl saw them,u,pl,PRO,,sg,N,,past
+105,this girl saw them,u,pl,PRO,,sg,N,,past
+106,this girl saw them,u,pl,PRO,,sg,N,,past
+107,this girl saw them,u,pl,PRO,,sg,N,,past
+108,this girl saw them,u,pl,PRO,,sg,N,,past
+109,this girl saw them,u,pl,PRO,,sg,N,,past
+110,this girl saw them,u,pl,PRO,,sg,N,,past
+111,this girl saw them,u,pl,PRO,,sg,N,,past
+112,this girl saw them,u,pl,PRO,,sg,N,,past
+113,this girl saw them,u,pl,PRO,,sg,N,,past
+114,this girl saw them,u,pl,PRO,,sg,N,,past
+115,this girl saw them,u,pl,PRO,,sg,N,,past
+116,this girl saw them,u,pl,PRO,,sg,N,,past
+117,this girl saw them,u,pl,PRO,,sg,N,,past
+118,this girl saw them,u,pl,PRO,,sg,N,,past
+119,this girl saw them,u,pl,PRO,,sg,N,,past
+120,this girl saw them,u,pl,PRO,,sg,N,,past
+121,this girl saw them,u,pl,PRO,,sg,N,,past
+122,this girl saw them,u,pl,PRO,,sg,N,,past
+123,this girl saw them,u,pl,PRO,,sg,N,,past
+124,this girl saw them,u,pl,PRO,,sg,N,,past
+125,this girl saw them,u,pl,PRO,,sg,N,,past
+126,this girl saw them,u,pl,PRO,,sg,N,,past
+127,this girl saw them,u,pl,PRO,,sg,N,,past
+128,this girl saw them,u,pl,PRO,,sg,N,,past
+129,this girl saw them,u,pl,PRO,,sg,N,,past
+130,this girl saw them,u,pl,PRO,,sg,N,,past
+131,this girl saw them,u,pl,PRO,,sg,N,,past
+132,this girl saw them,u,pl,PRO,,sg,N,,past
+133,this girl saw them,u,pl,PRO,,sg,N,,past
+134,this girl saw them,u,pl,PRO,,sg,N,,past
+135,this girl saw them,u,pl,PRO,,sg,N,,past
+136,this girl saw them,u,pl,PRO,,sg,N,,past
+137,this girl saw them,u,pl,PRO,,sg,N,,past
+138,this girl saw them,u,pl,PRO,,sg,N,,past
+139,this girl saw them,u,pl,PRO,,sg,N,,past
+140,this girl saw them,u,pl,PRO,,sg,N,,past
+141,this girl saw them,u,pl,PRO,,sg,N,,past
+142,this girl saw them,u,pl,PRO,,sg,N,,past
+143,this girl saw them,u,pl,PRO,,sg,N,,past
+144,this girl saw them,u,pl,PRO,,sg,N,,past
+145,this girl saw them,u,pl,PRO,,sg,N,,past
+146,this girl saw them,u,pl,PRO,,sg,N,,past
+147,this girl saw them,u,pl,PRO,,sg,N,,past
+148,this girl saw them,u,pl,PRO,,sg,N,,past
+149,this girl saw them,u,pl,PRO,,sg,N,,past
+150,this girl saw them,u,pl,PRO,,sg,N,,past
+151,this girl saw them,u,pl,PRO,,sg,N,,past
+152,this girl saw them,u,pl,PRO,,sg,N,,past
+153,this girl saw them,u,pl,PRO,,sg,N,,past
+154,this girl saw them,u,pl,PRO,,sg,N,,past
+155,this girl saw them,u,pl,PRO,,sg,N,,past
+156,this girl saw them,u,pl,PRO,,sg,N,,past
+157,this girl saw them,u,pl,PRO,,sg,N,,past
+158,this girl saw them,u,pl,PRO,,sg,N,,past
+159,this girl saw them,u,pl,PRO,,sg,N,,past
+160,this girl saw them,u,pl,PRO,,sg,N,,past
+161,this girl saw them,u,pl,PRO,,sg,N,,past
+162,this girl saw them,u,pl,PRO,,sg,N,,past
+163,this girl saw them,u,pl,PRO,,sg,N,,past
+164,this girl saw them,u,pl,PRO,,sg,N,,past
+165,this girl saw them,u,pl,PRO,,sg,N,,past
+166,this girl saw them,u,pl,PRO,,sg,N,,past
+167,this girl saw them,u,pl,PRO,,sg,N,,past
+168,this girl saw them,u,pl,PRO,,sg,N,,past
+169,this girl saw them,u,pl,PRO,,sg,N,,past
+170,this girl saw them,u,pl,PRO,,sg,N,,past
+171,this girl saw them,u,pl,PRO,,sg,N,,past
+172,this girl saw them,u,pl,PRO,,sg,N,,past
+173,this girl saw them,u,pl,PRO,,sg,N,,past
+174,this girl saw them,u,pl,PRO,,sg,N,,past
+175,this girl saw them,u,pl,PRO,,sg,N,,past
+176,this girl saw them,u,pl,PRO,,sg,N,,past
+177,this girl saw them,u,pl,PRO,,sg,N,,past
+178,this girl saw them,u,pl,PRO,,sg,N,,past
+179,this girl saw them,u,pl,PRO,,sg,N,,past
+180,this girl saw them,u,pl,PRO,,sg,N,,past
+181,this girl saw them,u,pl,PRO,,sg,N,,past
+182,this girl saw them,u,pl,PRO,,sg,N,,past
+183,this girl saw them,u,pl,PRO,,sg,N,,past
+184,these boys will walk,,,,,pl,N,,future
+185,these boys will smile,,,,,pl,N,,future
+186,these boys will smile,,,,,pl,N,,future
+187,these boys will smile,,,,,pl,N,,future
+188,these boys walk,,,,,pl,N,pl,pres
+189,these boys smile,,,,,pl,N,pl,pres
+190,these boys walked,,,,,pl,N,,past
+191,these boys smiled,,,,,pl,N,,past
+192,these boys smiled,,,,,pl,N,,past
+193,these boys smiled,,,,,pl,N,,past
+194,these boys smiled,,,,,pl,N,,past
+195,these boys smiled,,,,,pl,N,,past
+196,these boys smiled,,,,,pl,N,,past
+197,these boys see Alice,f,sg,PropN,,pl,N,pl,pres
+198,these boys see Bob,m,sg,PropN,,pl,N,pl,pres
+199,these boys see him,m,sg,PRO,,pl,N,pl,pres
+200,these boys see her,f,sg,PRO,,pl,N,pl,pres
+201,these boys see them,u,pl,PRO,,pl,N,pl,pres
+202,these boys saw Alice,f,sg,PropN,,pl,N,,past
+203,these boys saw Bob,m,sg,PropN,,pl,N,,past
+204,these boys saw him,m,sg,PRO,,pl,N,,past
+205,these boys saw her,f,sg,PRO,,pl,N,,past
+206,these boys saw them,u,pl,PRO,,pl,N,,past
+207,these girls will walk,,,,,pl,N,,future
+208,these girls will smile,,,,,pl,N,,future
+209,these girls will smile,,,,,pl,N,,future
+210,these girls will smile,,,,,pl,N,,future
+211,these girls walk,,,,,pl,N,pl,pres
+212,these girls smile,,,,,pl,N,pl,pres
+213,these girls walked,,,,,pl,N,,past
+214,these girls smiled,,,,,pl,N,,past
+215,these girls smiled,,,,,pl,N,,past
+216,these girls smiled,,,,,pl,N,,past
+217,these girls smiled,,,,,pl,N,,past
+218,these girls smiled,,,,,pl,N,,past
+219,these girls smiled,,,,,pl,N,,past
+220,these girls see Alice,f,sg,PropN,,pl,N,pl,pres
+221,these girls see Bob,m,sg,PropN,,pl,N,pl,pres
+222,these girls see him,m,sg,PRO,,pl,N,pl,pres
+223,these girls see her,f,sg,PRO,,pl,N,pl,pres
+224,these girls see them,u,pl,PRO,,pl,N,pl,pres
+225,these girls saw Alice,f,sg,PropN,,pl,N,,past
+226,these girls saw Bob,m,sg,PropN,,pl,N,,past
+227,these girls saw him,m,sg,PRO,,pl,N,,past
+228,these girls saw her,f,sg,PRO,,pl,N,,past
+229,these girls saw them,u,pl,PRO,,pl,N,,past
+230,the boy will walk,,,,,sg,N,,future
+231,the boy will smile,,,,,sg,N,,future
+232,the boy walks,,,,,sg,N,sg,pres
+233,the boy smiles,,,,,sg,N,sg,pres
+234,the boy smiles,,,,,sg,N,sg,pres
+235,the boy smiles,,,,,sg,N,sg,pres
+236,the boy walked,,,,,sg,N,,past
+237,the boy smiled,,,,,sg,N,,past
+238,the boy sees Alice,f,sg,PropN,,sg,N,sg,pres
+239,the boy sees Bob,m,sg,PropN,,sg,N,sg,pres
+240,the boy sees him,m,sg,PRO,,sg,N,sg,pres
+241,the boy sees her,f,sg,PRO,,sg,N,sg,pres
+242,the boy sees them,u,pl,PRO,,sg,N,sg,pres
+243,the boy sees them,u,pl,PRO,,sg,N,sg,pres
+244,the boy sees them,u,pl,PRO,,sg,N,sg,pres
+245,the boy sees them,u,pl,PRO,,sg,N,sg,pres
+246,the boy sees them,u,pl,PRO,,sg,N,sg,pres
+247,the boy sees them,u,pl,PRO,,sg,N,sg,pres
+248,the boy saw Alice,f,sg,PropN,,sg,N,,past
+249,the boy saw Bob,m,sg,PropN,,sg,N,,past
+250,the boy saw him,m,sg,PRO,,sg,N,,past
+251,the boy saw her,f,sg,PRO,,sg,N,,past
+252,the boy saw them,u,pl,PRO,,sg,N,,past
+253,the girl will walk,,,,,sg,N,,future
+254,the girl will smile,,,,,sg,N,,future
+255,the girl walks,,,,,sg,N,sg,pres
+256,the girl smiles,,,,,sg,N,sg,pres
+257,the girl smiles,,,,,sg,N,sg,pres
+258,the girl smiles,,,,,sg,N,sg,pres
+259,the girl walked,,,,,sg,N,,past
+260,the girl smiled,,,,,sg,N,,past
+261,the girl sees Alice,f,sg,PropN,,sg,N,sg,pres
+262,the girl sees Bob,m,sg,PropN,,sg,N,sg,pres
+263,the girl sees him,m,sg,PRO,,sg,N,sg,pres
+264,the girl sees her,f,sg,PRO,,sg,N,sg,pres
+265,the girl sees them,u,pl,PRO,,sg,N,sg,pres
+266,the girl sees them,u,pl,PRO,,sg,N,sg,pres
+267,the girl sees them,u,pl,PRO,,sg,N,sg,pres
+268,the girl sees them,u,pl,PRO,,sg,N,sg,pres
+269,the girl sees them,u,pl,PRO,,sg,N,sg,pres
+270,the girl sees them,u,pl,PRO,,sg,N,sg,pres
+271,the girl saw Alice,f,sg,PropN,,sg,N,,past
+272,the girl saw Bob,m,sg,PropN,,sg,N,,past
+273,the girl saw him,m,sg,PRO,,sg,N,,past
+274,the girl saw her,f,sg,PRO,,sg,N,,past
+275,the girl saw them,u,pl,PRO,,sg,N,,past
+276,the boys will walk,,,,,pl,N,,future
+277,the boys will smile,,,,,pl,N,,future
+278,the boys will smile,,,,,pl,N,,future
+279,the boys will smile,,,,,pl,N,,future
+280,the boys walk,,,,,pl,N,pl,pres
+281,the boys smile,,,,,pl,N,pl,pres
+282,the boys walked,,,,,pl,N,,past
+283,the boys smiled,,,,,pl,N,,past
+284,the boys smiled,,,,,pl,N,,past
+285,the boys smiled,,,,,pl,N,,past
+286,the boys smiled,,,,,pl,N,,past
+287,the boys smiled,,,,,pl,N,,past
+288,the boys smiled,,,,,pl,N,,past
+289,the boys see Alice,f,sg,PropN,,pl,N,pl,pres
+290,the boys see Bob,m,sg,PropN,,pl,N,pl,pres
+291,the boys see him,m,sg,PRO,,pl,N,pl,pres
+292,the boys see her,f,sg,PRO,,pl,N,pl,pres
+293,the boys see them,u,pl,PRO,,pl,N,pl,pres
+294,the boys saw Alice,f,sg,PropN,,pl,N,,past
+295,the boys saw Bob,m,sg,PropN,,pl,N,,past
+296,the boys saw him,m,sg,PRO,,pl,N,,past
+297,the boys saw her,f,sg,PRO,,pl,N,,past
+298,the boys saw them,u,pl,PRO,,pl,N,,past
+299,the girls will walk,,,,,pl,N,,future
+300,the girls will smile,,,,,pl,N,,future
+301,the girls will smile,,,,,pl,N,,future
+302,the girls will smile,,,,,pl,N,,future
+303,the girls walk,,,,,pl,N,pl,pres
+304,the girls smile,,,,,pl,N,pl,pres
+305,the girls walked,,,,,pl,N,,past
+306,the girls smiled,,,,,pl,N,,past
+307,the girls smiled,,,,,pl,N,,past
+308,the girls smiled,,,,,pl,N,,past
+309,the girls smiled,,,,,pl,N,,past
+310,the girls smiled,,,,,pl,N,,past
+311,the girls smiled,,,,,pl,N,,past
+312,the girls see Alice,f,sg,PropN,,pl,N,pl,pres
+313,the girls see Bob,m,sg,PropN,,pl,N,pl,pres
+314,the girls see him,m,sg,PRO,,pl,N,pl,pres
+315,the girls see her,f,sg,PRO,,pl,N,pl,pres
+316,the girls see them,u,pl,PRO,,pl,N,pl,pres
+317,the girls saw Alice,f,sg,PropN,,pl,N,,past
+318,the girls saw Bob,m,sg,PropN,,pl,N,,past
+319,the girls saw him,m,sg,PRO,,pl,N,,past
+320,the girls saw her,f,sg,PRO,,pl,N,,past
+321,the girls saw them,u,pl,PRO,,pl,N,,past
+322,he will walk,,,,m,sg,PRO,,future
+323,he will smile,,,,m,sg,PRO,,future
+324,he walks,,,,m,sg,PRO,sg,pres
+325,he smiles,,,,m,sg,PRO,sg,pres
+326,he smiles,,,,m,sg,PRO,sg,pres
+327,he smiles,,,,m,sg,PRO,sg,pres
+328,he walked,,,,m,sg,PRO,,past
+329,he smiled,,,,m,sg,PRO,,past
+330,he sees Alice,f,sg,PropN,m,sg,PRO,sg,pres
+331,he sees Bob,m,sg,PropN,m,sg,PRO,sg,pres
+332,he sees him,m,sg,PRO,m,sg,PRO,sg,pres
+333,he sees her,f,sg,PRO,m,sg,PRO,sg,pres
+334,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+335,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+336,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+337,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+338,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+339,he sees them,u,pl,PRO,m,sg,PRO,sg,pres
+340,he saw Alice,f,sg,PropN,m,sg,PRO,,past
+341,he saw Bob,m,sg,PropN,m,sg,PRO,,past
+342,he saw him,m,sg,PRO,m,sg,PRO,,past
+343,he saw her,f,sg,PRO,m,sg,PRO,,past
+344,he saw them,u,pl,PRO,m,sg,PRO,,past
+345,she will walk,,,,f,sg,PRO,,future
+346,she will smile,,,,f,sg,PRO,,future
+347,she walks,,,,f,sg,PRO,sg,pres
+348,she smiles,,,,f,sg,PRO,sg,pres
+349,she smiles,,,,f,sg,PRO,sg,pres
+350,she smiles,,,,f,sg,PRO,sg,pres
+351,she walked,,,,f,sg,PRO,,past
+352,she smiled,,,,f,sg,PRO,,past
+353,she sees Alice,f,sg,PropN,f,sg,PRO,sg,pres
+354,she sees Bob,m,sg,PropN,f,sg,PRO,sg,pres
+355,she sees him,m,sg,PRO,f,sg,PRO,sg,pres
+356,she sees her,f,sg,PRO,f,sg,PRO,sg,pres
+357,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+358,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+359,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+360,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+361,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+362,she sees them,u,pl,PRO,f,sg,PRO,sg,pres
+363,she saw Alice,f,sg,PropN,f,sg,PRO,,past
+364,she saw Bob,m,sg,PropN,f,sg,PRO,,past
+365,she saw him,m,sg,PRO,f,sg,PRO,,past
+366,she saw her,f,sg,PRO,f,sg,PRO,,past
+367,she saw them,u,pl,PRO,f,sg,PRO,,past
+368,they will walk,,,,u,pl,PRO,,future
+369,they will smile,,,,u,pl,PRO,,future
+370,they will smile,,,,u,pl,PRO,,future
+371,they will smile,,,,u,pl,PRO,,future
+372,they walk,,,,u,pl,PRO,pl,pres
+373,they smile,,,,u,pl,PRO,pl,pres
+374,they walked,,,,u,pl,PRO,,past
+375,they smiled,,,,u,pl,PRO,,past
+376,they smiled,,,,u,pl,PRO,,past
+377,they smiled,,,,u,pl,PRO,,past
+378,they smiled,,,,u,pl,PRO,,past
+379,they smiled,,,,u,pl,PRO,,past
+380,they smiled,,,,u,pl,PRO,,past
+381,they see Alice,f,sg,PropN,u,pl,PRO,pl,pres
+382,they see Bob,m,sg,PropN,u,pl,PRO,pl,pres
+383,they see him,m,sg,PRO,u,pl,PRO,pl,pres
+384,they see her,f,sg,PRO,u,pl,PRO,pl,pres
+385,they see them,u,pl,PRO,u,pl,PRO,pl,pres
+386,they saw Alice,f,sg,PropN,u,pl,PRO,,past
+387,they saw Bob,m,sg,PropN,u,pl,PRO,,past
+388,they saw him,m,sg,PRO,u,pl,PRO,,past
+389,they saw her,f,sg,PRO,u,pl,PRO,,past
+390,they saw them,u,pl,PRO,u,pl,PRO,,past
