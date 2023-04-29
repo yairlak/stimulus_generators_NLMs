@@ -1,7 +1,7 @@
 % start S
 
 # Template 1 :
-# pronoun  / full-subject
+# probjNoun  / full-subject
 # main number
 # main gender
 # tense
@@ -10,53 +10,61 @@
 #######################
 # Grammar Productions #
 #######################
-S -> sNP[NUM=?n] VP[NUM=?n]
+S -> subjNP[NUM=?n] VP[NUM=?n]
 
 # subject
-sNP[NUM=?n, GEN=?g] -> PropN[NUM=?n, GEN=?g]
-sNP[NUM=?n] -> Det[NUM=?n] sN[NUM=?n]
-sNP[NUM=?n, GEN=?g] -> sPRO[NUM=?n, GEN=?g]
+subjNP[NUM=?n, GEN=?g] -> subj_PropN[NUM=?n, GEN=?g]
+subjNP[NUM=?n] -> Det[NUM=?n] subj_N[NUM=?n]
+subjNP[NUM=?n, GEN=?g] -> subj_PRO[NUM=?n, GEN=?g]
 
 # verb
-VP[TENSE=?t, NUM=?n] -> IV[TENSE=?t, NUM=?n]
-VP[TENSE=?t, NUM=?n] -> TV[TENSE=?t, NUM=?n] oNP
-IV[TENSE=future] -> modalV V
+VP[TENSE=?t, NUM=?n] -> verb_I[TENSE=?t, NUM=?n]
+VP[TENSE=?t, NUM=?n] -> verb_T[TENSE=?t, NUM=?n] objNP
+verb_I[TENSE=future] -> verb_Mod[TENSE=future] Inf
 
 # object
-oNP[NUM=?n] -> PropN[NUM=?n, GEN=?g]
-oNP[NUM=?n] -> Det[NUM=?n] oN[NUM=?n]
-oNP[NUM=?n] -> oPRO[NUM=?n, GEN=?g]
+objNP[NUM=?n] -> obj_PropN[NUM=?n, GEN=?g]
+objNP[NUM=?n] -> Det[NUM=?n] objN[NUM=?n]
+objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
 
 #######################
 # Lexical Productions #
 #######################
+
 Det[NUM=sg] -> 'this'
 Det[NUM=pl] -> 'these'
 Det -> 'the'
 
-sPRO[Num=sg, GEN=m]->'he'
-sPRO[Num=sg, GEN=f]->'she'
-sPRO[Num=pl, GEN=u]->'they'
+# subject
+subj_PRO[NUM=sg, GEN=m]->'he'
+subj_PRO[NUM=sg, GEN=f]->'she'
+subj_PRO[NUM=pl, GEN=u]->'they'
 
-oPRO[Num=sg, GEN=m]->'him'
-oPRO[Num=sg, GEN=f]->'her'
-oPRO[Num=pl, GEN=u]->'them'
+subj_N[NUM=sg] -> 'boy'|'girl'
+subj_N[NUM=pl] -> 'boys'|'girls'
 
-PropN[NUM=sg, GEN=f]-> 'Alice'
-PropN[NUM=sg, GEN=m]-> 'Bob'
+subj_PropN[NUM=sg, GEN=f]-> 'Alice'
+subj_PropN[NUM=sg, GEN=m]-> 'Bob'
 
-sN[NUM=sg] -> 'boy'|'girl'
-sN[NUM=pl] -> 'boys'|'girls'
-oN[NUM=sg] -> 'dog'|'car'
-oN[NUM=pl] -> 'dogs'|'cars'
+# object
+obj_PRO[NUM=sg, GEN=m]->'him'
+obj_PRO[NUM=sg, GEN=f]->'her'
+obj_PRO[NUM=pl, GEN=u]->'them'
 
-IV[TENSE=pres,  NUM=sg] -> 'walks'|'smiles'
-IV[TENSE=pres,  NUM=pl] -> 'walk'|'smile'
-IV[TENSE=past] -> 'walked'|'smiled'
+obj_N[NUM=sg] -> 'dog'|'car'
+obj_N[NUM=pl] -> 'dogs'|'cars'
 
-TV[TENSE=pres, NUM=sg] -> 'sees'
-TV[TENSE=pres, NUM=pl] -> 'see'
-TV[TENSE=past] -> 'saw'
+obj_PropN[NUM=sg, GEN=f]-> 'Alice'
+obj_PropN[NUM=sg, GEN=m]-> 'Bob'
 
-V -> 'walk'|'smile'
-modalV -> 'will'
+# verb
+verb_I[TENSE=pres,  NUM=sg] -> 'walks'|'smiles'
+verb_I[TENSE=pres,  NUM=pl] -> 'walk'|'smile'
+verb_I[TENSE=past] -> 'walked'|'smiled'
+
+verb_T[TENSE=pres, NUM=sg] -> 'sees'
+verb_T[TENSE=pres, NUM=pl] -> 'see'
+verb_T[TENSE=past] -> 'saw'
+
+Inf -> 'walk'|'smile'
+verb_Mod[TENSE=future] -> 'will'
