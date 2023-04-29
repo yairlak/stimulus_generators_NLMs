@@ -19,9 +19,5 @@ with open(fn_output, 'w') as f:
     for s in list(generate(fcfg.grammar())):
         for tree in fcfg.parse(s): # enter loop only if parsable
             f.write(' '.join(s)+'\n')
-            #print(tree.pos())
-        else:
-            print('-'*100)
-            print(' '.join(s))
-            print('-'*100)
-            # f.write(tree.pformat() + '\n')
+            print(tree.pos())
+            print(tree.pformat())
