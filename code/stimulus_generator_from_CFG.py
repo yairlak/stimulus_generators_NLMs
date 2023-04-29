@@ -12,7 +12,7 @@ from nltk.parse.generate import generate
 n_debug = 100
 
 fn_grammar = 'grammar.fcfg'
-fn_output = 'stimuli_from_fcfg.csv'
+fn_output = '../stimuli/stimuli_from_fcfg.csv'
 fcfg = load_parser(fn_grammar, trace=1)
 
 with open(fn_output, 'w') as f:
