@@ -1,28 +1,20 @@
-% start S
-
-# Template 1 :
-# probjNoun  / full-subject
-# main number
-# main gender
-# tense
-# verb type
 
 #######################
 # Grammar Productions #
 #######################
-S -> subjNP[NUM=?n, animate=?a] VP[NUM=?n, animate=?a]
+S -> subjNP[NUM=?n, PERS=?p, animate=?a] VP[NUM=?n, PERS=?p, animate=?a]
 
 # subject
-subjNP[NUM=?n, GEN=?g, animate=true] -> subj_PropN[NUM=?n, GEN=?g, animate=true]
-subjNP[NUM=?n, animate=?a] -> subj_Det[NUM=?n] subj_N[NUM=?n, animate=?a]
-subjNP[NUM=?n, animate=?a] -> subj_Quantifier[NUM=?n] subj_N[NUM=?n, animate=?a]
-subjNP[NUM=?n, GEN=?g, animate=?a] -> subj_PRO[NUM=?n, GEN=?g, animate=?a]
+subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PropN[NUM=?n, PERS=?p, animate=?a]
+subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_Det[NUM=?n] subj_N[NUM=?n, PERS=?p, animate=?a]
+subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_Quantifier[NUM=?n] subj_N[NUM=?n, PERS=?p, animate=?a]
+subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PRO[NUM=?n, PERS=?p, animate=?a]
 
 # verb
-VP[TENSE=?t, NUM=?n, animate=?a] -> verb_Intrans[TENSE=?t, NUM=?n, animate=?a]
-VP[TENSE=?t, NUM=?n, animate=?a] -> verb_Trans[TENSE=?t, NUM=?n, animate=?a] objNP
+VP[TENSE=?t, NUM=?n, PERS=?p, animate=?a] -> verb_Intrans[TENSE=?t, NUM=?n, PERS=?p, animate=?a]
+VP[TENSE=?t, NUM=?n, PERS=?p, animate=?a] -> verb_Trans[TENSE=?t, NUM=?n, PERS=?p, animate=?a] objNP
 
-verb_Intrans[TENSE=future, animate=?a] -> verb_Mod[TENSE=future] inf[animate=?a]
+verb_Intrans[TENSE=future, animate=?a] -> verb_Mod[TENSE=future] V[animate=?a]
 
 # object
 objNP[NUM=?n] -> obj_PropN[NUM=?n, GEN=?g]
@@ -34,7 +26,6 @@ objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
 # Lexical Productions #
 #######################
 
-
 # subject
 subj_Det[NUM=sg] -> 'this'
 subj_Det[NUM=pl] -> 'these'
@@ -43,23 +34,24 @@ subj_Det -> 'the'
 subj_Quantifier[NUM=sg] -> 'every'
 subj_Quantifier[NUM=pl] -> 'all'
 
-subj_PRO[NUM=sg, animate=true]->'I'
-subj_PRO[NUM=pl, animate=true]->'you'
-subj_PRO[NUM=sg, GEN=m, animate=true]->'he'
-subj_PRO[NUM=sg, GEN=f, animate=true]->'she'
-subj_PRO[NUM=sg, animate=false]->'it'
-subj_PRO[NUM=pl, animate=true]->'they'|'we'
+subj_PRO[NUM=sg, PERS=1, animate=true]->'I'
+subj_PRO[NUM=pl, PERS=2, animate=true]->'you'
+subj_PRO[NUM=sg, PERS=3, GEN=m, animate=true]->'he'
+subj_PRO[NUM=sg, PERS=3, GEN=f, animate=true]->'she'
+subj_PRO[NUM=sg, PERS=3, animate=false]->'it'
+subj_PRO[NUM=pl, PERS=3, animate=true]->'they'
+subj_PRO[NUM=pl, PERS=1, animate=true]->'we'
 
-subj_N[NUM=sg, GEN=m, animate=true] -> 'boy'|'man'
-subj_N[NUM=sg, GEN=f, animate=true] -> 'man'|'woman'
-subj_N[NUM=pl, GEN=m, animate=true] -> 'boys'|'men'
-subj_N[NUM=pl, GEN=f, animate=true] -> 'girls'|'women'
+subj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'|'man'
+subj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'man'|'woman'
+subj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'|'men'
+subj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'|'women'
 
-subj_N[NUM=sg, animate=false] -> 'cat'|'dog'|'mouse'
-subj_N[NUM=pl, animate=false] -> 'cat'|'dog'|'mice'
+subj_N[NUM=sg, PERS=3, animate=false] -> 'cat'|'dog'|'mouse'|'key'
+subj_N[NUM=pl, PERS=3, animate=false] -> 'cat'|'dog'|'mice'|'keys'
 
-subj_PropN[NUM=sg, GEN=f, animate=true]-> 'Alice'|'Mary'
-subj_PropN[NUM=sg, GEN=m, animate=true]-> 'Bob'|'John'
+subj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'|'Mary'
+subj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'|'John'
 
 # object
 obj_Det[NUM=sg] -> 'this'
@@ -69,29 +61,30 @@ obj_Det -> 'the'
 obj_Quantifier[NUM=sg] -> 'every'
 obj_Quantifier[NUM=pl] -> 'all'
 
-obj_PRO[NUM=sg, animate=true]->'me'
-obj_PRO[animate=true]->'you'
-obj_PRO[NUM=sg, GEN=m, animate=true]->'him'
-obj_PRO[NUM=sg, GEN=f, animate=true]->'her'
-obj_PRO[NUM=pl, animate=true]->'them'|'us'
+obj_PRO[NUM=sg, PERS=1, animate=true]->'me'
+obj_PRO[PERS=2, animate=true]->'you'
+obj_PRO[NUM=sg, GEN=m, PERS=3, animate=true]->'him'
+obj_PRO[NUM=sg, GEN=f, PERS=3, animate=true]->'her'
+obj_PRO[NUM=pl, PERS=3, animate=true]->'them'
+obj_PRO[NUM=pl, PERS=1, animate=true]->'us'
 
-obj_N[NUM=sg, GEN=m, animate=true] -> 'boy'|'man'
-obj_N[NUM=sg, GEN=f, animate=true] -> 'man'|'woman'
-obj_N[NUM=pl, GEN=m, animate=true] -> 'boys'|'men'
-obj_N[NUM=pl, GEN=f, animate=true] -> 'girls'|'women'
+obj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'|'man'
+obj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'man'|'woman'
+obj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'|'men'
+obj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'|'women'
 
-obj_N[NUM=sg, animate=false] -> 'cat'|'dog'|'mouse'
-obj_N[NUM=pl, animate=false] -> 'cat'|'dog'|'mice'
+obj_N[NUM=sg, PERS=3, animate=false] -> 'cat'|'dog'|'mouse'|'key'
+obj_N[NUM=pl, PERS=3, animate=false] -> 'cat'|'dog'|'mice'|'keys'
 
-obj_PropN[NUM=sg, GEN=f, animate=true]-> 'Alice'|'Mary'
-obj_PropN[NUM=sg, GEN=m, animate=true]-> 'Bob'|'John'
+obj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'|'Mary'
+obj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'|'John'
 
 # verb
-verb_Intrans[TENSE=pres,  NUM=sg, animate=true] -> 'walks'|'smiles'|'cries'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, animate=true] -> 'walks'|'smiles'|'cries'
 verb_Intrans[TENSE=pres,  NUM=pl, animate=true] -> 'walk'|'smile'|'cry'
 verb_Intrans[TENSE=past, animate=true] -> 'walked'|'smiled'|'cried'
 
-verb_Intrans[TENSE=pres,  NUM=sg] -> 'falls'|'disappears'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'|'disappears'
 verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'|'disappear'
 verb_Intrans[TENSE=past] -> 'fell'
 
@@ -99,7 +92,7 @@ verb_Trans[TENSE=pres, NUM=sg, animate=true] -> 'sees'|'watches'
 verb_Trans[TENSE=pres, NUM=pl, animate=true] -> 'see'|'watch'
 verb_Trans[TENSE=past, animate=true] -> 'saw'|'watched'
 
-inf[animate=true] -> 'walk'|'smile'|'cry'
-inf -> 'fall'|'disappear'
+V[animate=true] -> 'walk'|'smile'|'cry'
+V -> 'fall'|'disappear'
 
 verb_Mod[TENSE=future] -> 'will'
