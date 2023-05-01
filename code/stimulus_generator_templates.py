@@ -191,7 +191,7 @@ if args.natask == 'objrel':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-# det N1 that the pronuon V2 V1 det N3
+# det N1 that pronoun V2 V1 det N3
 if args.natask == 'objrel_pronoun':
 
     genders = ['masculine', 'feminine']
@@ -253,6 +253,7 @@ if args.natask == 'objrel_pronoun':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
+# The N1 that the N2 prep the N3 V2 V1 the N4
 if args.natask == 'objrel_nounpp':
 
     genders = ['masculine', 'feminine']
@@ -464,7 +465,7 @@ if args.natask == 'embedding_mental':
     [print('\t'.join(l)) for l in stimuli]
 
 # The N1 prep1 the N3 V1_MATRIX that the N2 prep2 the N4 V2 the N5
-# - opposite genders: not used?
+# - opposite numbers: not used?
 if args.natask == 'embedding_mental_2LRs':
 
     genders = ['masculine', 'feminine']
@@ -630,7 +631,8 @@ if args.natask == 'OR_OR':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-# The N1 that the N2 that the N3 V3 V2 V1 ridiculous
+# The N1_SC that the N2 that the N3 V3 V2 V1_copula ridiculous
+# - opposite numbers: not used?
 if args.natask == 'SC_OR':
 
     genders = ['masculine', 'feminine']
