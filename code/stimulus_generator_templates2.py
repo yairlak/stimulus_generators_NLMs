@@ -13,8 +13,12 @@ FEATURES = {
 
 REMAP_POS = {
     "P": "pronouns",
+    "Pself": "anaphoras",
     "N": "nouns",
     "V": "verbs",
+    "Vi": "verbs_intran",
+    "Q": "quantifiers",
+    "PN": "proper_names",
     "N_SC": "nouns_SC",
     "det": "determinants",
     "V_copula": "copula",
