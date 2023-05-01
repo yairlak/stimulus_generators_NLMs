@@ -88,8 +88,9 @@ verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'|'disappears'
 verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'|'disappear'
 verb_Intrans[TENSE=past] -> 'fell'|'disappeared'
 
-verb_Trans[TENSE=pres, NUM=sg, animate=true] -> 'sees'|'watches'
-verb_Trans[TENSE=pres, NUM=pl, animate=true] -> 'see'|'watch'
+verb_Trans[TENSE=pres, NUM=sg, PERS=1, animate=true] -> 'sees'|'watches'
+verb_Trans[TENSE=pres, NUM=pl, PERS=2, animate=true] -> 'see'|'watch'
+verb_Trans[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'see'|'watch'
 verb_Trans[TENSE=past, animate=true] -> 'saw'|'watched'
 
 V[animate=true] -> 'walk'|'smile'|'cry'
