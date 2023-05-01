@@ -14,8 +14,12 @@ FEATURES = {
 REMAP_POS = {
     "N": "nouns",
     "V": "verbs",
-    "det": "determinants"
+    "N_SC": "nouns_SC",
+    "det": "determinants",
+    "V_copula": "copula",
+    "V_MATRIX": "matrix_verbs"
 }
+
 
 def find_features(pos: str):
     pos_features = []
@@ -107,7 +111,7 @@ class Label:
             try:
                 return sentence.features[int(self.index)][self.feature]
             except:
-                return "FAILED"
+                return "FAILED"  # or underspecified?
 
 
 class Template:
