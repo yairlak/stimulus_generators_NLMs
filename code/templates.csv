@@ -1,0 +1,10 @@
+name;n_repetitions;template;subject_number;subject_gender;object_number;object_gender
+subjrel;1;det N1 that the N2 V2 V1 det N3;w1__number;w1__gender;w3__number;w3__gender
+objrel;1;det N1 that the N2 V2 V1 det N3;w1__gender;w2__number;w3__number;w3__gender
+objrel_pronoun;1;det N1 that pronoun V2 V1 det N3;w1__gender;w2__number;w3__number;w3__gender
+objrel_nounpp;1;The N1 that the N2 prep the N3 V2 V1 the N4;w1__gender;w2__number;w4__number;w4__gender
+embedding_mental_SR;1;det N1 that the N2 V2 V1 det N3;w1__gender;w2__number;w3__number;w3__gender
+embedding_mental;1;The N1 V_MATRIX1 that the N2 prep the N3 V2 the N4;w1__gender;w2__number;w4__number;w4__gender
+embedding_mental_2LRs;1;The N1 prep1 the N3 V_MATRIX1 that the N2 prep2 the N4 V2 the N5;w1__gender;w2__number;w5__number;w5__gender
+OR_OR;1;The N1 that the N2 that the N3 V3 V2 V1 the N4;w1__gender;w2__number;w4__number;w4__gender
+SC_OR;1;The N_SC1 that the N2 that the N3 V3 V2 V_copula1 ridiculous;w1__gender;w2__number;underspecified;underspecified
