@@ -55,9 +55,9 @@ def get_random_article(determiners):
 
 def init_counter(features):
     # Create counter
-    import itertools 
+    import itertools
     counter = {}
-    feature_combinations = list(itertools.product(*features.values())) 
+    feature_combinations = list(itertools.product(*features.values()))
     for comb in feature_combinations:
         counter['_'.join(comb)] = 0
     return counter
@@ -72,7 +72,7 @@ if args.natask == 'subjrel':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -110,7 +110,7 @@ if args.natask == 'subjrel':
         # sentence
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
-        sentence = ' '.join(['The', N1, 'that', V2, 'the', N2, V1, 'the', N3]) 
+        sentence = ' '.join(['The', N1, 'that', V2, 'the', N2, V1, 'the', N3])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -121,7 +121,7 @@ if args.natask == 'subjrel':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -129,14 +129,12 @@ if args.natask == 'subjrel':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-
-
 # det N1 that the N2 V2 V1 det N3
 if args.natask == 'objrel':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -174,7 +172,7 @@ if args.natask == 'objrel':
         # sentence
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
-        sentence = ' '.join(['The', N1, 'that', 'the', N2, V2, V1, 'the', N3]) 
+        sentence = ' '.join(['The', N1, 'that', 'the', N2, V2, V1, 'the', N3])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -185,7 +183,7 @@ if args.natask == 'objrel':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -193,13 +191,12 @@ if args.natask == 'objrel':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-
 # det N1 that the pronuon V2 V1 det N3
 if args.natask == 'objrel_pronoun':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -237,7 +234,7 @@ if args.natask == 'objrel_pronoun':
         # sentence
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
-        sentence = ' '.join(['The', N1, 'that', N2, V2, V1, 'the', N3]) 
+        sentence = ' '.join(['The', N1, 'that', N2, V2, V1, 'the', N3])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -248,7 +245,7 @@ if args.natask == 'objrel_pronoun':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -260,7 +257,7 @@ if args.natask == 'objrel_nounpp':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -311,7 +308,7 @@ if args.natask == 'objrel_nounpp':
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
         last_article = get_random_article(Words['determinants'])
-        sentence = ' '.join(['The', N1, 'that', 'the', N2, prep, 'the', N3, V2, V1, 'the', N4]) 
+        sentence = ' '.join(['The', N1, 'that', 'the', N2, prep, 'the', N3, V2, V1, 'the', N4])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3, IX_N4]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -322,7 +319,7 @@ if args.natask == 'objrel_nounpp':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -335,7 +332,7 @@ if args.natask == 'embedding_mental_SR':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -373,7 +370,7 @@ if args.natask == 'embedding_mental_SR':
         # sentence
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
-        sentence = ' '.join(['The', N1, V1, 'that', 'the', N2, V2, 'the', N3]) 
+        sentence = ' '.join(['The', N1, V1, 'that', 'the', N2, V2, 'the', N3])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -384,7 +381,7 @@ if args.natask == 'embedding_mental_SR':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['matrix_verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -392,12 +389,12 @@ if args.natask == 'embedding_mental_SR':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-
+# The N1 V1_MATRIX that the N2 prep the N3 V2 the N4
 if args.natask == 'embedding_mental':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -447,7 +444,7 @@ if args.natask == 'embedding_mental':
         # sentence
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
-        sentence = ' '.join(['The', N1, V1, 'that', 'the', N2, prep, 'the', N3, V2, 'the', N4]) 
+        sentence = ' '.join(['The', N1, V1, 'that', 'the', N2, prep, 'the', N3, V2, 'the', N4])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3, IX_N4]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -458,7 +455,7 @@ if args.natask == 'embedding_mental':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['matrix_verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -466,12 +463,13 @@ if args.natask == 'embedding_mental':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-
+# The N1 prep1 the N3 V1_MATRIX that the N2 prep2 the N4 V2 the N5
+# - opposite genders: not used?
 if args.natask == 'embedding_mental_2LRs':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -531,7 +529,7 @@ if args.natask == 'embedding_mental_2LRs':
         # sentence
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
-        sentence = ' '.join(['The', N1, prep1, 'the', N3, V1, 'that', 'the', N2, prep2, 'the', N4, V2, 'the', N5]) 
+        sentence = ' '.join(['The', N1, prep1, 'the', N3, V1, 'that', 'the', N2, prep2, 'the', N4, V2, 'the', N5])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3, IX_N4, IX_N5]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -544,7 +542,7 @@ if args.natask == 'embedding_mental_2LRs':
                                N3_gender, N3_number,
                                N4_gender, N4_number,
                                Words['matrix_verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2]])
-                        counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number, N4_gender, N4_number])]+=1 
+                        counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number, N4_gender, N4_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -552,12 +550,12 @@ if args.natask == 'embedding_mental_2LRs':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-
+# The N1 that the N2 that the N3 V3 V2 V1 the N4
 if args.natask == 'OR_OR':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_gender'] = genders
     features['N1_number'] = numbers
@@ -611,7 +609,7 @@ if args.natask == 'OR_OR':
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
         last_article = get_random_article(Words['determinants'])
-        sentence = ' '.join(['The', N1, 'that', 'the', N2, 'that', 'the', N3, V3, V2, V1, 'the', N4]) 
+        sentence = ' '.join(['The', N1, 'that', 'the', N2, 'that', 'the', N3, V3, V2, V1, 'the', N4])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3, IX_N4]
         verb_IXs = [IX_V1, IX_V2, IX_V3]
@@ -624,7 +622,7 @@ if args.natask == 'OR_OR':
                            N3_gender, N3_number,
                            N4_gender, N4_number,
                            Words['verbs'][opposite_number_V1][IX_V1], Words['verbs'][opposite_number_V2][IX_V2], Words['verbs'][opposite_number_V3][IX_V3]])
-                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number, N4_gender, N4_number])]+=1 
+                    counter['_'.join([N1_gender, N1_number, N2_gender, N2_number, N3_gender, N3_number, N4_gender, N4_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
@@ -632,12 +630,12 @@ if args.natask == 'OR_OR':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-
+# The N1 that the N2 that the N3 V3 V2 V1 ridiculous
 if args.natask == 'SC_OR':
 
     genders = ['masculine', 'feminine']
     numbers = ['singular', 'plural']
-    
+
     features = {}
     features['N1_number'] = numbers
     features['N2_gender'] = genders
@@ -682,7 +680,7 @@ if args.natask == 'SC_OR':
         opposite_number_V2 = 'singular' if N2_number == 'plural' else 'plural'
         opposite_number_V1 = 'singular' if N1_number == 'plural' else 'plural'
         last_article = get_random_article(Words['determinants'])
-        sentence = ' '.join(['The', N1, 'that', 'the', N2, 'that', 'the', N3, V3, V2, V1, 'ridiculous']) 
+        sentence = ' '.join(['The', N1, 'that', 'the', N2, 'that', 'the', N3, V3, V2, V1, 'ridiculous'])
 
         noun_IXs = [IX_N1, IX_N2, IX_N3]
         if len(set(noun_IXs)) == len(noun_IXs): # check noun repetition at the lemma level (i.e., all indexes are different)
@@ -693,7 +691,7 @@ if args.natask == 'SC_OR':
                            N2_gender, N2_number,
                            N3_gender, N3_number,
                            Words['copula'][opposite_number_V1][IX_V1], Words['verbs_intran'][opposite_number_V2][IX_V2], Words['verbs'][opposite_number_V3][IX_V3]])
-                    counter['_'.join([N1_number, N2_gender, N2_number, N3_gender, N3_number])]+=1 
+                    counter['_'.join([N1_number, N2_gender, N2_number, N3_gender, N3_number])]+=1
 
     stimuli.sort(key=lambda x: x[1]) # first word
     stimuli.sort(key=lambda x: x[7], reverse=True) # feature 1
