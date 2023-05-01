@@ -57,14 +57,15 @@ def csv_to_param(csvfilename):
         reader = csv.DictReader(csvfile, delimiter=';')
         templates_param = []
         for row in reader:
-            row['n_repetitions'] = float(row['n_repetitions'])
-            other_cols = {key: value for key, value in row.items() if key not in ['name', 'n_repetitions', 'template']}
-            row_dict = {
-                'name': row['name'],
-                'n_repetitions': row['n_repetitions'],
-                'template_str': row['template'],
-                'labels': other_cols.values()}
-            templates_param.append(row_dict)
+            if not all(val == '' for val in row.values()):
+                row['n_repetitions'] = float(row['n_repetitions'])
+                other_cols = {key: value for key, value in row.items() if key not in ['name', 'n_repetitions', 'template']}
+                row_dict = {
+                    'name': row['name'],
+                    'n_repetitions': row['n_repetitions'],
+                    'template_str': row['template'],
+                    'labels': other_cols.values()}
+                templates_param.append(row_dict)
     return templates_param
 
 
