@@ -278,6 +278,6 @@ if __name__ == "__main__":
     for template_param in templates_param:
         template = Template(**template_param)
         c = template.generate_corpus()
-        for s in c:
+        for s in c[:2]:
             print(f"- {s}\t{s.show_labels()}")
         print()
