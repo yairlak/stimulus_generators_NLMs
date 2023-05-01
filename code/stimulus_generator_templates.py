@@ -67,7 +67,7 @@ def counter_fullfilled(counter, n):
     return False if any(v < n for v in list(counter.values())) else True
 
 
-# det N1 that the N2 V2 V1 det N3
+# det N1 that V2 the N2 V1 det N3
 if args.natask == 'subjrel':
 
     genders = ['masculine', 'feminine']
@@ -328,7 +328,7 @@ if args.natask == 'objrel_nounpp':
     stimuli.sort(key=lambda x: x[3], reverse=True) # feature 2
     [print('\t'.join(l)) for l in stimuli]
 
-# det N1 that the N2 V2 V1 det N3
+# det N1 V1_MATRIX that the N2 V2 det N3
 if args.natask == 'embedding_mental_SR':
 
     genders = ['masculine', 'feminine']

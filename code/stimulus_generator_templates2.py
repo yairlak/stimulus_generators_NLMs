@@ -12,6 +12,7 @@ FEATURES = {
 }
 
 REMAP_POS = {
+    "P": "pronouns",
     "N": "nouns",
     "V": "verbs",
     "N_SC": "nouns_SC",
@@ -98,9 +99,14 @@ class Word:
 class Label:
     def __init__(self, label_code: str=""):
         self.label_code = label_code
-        if self.label_code[0] == "w":
+
+        if (self.label_code) and (self.label_code[0] == "w"):
             self.type = "w"
-            self.index, self.feature = self.label_code[1:].split("__")
+            label_split = self.label_code[1:].split("__")
+            if len(label_split) == 2:
+                self.index, self.feature = label_split
+            else:
+                self.type = "code"
         else:
             self.type = "code"
 
@@ -229,6 +235,14 @@ class Sentence:
         return True
 
     def __repr__(self):
+        for i, w in enumerate(self.words[:-1]):
+            if w.word_form in ["a", "an"]:
+                w_next = self.words[i+1]
+                if w_next.word_form[0] in ["a", "e", "i", "o", "u"]:  # forget about 'h'
+                    w.word_form = "an"
+                else:
+                    w.word_form = "a"
+
         res = " ".join([w.word_form for w in self.words])
         res = res.replace("  ", " ").strip().lower()
         return res
@@ -236,8 +250,9 @@ class Sentence:
     def show_labels(self):
         labels = []
         if self.template.labels is not None:
-            labels = [label.extract(self)
-                    for label in self.template.labels]
+            labels = [
+                label.extract(self)
+                for label in self.template.labels]
         return "\t".join(labels)
 
     def __eq__(self, other):
