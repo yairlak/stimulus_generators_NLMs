@@ -74,7 +74,7 @@ obj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'|'men'
 obj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'|'women'
 
 obj_N[NUM=sg, PERS=3, animate=false] -> 'cat'|'dog'|'mouse'|'key'
-obj_N[NUM=pl, PERS=3, animate=false] -> 'cat'|'dog'|'mice'|'keys'
+obj_N[NUM=pl, PERS=3, animate=false] -> 'cats'|'dogs'|'mice'|'keys'
 
 obj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'|'Mary'
 obj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'|'John'
