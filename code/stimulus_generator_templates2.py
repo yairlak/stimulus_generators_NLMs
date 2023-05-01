@@ -252,13 +252,13 @@ class Sentence:
         res = res.replace("  ", " ").strip().lower()
         return res
 
-    def show_labels(self):
+    def show_labels(self, sep='\t'):
         labels = []
         if self.template.labels is not None:
             labels = [
                 label.extract(self)
                 for label in self.template.labels]
-        return "\t".join(labels)
+        return sep.join(labels)
 
     def __eq__(self, other):
         if isinstance(other, Sentence):
@@ -274,10 +274,19 @@ if __name__ == "__main__":
         print(f"- {s}\t{s.show_labels()}")
     print()
 
-    templates_param = csv_to_param('code/templates.csv')
-    for template_param in templates_param:
-        template = Template(**template_param)
-        c = template.generate_corpus()
-        for s in c[:2]:
-            print(f"- {s}\t{s.show_labels()}")
-        print()
+    output_filename = "stimuli/stimuli_from_templates.csv"
+    sep = ','
+    with open(output_filename, 'w') as fn:
+        templates_param = csv_to_param('code/templates.csv')
+        for template_param in templates_param:
+            template = Template(**template_param)
+            c = template.generate_corpus()
+            for s in c:
+                fn.write(f"{s}{sep}{s.show_labels(sep=sep)}")
+                fn.write("\n")
+
+    # TODO: filter bad sentences, eg, with plurals for questions 'who come'
+    # TODO: add more tense options
+    # TODO: resolve the features conditionals on others (e.g., match/mismatch)
+    # TODO: improve determiners
+    # TODO: add possessives
