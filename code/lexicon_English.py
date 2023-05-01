@@ -38,6 +38,39 @@ pronouns['feminine']['singular'] = ['she']
 pronouns['feminine']['plural'] = ['they']
 
 ###################
+###### ANAPHORAS ######
+###################
+# Initialization
+anaphoras = {}
+for gender in ['masculine', 'feminine']:
+    anaphoras[gender] = {}
+# Tokens
+anaphoras['masculine']['singular'] = ['himself']
+anaphoras['masculine']['plural'] = ['themselves']
+anaphoras['feminine']['singular'] = ['herself']
+anaphoras['feminine']['plural'] = ['themselves']
+
+###################
+###### QUANTIFIERS ######
+###################
+# Initialization
+quantifiers = {}
+# Tokens
+quantifiers['singular'] = ['every', 'no']
+quantifiers['plural'] = ['most', 'many', 'few']
+
+###################
+###### PROPER NAMES ######
+###################
+# Initialization
+proper_names = {}
+for number in ['singular']:
+    proper_names[number] = {}
+# Tokens
+proper_names['singular']['masculine']=['Johnny', 'Alfred']
+proper_names['singular']['feminine']=['Mary', 'Alice']
+
+###################
 ###### NOUNS ######
 ###################
 # Initialization
@@ -120,4 +153,19 @@ adjectives = {}
 #adjectives['feminine']['plural'] = ['belle', 'famose', 'brutte', 'ricche', 'povere', 'basse', 'alte', 'grasse', 'cattive', 'buone', 'lente', 'nuove']
 
 
-Words = {'determinants':determinants.copy(), 'pronouns':pronouns.copy(), 'nouns':nouns.copy(), 'nouns_SC':nouns_SC.copy(), 'location_nouns':location_nouns.copy(), 'verbs':verbs.copy(), 'verbs_intran':verbs_intran.copy(), 'copula':copula.copy(), 'matrix_verbs':matrix_verbs.copy(), 'loc_preps':loc_preps.copy(), 'adjectives':adjectives.copy()}
+Words = {
+    'determinants':determinants.copy(),
+    'pronouns':pronouns.copy(),
+    'nouns':nouns.copy(),
+    'nouns_SC':nouns_SC.copy(),
+    'location_nouns':location_nouns.copy(),
+    'verbs':verbs.copy(),
+    'verbs_intran':verbs_intran.copy(),
+    'copula':copula.copy(),
+    'matrix_verbs':matrix_verbs.copy(),
+    'loc_preps':loc_preps.copy(),
+    'adjectives':adjectives.copy(),
+    'quantifiers':quantifiers.copy(),
+    'proper_names':proper_names.copy(),
+    'anaphoras':anaphoras.copy()
+    }
