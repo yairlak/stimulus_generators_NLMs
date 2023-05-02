@@ -36,7 +36,9 @@ cols.insert(0, cols.pop(cols.index('sentence')))
 df_sentences = df_sentences.loc[:, cols]
 
 # Remove cases where subject and object are the same (e.g., the dog watches the dog)
+# TODO: should be done at the lemma level
 df_sentences = df_sentences.query("subj!=obj")
+df_sentences = df_sentences.query("subj!=embed")
 
 # Print and save
 print(df_sentences)

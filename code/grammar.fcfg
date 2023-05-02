@@ -22,6 +22,17 @@ objNP[NUM=?n] -> obj_Det[NUM=?n] obj_N[NUM=?n]
 objNP[NUM=?n] -> obj_Quantifier[NUM=?n] obj_N[NUM=?n]
 objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
 
+
+#############
+# TEMPLATES #
+#############
+
+# Long-range agreement across a PP
+S[NUM=?n, animate=?a] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] P Det[NUM=unspec] pp_N verb_Intrans[TENSE=pres, NUM=?n, animate=?a]
+
+# RCs
+S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
+
 #######################
 # Lexical Productions #
 #######################
@@ -42,16 +53,16 @@ subj_PRO[NUM=sg, PERS=3, animate=false]->'it'
 subj_PRO[NUM=pl, PERS=3, animate=true]->'they'
 subj_PRO[NUM=pl, PERS=1, animate=true]->'we'
 
-subj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'|'man'
-subj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'|'woman'
-subj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'|'men'
-subj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'|'women'
+subj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
+subj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
+subj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
+subj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
 
-subj_N[NUM=sg, PERS=3, animate=false] -> 'cat'|'dog'|'mouse'|'key'
-subj_N[NUM=pl, PERS=3, animate=false] -> 'cats'|'dogs'|'mice'|'keys'
+subj_N[NUM=sg, PERS=3, animate=false] -> 'cat'
+subj_N[NUM=pl, PERS=3, animate=false] -> 'cats'
 
-subj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'|'Mary'
-subj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'|'John'
+subj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'
+subj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'
 
 # object
 obj_Det[NUM=sg] -> 'this'
@@ -68,33 +79,55 @@ obj_PRO[NUM=sg, GEN=f, PERS=3, animate=true]->'her'
 obj_PRO[NUM=pl, PERS=3, animate=true]->'them'
 obj_PRO[NUM=pl, PERS=1, animate=true]->'us'
 
-obj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'|'man'
-obj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'man'|'woman'
-obj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'|'men'
-obj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'|'women'
+obj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
+obj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
+obj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
+obj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
 
-obj_N[NUM=sg, PERS=3, animate=false] -> 'cat'|'dog'|'mouse'|'key'
-obj_N[NUM=pl, PERS=3, animate=false] -> 'cats'|'dogs'|'mice'|'keys'
+obj_N[NUM=sg, PERS=3, animate=false] -> 'cat'
+obj_N[NUM=pl, PERS=3, animate=false] -> 'cats'
 
-obj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'|'Mary'
-obj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'|'John'
+obj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'
+obj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'
 
 # verb
-verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, animate=true] -> 'walks'|'smiles'|'cries'
-verb_Intrans[TENSE=pres,  NUM=pl, animate=true] -> 'walk'|'smile'|'cry'
-verb_Intrans[TENSE=past, animate=true] -> 'walked'|'smiled'|'cried'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, animate=true] -> 'walks'
+verb_Intrans[TENSE=pres,  NUM=pl, animate=true] -> 'walk'
+verb_Intrans[TENSE=past, animate=true] -> 'walked'
 
-verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'|'disappears'
-verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'|'disappear'
-verb_Intrans[TENSE=past] -> 'fell'|'disappeared'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
+verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
+verb_Intrans[TENSE=past] -> 'fell'
 
-verb_Trans[TENSE=pres, PERS=1, animate=true] -> 'see'|'watch'
-verb_Trans[TENSE=pres, PERS=2, animate=true] -> 'see'|'watch'
-verb_Trans[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'sees'|'watches'
-verb_Trans[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'see'|'watch'
-verb_Trans[TENSE=past, animate=true] -> 'saw'|'watched'
+verb_Trans[TENSE=pres, PERS=1, animate=true] -> 'see'
+verb_Trans[TENSE=pres, PERS=2, animate=true] -> 'see'
+verb_Trans[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'sees'
+verb_Trans[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'see'
+verb_Trans[TENSE=past, animate=true] -> 'saw'
 
-V[animate=true] -> 'walk'|'smile'|'cry'
-V -> 'fall'|'disappear'
 
 verb_Mod[TENSE=future] -> 'will'
+
+# pp
+pp_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
+pp_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
+pp_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
+pp_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
+
+# embedded nouns
+embed_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
+embed_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
+embed_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
+embed_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
+
+# Other
+
+Det[NUM=sg] -> 'this'
+Det[NUM=pl] -> 'these'
+Det[NUM=unspec] -> 'the'
+
+V[animate=true] -> 'walk'
+V -> 'fall'
+P -> 'near'
+Rel -> 'that'
+
