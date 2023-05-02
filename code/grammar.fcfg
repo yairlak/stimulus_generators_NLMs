@@ -28,10 +28,14 @@ objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
 #############
 
 # Long-range agreement across a PP
-S[NUM=?n, animate=?a] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] P Det[NUM=unspec] pp_N verb_Intrans[TENSE=pres, NUM=?n, animate=?a]
+S[NUM=?n, animate=?a] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] P Det[NUM=unspec] embed_N[nesting=pp] verb_Intrans[TENSE=pres, NUM=?n, animate=?a]
 
-# RCs
-S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
+# subjRCs
+S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N[nesting=subjrel] verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
+
+# objRCs
+S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
+nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
 
 #######################
 # Lexical Productions #
@@ -108,17 +112,19 @@ verb_Trans[TENSE=past, animate=true] -> 'saw'
 
 verb_Mod[TENSE=future] -> 'will'
 
-# pp
-pp_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
-pp_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
-pp_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
-pp_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
-
 # embedded nouns
-embed_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
-embed_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
-embed_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
-embed_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
+embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boy'
+embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=pp] -> 'girl'
+embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boys'
+embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=pp] -> 'girls'
+embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=subjrel] -> 'boy'
+embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=subjrel] -> 'girl'
+embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=subjrel] -> 'boys'
+embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=subjrel] -> 'girls'
+embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=objrel] -> 'boy'
+embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=objrel] -> 'girl'
+embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=objrel] -> 'boys'
+embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=objrel] -> 'girls'
 
 # Other
 
