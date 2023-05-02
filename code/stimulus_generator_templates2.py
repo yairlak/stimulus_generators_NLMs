@@ -274,10 +274,10 @@ if __name__ == "__main__":
         print(f"- {s}\t{s.show_labels()}")
     print()
 
-    output_filename = "stimuli/stimuli_from_templates.csv"
+    output_filename = "../stimuli/stimuli_from_templates.csv"
     sep = ','
     with open(output_filename, 'w') as fn:
-        templates_param = csv_to_param('code/templates.csv')
+        templates_param = csv_to_param('templates.csv')
         for template_param in templates_param:
             template = Template(**template_param)
             c = template.generate_corpus()
