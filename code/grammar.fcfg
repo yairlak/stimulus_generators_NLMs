@@ -2,7 +2,8 @@
 #######################
 # Grammar Productions #
 #######################
-S -> subjNP[NUM=?n, PERS=?p, animate=?a] VP[NUM=?n, PERS=?p, animate=?a]
+S[NUM=?n, PERS=?p, animate=?a] -> subjNP[NUM=?n, PERS=?p, animate=?a] VP[NUM=?n, PERS=?p, animate=?a]
+S -> subj_wh verb_Intrans[TESNE=pres, NUM=pl, PERS=3, animate=true]
 
 # subject
 subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PropN[NUM=?n, PERS=?p, animate=?a]
@@ -30,12 +31,21 @@ objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
 # Long-range agreement across a PP
 S[NUM=?n, animate=?a] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] P Det[NUM=unspec] embed_N[nesting=pp] verb_Intrans[TENSE=pres, NUM=?n, animate=?a]
 
+# RCs
+S[NUM=?n, nesting=relative_clause] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] Rel nestedS[NUM=?n, animate=?a] verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
+nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
+nestedS[NUM=?n] -> verb_Trans[TENSE=pres, NUM=?n, PERS=3] Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=subjrel]
+
+# Embedding
+S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, PERS=?p, animate=true] verb_Embed[NUM=?n, PERS=?p, animate=true] Rel nestedClause
+nestedClause[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, nesting=embed] verb_Intrans[NUM=?n]
+
 # subjRCs
-S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N[nesting=subjrel] verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
+#S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N[nesting=subjrel] verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
 
 # objRCs
-S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
-nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
+#S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
+#nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
 
 #######################
 # Lexical Productions #
@@ -56,6 +66,8 @@ subj_PRO[NUM=sg, PERS=3, GEN=f, animate=true]->'she'
 subj_PRO[NUM=sg, PERS=3, animate=false]->'it'
 subj_PRO[NUM=pl, PERS=3, animate=true]->'they'
 subj_PRO[NUM=pl, PERS=1, animate=true]->'we'
+
+subj_wh[NUM=unspec, GEN=unspec, PERS=unspec, animate=true, question=true]-> 'who'
 
 subj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
 subj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
@@ -109,8 +121,12 @@ verb_Trans[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'sees'
 verb_Trans[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'see'
 verb_Trans[TENSE=past, animate=true] -> 'saw'
 
-
 verb_Mod[TENSE=future] -> 'will'
+
+verb_Embed[TENSE=pres, PERS=1, animate=true] -> 'know'
+verb_Embed[TENSE=pres, PERS=2, animate=true] -> 'know'
+verb_Embed[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'knows'
+verb_Embed[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'know'
 
 # embedded nouns
 embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boy'
@@ -125,6 +141,10 @@ embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=objrel] -> 'boy'
 embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=objrel] -> 'girl'
 embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=objrel] -> 'boys'
 embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=objrel] -> 'girls'
+embed_N[NUM=sg, GEN=m, PERS=3, nesting=embed] -> 'boy'
+embed_N[NUM=sg, GEN=f, PERS=3, nesting=embed] -> 'girl'
+embed_N[NUM=pl, GEN=m, PERS=3, nesting=embed] -> 'boys'
+embed_N[NUM=pl, GEN=f, PERS=3, nesting=embed] -> 'girls'
 
 # Other
 
