@@ -38,6 +38,8 @@ nestedS[NUM=?n] -> verb_Trans[TENSE=pres, NUM=?n, PERS=3] Det[NUM=unspec] embed_
 # Embedding
 S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, PERS=?p, animate=true] verb_Embed[NUM=?n, PERS=?p, animate=true] nestedClause
 nestedClause[NUM=?n] -> Rel Det[NUM=unspec] embed_N[NUM=?n, nesting=thatclause] verb_Intrans[NUM=?n, PERS=3]
+nestedQ[NUM=?n] -> RelWhether Det[NUM=unspec] embed_N[NUM=?n, nesting=whetherclause] verb_Intrans[NUM=?n, PERS=3]
+nestedQ[NUM=?n] -> DetWh embed_N[NUM=?n, nesting=whichclause] verb_Intrans[NUM=?n, PERS=3]
 
 # subjRCs
 #S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N[nesting=subjrel] verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
@@ -155,4 +157,6 @@ V[animate=true] -> 'walk'
 V -> 'fall'
 P -> 'near'
 Rel -> 'that'
+RelWhether -> 'whether'
+DetWh -> 'which'
 
