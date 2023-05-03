@@ -5,10 +5,11 @@ S[NUM=?n, PERS=?p, animate=?a] -> subjNP[NUM=?n, PERS=?p, animate=?a] VP[NUM=?n,
 S -> subj_wh verb_Intrans[TESNE=pres, NUM=pl, PERS=3, animate=true]
 
 # subject
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PropN[NUM=?n, PERS=?p, animate=?a]
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_Det[NUM=?n] subj_N[NUM=?n, PERS=?p, animate=?a]
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_Quantifier[NUM=?n] subj_N[NUM=?n, PERS=?p, animate=?a]
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PRO[NUM=?n, PERS=?p, animate=?a]
+
+subjNP[GEN=?g, NUM=?n, PERS=?p, animate=?a] -> subj_PropN[GEN=?g, NUM=?n, PERS=?p, animate=?a]
+subjNP[GEN=?g, NUM=?n, PERS=?p, animate=?a] -> subj_Det[NUM=?n] subj_N[GEN=?g, NUM=?n, PERS=?p, animate=?a]
+subjNP[GEN=?g, NUM=?n, PERS=?p, animate=?a] -> subj_Quantifier[NUM=?n] subj_N[GEN=?g, NUM=?n, PERS=?p, animate=?a]
+subjNP[GEN=?g, NUM=?n, PERS=?p, animate=?a] -> subj_PRO[GEN=?g, NUM=?n, PERS=?p, animate=?a, BOUND=false]
 
 # verb
 VP[TENSE=?t, NUM=?n, PERS=?p, animate=?a] -> verb_Intrans[TENSE=?t, NUM=?n, PERS=?p, animate=?a]
@@ -20,7 +21,7 @@ verb_Intrans[TENSE=future, animate=?a] -> verb_Mod[TENSE=future] V[animate=?a]
 objNP[NUM=?n] -> obj_PropN[NUM=?n, GEN=?g]
 objNP[NUM=?n] -> obj_Det[NUM=?n] obj_N[NUM=?n]
 objNP[NUM=?n] -> obj_Quantifier[NUM=?n] obj_N[NUM=?n]
-objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
+objNP[NUM=?n] -> obj_PRO[PERS=?p, NUM=?n, GEN=?g, BOUND=false]
 
 
 #############
@@ -45,6 +46,9 @@ nestedClause[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, nesting=embed] verb_Intr
 # objRCs
 #S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
 #nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
+
+# Binding (reflexive for now)
+S[NUM=?n, GEN=?g, PERS=?p, animate=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, animate=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, animate=?a] obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
 
 #######################
 # Lexical Productions #
@@ -87,12 +91,19 @@ obj_Det -> 'the'
 obj_Quantifier[NUM=sg] -> 'every'
 obj_Quantifier[NUM=pl] -> 'all'
 
-obj_PRO[NUM=sg, PERS=1, animate=true]->'me'
-obj_PRO[PERS=2, animate=true]->'you'
-obj_PRO[NUM=sg, GEN=m, PERS=3, animate=true]->'him'
-obj_PRO[NUM=sg, GEN=f, PERS=3, animate=true]->'her'
-obj_PRO[NUM=pl, PERS=3, animate=true]->'them'
-obj_PRO[NUM=pl, PERS=1, animate=true]->'us'
+obj_PRO[NUM=sg, PERS=1, animate=true, BOUND=false]->'me'
+obj_PRO[NUM=sg, PERS=1, animate=true, BOUND=true]->'myself'
+obj_PRO[PERS=2, animate=true, BOUND=false]->'you'
+obj_PRO[PERS=2, NUM=sg, animate=true, BOUND=true]->'yourself'
+obj_PRO[PERS=2, NUM=pl, animate=true, BOUND=true]->'yourselves'
+obj_PRO[NUM=sg, GEN=m, PERS=3, animate=true, BOUND=false]->'him'
+obj_PRO[NUM=sg, GEN=m, PERS=3, animate=true, BOUND=true]->'himself'
+obj_PRO[NUM=sg, GEN=f, PERS=3, animate=true, BOUND=false]->'her'
+obj_PRO[NUM=sg, GEN=f, PERS=3, animate=true, BOUND=true]->'herself'
+obj_PRO[NUM=pl, PERS=3, animate=true, BOUND=false]->'them'
+obj_PRO[NUM=pl, PERS=3, animate=true, BOUND=true]->'themselves'
+obj_PRO[NUM=pl, PERS=1, animate=true, BOUND=false]->'us'
+obj_PRO[NUM=pl, PERS=1, animate=true, BOUND=true]->'ourselves'
 
 obj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
 obj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
