@@ -128,6 +128,7 @@ verb_Embed[TENSE=pres, PERS=1, animate=true] -> 'know'
 verb_Embed[TENSE=pres, PERS=2, animate=true] -> 'know'
 verb_Embed[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'knows'
 verb_Embed[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'know'
+# Other options which can embed which,whether,that-clauses: 'remember'|'say'|'declare'
 
 # embedded nouns
 embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boy'
