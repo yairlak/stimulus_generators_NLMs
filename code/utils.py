@@ -8,9 +8,9 @@ def add_features_to_dict(d, pos_tuple):
             svo = None
             if '_' in val:
                 svo, svo_type = val.split('_')
-                if svo_type in ['Quantifier', 'Det']: # Exception
+                if svo_type in ['Quantifier']: # Exception
                     d[val] = word # val:subj_QuantifierTrue
-                else:
+                elif svo_type!='':
                     d[f'{svo}_type'] = svo_type
                     d[f'{svo}'] = word
         else: # Features of pos
