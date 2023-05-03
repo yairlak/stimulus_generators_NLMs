@@ -1,4 +1,3 @@
-
 #######################
 # Grammar Productions #
 #######################
@@ -46,14 +45,6 @@ nestedClause[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, nesting=embed] verb_Intr
 # objRCs
 #S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
 #nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
-
-
-# # RCs suggestion
-# S[NUM=?n, nesting=relative_clause] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] Rel nestedS[NUM=?n, animate=?a] verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
-# nestedS[NUM=?n, animate=?a] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
-# nestedS[NUM=?n, animate=?a] -> verb_Trans[TENSE=pres, NUM=?n, PERS=3] Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=subjrel]
-
-
 
 #######################
 # Lexical Productions #
@@ -115,12 +106,12 @@ obj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'
 obj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'
 
 # verb
-verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, animate=true] -> 'walks'
-verb_Intrans[TENSE=pres,  NUM=pl, animate=true] -> 'walk'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, animate=true] -> 'walks'
+verb_Intrans[TENSE=pres,  NUM=pl, animate=true] -> 'walk'
 verb_Intrans[TENSE=past, animate=true] -> 'walked'
 
-verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
-verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
+verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
 verb_Intrans[TENSE=past] -> 'fell'
 
 verb_Trans[TENSE=pres, PERS=1, animate=true] -> 'see'
