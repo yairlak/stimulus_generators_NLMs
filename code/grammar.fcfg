@@ -47,8 +47,14 @@ nestedClause[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, nesting=embed] verb_Intr
 #S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
 #nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
 
-# Binding (reflexive for now)
+# Binding (reflexives)
 S[NUM=?n, GEN=?g, PERS=?p, animate=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, animate=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, animate=?a] obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
+
+# Binding (possessives)
+S[NUM=?n, GEN=?g, PERS=?p, animate=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, animate=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, animate=?a] possNP
+S[NUM=?n, GEN=?g, PERS=?p, animate=?a] -> possNP verb_Trans[TENSE=?t, NUM=?n, PERS=?p, animate=?a] objNP[NUM=?n, GEN=?g, PERS=?p, animate=?a]
+possNP[NUM=?n, GEN=?g, PERS=?p, POSS=true] -> possDet[NUM=?n, GEN=?g, PERS=?p, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true]
+
 
 #######################
 # Lexical Productions #
@@ -167,3 +173,20 @@ V -> 'fall'
 P -> 'near'
 Rel -> 'that'
 
+possDet[NUM=sg, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'my'
+possDet[NUM=pl, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'our'
+
+possDet[NUM=sg, GEN=f, PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
+possDet[NUM=sg, GEN=m, PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
+possDet[NUM=pl, GEN=f, PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
+possDet[NUM=pl, GEN=m, PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
+
+possDet[NUM=sg, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'her'
+possDet[NUM=sg, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'his'
+possDet[NUM=pl, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
+possDet[NUM=pl, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
+
+possN[NUM=sg, GEN=f, POSS=true] -> 'mother'
+possN[NUM=sg, GEN=m, POSS=true] -> 'father'
+possN[NUM=pl, GEN=f, POSS=true] -> 'sisters'
+possN[NUM=pl, GEN=m, POSS=true] -> 'brothers'
