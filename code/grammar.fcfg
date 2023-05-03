@@ -37,8 +37,10 @@ nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel]
 nestedS[NUM=?n] -> verb_Trans[TENSE=pres, NUM=?n, PERS=3] Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=subjrel]
 
 # Embedding
-S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, PERS=?p, animate=true] verb_Embed[NUM=?n, PERS=?p, animate=true] Rel nestedClause
-nestedClause[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, nesting=embed] verb_Intrans[NUM=?n]
+S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, PERS=?p, animate=true] verb_Embed[NUM=?n, PERS=?p, animate=true] nestedClause
+nestedClause[NUM=?n] -> Rel Det[NUM=unspec] embed_N[NUM=?n, nesting=thatclause] verb_Intrans[NUM=?n, PERS=3]
+nestedQ[NUM=?n] -> RelWhether Det[NUM=unspec] embed_N[NUM=?n, nesting=whetherclause] verb_Intrans[NUM=?n, PERS=3]
+nestedQ[NUM=?n] -> DetWh embed_N[NUM=?n, nesting=whichclause] verb_Intrans[NUM=?n, PERS=3]
 
 # subjRCs
 #S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N[nesting=subjrel] verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
@@ -137,6 +139,7 @@ verb_Embed[TENSE=pres, PERS=1, animate=true] -> 'know'
 verb_Embed[TENSE=pres, PERS=2, animate=true] -> 'know'
 verb_Embed[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'knows'
 verb_Embed[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'know'
+# Other options which can embed which,whether,that-clauses: 'remember'|'say'|'declare'
 
 # embedded nouns
 embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boy'
@@ -166,4 +169,6 @@ V[animate=true] -> 'walk'
 V -> 'fall'
 P -> 'near'
 Rel -> 'that'
+RelWhether -> 'whether'
+DetWh -> 'which'
 
