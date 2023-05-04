@@ -5,10 +5,10 @@
 S[GROUP=?e] -> subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=?e] VP[NUM=?n, PERS=?p, ANIM=?a]
 
 # subject
-subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=svo] -> subj_PropN[NUM=?n, PERS=?p, ANIM=?a]
-subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=svo] -> Det subj_N[NUM=?n, PERS=?p, ANIM=?a]
-subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=svo] -> subj_Quantifier[NUM=?n] subj_N[NUM=?n, PERS=?p, ANIM=?a]
-subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=svo] -> subj_PRO[NUM=?n, PERS=?p, ANIM=?a]
+subjNP[NUM=?n, PERS=?p, GEN=?g, ANIM=?a, GROUP=svo] -> subj_PropN[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+subjNP[NUM=?n, PERS=?p, GEN=?g, ANIM=?a, GROUP=svo] -> Det subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+subjNP[NUM=?n, PERS=?p, GEN=?g, ANIM=?a, GROUP=svo] -> subj_Quantifier[NUM=?n, PERS=?p] subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+subjNP[NUM=?n, PERS=?p, GEN=?g, ANIM=?a, GROUP=svo] -> subj_PRO[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
 
 # verb
 VP[NUM=?n, PERS=?p, ANIM=?a] -> verb_Intrans[NUM=?n, PERS=?p, ANIM=?a]
@@ -65,8 +65,8 @@ nestedClause[GROUP=embed_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=em
 ###########
 
 # Binding (reflexives)
-S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objPRO[GROUP=?e]
-objPRO[GROUP=binding] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
+S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objPRO[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+objPRO[GROUP=binding, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
 
 # Binding (possessives)
 S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possNP[GROUP=?e]
