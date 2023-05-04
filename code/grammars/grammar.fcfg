@@ -26,7 +26,7 @@ objNP -> obj_PRO
 #############
 
 # subject questions (intransitive verb)
-S[GROUP=?e] -> subjWho[GROUP=?e] verb_Intrans[TESNE=pres, NUM=sg, PERS=3, ANIM=true]
+S[GROUP=?e] -> subjWho[GROUP=?e] verb_Intrans[TENSE=pres, NUM=sg, PERS=3, ANIM=true]
 subjWho[GROUP=subjquest_intrans] -> subj_who
 
 # subject questions (transitive verb)
@@ -71,7 +71,7 @@ objPRO[GROUP=binding] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
 # Binding (possessives)
 S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possNP[GROUP=?e]
 S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> possNP[GROUP=?e] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
-possNP[GROUP=possesif, NUM=?n, GEN=?g, PERS=?p, POSS=true] -> poss_Det[NUM=?n, GEN=?g, PERS=?p, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true]
+possNP[GROUP=possessive, NUM=?n, GEN=?g, PERS=?p, POSS=true] -> poss_Det[NUM=?n, GEN=?g, PERS=?p, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true]
 
 #######################
 # Lexical Productions #
