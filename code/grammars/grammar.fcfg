@@ -18,7 +18,7 @@ verb_Intrans[TENSE=future, ANIM=?a] -> verb_Mod[TENSE=future] V[ANIM=?a]
 # object
 objNP -> obj_PropN
 objNP -> Det obj_N
-objNP -> obj_Quantifier obj_N
+objNP -> obj_Quantifier[NUM=?n] obj_N[NUM=?n]
 objNP -> obj_PRO
 
 #############
