@@ -1,6 +1,7 @@
 ########
 # SVOs #
 ########
+
 S[GROUP=?e] -> subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=?e] VP[NUM=?n, PERS=?p, ANIM=?a]
 
 # subject
@@ -12,7 +13,6 @@ subjNP[NUM=?n, PERS=?p, ANIM=?a, GROUP=svo] -> subj_PRO[NUM=?n, PERS=?p, ANIM=?a
 # verb
 VP[NUM=?n, PERS=?p, ANIM=?a] -> verb_Intrans[NUM=?n, PERS=?p, ANIM=?a]
 VP[NUM=?n, PERS=?p, ANIM=?a] -> verb_Trans[NUM=?n, PERS=?p, ANIM=?a] objNP
-
 verb_Intrans[TENSE=future, ANIM=?a] -> verb_Mod[TENSE=future] V[ANIM=?a]
 
 # object
@@ -24,8 +24,18 @@ objNP -> obj_PRO
 #############
 # QUESTIONS #
 #############
+
+# subject questions (intransitive verb)
 S[GROUP=?e] -> subjWho[GROUP=?e] verb_Intrans[TESNE=pres, NUM=sg, PERS=3, ANIM=true]
-subjWho[GROUP=who] -> subj_who
+subjWho[GROUP=subjquest_intrans] -> subj_who
+
+# subject questions (transitive verb)
+S[GROUP=?e] -> subjWH[GROUP=?e]
+subjWH[GROUP=subjquest_trans] -> subj_who verb_Trans[TENSE=pres, NUM=sg, PERS=3, ANIM=true] Det obj_N
+
+# object questions
+S[GROUP=?e] -> objWh[GROUP=?e] verb_Trans[TENSE=unspec, ANIM=true]
+objWh[GROUP=objquest] -> obj_WH do_Aux[NUM=?n] Det subj_N[NUM=?n, ANIM=true]
 
 ########################
 # Long-Range Agreement #
@@ -36,7 +46,6 @@ nestedPP[GROUP=pp] -> P Det embedsubj_N[GROUP=pp]
 ##############
 # EMBEDDINGS #
 ##############
-
 # object RCs
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=3, ANIM=true] rel_That Objrel[GROUP=?g] verb_Intrans[TENSE=pres, NUM=?n, PERS=3, ANIM=true]
 Objrel[GROUP=objrel] -> Det embedsubj_N[NUM=?n, ANIM=true, GROUP=objrel] embedverb_Trans[NUM=?n, TENSE=pres, PERS=3]
@@ -51,7 +60,6 @@ nestedClause[GROUP=embed_clause] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed
 nestedClause[GROUP=embed_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[NUM=?n, PERS=3]
 #nestedClause -> Rel[REL=which] embedsubj_N[NUM=?n] embedverb_Intrans[NUM=?n, PERS=3]
 
-
 ###########
 # BINDING #
 ###########
@@ -64,7 +72,6 @@ objPRO[GROUP=binding] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
 S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possNP[GROUP=?e]
 S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> possNP[GROUP=?e] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
 possNP[GROUP=possesif, NUM=?n, GEN=?g, PERS=?p, POSS=true] -> poss_Det[NUM=?n, GEN=?g, PERS=?p, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true]
-
 
 #######################
 # Lexical Productions #
@@ -86,14 +93,14 @@ subj_PRO[NUM=sg, PERS=3, ANIM=false]->'it'
 subj_PRO[NUM=pl, PERS=3, ANIM=true]->'they'
 subj_PRO[NUM=pl, PERS=1, ANIM=true]->'we'
 
-subj_who[NUM=unspec, GEN=unspec, PERS=unspec, ANIM=true, question=true]-> 'who'
+subj_who[NUM=unspec, GEN=unspec, PERS=unspec, ANIM=true]-> 'who'
 
 subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
 subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
 subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
 subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
-subj_N[NUM=sg, PERS=3, ANIM=false] -> 'cat'
-subj_N[NUM=pl, PERS=3, ANIM=false] -> 'cats'
+subj_N[NUM=sg, PERS=3, ANIM=false] -> 'car'
+subj_N[NUM=pl, PERS=3, ANIM=false] -> 'cars'
 
 subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Alice'
 subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'Bob'
@@ -130,8 +137,10 @@ obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
 obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
 obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
 
-obj_N[NUM=sg, PERS=3, ANIM=false] -> 'cat'
-obj_N[NUM=pl, PERS=3, ANIM=false] -> 'cats'
+obj_N[NUM=sg, PERS=3, ANIM=false] -> 'car'
+obj_N[NUM=pl, PERS=3, ANIM=false] -> 'cars'
+
+obj_WH -> 'who'|'whom'
 
 obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Alice'
 obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'Bob'
@@ -140,7 +149,6 @@ embedobj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
 embedobj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
 embedobj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
 embedobj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
-
 
 # verb
 verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'walks'
@@ -162,6 +170,7 @@ verb_Trans[TENSE=pres, PERS=2, ANIM=true] -> 'see'
 verb_Trans[TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'
 verb_Trans[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'see'
 verb_Trans[TENSE=past, ANIM=true] -> 'saw'
+verb_Trans[TENSE=unspec, ANIM=true] -> 'see'
 
 embedverb_Trans[TENSE=pres, PERS=1, ANIM=true] -> 'see'
 embedverb_Trans[TENSE=pres, PERS=2, ANIM=true] -> 'see'
@@ -179,6 +188,9 @@ verb_Matrix[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'know'
 
 
 # Other
+do_Aux[TENSE=past] -> 'did'
+do_Aux[TENSE=pres, NUM=sg] -> 'does'
+do_Aux[TENSE=pres, NUM=pl] -> 'do'
 
 Det -> 'the'
 
