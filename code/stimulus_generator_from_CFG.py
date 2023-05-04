@@ -46,6 +46,9 @@ cols = sorted(list(df))
 cols.insert(0, cols.pop(cols.index('sentence')))
 df = df.loc[:, cols]
 
+# Remove duplicate sentences
+df = df.drop_duplicates(subset=['sentence'])
+
 # Remove sentences where a lemma is repeated
 SINGLE_STRINGS = [r'dog', r'cat',
                   r'Alice', r'Bob',
@@ -57,6 +60,7 @@ SINGLE_STRINGS = [r'dog', r'cat',
                   ]
 for E in SINGLE_STRINGS:
     df = df[~df['sentence'].apply(check_twice, E=E)]
+df = df.reset_index(drop=True)
 
 # Print and save
 print(df)
