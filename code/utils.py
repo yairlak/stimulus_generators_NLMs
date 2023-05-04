@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import re
+
+
 def add_features_to_dict(d, pos_tuple):
     word, pos = pos_tuple
     for i_item, (key, val) in enumerate(pos.items()):
@@ -19,3 +22,7 @@ def add_features_to_dict(d, pos_tuple):
                 d[f'{svo}_{feature_name}'] = val
     return d
 
+
+def check_twice(sentence, E):
+    matches = re.findall(E, sentence)
+    return len(matches) > 1
