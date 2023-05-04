@@ -59,13 +59,12 @@ Subjrel[NUM=?n, PERS=3, ANIM=true, GROUP=subjrel] -> embedverb_Trans[finite=true
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] nestedClause[GROUP=?g]
 nestedClause[GROUP=that_clause] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
 nestedClause[GROUP=whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
-#TODO: objwho_clause, subjwho_clause
-#TODO: objwhich_clause, subjwhich_clause?
-#WIP:
 nestedClause[GROUP=subjwho_clause] -> subj_who verb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det obj_N
 nestedClause[GROUP=objwho_clause] -> nestedobjWh[GROUP=?e] verb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
 nestedobjWh[GROUP=objwho_clause, NUM=?n, PERS=?p] -> obj_WH Det subj_N[NUM=?n, PERS=?p, ANIM=true]
 nestedClause -> Rel[REL=which] embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
+
+#TODO: embedded which NP clauses?
 
 ###########
 # BINDING #
