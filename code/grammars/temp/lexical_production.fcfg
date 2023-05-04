@@ -1,0 +1,91 @@
+#######################
+# Lexical Productions #
+#######################
+
+# subject
+subj_Quantifier[NUM=sg] -> 'every'
+subj_Quantifier[NUM=pl] -> 'all'
+
+subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
+subj_PRO[NUM=pl, PERS=2, ANIM=true]->'you'
+subj_PRO[NUM=sg, PERS=3, GEN=m, ANIM=true]->'he'
+subj_PRO[NUM=sg, PERS=3, GEN=f, ANIM=true]->'she'
+subj_PRO[NUM=sg, PERS=3, ANIM=false]->'it'
+subj_PRO[NUM=pl, PERS=3, ANIM=true]->'they'
+subj_PRO[NUM=pl, PERS=1, ANIM=true]->'we'
+
+subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
+
+subj_N[NUM=sg, PERS=3, ANIM=false] -> 'cat'
+subj_N[NUM=pl, PERS=3, ANIM=false] -> 'cats'
+
+subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Alice'
+subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'Bob'
+
+embedsubj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+embedsubj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+embedsubj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
+
+# object
+obj_Quantifier[NUM=sg] -> 'every'
+obj_Quantifier[NUM=pl] -> 'all'
+
+obj_PRO[NUM=sg, PERS=1, ANIM=true]->'me'
+obj_PRO[PERS=2, ANIM=true]->'you'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true]->'him'
+obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true]->'her'
+obj_PRO[NUM=pl, PERS=3, ANIM=true]->'them'
+obj_PRO[NUM=pl, PERS=1, ANIM=true]->'us'
+
+obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
+
+obj_N[NUM=sg, PERS=3, ANIM=false] -> 'cat'
+obj_N[NUM=pl, PERS=3, ANIM=false] -> 'cats'
+
+obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Alice'
+obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'Bob'
+
+# verb
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'walks'
+verb_Intrans[TENSE=pres,  NUM=pl, ANIM=true] -> 'walk'
+verb_Intrans[TENSE=past, ANIM=true] -> 'walked'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
+verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
+verb_Intrans[TENSE=past] -> 'fell'
+
+verb_Trans[TENSE=pres, PERS=1, ANIM=true] -> 'see'
+verb_Trans[TENSE=pres, PERS=2, ANIM=true] -> 'see'
+verb_Trans[TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'
+verb_Trans[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'see'
+verb_Trans[TENSE=past, ANIM=true] -> 'saw'
+
+embedverb_Trans[TENSE=pres, PERS=1, ANIM=true] -> 'see'
+embedverb_Trans[TENSE=pres, PERS=2, ANIM=true] -> 'see'
+embedverb_Trans[TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'
+embedverb_Trans[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'see'
+embedverb_Trans[TENSE=past, ANIM=true] -> 'saw'
+
+embedverb_Intrans[TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'walks'
+embedverb_Intrans[TENSE=pres,  NUM=pl, ANIM=true] -> 'walk'
+embedverb_Intrans[TENSE=past, ANIM=true] -> 'walked'
+embedverb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
+embedverb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
+embedverb_Intrans[TENSE=past] -> 'fell'
+
+verb_Mod[TENSE=future] -> 'will'
+
+V[ANIM=true] -> 'walk'
+V -> 'fall'
+
+# Other
+Det -> 'the'
+rel_That -> 'that'
+rel_Whether -> 'whether'
+rel_Which -> 'which'

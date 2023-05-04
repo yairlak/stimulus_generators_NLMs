@@ -1,0 +1,9 @@
+#######################
+# Grammar Productions #
+#######################
+
+# Embedding
+S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[NUM=?n, PERS=?p, ANIM=true] nestedClause[GROUP=?g]
+nestedClause[GROUP=?g] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[NUM=?n, PERS=3]
+nestedClause[GROUP=?g] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[NUM=?n, PERS=3]
+#nestedClause -> Rel[REL=which] embedsubj_N[NUM=?n] embedverb_Intrans[NUM=?n, PERS=3]

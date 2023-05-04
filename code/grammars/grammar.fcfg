@@ -1,26 +1,26 @@
 #######################
 # Grammar Productions #
 #######################
-S[NUM=?n, PERS=?p, animate=?a] -> subjNP[NUM=?n, PERS=?p, animate=?a] VP[NUM=?n, PERS=?p, animate=?a]
-S -> subj_wh verb_Intrans[TESNE=pres, NUM=pl, PERS=3, animate=true]
+S[NUM=?n, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, PERS=?p, ANIM=?a] VP[NUM=?n, PERS=?p, ANIM=?a]
+#S -> subj_wh verb_Intrans[TESNE=pres, NUM=sg, PERS=3, ANIM=true]
 
 # subject
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PropN[NUM=?n, PERS=?p, animate=?a]
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_Det[NUM=?n] subj_N[NUM=?n, PERS=?p, animate=?a]
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_Quantifier[NUM=?n] subj_N[NUM=?n, PERS=?p, animate=?a]
-subjNP[NUM=?n, PERS=?p, animate=?a] -> subj_PRO[NUM=?n, PERS=?p, animate=?a]
+#subjNP[GEN=?g, NUM=?n, PERS=?p, ANIM=?a] -> subj_PropN[GEN=?g, NUM=?n, PERS=?p, ANIM=?a]
+#subjNP[GEN=?g, NUM=?n, PERS=?p, ANIM=?a] -> Det subj_N[GEN=?g, NUM=?n, PERS=?p, ANIM=?a]
+#subjNP[GEN=?g, NUM=?n, PERS=?p, ANIM=?a] -> subj_Quantifier[NUM=?n] subj_N[GEN=?g, NUM=?n, PERS=?p, ANIM=?a]
+#subjNP[GEN=?g, NUM=?n, PERS=?p, ANIM=?a] -> subj_PRO[GEN=?g, NUM=?n, PERS=?p, ANIM=?a, BOUND=false]
 
 # verb
-VP[TENSE=?t, NUM=?n, PERS=?p, animate=?a] -> verb_Intrans[TENSE=?t, NUM=?n, PERS=?p, animate=?a]
-VP[TENSE=?t, NUM=?n, PERS=?p, animate=?a] -> verb_Trans[TENSE=?t, NUM=?n, PERS=?p, animate=?a] objNP
+#VP[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] -> verb_Intrans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a]
+#VP[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] -> verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP
 
-verb_Intrans[TENSE=future, animate=?a] -> verb_Mod[TENSE=future] V[animate=?a]
+#verb_Intrans[TENSE=future, ANIM=?a] -> verb_Mod[TENSE=future] V[ANIM=?a]
 
 # object
-objNP[NUM=?n] -> obj_PropN[NUM=?n, GEN=?g]
-objNP[NUM=?n] -> obj_Det[NUM=?n] obj_N[NUM=?n]
-objNP[NUM=?n] -> obj_Quantifier[NUM=?n] obj_N[NUM=?n]
-objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
+#objNP[NUM=?n] -> obj_PropN[NUM=?n, GEN=?g]
+#objNP[NUM=?n] -> Det obj_N[NUM=?n]
+#objNP[NUM=?n] -> obj_Quantifier[NUM=?n] obj_N[NUM=?n]
+#objNP[NUM=?n] -> obj_PRO[PERS=?p, NUM=?n, GEN=?g, BOUND=false]
 
 
 #############
@@ -28,25 +28,36 @@ objNP[NUM=?n] -> obj_PRO[NUM=?n, GEN=?g]
 #############
 
 # Long-range agreement across a PP
-S[NUM=?n, animate=?a] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] P Det[NUM=unspec] embed_N[nesting=pp] verb_Intrans[TENSE=pres, NUM=?n, animate=?a]
-
-# RCs
-S[NUM=?n, nesting=relative_clause] -> Det[NUM=unspec] subj_N[NUM=?n, animate=?a] Rel nestedS[NUM=?n, animate=?a] verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
-nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
-nestedS[NUM=?n] -> verb_Trans[TENSE=pres, NUM=?n, PERS=3] Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=subjrel]
+S[NEST=?e] -> Det subj_N[NUM=?n, ANIM=?a] nestedPP[NEST=?e] verb_Intrans[TENSE=pres, NUM=?n, ANIM=?a]
+nestedPP[NEST=pp] -> P Det embedsubj_N[NEST=pp]
 
 # Embedding
-S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, PERS=?p, animate=true] verb_Embed[NUM=?n, PERS=?p, animate=true] nestedClause
-nestedClause[NUM=?n] -> Rel Det[NUM=unspec] embed_N[NUM=?n, nesting=thatclause] verb_Intrans[NUM=?n, PERS=3]
-nestedQ[NUM=?n] -> RelWhether Det[NUM=unspec] embed_N[NUM=?n, nesting=whetherclause] verb_Intrans[NUM=?n, PERS=3]
-nestedQ[NUM=?n] -> DetWh embed_N[NUM=?n, nesting=whichclause] verb_Intrans[NUM=?n, PERS=3]
+S[NEST=?e] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[NUM=?n, PERS=?p, ANIM=true] nestedClause[NEST=?e]
+nestedClause[NEST=thatclause] -> Rel Det embedsubj_N[NUM=?n, NEST=thatclause] embedverb_Intrans[NUM=?n, PERS=3]
+#nestedQ[NUM=?n] -> RelWhether Det embed_N[NUM=?n, NEST=whetherclause] verb_Intrans[NUM=?n, PERS=3]
+#nestedQ[NUM=?n] -> DetWh embed_N[NUM=?n, NEST=whichclause] verb_Intrans[NUM=?n, PERS=3]
 
 # subjRCs
-#S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n, animate=true] Rel verb_Trans[TENSE=pres, PERS=3, NUM=?n, animate=true] Det[NUM=unspec] embed_N[nesting=subjrel] verb_Intrans[TENSE=pres, NUM=?n, animate=true, PERS=3]
+S[NEST=?e] -> Det subj_N[NUM=?n, ANIM=true] Rel Subjrel[NEST=?e] verb_Intrans[TENSE=pres, NUM=?n, ANIM=true, PERS=3]
+Subjrel[NEST=subjrel] -> embedverb_Trans[TENSE=pres, PERS=3, NUM=?n, ANIM=true] Det embedobj_N[NEST=subjrel]
 
 # objRCs
-#S[NUM=?n] -> Det[NUM=unspec] subj_N[NUM=?n] Rel nestedS verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
-#nestedS[NUM=?n] -> Det[NUM=unspec] embed_N[NUM=?n, animate=true, nesting=objrel] verb_Trans[TENSE=pres, NUM=?n, PERS=3]
+S[NEST=?e] -> Det subj_N[NUM=?n] Rel Objrel[NEST=?e] verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
+Objrel[NEST=objrel] -> Det embedsubj_N[NUM=?n, ANIM=true, NEST=objrel] embedverb_Trans[TENSE=pres, NUM=?n, PERS=3]
+
+# Binding (reflexives)
+S[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] obj_PRO[NUM=?n, GEN=?g, PERS=?p, BOUND=true]
+
+# Binding (possessives)
+S[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possNP
+S[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> possNP verb_Trans[TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+possNP[NUM=?n, GEN=?g, PERS=?p, POSS=true] -> poss_Det[NUM=?n, GEN=?g, PERS=?p, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true]
+
+# RCs
+#S[NUM=?n, NEST=relative_clause] -> Det subj_N[NUM=?n, ANIM=?a] Rel nestedS[NUM=?n, ANIM=?a] verb_Intrans[TENSE=pres, NUM=?n, PERS=3]
+#nestedS[NUM=?n] -> Det embedsubj_N[NUM=?n, ANIM=true, NEST=objrel] embedverb_Trans[TENSE=pres, NUM=?n, PERS=3]
+#nestedS[NUM=?n] -> embedverb_Trans[TENSE=pres, NUM=?n, PERS=3] Det embedsubj_N[NUM=?n, ANIM=true, NEST=subjrel]
+
 
 #######################
 # Lexical Productions #
@@ -60,26 +71,30 @@ subj_Det -> 'the'
 subj_Quantifier[NUM=sg] -> 'every'
 subj_Quantifier[NUM=pl] -> 'all'
 
-subj_PRO[NUM=sg, PERS=1, animate=true]->'I'
-subj_PRO[NUM=pl, PERS=2, animate=true]->'you'
-subj_PRO[NUM=sg, PERS=3, GEN=m, animate=true]->'he'
-subj_PRO[NUM=sg, PERS=3, GEN=f, animate=true]->'she'
-subj_PRO[NUM=sg, PERS=3, animate=false]->'it'
-subj_PRO[NUM=pl, PERS=3, animate=true]->'they'
-subj_PRO[NUM=pl, PERS=1, animate=true]->'we'
+subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
+subj_PRO[NUM=pl, PERS=2, ANIM=true]->'you'
+subj_PRO[NUM=sg, PERS=3, GEN=m, ANIM=true]->'he'
+subj_PRO[NUM=sg, PERS=3, GEN=f, ANIM=true]->'she'
+subj_PRO[NUM=sg, PERS=3, ANIM=false]->'it'
+subj_PRO[NUM=pl, PERS=3, ANIM=true]->'they'
+subj_PRO[NUM=pl, PERS=1, ANIM=true]->'we'
 
-subj_wh[NUM=unspec, GEN=unspec, PERS=unspec, animate=true, question=true]-> 'who'
+subj_wh[NUM=unspec, GEN=unspec, PERS=unspec, ANIM=true, question=true]-> 'who'
 
-subj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
-subj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
-subj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
-subj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
+subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
+subj_N[NUM=sg, PERS=3, ANIM=false] -> 'cat'
+subj_N[NUM=pl, PERS=3, ANIM=false] -> 'cats'
 
-subj_N[NUM=sg, PERS=3, animate=false] -> 'cat'
-subj_N[NUM=pl, PERS=3, animate=false] -> 'cats'
+subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Alice'
+subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'Bob'
 
-subj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'
-subj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'
+embedsubj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+embedsubj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+embedsubj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
 
 # object
 obj_Det[NUM=sg] -> 'this'
@@ -89,75 +104,95 @@ obj_Det -> 'the'
 obj_Quantifier[NUM=sg] -> 'every'
 obj_Quantifier[NUM=pl] -> 'all'
 
-obj_PRO[NUM=sg, PERS=1, animate=true]->'me'
-obj_PRO[PERS=2, animate=true]->'you'
-obj_PRO[NUM=sg, GEN=m, PERS=3, animate=true]->'him'
-obj_PRO[NUM=sg, GEN=f, PERS=3, animate=true]->'her'
-obj_PRO[NUM=pl, PERS=3, animate=true]->'them'
-obj_PRO[NUM=pl, PERS=1, animate=true]->'us'
+obj_PRO[NUM=sg, PERS=1, ANIM=true, BOUND=false]->'me'
+obj_PRO[NUM=sg, PERS=1, ANIM=true, BOUND=true]->'myself'
+obj_PRO[PERS=2, ANIM=true, BOUND=false]->'you'
+obj_PRO[PERS=2, NUM=sg, ANIM=true, BOUND=true]->'yourself'
+obj_PRO[PERS=2, NUM=pl, ANIM=true, BOUND=true]->'yourselves'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, BOUND=false]->'him'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, BOUND=true]->'himself'
+obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, BOUND=false]->'her'
+obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, BOUND=true]->'herself'
+obj_PRO[NUM=pl, PERS=3, ANIM=true, BOUND=false]->'them'
+obj_PRO[NUM=pl, PERS=3, ANIM=true, BOUND=true]->'themselves'
+obj_PRO[NUM=pl, PERS=1, ANIM=true, BOUND=false]->'us'
+obj_PRO[NUM=pl, PERS=1, ANIM=true, BOUND=true]->'ourselves'
 
-obj_N[NUM=sg, GEN=m, PERS=3, animate=true] -> 'boy'
-obj_N[NUM=sg, GEN=f, PERS=3, animate=true] -> 'girl'
-obj_N[NUM=pl, GEN=m, PERS=3, animate=true] -> 'boys'
-obj_N[NUM=pl, GEN=f, PERS=3, animate=true] -> 'girls'
+obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
 
-obj_N[NUM=sg, PERS=3, animate=false] -> 'cat'
-obj_N[NUM=pl, PERS=3, animate=false] -> 'cats'
+obj_N[NUM=sg, PERS=3, ANIM=false] -> 'cat'
+obj_N[NUM=pl, PERS=3, ANIM=false] -> 'cats'
 
-obj_PropN[NUM=sg, GEN=f, PERS=3, animate=true]-> 'Alice'
-obj_PropN[NUM=sg, GEN=m, PERS=3, animate=true]-> 'Bob'
+obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Alice'
+obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'Bob'
+
+embedobj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
+embedobj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
+embedobj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'boys'
+embedobj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'girls'
+
 
 # verb
-verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, animate=true] -> 'walks'
-verb_Intrans[TENSE=pres,  NUM=pl, animate=true] -> 'walk'
-verb_Intrans[TENSE=past, animate=true] -> 'walked'
-
-verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
-verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'walks'
+verb_Intrans[TENSE=pres,  NUM=pl, ANIM=true] -> 'walk'
+verb_Intrans[TENSE=past, ANIM=true] -> 'walked'
+verb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
+verb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
 verb_Intrans[TENSE=past] -> 'fell'
 
-verb_Trans[TENSE=pres, PERS=1, animate=true] -> 'see'
-verb_Trans[TENSE=pres, PERS=2, animate=true] -> 'see'
-verb_Trans[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'sees'
-verb_Trans[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'see'
-verb_Trans[TENSE=past, animate=true] -> 'saw'
+embedverb_Intrans[TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'walks'
+embedverb_Intrans[TENSE=pres,  NUM=pl, ANIM=true] -> 'walk'
+embedverb_Intrans[TENSE=past, ANIM=true] -> 'walked'
+embedverb_Intrans[TENSE=pres,  NUM=sg, PERS=3] -> 'falls'
+embedverb_Intrans[TENSE=pres,  NUM=pl] -> 'fall'
+embedverb_Intrans[TENSE=past] -> 'fell'
+
+verb_Trans[TENSE=pres, PERS=1, ANIM=true] -> 'see'
+verb_Trans[TENSE=pres, PERS=2, ANIM=true] -> 'see'
+verb_Trans[TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'
+verb_Trans[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'see'
+verb_Trans[TENSE=past, ANIM=true] -> 'saw'
+
+embedverb_Trans[TENSE=pres, PERS=1, ANIM=true] -> 'see'
+embedverb_Trans[TENSE=pres, PERS=2, ANIM=true] -> 'see'
+embedverb_Trans[TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'
+embedverb_Trans[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'see'
+embedverb_Trans[TENSE=past, ANIM=true] -> 'saw'
 
 verb_Mod[TENSE=future] -> 'will'
 
-verb_Embed[TENSE=pres, PERS=1, animate=true] -> 'know'
-verb_Embed[TENSE=pres, PERS=2, animate=true] -> 'know'
-verb_Embed[TENSE=pres, NUM=sg, PERS=3, animate=true] -> 'knows'
-verb_Embed[TENSE=pres, NUM=pl, PERS=3, animate=true] -> 'know'
+verb_Matrix[TENSE=pres, PERS=1, ANIM=true] -> 'know'
+verb_Matrix[TENSE=pres, PERS=2, ANIM=true] -> 'know'
+verb_Matrix[TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'knows'
+verb_Matrix[TENSE=pres, NUM=pl, PERS=3, ANIM=true] -> 'know'
 # Other options which can embed which,whether,that-clauses: 'remember'|'say'|'declare'
 
-# embedded nouns
-embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boy'
-embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=pp] -> 'girl'
-embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=pp] -> 'boys'
-embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=pp] -> 'girls'
-embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=subjrel] -> 'boy'
-embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=subjrel] -> 'girl'
-embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=subjrel] -> 'boys'
-embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=subjrel] -> 'girls'
-embed_N[NUM=sg, GEN=m, PERS=3, animate=true, nesting=objrel] -> 'boy'
-embed_N[NUM=sg, GEN=f, PERS=3, animate=true, nesting=objrel] -> 'girl'
-embed_N[NUM=pl, GEN=m, PERS=3, animate=true, nesting=objrel] -> 'boys'
-embed_N[NUM=pl, GEN=f, PERS=3, animate=true, nesting=objrel] -> 'girls'
-embed_N[NUM=sg, GEN=m, PERS=3, nesting=embed] -> 'boy'
-embed_N[NUM=sg, GEN=f, PERS=3, nesting=embed] -> 'girl'
-embed_N[NUM=pl, GEN=m, PERS=3, nesting=embed] -> 'boys'
-embed_N[NUM=pl, GEN=f, PERS=3, nesting=embed] -> 'girls'
 
 # Other
 
-Det[NUM=sg] -> 'this'
-Det[NUM=pl] -> 'these'
-Det[NUM=unspec] -> 'the'
+Det -> 'the'
 
-V[animate=true] -> 'walk'
+V[ANIM=true] -> 'walk'
 V -> 'fall'
 P -> 'near'
 Rel -> 'that'
 RelWhether -> 'whether'
 DetWh -> 'which'
 
+poss_Det[NUM=sg, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'my'
+poss_Det[NUM=pl, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'our'
+
+poss_Det[PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
+
+poss_Det[NUM=sg, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'her'
+poss_Det[NUM=sg, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'his'
+poss_Det[NUM=pl, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_Det[NUM=pl, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
+
+possN[NUM=sg, GEN=f, POSS=true] -> 'mother'
+possN[NUM=sg, GEN=m, POSS=true] -> 'father'
+possN[NUM=pl, GEN=f, POSS=true] -> 'sisters'
+possN[NUM=pl, GEN=m, POSS=true] -> 'brothers'

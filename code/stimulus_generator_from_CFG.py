@@ -10,7 +10,7 @@ from tqdm import tqdm
 import pandas as pd
 
 path2grammars = 'grammars/'
-grammars = ['embeddings']#, 'SVO']
+grammars = ['SVO', 'embeddings']
 
 fn_output = '../stimuli/stimuli_from_fcfg.csv'
 
