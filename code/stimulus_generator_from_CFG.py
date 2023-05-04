@@ -23,6 +23,10 @@ for s in tqdm(list(generate(fcfg.grammar()))): # generate all sentences from gra
     for tree in fcfg.parse(s): # enter loop only if parsablei
         d = {}
         d['sentence'] = ' '.join(s)
+        if "dogs see " in d['sentence']:
+            print("WARNING")
+            print(d['sentence'])
+            print(tree)
 
         # extract sentence features from tree label
         for i_item, (feature, val) in enumerate(tree.label().items()):
