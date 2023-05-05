@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import os
-import contextlib
 
 from utils import add_features_to_dict
 from utils import check_twice, check_congruence
@@ -71,7 +69,8 @@ for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
 
 # Move sentence to front column and save
 cols = sorted(list(df))
-cols.insert(0, cols.pop(cols.index('sentence')))
-df = df.loc[:, cols]
+for name in ['sentence_GROUP', 'sentence']:
+    cols.insert(0, cols.pop(cols.index(name)))
+    df = df.loc[:, cols]
 df.to_csv(fn_output)
 print(df)
