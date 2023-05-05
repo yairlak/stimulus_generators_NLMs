@@ -77,8 +77,8 @@ def compute_new_features(df):
     
     
     # objrel
-    for group in ['subjrel', 'objrel']:
-        df[f'contain_{group}'] = df.apply(lambda row: row['sentence_GROUP']==f'{group}',
+    for group in ['subjrel', 'objrel', 'embed_', 'quest_']:
+        df[f'has_{group}'] = df.apply(lambda row: row['sentence_GROUP'].startswith(f'{group}'),
                                         axis=1)
     
     return df
