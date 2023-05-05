@@ -31,7 +31,7 @@ subjWho[GROUP=subjquest_intrans] -> subj_who
 # subject questions (transitive verb)
 S[GROUP=?e] -> subjWH[GROUP=?e]
 subjWH[GROUP=subjquest_trans] -> subj_who verb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det obj_N
-subjWH[GROUP=subjquest_trans] -> subj_which subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=?a] Det obj_N
+subjWH[GROUP=subjquest_which_trans] -> Which subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=?a] Det obj_N
 
 # object questions
 S[GROUP=?e] -> objWh[GROUP=?e] verb_Trans[finite=false, ANIM=true]
@@ -59,10 +59,10 @@ Subjrel[NUM=?n, PERS=3, ANIM=true, GROUP=subjrel] -> embedverb_Trans[finite=true
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] nestedClause[GROUP=?g]
 nestedClause[GROUP=that_clause] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
 nestedClause[GROUP=whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
-nestedClause[GROUP=subjwho_clause] -> subj_who verb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det obj_N
-nestedClause[GROUP=objwho_clause] -> nestedbjWh[GROUP=?e, NUM=?n, PERS=?p] verb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
-nestedbjWh[GROUP=objwho_clause, NUM=?n, PERS=?p] -> obj_WH Det subj_N[NUM=?n, PERS=?p, ANIM=true]
-nestedClause -> Rel[REL=which] embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
+nestedClause[GROUP=subjwho_clause] -> rel_who embedverb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det embedobj_N
+nestedClause[GROUP=objwho_clause] -> nestedbjWh[GROUP=?e, NUM=?n, PERS=?p] embedverb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
+nestedbjWh[GROUP=objwho_clause, NUM=?n, PERS=?p] -> obj_WH Det embedsubj_N[NUM=?n, PERS=?p, ANIM=true]
+nestedClause[GROUP=which_clause] -> rel_which embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
 
 #TODO: embedded which NP clauses?
 
@@ -100,7 +100,6 @@ subj_PRO[NUM=pl, PERS=3, ANIM=true]->'they'
 subj_PRO[NUM=pl, PERS=1, ANIM=true]->'we'
 
 subj_who[ANIM=true] -> 'who'
-subj_which -> 'which'
 
 subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'boy'
 subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'girl'
@@ -233,7 +232,8 @@ V -> 'fall'
 P -> 'near'
 rel_That -> 'that'
 rel_Whether -> 'whether'
-DetWh -> 'which'
+rel_which -> 'which'
+Which -> 'which'
 
 poss_Det[NUM=sg, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'my'
 poss_Det[NUM=pl, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'our'

@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import re
-
+import pandas as pd
+import numpy as np
 
 def add_features_to_dict(d, pos_tuple):
     word, pos = pos_tuple
@@ -26,3 +27,10 @@ def add_features_to_dict(d, pos_tuple):
 def check_twice(sentence, E):
     matches = re.findall(E, sentence)
     return len(matches) > 1
+
+
+def check_congruence(f1, f2):
+    if pd.isnull(f1) or pd.isnull(f2):
+        return np.nan
+    else:
+        return f1==f2
