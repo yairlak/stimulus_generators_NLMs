@@ -30,14 +30,14 @@ objNP -> obj_PRO[BOUND=false]
 ###########
 
 # Binding (reflexives)
-S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objPRO[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objPRO[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
 objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, ANIM=?a, BOUND=true]
 
 # Binding (possessives)
-S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possObjNP[GROUP=?e]
-S[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> possSubjNP[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
-possSubjNP[GROUP=possessive, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp, POSS=true] -> poss_subjDet[possNUM=?pn, possGEN=?pg, possPERS=?pp, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true, NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
-possObjNP[GROUP=possessive, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp, POSS=true] -> poss_objDet[possNUM=?pn, possGEN=?pg, possPERS=?pp, POSS=true, BOUND=TESTFEATUREMATCH] possN[POSS=true, NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
+S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possObjNP[GROUP=?e]
+S[GROUP=?e] -> possSubjNP[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
+possSubjNP[GROUP=possessive_subj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_subj[possNUM=?pn, possGEN=?pg, possPERS=?pp, BOUND=TESTFEATUREMATCH] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
+possObjNP[GROUP=possessive_obj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_obj[possNUM=?pn, possGEN=?pg, possPERS=?pp, BOUND=TESTFEATUREMATCH] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
 
 #############
 # QUESTIONS #
@@ -45,18 +45,18 @@ possObjNP[GROUP=possessive, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possG
 
 # subject questions (intransitive verb)
 S[GROUP=?e] -> subjWho[GROUP=?e] verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true]
-subjWH[GROUP=subjquest_who_intrans] -> subj_who verb_Intrans[finite=true, NUM=sg, PERS=3, ANIM=true]
-subjWH[GROUP=subjquest_which_intrans] -> Which subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Intrans[finite=true, NUM=?n, PERS=?p, ANIM=?a]
+subjWH[GROUP=quest_subj_who_intrans] -> subj_who verb_Intrans[finite=true, NUM=sg, PERS=3, ANIM=true]
+subjWH[GROUP=quest_subj_which_intrans] -> Which subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Intrans[finite=true, NUM=?n, PERS=?p, ANIM=?a]
 
 # subject questions (transitive verb)
 S[GROUP=?e] -> subjWH[GROUP=?e]
-subjWH[GROUP=subjquest_who_trans] -> subj_who verb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det obj_N
-subjWH[GROUP=subjquest_which_trans] -> Which subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=?a] Det obj_N
+subjWH[GROUP=quest_subj_who_trans] -> subj_who verb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det obj_N
+subjWH[GROUP=quest_subj_which_trans] -> Which subj_N[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=?a] Det obj_N
 
 # object questions
 S[GROUP=?e] -> objWh[GROUP=?e] verb_Trans[finite=false, ANIM=true]
-objWh[GROUP=objquest_who_trans, NUM=?n, PERS=?p] -> obj_WH do_Aux[NUM=?n, PERS=?p] Det subj_N[NUM=?n, PERS=?p, ANIM=true]
-objWh[GROUP=objquest_which_trans, NUM=?n, PERS=?p] -> Which obj_N do_Aux[NUM=?n, PERS=?p] Det subj_N[NUM=?n, PERS=?p, ANIM=true]
+objWh[GROUP=quest_obj_who_trans, NUM=?n, PERS=?p] -> obj_WH do_Aux[NUM=?n, PERS=?p] Det subj_N[NUM=?n, PERS=?p, ANIM=true]
+objWh[GROUP=quest_obj_which_trans, NUM=?n, PERS=?p] -> Which obj_N do_Aux[NUM=?n, PERS=?p] Det subj_N[NUM=?n, PERS=?p, ANIM=true]
 
 
 ########################
@@ -78,14 +78,12 @@ Subjrel[NUM=?n, PERS=3, ANIM=true, GROUP=subjrel] -> embedverb_Trans[finite=true
 
 # Embedding
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] nestedClause[GROUP=?g]
-nestedClause[GROUP=that_clause] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
-nestedClause[GROUP=whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
-nestedClause[GROUP=subjwho_clause] -> rel_who embedverb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det embedobj_N
-nestedClause[GROUP=objwho_clause] -> nestedbjWh[GROUP=?e, NUM=?n, PERS=?p] embedverb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
-nestedbjWh[GROUP=objwho_clause, NUM=?n, PERS=?p] -> obj_WH Det embedsubj_N[NUM=?n, PERS=?p, ANIM=true]
-nestedClause[GROUP=which_clause] -> rel_which embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
-
-#TODO: embedded which NP clauses?
+nestedClause[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
+nestedClause[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
+nestedClause[GROUP=embed_subjwho_clause] -> rel_who embedverb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det embedobj_N
+nestedClause[GROUP=embed_objwho_clause] -> nestedbjWh[GROUP=?e, NUM=?n, PERS=?p] embedverb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
+nestedbjWh[GROUP=embed_objwho_clause, NUM=?n, PERS=?p] -> obj_WH Det embedsubj_N[NUM=?n, PERS=?p, ANIM=true]
+nestedClause[GROUP=embed_which_clause] -> rel_which embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
 
 #######################
 # Lexical Productions #
@@ -93,20 +91,20 @@ nestedClause[GROUP=which_clause] -> rel_which embedsubj_N[NUM=?n] embedverb_Intr
 
 # Det
 Det -> 'the'
-poss_subjDet[NUM=sg, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'my'
-poss_subjDet[NUM=pl, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'our'
-poss_subjDet[PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
-poss_subjDet[NUM=sg, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'her'
-poss_subjDet[NUM=sg, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_subjDet[NUM=pl, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_subjDet[NUM=pl, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_objDet[NUM=sg, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'my'
-poss_objDet[NUM=pl, PERS=1, POSS=true, BOUND=TESTFEATUREMATCH] -> 'our'
-poss_objDet[PERS=2, POSS=true, BOUND=TESTFEATUREMATCH] -> 'your'
-poss_objDet[NUM=sg, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'her'
-poss_objDet[NUM=sg, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_objDet[NUM=pl, GEN=m, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_objDet[NUM=pl, GEN=f, PERS=3, POSS=true, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_subj[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
+poss_subj[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
+poss_subj[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
+poss_subj[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
+poss_subj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
+poss_subj[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_subj[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_obj[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
+poss_obj[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
+poss_obj[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
+poss_obj[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
+poss_obj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
+poss_obj[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_obj[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
 
 # subject
 subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
@@ -238,6 +236,8 @@ verb_Matrix[finite=true, TENSE=future, ANIM=true] -> '{"'|'".join(Words['matrix_
 verb_Matrix[finite=false, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['finite'])}'
 
 # Other
+P -> '{"'|'".join(Words['loc_preps'])}'
+
 do_Aux[TENSE=pres, NUM=sg, PERS=1] -> 'do'
 do_Aux[TENSE=pres, NUM=sg, PERS=2] -> 'do'
 do_Aux[TENSE=pres, NUM=sg, PERS=3] -> 'does'
@@ -245,24 +245,21 @@ do_Aux[TENSE=pres, NUM=pl] -> 'do'
 do_Aux[TENSE=past] -> 'did'
 do_Aux[TENSE=future, NUM=pl] -> 'will'
 
-V[ANIM=true] -> 'walk'
-V -> 'fall'
-P -> 'near'
 rel_That -> 'that'
 rel_Whether -> 'whether'
 rel_which -> 'which'
 Which -> 'which'
 
-possN[NUM=sg, GEN=f, PERS=3, POSS=true, ANIM=true] -> 'mother'
-possN[NUM=sg, GEN=m, PERS=3, POSS=true, ANIM=true] -> 'father'
-possN[NUM=sg, GEN=f, PERS=3, POSS=true, ANIM=true] -> 'sister'
-possN[NUM=sg, GEN=m, PERS=3, POSS=true, ANIM=true] -> 'brother'
-possN[NUM=pl, GEN=f, PERS=3, POSS=true, ANIM=true] -> 'sisters'
-possN[NUM=pl, GEN=m, PERS=3, POSS=true, ANIM=true] -> 'brothers'
-possN[NUM=sg, GEN=f, PERS=3, POSS=true, ANIM=false] -> 'cat'
-possN[NUM=sg, GEN=m, PERS=3, POSS=true, ANIM=false] -> 'dog'
-possN[NUM=pl, GEN=f, PERS=3, POSS=true, ANIM=false] -> 'cats'
-possN[NUM=pl, GEN=m, PERS=3, POSS=true, ANIM=false] -> 'dogs'
+possN[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'mother'
+possN[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'father'
+possN[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'sister'
+possN[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'brother'
+possN[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'sisters'
+possN[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'brothers'
+possN[NUM=sg, GEN=f, PERS=3, ANIM=false] -> 'cat'
+possN[NUM=sg, GEN=m, PERS=3, ANIM=false] -> 'dog'
+possN[NUM=pl, GEN=f, PERS=3, ANIM=false] -> 'cats'
+possN[NUM=pl, GEN=m, PERS=3, ANIM=false] -> 'dogs'
 """
 
 with open(fn_grammar, 'w') as f:

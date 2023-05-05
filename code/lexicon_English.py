@@ -56,8 +56,8 @@ anaphoras['feminine']['plural'] = ['themselves']
 # Initialization
 quantifiers = {}
 # Tokens
-quantifiers['singular'] = ['every', 'no']
-quantifiers['plural'] = ['all', 'few']
+quantifiers['singular'] = ['every']#, 'no']
+quantifiers['plural'] = ['all']#, 'few']
 
 ###################
 ###### PROPER NAMES ######
@@ -67,8 +67,8 @@ proper_names = {}
 for number in ['singular']:
     proper_names[number] = {}
 # Tokens
-proper_names['singular']['masculine']=['John', 'Bob']
-proper_names['singular']['feminine']=['Mary', 'Alice']
+proper_names['singular']['masculine']=['John']#, 'Bob']
+proper_names['singular']['feminine']=['Mary']#, 'Alice']
 
 ###################
 ###### NOUNS ######
@@ -78,15 +78,15 @@ nouns = {}
 for gender in ['masculine', 'feminine']:
     nouns[gender] = {}
 # Tokens
-nouns['masculine']['singular'] = ['brother', 'father', 'boy', 'man']
-nouns['masculine']['plural'] = ['brothers', 'fathers', 'boys', 'men']
-nouns['feminine']['singular'] = ['sister', 'mother', 'girl', 'woman']
-nouns['feminine']['plural'] = ['sisters', 'mothers', 'girls', 'women']
+nouns['masculine']['singular'] = ['brother']#, 'father', 'boy', 'man']
+nouns['masculine']['plural'] = ['brothers']#, 'fathers', 'boys', 'men']
+nouns['feminine']['singular'] = ['sister']#, 'mother', 'girl', 'woman']
+nouns['feminine']['plural'] = ['sisters']#, 'mothers', 'girls', 'women']
 
 
 nouns_inanimate = {}
-nouns_inanimate['singular'] = ['car', 'table', 'pen']
-nouns_inanimate['plural'] = ['cars', 'tables', 'pens']
+nouns_inanimate['singular'] = ['car']#, 'table', 'pen']
+nouns_inanimate['plural'] = ['cars']#, 'tables', 'pens']
     
 ###################
 ####SC NOUNS ######
@@ -117,26 +117,27 @@ verbs, verbs_intran_anim, verbs_intran_inanim, matrix_verbs = {}, {}, {}, {}
 for tense in ['past', 'present', 'future', 'finite']:
     verbs[tense], verbs_intran_anim[tense], verbs_intran_inanim[tense], matrix_verbs[tense] = {}, {}, {}, {}
 
-verbs['past'] = ['saw', 'stopped']
-verbs['present']['singular'] = ['sees', 'stops']
-verbs['present']['plural'] =  ['see', 'stop']
-verbs['future'] = ['will see', 'will stop']
+verbs['past'] = ['saw']#, 'stopped']
+verbs['present']['singular'] = ['sees']#, 'stops']
+verbs['present']['plural'] =  ['see']#, 'stop']
+verbs['future'] = ['will see']#, 'will stop']
 verbs['finite'] = verbs['present']['plural']
 
-verbs_intran_anim['past'] = ['smiled', 'jumpped']
-verbs_intran_anim['present']['singular'] = ['smiles', 'jumps']
-verbs_intran_anim['present']['plural'] =  ['smile', 'jump']
-verbs_intran_anim['future'] = ['will smile', 'will jump']
+verbs_intran_anim['past'] = ['smiled']#, 'jumpped']
+verbs_intran_anim['present']['singular'] = ['smiles']#, 'jumps']
+verbs_intran_anim['present']['plural'] =  ['smile']#, 'jump']
+verbs_intran_anim['future'] = ['will smile']#, 'will jump']
 
-verbs_intran_inanim['past'] = ['fell', 'disappeared']
-verbs_intran_inanim['present']['singular'] = ['falls', 'disappears']
-verbs_intran_inanim['present']['plural'] =  ['fall', 'disappear']
-verbs_intran_inanim['future'] = ['will fall', 'will disappear']
+verbs_intran_inanim['past'] = ['fell']#, 'disappeared']
+verbs_intran_inanim['present']['singular'] = ['falls']#, 'disappears']
+verbs_intran_inanim['present']['plural'] =  ['fall']#, 'disappear']
+verbs_intran_inanim['future'] = ['will fall']#, 'will disappear']
 
-matrix_verbs['past'] = ['knew', 'remembered', 'said']
-matrix_verbs['present']['singular'] = ['knows', 'remembers', 'says']
-matrix_verbs['present']['plural'] =   ['know', 'remember' , 'say']
-matrix_verbs['future'] = ['will know', 'will remember', 'will say']
+matrix_verbs['past'] = ['knew']#, 'remembered', 'said']
+matrix_verbs['present']['singular'] = ['knows']#, 'remembers', 'says']
+matrix_verbs['present']['plural'] =   ['know']#, 'remember' , 'say']
+matrix_verbs['future'] = ['will know']#, 'will remember', 'will say']
+matrix_verbs['finite'] = matrix_verbs['present']['plural']
 
 copula = {}
 copula['singular'] = ['is']
@@ -149,7 +150,7 @@ copula['plural'] = ['are']
 # LOCATION PREPOSITIONS
 # -----
 # Tokens (second word will be used to choose the right article from determinats{} - 'a'/'definit'/)
-loc_preps = ['near', 'behind', 'before', 'beside']
+loc_preps = ['near']#, 'behind', 'before', 'beside']
 
 
 ##########################
