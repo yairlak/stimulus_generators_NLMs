@@ -244,6 +244,7 @@ do_Aux[TENSE=future, NUM=pl] -> 'will'
 rel_That -> 'that'
 rel_Whether -> 'whether'
 rel_which -> 'which'
+rel_who -> 'who'
 Which -> 'which'
 
 possN[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'mother'
