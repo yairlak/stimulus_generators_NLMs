@@ -1,4 +1,8 @@
+from lexicon_English import Words
 
+fn_grammar = 'grammars/grammar.fcfg'
+
+grammar = f"""
 ########
 # SVOs #
 ########
@@ -115,28 +119,28 @@ subj_PRO[NUM=pl, PERS=1, ANIM=true]->'we'
 
 subj_who[ANIM=true] -> 'who'
 
-quantifier_subj[NUM=sg] -> 'every'|'no'
-quantifier_subj[NUM=pl] -> 'all'|'few'
+quantifier_subj[NUM=sg] -> '{"'|'".join(Words['quantifiers']['singular'])}'
+quantifier_subj[NUM=pl] -> '{"'|'".join(Words['quantifiers']['plural'])}'
 
-subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'brother'|'father'|'boy'|'man'
-subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'sister'|'mother'|'girl'|'woman'
-subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'brothers'|'fathers'|'boys'|'men'
-subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'sisters'|'mothers'|'girls'|'women'
+subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['singular'])}'
+subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['singular'])}'
+subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['plural'])}'
+subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['plural'])}'
 
-subj_N[NUM=sg, PERS=3, ANIM=false] -> 'car'|'table'|'pen'
-subj_N[NUM=pl, PERS=3, ANIM=false] -> 'cars'|'tables'|'pens'
+subj_N[NUM=sg, PERS=3, ANIM=false] -> '{"'|'".join(Words['nouns_inanimate']['singular'])}'
+subj_N[NUM=pl, PERS=3, ANIM=false] -> '{"'|'".join(Words['nouns_inanimate']['plural'])}'
 
-subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Alice'
-subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'
+subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> '{"'|'".join(Words['proper_names']['singular']['feminine'])}'
+subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> '{"'|'".join(Words['proper_names']['singular']['masculine'])}'
 
-embedsubj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'brother'|'father'|'boy'|'man'
-embedsubj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'sister'|'mother'|'girl'|'woman'
-embedsubj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'brothers'|'fathers'|'boys'|'men'
-embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'sisters'|'mothers'|'girls'|'women'
+embedsubj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['singular'])}'
+embedsubj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['singular'])}'
+embedsubj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['plural'])}'
+embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['plural'])}'
 
 # object
-quantifier_obj[NUM=sg] -> 'every'|'no'
-quantifier_obj[NUM=pl] -> 'all'|'few'
+quantifier_obj[NUM=sg] -> '{"'|'".join(Words['quantifiers']['singular'])}'
+quantifier_obj[NUM=pl] -> '{"'|'".join(Words['quantifiers']['plural'])}'
 
 obj_PRO[NUM=sg, PERS=1, ANIM=true, BOUND=false]->'me'
 obj_PRO[NUM=sg, PERS=1, ANIM=true, BOUND=true]->'myself'
@@ -155,83 +159,83 @@ obj_PRO[NUM=pl, PERS=1, ANIM=true, BOUND=false]->'us'
 obj_PRO[NUM=pl, PERS=1, ANIM=true, BOUND=true]->'ourselves'
 
 
-obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'brother'|'father'|'boy'|'man'
-obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'sister'|'mother'|'girl'|'woman'
-obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'brothers'|'fathers'|'boys'|'men'
-obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'sisters'|'mothers'|'girls'|'women'
+obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['singular'])}'
+obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['singular'])}'
+obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['plural'])}'
+obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['plural'])}'
 
-obj_N[NUM=sg, PERS=3, ANIM=false] -> 'car'|'table'|'pen'
-obj_N[NUM=pl, PERS=3, ANIM=false] -> 'cars'|'tables'|'pens'
+obj_N[NUM=sg, PERS=3, ANIM=false] -> '{"'|'".join(Words['nouns_inanimate']['singular'])}'
+obj_N[NUM=pl, PERS=3, ANIM=false] -> '{"'|'".join(Words['nouns_inanimate']['plural'])}'
 
 obj_WH -> 'who'|'whom'
 obj_which -> 'which'
 
-obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Alice'
-obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'
+obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> '{"'|'".join(Words['proper_names']['singular']['feminine'])}'
+obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> '{"'|'".join(Words['proper_names']['singular']['masculine'])}'
 
-embedobj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'brother'|'father'|'boy'|'man'
-embedobj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'sister'|'mother'|'girl'|'woman'
-embedobj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'brothers'|'fathers'|'boys'|'men'
-embedobj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'sisters'|'mothers'|'girls'|'women'
+embedobj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['singular'])}'
+embedobj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['singular'])}'
+embedobj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['plural'])}'
+embedobj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['feminine']['plural'])}'
 
 # VERBS
 # INTRANS ANIMATE
-verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> 'smile'|'jump'
-verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> 'smile'|'jump'
-verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'smiles'|'jumps'
-verb_Intrans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> 'smile'|'jump'
-verb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'smiled'|'jumpped'
-verb_Intrans[finite=true, TENSE=future, ANIM=true] -> 'will smile'|'will jump'
+verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['plural'])}'
+verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['plural'])}'
+verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['singular'])}'
+verb_Intrans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['plural'])}'
+verb_Intrans[finite=true, TENSE=past, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['past'])}'
+verb_Intrans[finite=true, TENSE=future, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['future'])}'
 
 # INTRANS ANIMATE OR INANIMATE
-verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1] -> 'fall'|'disappear'
-verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2] -> 'fall'|'disappear'
-verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3] -> 'falls'|'disappears'
-verb_Intrans[finite=true, TENSE=pres,  NUM=pl] -> 'fall'|'disappear'
-verb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'
-verb_Intrans[finite=true, TENSE=future] -> 'will fall'|'will disappear'
+verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['plural'])}'
+verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['plural'])}'
+verb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['singular'])}'
+verb_Intrans[finite=true, TENSE=pres,  NUM=pl] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['plural'])}'
+verb_Intrans[finite=true, TENSE=past] -> '{"'|'".join(Words['verbs_intran_inanim']['past'])}'
+verb_Intrans[finite=true, TENSE=future] -> '{"'|'".join(Words['verbs_intran_inanim']['future'])}'
 
 # EMBED INTRANS ANIMATE
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> 'smile'|'jump'
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> 'smile'|'jump'
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'smiles'|'jumps'
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> 'smile'|'jump'
-embedverb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'smiled'|'jumpped'
-embedverb_Intrans[finite=true, TENSE=future, ANIM=true] -> 'will smile'|'will jump'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['plural'])}'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['plural'])}'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['singular'])}'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['present']['plural'])}'
+embedverb_Intrans[finite=true, TENSE=past, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['past'])}'
+embedverb_Intrans[finite=true, TENSE=future, ANIM=true] -> '{"'|'".join(Words['verbs_intran_anim']['future'])}'
 
 # EMBED INTRANS ANIMATE OR INANIMATE
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1] -> 'fall'|'disappear'
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2] -> 'fall'|'disappear'
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3] -> 'falls'|'disappears'
-embedverb_Intrans[finite=true, TENSE=pres,  NUM=pl] -> 'fall'|'disappear'
-embedverb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'
-embedverb_Intrans[finite=true, TENSE=future] -> 'will fall'|'will disappear'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=1] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['plural'])}'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=2] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['plural'])}'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=sg, PERS=3] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['singular'])}'
+embedverb_Intrans[finite=true, TENSE=pres,  NUM=pl] -> '{"'|'".join(Words['verbs_intran_inanim']['present']['plural'])}'
+embedverb_Intrans[finite=true, TENSE=past] -> '{"'|'".join(Words['verbs_intran_inanim']['past'])}'
+embedverb_Intrans[finite=true, TENSE=future] -> '{"'|'".join(Words['verbs_intran_inanim']['future'])}'
 
 # TRANSITIVE (ANIMATE)
-verb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> 'see'|'stop'
-verb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> 'see'|'stop'
-verb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'sees'|'stops'
-verb_Trans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> 'see'|'stop'
-verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'stopped'
-verb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will see'|'will stop'
-verb_Trans[finite=false, ANIM=true] -> 'see'|'stop'
+verb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['plural'])}'
+verb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['plural'])}'
+verb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['singular'])}'
+verb_Trans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['plural'])}'
+verb_Trans[finite=true, TENSE=past, ANIM=true] -> '{"'|'".join(Words['verbs']['past'])}'
+verb_Trans[finite=true, TENSE=future, ANIM=true] -> '{"'|'".join(Words['verbs']['future'])}'
+verb_Trans[finite=false, ANIM=true] -> '{"'|'".join(Words['verbs']['finite'])}'
 
 # EMBED TRANSITIVE (ANIMATE)
-embedverb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> 'see'|'stop'
-embedverb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> 'see'|'stop'
-embedverb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'sees'|'stops'
-embedverb_Trans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> 'see'|'stop'
-embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'stopped'
-embedverb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will see'|'will stop'
-embedverb_Trans[finite=false, ANIM=true] -> 'see'|'stop'
+embedverb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['plural'])}'
+embedverb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['plural'])}'
+embedverb_Trans[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['singular'])}'
+embedverb_Trans[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> '{"'|'".join(Words['verbs']['present']['plural'])}'
+embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> '{"'|'".join(Words['verbs']['past'])}'
+embedverb_Trans[finite=true, TENSE=future, ANIM=true] -> '{"'|'".join(Words['verbs']['future'])}'
+embedverb_Trans[finite=false, ANIM=true] -> '{"'|'".join(Words['verbs']['finite'])}'
 
-verb_Matrix[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> 'know'|'remember'|'say'
-verb_Matrix[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> 'know'|'remember'|'say'
-verb_Matrix[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> 'knows'|'remembers'|'says'
-verb_Matrix[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> 'know'|'remember'|'say'
-verb_Matrix[finite=true, TENSE=past, ANIM=true] -> 'knew'|'remembered'|'said'
-verb_Matrix[finite=true, TENSE=future, ANIM=true] -> 'will know'|'will remember'|'will say'
-verb_Matrix[finite=false, ANIM=true] -> ''
+verb_Matrix[finite=true, TENSE=pres,  NUM=sg, PERS=1, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['present']['plural'])}'
+verb_Matrix[finite=true, TENSE=pres,  NUM=sg, PERS=2, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['present']['plural'])}'
+verb_Matrix[finite=true, TENSE=pres,  NUM=sg, PERS=3, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['present']['singular'])}'
+verb_Matrix[finite=true, TENSE=pres,  NUM=pl, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['present']['plural'])}'
+verb_Matrix[finite=true, TENSE=past, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['past'])}'
+verb_Matrix[finite=true, TENSE=future, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['future'])}'
+verb_Matrix[finite=false, ANIM=true] -> '{"'|'".join(Words['matrix_verbs']['finite'])}'
 
 # Other
 do_Aux[TENSE=pres, NUM=sg, PERS=1] -> 'do'
@@ -259,3 +263,8 @@ possN[NUM=sg, GEN=f, PERS=3, POSS=true, ANIM=false] -> 'cat'
 possN[NUM=sg, GEN=m, PERS=3, POSS=true, ANIM=false] -> 'dog'
 possN[NUM=pl, GEN=f, PERS=3, POSS=true, ANIM=false] -> 'cats'
 possN[NUM=pl, GEN=m, PERS=3, POSS=true, ANIM=false] -> 'dogs'
+"""
+
+with open(fn_grammar, 'w') as f:
+    f.write(grammar)
+    

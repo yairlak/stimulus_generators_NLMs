@@ -57,7 +57,7 @@ anaphoras['feminine']['plural'] = ['themselves']
 quantifiers = {}
 # Tokens
 quantifiers['singular'] = ['every', 'no']
-quantifiers['plural'] = ['most', 'many', 'few']
+quantifiers['plural'] = ['all', 'few']
 
 ###################
 ###### PROPER NAMES ######
@@ -67,7 +67,7 @@ proper_names = {}
 for number in ['singular']:
     proper_names[number] = {}
 # Tokens
-proper_names['singular']['masculine']=['Johnny', 'Alfred']
+proper_names['singular']['masculine']=['John', 'Bob']
 proper_names['singular']['feminine']=['Mary', 'Alice']
 
 ###################
@@ -78,11 +78,16 @@ nouns = {}
 for gender in ['masculine', 'feminine']:
     nouns[gender] = {}
 # Tokens
-nouns['masculine']['singular'] = ['brother', 'student', 'father', 'son', 'boy', 'friend', 'man', 'actor', 'farmer']
-nouns['masculine']['plural'] = ['brothers', 'students', 'fathers', 'sons', 'boys', 'friends', 'men', 'actors', 'farmers']
-nouns['feminine']['singular'] = ['sister', 'student', 'mother', 'daughter', 'girl', 'friend', 'woman', 'actress', 'farmer']
-nouns['feminine']['plural'] = ['sisters', 'students', 'mothers', 'daughters', 'girls', 'friends', 'women', 'actresses', 'farmers']
+nouns['masculine']['singular'] = ['brother', 'father', 'boy', 'man']
+nouns['masculine']['plural'] = ['brothers', 'fathers', 'boys', 'men']
+nouns['feminine']['singular'] = ['sister', 'mother', 'girl', 'woman']
+nouns['feminine']['plural'] = ['sisters', 'mothers', 'girls', 'women']
 
+
+nouns_inanimate = {}
+nouns_inanimate['singular'] = ['car', 'table', 'pen']
+nouns_inanimate['plural'] = ['cars', 'tables', 'pens']
+    
 ###################
 ####SC NOUNS ######
 ###################
@@ -108,28 +113,34 @@ location_nouns['feminine']['plural'] = nouns['feminine']['plural']
 ###### VERBS ######
 ###################
 # Initialization
-verbs = {}
-# Tokens
-verbs['singular'] = ['welcomes', 'watches', 'attracts', 'blocks', 'knows', 'defends', 'avoids', 'stops', 'ignores', 'meets', 'interrupts', 'observes', 'greets']
-verbs['plural'] =  ['welcome',   'watch',  'attract',  'block',  'know',   'defend',  'avoid',   'stop', 'ignore', 'meet', 'interrupt', 'observe', 'greet']
+verbs, verbs_intran_anim, verbs_intran_inanim, matrix_verbs = {}, {}, {}, {}
+for tense in ['past', 'present', 'future', 'finite']:
+    verbs[tense], verbs_intran_anim[tense], verbs_intran_inanim[tense], matrix_verbs[tense] = {}, {}, {}, {}
 
-verbs_intran = {}
-# Tokens
-verbs_intran['singular'] = ['smiles', 'jumps', 'falls', 'disappears']
-verbs_intran['plural'] =  ['smile', 'jump', 'fall', 'disappear']
+verbs['past'] = ['saw', 'stopped']
+verbs['present']['singular'] = ['sees', 'stops']
+verbs['present']['plural'] =  ['see', 'stop']
+verbs['future'] = ['will see', 'will stop']
+verbs['finite'] = verbs['present']['plural']
+
+verbs_intran_anim['past'] = ['smiled', 'jumpped']
+verbs_intran_anim['present']['singular'] = ['smiles', 'jumps']
+verbs_intran_anim['present']['plural'] =  ['smile', 'jump']
+verbs_intran_anim['future'] = ['will smile', 'will jump']
+
+verbs_intran_inanim['past'] = ['fell', 'disappeared']
+verbs_intran_inanim['present']['singular'] = ['falls', 'disappears']
+verbs_intran_inanim['present']['plural'] =  ['fall', 'disappear']
+verbs_intran_inanim['future'] = ['will fall', 'will disappear']
+
+matrix_verbs['past'] = ['knew', 'remembered', 'said']
+matrix_verbs['present']['singular'] = ['knows', 'remembers', 'says']
+matrix_verbs['present']['plural'] =   ['know', 'remember' , 'say']
+matrix_verbs['future'] = ['will know', 'will remember', 'will say']
 
 copula = {}
 copula['singular'] = ['is']
 copula['plural'] = ['are']
-
-# MATRIX VERBS
-# -----
-# Initialization
-matrix_verbs = {}
-# Tokens
-matrix_verbs['singular'] = ['remembers', 'says', 'declares']
-matrix_verbs['plural'] =   ['remember' , 'say', 'declare']
-
 
 ##########################
 ###### PREPOSITIONS ######
@@ -157,10 +168,12 @@ Words = {
     'determinants':determinants.copy(),
     'pronouns':pronouns.copy(),
     'nouns':nouns.copy(),
+    'nouns_inanimate':nouns_inanimate.copy(),
     'nouns_SC':nouns_SC.copy(),
     'location_nouns':location_nouns.copy(),
     'verbs':verbs.copy(),
-    'verbs_intran':verbs_intran.copy(),
+    'verbs_intran_anim':verbs_intran_anim.copy(),
+    'verbs_intran_inanim':verbs_intran_inanim.copy(),
     'copula':copula.copy(),
     'matrix_verbs':matrix_verbs.copy(),
     'loc_preps':loc_preps.copy(),
