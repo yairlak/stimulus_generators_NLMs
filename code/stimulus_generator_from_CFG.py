@@ -3,7 +3,8 @@
 import os
 import contextlib
 
-from utils import add_features_to_dict, check_twice
+from utils import add_features_to_dict
+from utils import check_twice, check_congruence
 from nltk.parse import load_parser
 from nltk.parse.generate import generate
 from tqdm import tqdm
@@ -45,10 +46,6 @@ for s in tqdm(list(generate(fcfg.grammar()))): # generate all sentences from gra
 # To dataframe
 df = pd.DataFrame(d_grammar)
 
-# Move sentence to front column
-cols = sorted(list(df))
-cols.insert(0, cols.pop(cols.index('sentence')))
-df = df.loc[:, cols]
 
 # Remove duplicate sentences
 df = df.drop_duplicates(subset=['sentence'])
@@ -66,6 +63,15 @@ for E in SINGLE_STRINGS:
     df = df[~df['sentence'].apply(check_twice, E=E)]
 df = df.reset_index(drop=True)
 
-# Print and save
-print(df)
+for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
+    df[f'congruent_subj_{feat}'] = df.apply(lambda row:
+                                            check_congruence(row[f'subj_{feat}'],
+                                                             row[f'embedsubj_{feat}']),
+                                            axis=1)
+
+# Move sentence to front column and save
+cols = sorted(list(df))
+cols.insert(0, cols.pop(cols.index('sentence')))
+df = df.loc[:, cols]
 df.to_csv(fn_output)
+print(df)
