@@ -36,8 +36,8 @@ objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NU
 # Binding (possessives)
 S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possObjNP[GROUP=?e]
 S[GROUP=?e] -> possSubjNP[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
-possSubjNP[GROUP=possessive_subj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_subj[possNUM=?pn, possGEN=?pg, possPERS=?pp, BOUND=TESTFEATUREMATCH] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
-possObjNP[GROUP=possessive_obj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_obj[possNUM=?pn, possGEN=?pg, possPERS=?pp, BOUND=TESTFEATUREMATCH] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
+possSubjNP[GROUP=possessive_subj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_subj[possNUM=?pn, possGEN=?pg, possPERS=?pp] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
+possObjNP[GROUP=possessive_obj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_obj[possNUM=?pn, possGEN=?pg, possPERS=?pp] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
 
 #############
 # QUESTIONS #
@@ -91,20 +91,20 @@ embedClause[GROUP=embed_which_clause] -> rel_which embedsubj_N[NUM=?n] embedverb
 
 # Det
 Det -> 'the'
-poss_subj[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
-poss_subj[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
-poss_subj[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
-poss_subj[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
-poss_subj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_subj[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_subj[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_obj[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
-poss_obj[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
-poss_obj[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
-poss_obj[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
-poss_obj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_obj[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_obj[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_subj[NUM=sg, PERS=1] -> 'my'
+poss_subj[NUM=pl, PERS=1] -> 'our'
+poss_subj[PERS=2] -> 'your'
+poss_subj[NUM=sg, GEN=f, PERS=3] -> 'her'
+poss_subj[NUM=sg, GEN=m, PERS=3] -> 'his'
+poss_subj[NUM=pl, GEN=m, PERS=3] -> 'their'
+poss_subj[NUM=pl, GEN=f, PERS=3] -> 'their'
+poss_obj[NUM=sg, PERS=1] -> 'my'
+poss_obj[NUM=pl, PERS=1] -> 'our'
+poss_obj[PERS=2] -> 'your'
+poss_obj[NUM=sg, GEN=f, PERS=3] -> 'her'
+poss_obj[NUM=sg, GEN=m, PERS=3] -> 'his'
+poss_obj[NUM=pl, GEN=m, PERS=3] -> 'their'
+poss_obj[NUM=pl, GEN=f, PERS=3] -> 'their'
 
 # subject
 subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
