@@ -67,6 +67,23 @@ def remove_sentences_with_repeated_lemma(df):
     return df
 
 
+def remove_impossible_binding(df):
+    # remove "He saw him", "I saw me", etc.
+    binding_problems = (
+        (df["subj_type"] == "PRO") &
+        (df["obj_type"] == "PRO") &
+        (~(df["obj_REFL"] == True)) &
+        (df["obj_congruence_all"])
+    )
+    for test_exclude in ["I saw me"]:
+        assert (test_exclude in df[binding_problems]["sentence"]) or ( not (test_exclude in df["sentence"]) )
+    for test_include in ["I saw myself"]:
+        assert not (test_include in df[binding_problems]["sentence"])
+    df = df[~binding_problems]
+    df = df.reset_index(drop=True)
+    return df
+
+
 def add_agr_congruence_subj(df):
     for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
         df[f'congruent_subj_{feat}'] = df.apply(lambda row:
