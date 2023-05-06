@@ -48,10 +48,12 @@ def order_columns(df, bring2front):
     return df
 
 
-def remove_repeated_lemma_and_sentences(df):
-    # Remove duplicate sentences
+def remove_sentences_with_repeated_lemma(df):
     df = df.drop_duplicates(subset=['sentence'])
+    return df
 
+
+def remove_repeated_lemma(df):
     # Remove sentences where a lemma is repeated
     # verbs are not included if one verb is trans and the other is intrans
     SINGLE_STRINGS = Words['nouns']['masculine']['singular'] + \
