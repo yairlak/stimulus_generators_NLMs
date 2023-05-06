@@ -14,7 +14,7 @@ def calc_single_binding(row, pronoun_type: str):
     binding_quantifier = None
     binding_pronoun = None
     if row["subj_type"] == pronoun_type:
-        if not (row["obj_type"].isnull()):
+        if not (row["obj_type"] is None):  # TODO: does that work for empty values?
             agreement_match = get_agreement_match(row, "subj", "obj")
             # valid_conditionA not relevant: no reflexive in subject position
             valid_conditionB = True
@@ -46,12 +46,12 @@ def calc_single_binding(row, pronoun_type: str):
 def format_binding(bindings):
     res = {}
     for pronoun_type, binding in bindings.items():
-        for prop, val in binding:
-            if prop == "agreement_match":
+        for prop, val in binding.items():
+            if prop == "agreement_match" and (val is not None):
                 for feature, val2 in val.items():
                     res[f"{pronoun_type}_congruence_{feature}"] = val2
             else:
-                res[f"{pronoun_type}_{feature}"] = val
+                res[f"{pronoun_type}_{prop}"] = val
     return res
 
 
