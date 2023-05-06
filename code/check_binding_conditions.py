@@ -4,8 +4,14 @@ import pandas as pd
 
 def get_agreement_match(row, role1, role2):
     agreement_match = {}
-    for feature in ["GEN", "NUM", "ANIM"]:
-        agreement_match[feature] = row[f"{role1}_{feature}"] == row[f"{role2}_{feature}"]
+    agr_features = ["GEN", "NUM", "PERS", "ANIM"]
+    for feature in agr_features:
+        agreement_match[feature] = (
+            (row[f"{role1}_{feature}"] == row[f"{role2}_{feature}"])
+            or (pd.isnull(row[f"{role1}_{feature}"]))
+            or (pd.isnull(row[f"{role2}_{feature}"]))
+        )
+    agreement_match["all"] = all(agreement_match[feature] for feature in agr_features)
     return agreement_match
 
 
