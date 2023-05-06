@@ -53,6 +53,7 @@ def remove_repeated_lemma_and_sentences(df):
     df = df.drop_duplicates(subset=['sentence'])
 
     # Remove sentences where a lemma is repeated
+    # verbs are not included if one verb is trans and the other is intrans
     SINGLE_STRINGS = Words['nouns']['masculine']['singular'] + \
                      Words['nouns']['feminine']['singular'] + \
                      Words['nouns_inanimate']['singular'] + \
