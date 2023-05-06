@@ -36,8 +36,8 @@ objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NU
 # Binding (possessives)
 S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possObjNP[GROUP=?e]
 S[GROUP=?e] -> possSubjNP[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
-possSubjNP[GROUP=possessive_subj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_subj[possNUM=?pn, possGEN=?pg, possPERS=?pp] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
-possObjNP[GROUP=possessive_obj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_obj[possNUM=?pn, possGEN=?pg, possPERS=?pp] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
+possSubjNP[GROUP=possessive_subj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_subj[possNUM=?pn, possGEN=?pg, possPERS=?pp] subj_N[NUM=?n, GEN=?g, ANIM=?a, PERS=?p, REL=true]
+possObjNP[GROUP=possessive_obj, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_obj[possNUM=?pn, possGEN=?pg, possPERS=?pp] obj_N[NUM=?n, GEN=?g, ANIM=?a, PERS=?p, REL=true]
 
 #############
 # QUESTIONS #
@@ -251,16 +251,6 @@ rel_which -> 'which'
 rel_who -> 'who'
 Which -> 'which'
 
-possN[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'mother'
-possN[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'father'
-possN[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'sister'
-possN[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'brother'
-possN[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'sisters'
-possN[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'brothers'
-possN[NUM=sg, GEN=f, PERS=3, ANIM=false] -> 'cat'
-possN[NUM=sg, GEN=m, PERS=3, ANIM=false] -> 'dog'
-possN[NUM=pl, GEN=f, PERS=3, ANIM=false] -> 'cats'
-possN[NUM=pl, GEN=m, PERS=3, ANIM=false] -> 'dogs'
 """
 
 with open(fn_grammar, 'w') as f:
