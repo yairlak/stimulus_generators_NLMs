@@ -78,11 +78,11 @@ Subjrel[NUM=?n, PERS=3, ANIM=true, GROUP=subjrel] -> embedverb_Trans[finite=true
 
 # Embedding
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] nestedClause[GROUP=?g]
-nestedClause[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
-nestedClause[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, GROUP=embed_clause] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
+nestedClause[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
+nestedClause[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
 nestedClause[GROUP=embed_subjwho_clause] -> rel_who embedverb_Trans[finite=true, NUM=sg, PERS=3, ANIM=true] Det embedobj_N
-nestedClause[GROUP=embed_objwho_clause] -> nestedbjWh[GROUP=?e, NUM=?n, PERS=?p] embedverb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
-nestedbjWh[GROUP=embed_objwho_clause, NUM=?n, PERS=?p] -> obj_WH Det embedsubj_N[NUM=?n, PERS=?p, ANIM=true]
+nestedClause[GROUP=embed_objwho_clause] -> nestedobjWh[NUM=?n, PERS=?p] embedverb_Trans[finite=true, NUM=?n, PERS=?p, ANIM=true]
+nestedobjWh[NUM=?n, PERS=?p] -> obj_WH Det embedsubj_N[NUM=?n, PERS=?p, ANIM=true]
 nestedClause[GROUP=embed_which_clause] -> rel_which embedsubj_N[NUM=?n] embedverb_Intrans[finite=true, NUM=?n, PERS=3]
 
 #######################
@@ -265,4 +265,3 @@ possN[NUM=pl, GEN=m, PERS=3, ANIM=false] -> 'dogs'
 
 with open(fn_grammar, 'w') as f:
     f.write(grammar)
-    
