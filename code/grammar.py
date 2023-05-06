@@ -23,7 +23,7 @@ VP[NUM=?n, PERS=?p, ANIM=?a, GROUP=svo] -> verb_Trans[finite=true, NUM=?n, PERS=
 objNP -> obj_PropN
 objNP -> Det obj_N
 objNP -> quantifier_obj[NUM=?n] obj_N[NUM=?n]
-objNP -> obj_PRO[BOUND=false]
+objNP -> obj_PRO[REFL=false]
 
 ###########
 # BINDING #
@@ -31,7 +31,7 @@ objNP -> obj_PRO[BOUND=false]
 
 # Binding (reflexives)
 S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objPRO[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
-objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, ANIM=?a, BOUND=true]
+objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, ANIM=?a, REFL=true]
 
 # Binding (possessives)
 S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] possObjNP[GROUP=?e]
@@ -140,21 +140,21 @@ embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['fe
 quantifier_obj[NUM=sg] -> '{"'|'".join(Words['quantifiers']['singular'])}'
 quantifier_obj[NUM=pl] -> '{"'|'".join(Words['quantifiers']['plural'])}'
 
-obj_PRO[NUM=sg, PERS=1, ANIM=true, BOUND=false]->'me'
-obj_PRO[NUM=sg, PERS=1, ANIM=true, BOUND=true]->'myself'
-obj_PRO[PERS=2, ANIM=true, BOUND=false]->'you'
-obj_PRO[PERS=2, NUM=sg, ANIM=true, BOUND=true]->'yourself'
-obj_PRO[PERS=2, NUM=pl, ANIM=true, BOUND=true]->'yourselves'
-obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, BOUND=false]->'him'
-obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, BOUND=true]->'himself'
-obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, BOUND=false]->'her'
-obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, BOUND=true]->'herself'
-obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=false, BOUND=false]->'it'
-obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=false, BOUND=true]->'itself'
-obj_PRO[NUM=pl, PERS=3, ANIM=true, BOUND=false]->'them'
-obj_PRO[NUM=pl, PERS=3, ANIM=true, BOUND=true]->'themselves'
-obj_PRO[NUM=pl, PERS=1, ANIM=true, BOUND=false]->'us'
-obj_PRO[NUM=pl, PERS=1, ANIM=true, BOUND=true]->'ourselves'
+obj_PRO[NUM=sg, PERS=1, ANIM=true, REFL=false]->'me'
+obj_PRO[NUM=sg, PERS=1, ANIM=true, REFL=true]->'myself'
+obj_PRO[PERS=2, ANIM=true, REFL=false]->'you'
+obj_PRO[PERS=2, NUM=sg, ANIM=true, REFL=true]->'yourself'
+obj_PRO[PERS=2, NUM=pl, ANIM=true, REFL=true]->'yourselves'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, REFL=false]->'him'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, REFL=true]->'himself'
+obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, REFL=false]->'her'
+obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, REFL=true]->'herself'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=false, REFL=false]->'it'
+obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=false, REFL=true]->'itself'
+obj_PRO[NUM=pl, PERS=3, ANIM=true, REFL=false]->'them'
+obj_PRO[NUM=pl, PERS=3, ANIM=true, REFL=true]->'themselves'
+obj_PRO[NUM=pl, PERS=1, ANIM=true, REFL=false]->'us'
+obj_PRO[NUM=pl, PERS=1, ANIM=true, REFL=true]->'ourselves'
 
 
 obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> '{"'|'".join(Words['nouns']['masculine']['singular'])}'
