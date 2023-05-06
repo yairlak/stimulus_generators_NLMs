@@ -24,7 +24,7 @@ for role in ["subj", "obj"]:
 ## Binding (reflexives)
 grammar_rules += f"""
 S[GROUP=?e] -> subjNP[NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans[finite=true, TENSE=?t, NUM=?n, PERS=?p, ANIM=?a] objPRO[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a]
-objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, ANIM=?a, BOUND=true]
+objPRO[GROUP=binding_reflexives, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] -> obj_PRO[NUM=?n, GEN=?g, PERS=?p, ANIM=?a, REFL=true]
 """
 ## Binding (possessives)
 grammar_rules += f"""
@@ -34,7 +34,7 @@ S[GROUP=?e] -> possSubjNP[GROUP=?e, NUM=?n, GEN=?g, PERS=?p, ANIM=?a] verb_Trans
 ### possNP
 for role in ["subj", "obj"]:
     grammar_rules += f"""
-poss{role.capitalize()}NP[GROUP=possessive_{role}, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_{role}[possNUM=?pn, possGEN=?pg, possPERS=?pp, BOUND=TESTFEATUREMATCH] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
+poss{role.capitalize()}NP[GROUP=possessive_{role}, NUM=?n, GEN=?g, PERS=?p, ANIM=?a, possNUM=?pn, possGEN=?pg, possPERS=?pp] -> poss_{role}[possNUM=?pn, possGEN=?pg, possPERS=?pp, REFL=TESTFEATUREMATCH] possN[NUM=?n, GEN=?g, ANIM=?a, PERS=?p]
 """
 
 # QUESTIONS #
