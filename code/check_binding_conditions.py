@@ -13,14 +13,23 @@ def calc_single_binding(row, pronoun_type: str):
     valid_conditionC = None
     binding_quantifier = None
     binding_pronoun = None
-    if row["subj_type"] == pronoun_type:
+
+    subj_type, obj_type = row["subj_type"], row["obj_type"]
+    if row["poss_type"] == "subj":
+        subj_type = "POSS"
+    if row["poss_type"] == "obj":
+        obj_type = "POSS"
+
+    if subj_type == pronoun_type:
         if not (row["obj_type"] is None):  # TODO: does that work for empty values?
             agreement_match = get_agreement_match(row, "subj", "obj")
             # valid_conditionA not relevant: no reflexive in subject position
             valid_conditionB = True
-            valid_conditionC = False
-    # PRO=obj, DP=subj
-    if row["obj_type"] == pronoun_type:
+            if pronoun_type == "POSS":
+                valid_conditionC = True
+            else:
+                valid_conditionC = False
+    if obj_type == pronoun_type:
         agreement_match = get_agreement_match(row, "obj", "subj")
         if row["obj_REFL"] == "true":
             valid_conditionA = True
