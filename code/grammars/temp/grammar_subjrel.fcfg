@@ -1,7 +1,0 @@
-#######################
-# Grammar Productions #
-#######################
-
-# subject RCs
-S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=3, ANIM=true] rel_That Subjrel[NUM=?n, PERS=3, ANIM=true] verb_Intrans[TENSE=pres, NUM=?n, PERS=3, ANIM=true]
-Subjrel[NUM=?n, PERS=3, ANIM=true] -> embedverb_Trans[NUM=?n, TENSE=pres, PERS=3] Det embedsubj_N[NUM=?n, ANIM=true, GROUP=subjrel]
