@@ -4,6 +4,7 @@
 import re
 import pandas as pd
 import numpy as np
+from check_binding_conditions import calc_binding
 from lexicon_English import Words
 
 
@@ -89,4 +90,10 @@ def add_has_embedtype(df):
         df[f'has_{group}'] = df.apply(lambda row:
                                       row['sentence_GROUP'].startswith(f'{group}'),
                                       axis=1)
+    return df
+
+
+def add_binding(df):
+    binding_cols = df.apply(calc_binding, axis=1, result_type="expand")
+    df = pd.concat([df, binding_cols], axis=1)
     return df
