@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 from lexicon_English import Words
 
+
 def add_features_to_dict(d, pos_tuple):
     word, pos = pos_tuple
     for i_item, (key, val) in enumerate(pos.items()):
@@ -13,12 +14,12 @@ def add_features_to_dict(d, pos_tuple):
             svo = None
             if '_' in val:
                 svo, svo_type = val.split('_')
-                if svo_type in ['Quantifier']: # Exception
-                    d[val] = word # val:subj_QuantifierTrue
-                elif svo_type!='':
+                if svo_type in ['Quantifier']:  # Exception
+                    d[val] = word  # val:subj_QuantifierTrue
+                elif svo_type != '':
                     d[f'{svo}_type'] = svo_type
                     d[f'{svo}'] = word
-        else: # Features of pos
+        else:  # Features of pos
             if svo is not None:
                 feature_name = key
                 d[f'{svo}_{feature_name}'] = val
@@ -34,13 +35,13 @@ def check_congruence(f1, f2):
     if pd.isnull(f1) or pd.isnull(f2):
         return np.nan
     else:
-        return f1==f2
-    
+        return (f1 == f2)
+
 
 def order_columns(df, bring2front):
     # sort columns by name
     cols = sorted(list(df))
-    
+
     # Move sentence to front column and save
     for name in bring2front:
         cols.insert(0, cols.pop(cols.index(name)))
@@ -67,21 +68,25 @@ def remove_repeated_lemma(df):
     return df
 
 
-def compute_new_features(df):
-    # Congruence wrt number, gender, person and animacy
+def add_agr_congruence_subj(df):
     for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
         df[f'congruent_subj_{feat}'] = df.apply(lambda row:
                                                 check_congruence(row[f'subj_{feat}'],
                                                                  row[f'embedsubj_{feat}']),
                                                 axis=1)
-    # Sentence length
-    df['sentence_length'] = df.apply(lambda row: len(row['sentence'].split()),
+    return df
+
+
+def add_sentence_length(df):
+    df['sentence_length'] = df.apply(lambda row:
+                                     len(row['sentence'].split()),
                                      axis=1)
-    
-    
-    # objrel
+    return df
+
+
+def add_has_embedtype(df):
     for group in ['subjrel', 'objrel', 'embed_', 'quest_']:
-        df[f'has_{group}'] = df.apply(lambda row: row['sentence_GROUP'].startswith(f'{group}'),
-                                        axis=1)
-    
+        df[f'has_{group}'] = df.apply(lambda row:
+                                      row['sentence_GROUP'].startswith(f'{group}'),
+                                      axis=1)
     return df
