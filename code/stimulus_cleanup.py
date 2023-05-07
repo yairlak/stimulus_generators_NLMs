@@ -16,7 +16,10 @@ df = utils.remove_sentences_with_repeated_lemma(df)
 df = utils.add_agr_congruence_subj(df)
 df = utils.add_sentence_length(df)
 df = utils.add_has_embedtype(df)
+df = utils.calc_incongruence_counts(df)
 df = utils.add_binding(df)
+
+
 
 df = utils.remove_impossible_binding(df)
 
