@@ -94,9 +94,9 @@ def remove_impossible_binding(df):
         (~(df["obj_REFL"] == True)) &
         (df["obj_congruence_all"])
     )
-    for test_exclude in ["I saw me"]:
+    for test_exclude in ["I saw me", "She saw her"]:
         assert (test_exclude in df[binding_problems]["sentence"]) or ( not (test_exclude in df["sentence"]) )
-    for test_include in ["I saw myself"]:
+    for test_include in ["I saw myself", "She saw herself"]:
         assert not (test_include in df[binding_problems]["sentence"])
     df = df[~binding_problems]
     df = df.reset_index(drop=True)
@@ -134,10 +134,12 @@ def add_binding(df):
 
 
 def sanity_checks(sentence, tree):
-    test1 = "dogs see " in sentence
-    test2 = "dogs falls" in sentence
-    if test1 or test2:
-        print("WARNING")
-        print(sentence)
-        print(tree)
-    return
+    for fragment_test in [
+        "dog see ",  # not a perfect test: "The boy that saw the dogs see the man"
+        "dogs falls"  # not a perfect test: "The boy that saw the dogs falls"
+    ]:
+        if fragment_test in sentence:
+            print("WARNING")
+            print(sentence)
+            print(tree)
+        return
