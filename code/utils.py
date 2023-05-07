@@ -121,11 +121,28 @@ def remove_impossible_binding(df):
     return df
 
 
-def add_agr_congruence_subj(df):
+def calc_incongruence_counts(df):
+    df = calc_incongruence_count(df, "subj", "obj")
+    df = calc_incongruence_count(df, "poss", "subj")
+    df = calc_incongruence_count(df, "poss", "obj")
+    df = calc_incongruence_count(df, "subj", "embedsubj")
+    return df
+
+
+def calc_incongruence_count(df, role1, role2, features=None):
+    if features is None:
+        features = ['NUM', 'GEN', 'PERS', 'ANIM']
+    df = add_agr_congruence(df, role1, role2)
+    cols = [f"congruent_{role1}_{role2}_{feat}" for feat in features]
+    df[f"{role1}_{role2}_incongruence_count"] = df[cols].eq(False).sum(axis=1)
+    return df
+
+
+def add_agr_congruence(df, role1, role2):
     for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
-        df[f'congruent_subj_{feat}'] = df.apply(lambda row:
-                                                check_congruence(row[f'subj_{feat}'],
-                                                                 row[f'embedsubj_{feat}']),
+        df[f'congruent_{role1}_{role2}_{feat}'] = df.apply(lambda row:
+                                                check_congruence(row[f'{role1}_{feat}'],
+                                                                 row[f'{role2}_{feat}']),
                                                 axis=1)
     return df
 
