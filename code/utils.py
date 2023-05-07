@@ -56,6 +56,24 @@ def check_congruence(f1, f2):
         return (f1 == f2)
 
 
+def get_agreement_match(row, role1, role2, agr_features=None):
+    if agr_features is None:
+        agr_features = ["GEN", "NUM", "PERS", "ANIM"]
+    agreement_match = {}
+    if pd.isnull(row[f"{role1}_type"]) or pd.isnull(row[f"{role1}_type"]):
+        # How do we mark that?
+        # return np.nan?
+        # agreement_match = {feature: np.nan for feature in agr_features}
+        pass
+    else:
+        for feature in agr_features:
+            agreement_match[feature] = check_congruence(
+                row[f"{role1}_{feature}"],
+                row[f"{role2}_{feature}"])
+    agreement_match["all"] = all(agreement_match[feature] for feature in agr_features)
+    return agreement_match
+
+
 def order_columns(df, bring2front):
     # sort columns by name
     cols = sorted(list(df))
