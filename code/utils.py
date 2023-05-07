@@ -8,6 +8,25 @@ from check_binding_conditions import calc_binding
 from lexicon_English import Words
 
 
+def extract_verb(POS, anim_feature, Wkey):
+    if (POS == "embedverb_Matrix"):
+        return ""
+    W = Words[Wkey]
+    res = ""
+    res = f"""
+{POS}[finite=true, TENSE=pres, NUM=sg, PERS=1{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
+{POS}[finite=true, TENSE=pres, NUM=sg, PERS=2{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
+{POS}[finite=true, TENSE=pres, NUM=sg, PERS=3{anim_feature}] -> '{"'|'".join(W['present']['singular'])}'
+{POS}[finite=true, TENSE=pres, NUM=pl{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
+{POS}[finite=true, TENSE=past{anim_feature}] -> '{"'|'".join(W['past'])}'
+{POS}[finite=true, TENSE=future{anim_feature}] -> '{"'|'".join(W['future'])}'"""
+    if "-finite" in W.keys():
+        res += f"""
+{POS}[finite=false{anim_feature}] -> '{"'|'".join(W['-finite'])}'"""
+    res += "\n"
+    return res
+
+
 def add_features_to_dict(d, pos_tuple):
     word, pos = pos_tuple
     for i_item, (key, val) in enumerate(pos.items()):
