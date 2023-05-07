@@ -13,11 +13,9 @@ fn_output = '../stimuli/stimuli_from_fcfg.csv'
 
 fcfg = load_parser(path2grammar, trace=0)
 
-d_grammar = []
-for s in tqdm(list(generate(fcfg.grammar()))):  # generate all sentences from grammar
+
+def process_sentence(s):
     sentence = ' '.join(s)
-    if sentence in [d["sentence"] for d in d_grammar]: # Skip if sentence already exists
-        continue
     for tree in fcfg.parse(s):  # enter loop only if parsablei
         d = {}
         d['sentence'] = sentence
@@ -26,19 +24,23 @@ for s in tqdm(list(generate(fcfg.grammar()))):  # generate all sentences from gr
         # extract sentence features from tree label
         for i_item, (feature, val) in enumerate(tree.label().items()):
             if feature == 'GROUP':
-                d[f'sentence_{feature}'] = val  # add sentenial features
+                d[f'sentence_{feature}'] = val  # add sentential features
 
         # extract word features from tree pos
         for pos in tree.pos():  # Loop over part of speech
             d = add_features_to_dict(d, pos)
 
-        d_grammar.append(d)
-        break  # skip if there are more possible parses (n_trees>1)
+        return d
+    return None
+
+
+d_grammar = [process_sentence(s) for s in tqdm(list(generate(fcfg.grammar())))]
+d_grammar = [s for s in d_grammar if s is not None]
 
 # To dataframe
 df = pd.DataFrame(d_grammar)
 
-df = remove_repeated_sentences(df) # can be probably removed
+df = remove_repeated_sentences(df)
 
 df.to_csv(fn_output)
 print(df)
