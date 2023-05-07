@@ -15,15 +15,14 @@ fcfg = load_parser(path2grammar, trace=0)
 
 d_grammar = []
 for s in tqdm(list(generate(fcfg.grammar()))):  # generate all sentences from grammar
+    sentence = ' '.join(s)
+    if sentence in [d["sentence"] for d in d_grammar]: # Skip if sentence already exists
+        continue
     for tree in fcfg.parse(s):  # enter loop only if parsablei
-        s = ' '.join(s)
-        for d in d_grammar:
-            if s==d['sentence']: break # Skip if sentence already exists
-        
         d = {}
-        d['sentence'] = s
-        sanity_checks(d['sentence'], tree) # e.g., agreement ('dog see')
-        
+        d['sentence'] = sentence
+        sanity_checks(sentence, tree) # e.g., agreement ('dog see') - not a full proof test
+
         # extract sentence features from tree label
         for i_item, (feature, val) in enumerate(tree.label().items()):
             if feature == 'GROUP':
