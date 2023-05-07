@@ -131,17 +131,17 @@ location_nouns['feminine']['plural'] = nouns['feminine']['plural']
 ###### VERBS ######
 ###################
 # Initialization
-verbs, verbs_intran_anim, verbs_intran_inanim, matrix_verbs = {}, {}, {}, {}
-for tense in ['past', 'present', 'future', 'finite']:
-    verbs[tense], verbs_intran_anim[tense], verbs_intran_inanim[tense], matrix_verbs[tense] = {}, {}, {}, {}
+verbs, verbs_intran_anim, verbs_intran_inanim, matrix_verbs, do_Aux = {}, {}, {}, {}, {}
+for tense in ['present']:
+    verbs[tense], verbs_intran_anim[tense], verbs_intran_inanim[tense], matrix_verbs[tense], do_Aux[tense] = {}, {}, {}, {}, {}
 
 verbs['past'] = ['saw', 'stopped']
 verbs['present']['singular'] = ['sees', 'stops']
 verbs['present']['plural'] = ['see', 'stop']
 verbs['future'] = ['will see', 'will stop']
-verbs['finite'] = verbs['present']['plural']
+verbs['-finite'] = verbs['present']['plural']
 
-verbs_intran_anim['past'] = ['smiled', 'jumpped']
+verbs_intran_anim['past'] = ['smiled', 'jumped']
 verbs_intran_anim['present']['singular'] = ['smiles', 'jumps']
 verbs_intran_anim['present']['plural'] = ['smile', 'jump']
 verbs_intran_anim['future'] = ['will smile', 'will jump']
@@ -155,11 +155,16 @@ matrix_verbs['past'] = ['knew', 'remembered', 'said']
 matrix_verbs['present']['singular'] = ['knows', 'remembers', 'says']
 matrix_verbs['present']['plural'] =   ['know', 'remember', 'say']
 matrix_verbs['future'] = ['will know', 'will remember', 'will say']
-matrix_verbs['finite'] = matrix_verbs['present']['plural']
+matrix_verbs['-finite'] = matrix_verbs['present']['plural']
 
 copula = {}
 copula['singular'] = ['is']
 copula['plural'] = ['are']
+
+do_Aux['past'] = ['did']
+do_Aux['present']['singular'] = ['does']
+do_Aux['present']['plural'] =   ['do']
+do_Aux['future'] = ['will']
 
 ##########################
 ###### PREPOSITIONS ######
@@ -194,6 +199,7 @@ Words = {
     'verbs_intran_anim':verbs_intran_anim.copy(),
     'verbs_intran_inanim':verbs_intran_inanim.copy(),
     'copula':copula.copy(),
+    'do_Aux':do_Aux.copy(),
     'matrix_verbs':matrix_verbs.copy(),
     'loc_preps':loc_preps.copy(),
     'adjectives':adjectives.copy(),
