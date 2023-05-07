@@ -1,18 +1,6 @@
 import numpy as np
 import pandas as pd
-
-
-def get_agreement_match(row, role1, role2):
-    agreement_match = {}
-    agr_features = ["GEN", "NUM", "PERS", "ANIM"]
-    for feature in agr_features:
-        agreement_match[feature] = (
-            (row[f"{role1}_{feature}"] == row[f"{role2}_{feature}"])
-            or (pd.isnull(row[f"{role1}_{feature}"]))
-            or (pd.isnull(row[f"{role2}_{feature}"]))
-        )
-    agreement_match["all"] = all(agreement_match[feature] for feature in agr_features)
-    return agreement_match
+import utils
 
 
 def calc_single_binding(row, pronoun_position: str, target_position: str):
@@ -27,7 +15,7 @@ def calc_single_binding(row, pronoun_position: str, target_position: str):
     if row[f"{pronoun_position}_type"] == "PRO":
         pronoun_type = "PRO"
         if not pd.isnull(row[f"{target_position}_type"]):
-            agreement_match = get_agreement_match(row, pronoun_position, target_position)
+            agreement_match = utils.get_agreement_match(row, pronoun_position, target_position)
             valid_conditionC = (pronoun_position == "subj")
             if (pronoun_position == "obj") and row[f"{pronoun_position}_REFL"] == "true":
                 pronoun_type = "REFL"
@@ -40,7 +28,7 @@ def calc_single_binding(row, pronoun_position: str, target_position: str):
     elif row[f"{pronoun_position}_type"] == "POSS":
         pronoun_type = "POSS"
         if not pd.isnull(row[f"{target_position}_type"]):
-            agreement_match = get_agreement_match(row, "poss_N", target_position)
+            agreement_match = utils.get_agreement_match(row, "poss_N", target_position)
             valid_conditionC = True
             valid_conditionB = True
             binding_quantifier = (not pd.isnull(row["quantifier"]))
