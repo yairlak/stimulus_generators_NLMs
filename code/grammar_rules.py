@@ -38,7 +38,7 @@ VPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Intrans[finite=?f, NUM=?n, AN
 VPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Trans[finite=?f, NUM=?n, ANIM=?a, PERS=?p] Det obj_N
 
 # Sentences of the first type below are already in:
-# S[GROUP=main_that_clause] -> Det subj_N[NUM=?n] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
+# S[GROUP=main_that_clause] -> Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
 S[GROUP=main_whether_clause] -> do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=false, NUM=?n, ANIM=?a, PERS=3]
 S[GROUP=main_subjwho_clause] -> subj_who VPthe[finite=true, NUM=sg, PERS=3]
 S[GROUP=main_subjwhich_clause] -> subj_which subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
@@ -51,7 +51,7 @@ embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Trans[finite=?f, NUM=?n,
 
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] embedS[GROUP=?g]
 
-embedS[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
+embedS[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
 embedS[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=false, NUM=?n, ANIM=?a, PERS=3]
 embedS[GROUP=embed_subjwho_clause] -> subj_who embedVPthe[finite=true, NUM=sg, PERS=3]
 embedS[GROUP=embed_subjwhich_clause] -> subj_which embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
