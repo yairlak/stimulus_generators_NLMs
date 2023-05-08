@@ -7,12 +7,18 @@ from nltk.parse import load_parser
 from nltk.parse.generate import generate
 from tqdm import tqdm
 import pandas as pd
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-v', '--verbose', action='store_true', default=False)
+args = parser.parse_args()
 
 path2grammar = 'grammars/grammar.fcfg'
 fn_output = '../stimuli/stimuli_from_fcfg.csv'
 
 fcfg = load_parser(path2grammar, trace=0)
-
+if args.verbose:
+    print(fcfg.grammar())
 
 def process_sentence(s):
     sentence = ' '.join(s)
@@ -44,3 +50,4 @@ df = remove_repeated_sentences(df)
 
 df.to_csv(fn_output)
 print(df)
+print(f'Stimuli saved to {fn_output}')

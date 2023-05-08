@@ -29,7 +29,7 @@ rel_Whether -> 'whether'
 """
 
 # subject pronouns
-grammar_lexicon += f"""
+grammar_lexicon += """
 subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
 subj_PRO[NUM=pl, PERS=2, ANIM=true]->'you'
 subj_PRO[NUM=sg, PERS=3, GEN=m, ANIM=true]->'he'
@@ -40,23 +40,23 @@ subj_PRO[NUM=pl, PERS=3, ANIM=true]->'they'
 """
 
 # object pronouns
-grammar_lexicon += f"""
+grammar_lexicon += """
 obj_PRO[NUM=sg, PERS=1, ANIM=true, REFL=false]->'me'
 obj_PRO[PERS=2, ANIM=true, REFL=false]->'you'
 obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, REFL=false]->'him'
 obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, REFL=false]->'her'
-obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=false, REFL=false]->'it'
+obj_PRO[NUM=sg, PERS=3, ANIM=false, REFL=false]->'it'
 obj_PRO[NUM=pl, PERS=1, ANIM=true, REFL=false]->'us'
 obj_PRO[NUM=pl, PERS=3, ANIM=true, REFL=false]->'them'
 """
 # reflexive pronouns
-grammar_lexicon += f"""
+grammar_lexicon += """
 obj_PRO[NUM=sg, PERS=1, ANIM=true, REFL=true]->'myself'
 obj_PRO[PERS=2, NUM=sg, ANIM=true, REFL=true]->'yourself'
 obj_PRO[PERS=2, NUM=pl, ANIM=true, REFL=true]->'yourselves'
 obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=true, REFL=true]->'himself'
 obj_PRO[NUM=sg, GEN=f, PERS=3, ANIM=true, REFL=true]->'herself'
-obj_PRO[NUM=sg, GEN=m, PERS=3, ANIM=false, REFL=true]->'itself'
+obj_PRO[NUM=sg, PERS=3, ANIM=false, REFL=true]->'itself'
 obj_PRO[NUM=pl, PERS=1, ANIM=true, REFL=true]->'ourselves'
 obj_PRO[NUM=pl, PERS=3, ANIM=true, REFL=true]->'themselves'
 
@@ -96,5 +96,5 @@ for role in ["verb", "embedverb"]:
     grammar_lexicon += extract_verb(f"{role}_Intrans", ", ANIM=true", "verbs_intran_anim")
     grammar_lexicon += extract_verb(f"{role}_Intrans", "", "verbs_intran_inanim")
     grammar_lexicon += extract_verb(f"{role}_Trans", ", ANIM=true", "verbs")
-grammar_lexicon += extract_verb(f"verb_Matrix", ", ANIM=true", "matrix_verbs")
+grammar_lexicon += extract_verb("verb_Matrix", ", ANIM=true", "matrix_verbs")
 grammar_lexicon += extract_verb("do_Aux", "", "do_Aux")
