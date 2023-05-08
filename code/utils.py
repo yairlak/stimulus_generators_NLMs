@@ -20,6 +20,39 @@ def df_to_sentences(df):
     return sentences
 
 
+def remove_faulty_agreements(df):
+    # Warning: adjency between noun and verb does not guarantee agreement
+    # Here it is protected because we look at (noun, verb) pairs very early
+    # Beware of RC, auxiliaries, etc.
+    patterns = []
+    pro_verb_s = ["he", "she", "it"]
+    noun_sg = ["man", "brother", "actor", "woman", "sister", "actress", "book", "plate", "pencil"]
+    verb_pl = ["see", "stop", "play", "sing", "sneeze", "fall", "disappear", "vanish", "know", "remember", "declare"]
+    pattern_noun_sg = "^([A-Za-z]+\s)(" + "|".join(noun_sg) + ")\s(" + "|".join(verb_pl) + r")\b"
+    pattern_pro_sg = "^(" + "|".join(pro_verb_s) + ")\s(" + "|".join(verb_pl) + r")\b"
+
+    patterns.append(pattern_noun_sg)
+    patterns.append(pattern_pro_sg)
+
+    pro_verb_no_s = ["I", "you", "we", "they"]
+    noun_pl = [n+'s' for n in noun_sg] + ["men", "women"]
+    noun_pl.remove("mans")
+    noun_pl.remove("womans")
+    verb_sg = [v+'s' for v in verb_pl] + ["vanishes"]
+    verb_sg.remove("vanishs")
+    pattern_pl = "^([A-Za-z]+\s)(" + "|".join(noun_pl) + ")\s(" + "|".join(verb_sg) + r")\b"
+    pattern_pro_pl = "^(" + "|".join(pro_verb_no_s) + ")\s(" + "|".join(verb_sg) + r")\b"
+
+    patterns.append(pattern_pl)
+    patterns.append(pattern_pro_pl)
+
+    pattern = "|".join(patterns)
+    mask = df["sentence"].str.match(pattern)
+    df = df[~mask]
+
+    return df
+
+
 def extract_verb(POS, anim_feature, Wkey):
     if (POS == "embedverb_Matrix"):
         return ""

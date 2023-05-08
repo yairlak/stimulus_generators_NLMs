@@ -58,6 +58,10 @@ if __name__ == "__main__":
     df = utils.remove_sentences_with_repeated_lemma(df)
     print(f"- Number of sentences: {len(df)}")
 
+    print("Removing clearly faulty agreements...")
+    df = utils.remove_faulty_agreements(df)
+    print(f"- Number of sentences: {len(df)}")
+
     print("Parsing sentences...")
     sentences = utils.df_to_sentences(df)
     process_pool = multiprocessing.Pool(processes=os.cpu_count())
