@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from utils import add_features_to_dict, remove_repeated_sentences, remove_sentences_with_repeated_lemma
+import utils
 from utils import sanity_checks
 from nltk.parse import load_parser
 from nltk.parse.generate import generate
@@ -36,7 +36,7 @@ def process_sentence(s):
 
         # extract word features from tree pos
         for pos in tree.pos():  # Loop over part of speech
-            d = add_features_to_dict(d, pos)
+            d = utils.add_features_to_dict(d, pos)
 
         return d
     return None
@@ -48,16 +48,18 @@ if __name__ == "__main__":
 
     print("Generating all sentences...")
     sentences = list(generate(fcfg.grammar()))  # Exhausting generator for tqdm counter.
+    print(f"- Number of sentences: {len(sentences)}")
 
-    print("Removing duplicate sentences and duplicate lemmas...")
-    sentences_txt = [" ".join(sentence) for sentence in sentences]
-    df = pd.DataFrame({"sentence": sentences_txt})
-    df = remove_repeated_sentences(df)
-    df = remove_sentences_with_repeated_lemma(df)
-    sentences_txt = df["sentence"]
-    sentences = [sentence_txt.split(" ") for sentence_txt in sentences_txt]
+    df = utils.sentences_to_df(sentences)
+
+    print("Removing duplicate sentences, duplicate lemmas...")
+    df = utils.remove_repeated_sentences(df)
+    print(f"- Number of sentences: {len(df)}")
+    df = utils.remove_sentences_with_repeated_lemma(df)
+    print(f"- Number of sentences: {len(df)}")
 
     print("Parsing sentences...")
+    sentences = utils.df_to_sentences(df)
     process_pool = multiprocessing.Pool(processes=os.cpu_count())
     d_grammar = list(tqdm(process_pool.imap(process_sentence, sentences), total=len(sentences)))
 
@@ -65,7 +67,6 @@ if __name__ == "__main__":
 
     # To dataframe
     df = pd.DataFrame(d_grammar)
-    df = remove_repeated_sentences(df)
 
     df.to_csv(fn_output)
     print(df)

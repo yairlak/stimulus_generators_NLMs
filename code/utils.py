@@ -8,6 +8,18 @@ from check_binding_conditions import calc_binding
 from lexicon_English import Words
 
 
+def sentences_to_df(sentences):
+    sentences_txt = [" ".join(sentence) for sentence in sentences]
+    df = pd.DataFrame({"sentence": sentences_txt})
+    return df
+
+
+def df_to_sentences(df):
+    sentences_txt = df["sentence"]
+    sentences = [sentence_txt.split(" ") for sentence_txt in sentences_txt]
+    return sentences
+
+
 def extract_verb(POS, anim_feature, Wkey):
     if (POS == "embedverb_Matrix"):
         return ""
