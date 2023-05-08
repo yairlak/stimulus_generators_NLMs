@@ -1,4 +1,4 @@
-grammar_rules = f""" \
+grammar_rules = """ \
 # SVOs
 
 S[GROUP=?e] -> subjNP[NUM=?n, PERS=?p, ANIM=?a] VP[NUM=?n, PERS=?p, ANIM=?a, GROUP=?e]
@@ -46,8 +46,8 @@ S[GROUP=main_objwho_clause] -> obj_who do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n,
 S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a]
 
 # Embedded clause
-embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Intrans[finite=?f, NUM=?n, ANIM=?a, PERS=?p]
-embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Trans[finite=?f, NUM=?n, ANIM=?a, PERS=?p] Det embedobj_N
+embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Intrans[finite=?f, NUM=?n, ANIM=?a, PERS=?p]
+embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Trans[finite=?f, NUM=?n, ANIM=?a, PERS=?p] Det embedobj_N
 
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] embedS[GROUP=?g]
 

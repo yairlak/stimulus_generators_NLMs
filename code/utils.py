@@ -49,11 +49,16 @@ def check_twice(sentence, E):
     return len(matches) > 1
 
 
-def check_congruence(f1, f2):
+def check_congruence(f1, f2, role1=None, role2=None, poss_type=None):
     if pd.isnull(f1) or pd.isnull(f2):
         return np.nan
+    elif role1=='poss' and poss_type!=role2: 
+        # Verify that the possessive is of the current role.
+        # Since, poss-subj congruence means 'poss' is the possessive of the subject
+        # And poss-obj congruence means the 'poss' is of the object.
+        return np.nan
     else:
-        return (f1 == f2)
+        return (f1 != f2)
 
 
 def get_agreement_match(row, role1, role2, agr_features=None):
@@ -133,17 +138,21 @@ def calc_incongruence_count(df, role1, role2, features=None):
     if features is None:
         features = ['NUM', 'GEN', 'PERS', 'ANIM']
     df = add_agr_congruence(df, role1, role2)
-    cols = [f"congruent_{role1}_{role2}_{feat}" for feat in features]
-    df[f"{role1}_{role2}_incongruence_count"] = df[cols].eq(False).sum(axis=1)
+    cols = [f"incongruent_{role1}_{role2}_{feat}" for feat in features]
+    cols = [c for c in cols if c in df.columns]
+    df[f"incongruence_{role1}_{role2}_count"] = df[cols].sum(axis=1, min_count=1)
     return df
 
 
 def add_agr_congruence(df, role1, role2):
     for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
-        df[f'congruent_{role1}_{role2}_{feat}'] = df.apply(lambda row:
-                                                check_congruence(row[f'{role1}_{feat}'],
-                                                                 row[f'{role2}_{feat}']),
-                                                axis=1)
+        if f'{role1}_{feat}' in df.columns and f'{role2}_{feat}' in df.columns:
+            df[f'incongruent_{role1}_{role2}_{feat}'] = df.apply(lambda row:
+                                                    check_congruence(row[f'{role1}_{feat}'],
+                                                                     row[f'{role2}_{feat}'],
+                                                                     role1, role2,
+                                                                     row['poss_type']),
+                                                    axis=1)
     return df
 
 
@@ -178,3 +187,8 @@ def sanity_checks(sentence, tree):
             print(sentence)
             print(tree)
         return
+
+
+def nan_NUM_of_you(df):
+    df.loc[df.subj=='you', 'subj_NUM'] = np.nan
+    return df
