@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from utils import add_features_to_dict, remove_repeated_sentences
+from utils import add_features_to_dict, remove_repeated_sentences, remove_sentences_with_repeated_lemma
 from utils import sanity_checks
 from nltk.parse import load_parser
 from nltk.parse.generate import generate
@@ -48,6 +48,14 @@ if __name__ == "__main__":
 
     print("Generating all sentences...")
     sentences = list(generate(fcfg.grammar()))  # Exhausting generator for tqdm counter.
+
+    print("Removing duplicate sentences and duplicate lemmas...")
+    sentences_txt = [" ".join(sentence) for sentence in sentences]
+    df = pd.DataFrame({"sentence": sentences_txt})
+    df = remove_repeated_sentences(df)
+    df = remove_sentences_with_repeated_lemma(df)
+    sentences_txt = df["sentence"]
+    sentences = [sentence_txt.split(" ") for sentence_txt in sentences_txt]
 
     print("Parsing sentences...")
     process_pool = multiprocessing.Pool(processes=os.cpu_count())
