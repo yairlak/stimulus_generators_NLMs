@@ -30,7 +30,7 @@ def remove_faulty_agreements(df):
     patterns = []
 
     noun_inanimate = Words['nouns_inanimate']['singular'] + Words['nouns_inanimate']['plural']
-    verb_animate = flatten(Words['verbs'].values()) + flatten(Words['verbs_intran_anim'])
+    verb_animate = set(flatten(Words['verbs'].values()) + flatten(Words['verbs_intran_anim']))
     pattern_animacy = "([A-Za-z]+\s)(" + "|".join(noun_inanimate) + ")\s(" + "|".join(verb_animate) + r")\b"
 
     patterns.append(pattern_animacy)
