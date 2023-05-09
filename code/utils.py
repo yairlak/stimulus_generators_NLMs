@@ -276,5 +276,5 @@ def compute_mean_zipf(row, words=['subj', 'embedsubj', 'verb', 'embedverb'],
     return np.mean(zipfs)
 
 def add_word_zipf(df):   
-    df['mean_zipf'] = df.apply(lambda row: compute_mean_zipf(df), axis=1)
+    df['mean_zipf'] = df.apply(lambda row: compute_mean_zipf(row), axis=1)
     return df

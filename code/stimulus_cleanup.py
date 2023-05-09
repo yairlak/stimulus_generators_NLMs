@@ -14,12 +14,13 @@ df = utils.remove_sentences_with_repeated_lemma(df)
 df = utils.nan_NUM_of_you(df) # TODO: fix at the grammar level
 
 print(f'Adding new columns...')
+df = utils.add_word_zipf(df)
 df = utils.calc_incongruence_counts(df)
 df = utils.add_sentence_length(df)
 df = utils.add_has_embedtype(df)
 df = utils.calc_incongruence_counts(df)
 df = utils.add_binding(df)
-df = utils.add_word_zipf(df)
+
 
 df = utils.remove_impossible_binding(df)
 
