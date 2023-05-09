@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 # Data Files #
 # ############
 *.csv
 
+=======
+>>>>>>> 331259416ef6a6ca17acd3765cc49f9d04fe6dce
 # Compiled source #
 ###################
 *.com
