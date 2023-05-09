@@ -103,11 +103,6 @@ def add_features_to_dict(d, pos_tuple):
     return d
 
 
-def check_twice(sentence, E):
-    matches = re.findall(E, sentence)
-    return len(matches) > 1
-
-
 def check_congruence(f1, f2, role1=None, role2=None, poss_type=None):
     if pd.isnull(f1) or pd.isnull(f2):
         return np.nan
@@ -157,13 +152,21 @@ def remove_repeated_sentences(df):
 def remove_sentences_with_repeated_lemma(df):
     # Remove sentences where a lemma is repeated
     # verbs are not included if one verb is trans and the other is intrans
-    SINGLE_STRINGS = Words['nouns']['masculine']['singular'] + \
-                     Words['nouns']['feminine']['singular'] + \
-                     Words['nouns_inanimate']['singular'] + \
-                     Words['proper_names']['singular']['masculine'] + \
+    SINGLE_STRINGS = Words['proper_names']['singular']['masculine'] + \
                      Words['proper_names']['singular']['feminine']
-    for E in SINGLE_STRINGS:
-        df = df[~df['sentence'].apply(check_twice, E=E)]
+    SINGLE_STRINGS = [rf"\b{w}\b" for w in SINGLE_STRINGS]
+    SINGLE_PAIRS = ([
+            Words['nouns']['masculine'][NUM] +
+            Words['nouns']['feminine'][NUM] +
+            Words['nouns_inanimate'][NUM]
+            for NUM in ['singular', 'plural']])
+    SINGLE_PAIRS = [
+        rf"\b{n_sg}\b|\b{n_pl}\b"
+        for (n_sg, n_pl) in zip(*SINGLE_PAIRS)]
+    REG_EX = SINGLE_STRINGS + SINGLE_PAIRS
+    for E in REG_EX:
+        mask = (df['sentence'].str.count(E) <= 1)
+        df = df[mask]
     df = df.reset_index(drop=True)
     return df
 
