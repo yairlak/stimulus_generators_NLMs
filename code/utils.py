@@ -20,56 +20,77 @@ def df_to_sentences(df):
     return sentences
 
 
+def godown_dict_keys(d, ks):
+    res = set()
+    if len(ks) == 0:
+        return d
+    elif (type(d) is not dict):
+        return res
+    else:
+        next_ds = [next_d for k, next_d in d.items() if re.search(ks[0], k)]
+        for next_d in next_ds:
+            res = res.union(godown_dict_keys(next_d, ks[1:]))
+    return res
+
+
+def reg_unigrams(w_list, border=r"\b"):
+    return "|".join(rf"{border}{w}{border}" for w in w_list)
+
+
+def reg_bigrams(w1_list, w2_list):
+    return f"({reg_unigrams(w1_list)})" + r"\s" + f"({reg_unigrams(w2_list)})"
+
+
 def remove_faulty_agreements(df):
     # Warning: adjency between noun and verb does not guarantee agreement
     # Here it is protected because we look at (noun, verb) pairs very early
     # Beware of RC, auxiliaries, etc.
-    def flatten(list_list):
-        return [item for sublist in list_list for item in sublist]
 
-    patterns = []
+    patterns_a = []
 
-    noun_inanimate = Words['nouns_inanimate']['singular'] + Words['nouns_inanimate']['plural']
-    verb_animate = set(flatten(Words['verbs'].values()) + flatten(Words['verbs_intran_anim']))
-    pattern_animacy = "([A-Za-z]+\s)(" + "|".join(noun_inanimate) + ")\s(" + "|".join(verb_animate) + r")\b"
+    noun_inanimate = godown_dict_keys(Words, ['nouns_inanimate', '.*'])
+    verb_animate = godown_dict_keys(Words, [r'\bverbs\b|\bverbs_intran_anim\b', '.*', '.*'])
+    pattern_animacy = "[A-Za-z]+\s" + reg_bigrams(noun_inanimate, verb_animate)
 
-    patterns.append(pattern_animacy)
+    patterns_a.append(pattern_animacy)
 
     pro_verb_s = ["he", "she", "it"]
-    noun_sg = ["man", "brother", "actor", "woman", "sister", "actress", "book", "plate", "pencil"]
-    proper_names = ['John', 'Bob', 'Lex', 'Mary', 'Patricia', 'Lori']
-
-    verb_pl = ["see", "stop", "play", "sing", "sneeze", "fall", "disappear", "vanish", "know", "remember", "declare"]
-    pattern_noun_sg = "([A-Za-z]+\s){0,1}(" + "|".join(noun_sg+proper_names) + ")\s(" + "|".join(verb_pl) + r")\b"
-    pattern_pro_sg = "(" + "|".join(pro_verb_s) + ")\s(" + "|".join(verb_pl) + r")\b"
-
-    patterns.append(pattern_noun_sg)
-    patterns.append(pattern_pro_sg)
+    noun_sg_anim = godown_dict_keys(Words, [r'(\bnouns\b|\bnouns_inanimate\b)', '.*', 'singular'])
+    noun_sg_inanim = godown_dict_keys(Words, [r'(\bnouns_inanimate\b)', 'singular'])
+    noun_sg = noun_sg_anim.union(noun_sg_inanim)
+    proper_names = godown_dict_keys(Words, [r'\bproper_names\b', '.*', '.*'])
 
     pro_verb_no_s = ["I", "you", "we", "they"]
-    noun_pl = [n+'s' for n in noun_sg] + ["men", "women", "actresses"]
-    noun_pl.remove("mans")
-    noun_pl.remove("womans")
-    noun_pl.remove("actresss")
-    verb_sg = [v+'s' for v in verb_pl] + ["vanishes"]
-    verb_sg.remove("vanishs")
-    pattern_pl = "([A-Za-z]+\s)(" + "|".join(noun_pl) + ")\s(" + "|".join(verb_sg) + r")\b"
-    pattern_pro_pl = "(" + "|".join(pro_verb_no_s) + ")\s(" + "|".join(verb_sg) + r")\b"
+    noun_pl = godown_dict_keys(Words, [r'\bnouns\b|\bnouns_inanimate\b', '.*', 'plural'])
 
-    patterns.append(pattern_pl)
-    patterns.append(pattern_pro_pl)
+    verb_sg = godown_dict_keys(Words, ['verbs', 'present', 'singular'])
+    verb_pl = godown_dict_keys(Words, ['verbs', 'present', 'plural'])
 
-    pattern = "|".join(f"((that|whether)\s{p})" for p in patterns)
-    pattern += "|"
-    pattern += "|".join(f"(^{p})" for p in patterns)
+    pattern_PN_sg = reg_bigrams(proper_names, verb_pl)
+    pattern_noun_sg = "[A-Za-z]+\s" + reg_bigrams(noun_sg, verb_pl)
+    pattern_pro_sg = reg_bigrams(pro_verb_s, verb_pl)
+    pattern_pl = "[A-Za-z]+\s" + reg_bigrams(noun_pl, verb_sg)
+    pattern_pro_pl = reg_bigrams(pro_verb_no_s, verb_sg)
+
+    patterns_a.append(pattern_PN_sg)
+    patterns_a.append(pattern_noun_sg)
+    patterns_a.append(pattern_pro_sg)
+    patterns_a.append(pattern_pl)
+    patterns_a.append(pattern_pro_pl)
+
+    patterns = []
+    for pattern in patterns_a:
+        patterns.append(f"^{pattern}")
+        patterns.append(f"(that|whether){pattern}")
 
     quant_sg = ["every", "no"]
     quant_pl = ["all", "few"]
-    pattern_q_sg = "(" + "|".join(quant_sg) + ")\s(" + "|".join(noun_pl) + r")\b"
-    pattern_q_pl = "(" + "|".join(quant_pl) + ")\s(" + "|".join(noun_sg) + r")\b"
+    pattern_q_sg = reg_bigrams(quant_sg, noun_pl)
+    pattern_q_pl = reg_bigrams(quant_pl, noun_sg)
+    patterns.append(f"{pattern_q_sg}")
+    patterns.append(f"{pattern_q_pl}")
 
-    pattern += f"|({pattern_q_sg})"
-    pattern += f"|({pattern_q_pl})"
+    pattern = "|".join(rf"({p})" for p in patterns)
 
     mask = df["sentence"].str.contains(pattern)
     df = df[~mask]
