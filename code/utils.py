@@ -103,10 +103,10 @@ def add_features_to_dict(d, pos_tuple):
     return d
 
 
-def check_congruence(f1, f2, role1=None, role2=None, poss_type=None):
+def check_incongruence(f1, f2, role1=None, role2=None, poss_type=None):
     if pd.isnull(f1) or pd.isnull(f2):
         return np.nan
-    elif role1=='poss' and poss_type!=role2: 
+    elif role1=='poss' and poss_type!=role2:
         # Verify that the possessive is of the current role.
         # Since, poss-subj congruence means 'poss' is the possessive of the subject
         # And poss-obj congruence means the 'poss' is of the object.
@@ -126,7 +126,7 @@ def get_agreement_match(row, role1, role2, agr_features=None):
         pass
     else:
         for feature in agr_features:
-            agreement_match[feature] = check_congruence(
+            agreement_match[feature] = check_incongruence(
                 row[f"{role1}_{feature}"],
                 row[f"{role2}_{feature}"])
     agreement_match["all"] = all(agreement_match[feature] for feature in agr_features)
@@ -199,18 +199,18 @@ def calc_incongruence_counts(df):
 def calc_incongruence_count(df, role1, role2, features=None):
     if features is None:
         features = ['NUM', 'GEN', 'PERS', 'ANIM']
-    df = add_agr_congruence(df, role1, role2)
+    df = calc_incongruence_feature(df, role1, role2)
     cols = [f"incongruent_{role1}_{role2}_{feat}" for feat in features]
     cols = [c for c in cols if c in df.columns]
     df[f"incongruence_{role1}_{role2}_count"] = df[cols].sum(axis=1, min_count=1)
     return df
 
 
-def add_agr_congruence(df, role1, role2):
+def calc_incongruence_feature(df, role1, role2):
     for feat in ['NUM', 'GEN', 'PERS', 'ANIM']:
         if f'{role1}_{feat}' in df.columns and f'{role2}_{feat}' in df.columns:
             df[f'incongruent_{role1}_{role2}_{feat}'] = df.apply(lambda row:
-                                                    check_congruence(row[f'{role1}_{feat}'],
+                                                    check_incongruence(row[f'{role1}_{feat}'],
                                                                      row[f'{role2}_{feat}'],
                                                                      role1, role2,
                                                                      row['poss_type']),
