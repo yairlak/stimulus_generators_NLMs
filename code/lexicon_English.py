@@ -63,10 +63,10 @@ verbs, verbs_intran_anim, verbs_intran_inanim, matrix_verbs, do_Aux = {}, {}, {}
 for tense in ['present']:
     verbs[tense], verbs_intran_anim[tense], verbs_intran_inanim[tense], matrix_verbs[tense], do_Aux[tense] = {}, {}, {}, {}, {}
 
-verbs['past'] = ['saw', 'stopped']
-verbs['present']['singular'] = ['sees', 'stops']
-verbs['present']['plural'] = ['see', 'stop']
-verbs['future'] = ['will see', 'will stop']
+verbs['past'] = ['took', 'sold', 'utilized']
+verbs['present']['singular'] = ['takes', 'sells', 'utilizes']
+verbs['present']['plural'] = ['take', 'sell', 'utilize']
+verbs['future'] = ['will take', 'will sell', 'will utilize']
 verbs['-finite'] = verbs['present']['plural']
 
 verbs_intran_anim['past'] =                ['played', 'sang', 'sneezed']
