@@ -24,7 +24,17 @@ def remove_faulty_agreements(df):
     # Warning: adjency between noun and verb does not guarantee agreement
     # Here it is protected because we look at (noun, verb) pairs very early
     # Beware of RC, auxiliaries, etc.
+    def flatten(list_list):
+        return [item for sublist in list_list for item in sublist]
+
     patterns = []
+
+    noun_inanimate = Words['nouns_inanimate']['singular'] + Words['nouns_inanimate']['plural']
+    verb_animate = flatten(Words['verbs'].values()) + flatten(Words['verbs_intran_anim'])
+    pattern_animacy = "([A-Za-z]+\s)(" + "|".join(noun_inanimate) + ")\s(" + "|".join(verb_animate) + r")\b"
+
+    patterns.append(pattern_animacy)
+
     pro_verb_s = ["he", "she", "it"]
     noun_sg = ["man", "brother", "actor", "woman", "sister", "actress", "book", "plate", "pencil"]
     proper_names = ['John', 'Bob', 'Lex', 'Mary', 'Patricia', 'Lori']

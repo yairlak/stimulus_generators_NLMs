@@ -52,9 +52,11 @@ if __name__ == "__main__":
 
     df = utils.sentences_to_df(sentences)
 
-    print("Removing duplicate sentences, duplicate lemmas...")
+    print("Removing duplicate sentences...")
     df = utils.remove_repeated_sentences(df)
     print(f"- Number of sentences: {len(df)}")
+
+    print("Removing sentences with duplicate lemmas...")
     df = utils.remove_sentences_with_repeated_lemma(df)
     print(f"- Number of sentences: {len(df)}")
 
