@@ -27,27 +27,41 @@ def remove_faulty_agreements(df):
     patterns = []
     pro_verb_s = ["he", "she", "it"]
     noun_sg = ["man", "brother", "actor", "woman", "sister", "actress", "book", "plate", "pencil"]
+    proper_names = ['John', 'Bob', 'Lex', 'Mary', 'Patricia', 'Lori']
+
     verb_pl = ["see", "stop", "play", "sing", "sneeze", "fall", "disappear", "vanish", "know", "remember", "declare"]
-    pattern_noun_sg = "^([A-Za-z]+\s)(" + "|".join(noun_sg) + ")\s(" + "|".join(verb_pl) + r")\b"
-    pattern_pro_sg = "^(" + "|".join(pro_verb_s) + ")\s(" + "|".join(verb_pl) + r")\b"
+    pattern_noun_sg = "([A-Za-z]+\s){0,1}(" + "|".join(noun_sg+proper_names) + ")\s(" + "|".join(verb_pl) + r")\b"
+    pattern_pro_sg = "(" + "|".join(pro_verb_s) + ")\s(" + "|".join(verb_pl) + r")\b"
 
     patterns.append(pattern_noun_sg)
     patterns.append(pattern_pro_sg)
 
     pro_verb_no_s = ["I", "you", "we", "they"]
-    noun_pl = [n+'s' for n in noun_sg] + ["men", "women"]
+    noun_pl = [n+'s' for n in noun_sg] + ["men", "women", "actresses"]
     noun_pl.remove("mans")
     noun_pl.remove("womans")
+    noun_pl.remove("actresss")
     verb_sg = [v+'s' for v in verb_pl] + ["vanishes"]
     verb_sg.remove("vanishs")
-    pattern_pl = "^([A-Za-z]+\s)(" + "|".join(noun_pl) + ")\s(" + "|".join(verb_sg) + r")\b"
-    pattern_pro_pl = "^(" + "|".join(pro_verb_no_s) + ")\s(" + "|".join(verb_sg) + r")\b"
+    pattern_pl = "([A-Za-z]+\s)(" + "|".join(noun_pl) + ")\s(" + "|".join(verb_sg) + r")\b"
+    pattern_pro_pl = "(" + "|".join(pro_verb_no_s) + ")\s(" + "|".join(verb_sg) + r")\b"
 
     patterns.append(pattern_pl)
     patterns.append(pattern_pro_pl)
 
-    pattern = "|".join(patterns)
-    mask = df["sentence"].str.match(pattern)
+    pattern = "|".join(f"((that|whether)\s{p})" for p in patterns)
+    pattern += "|"
+    pattern += "|".join(f"(^{p})" for p in patterns)
+
+    quant_sg = ["every", "no"]
+    quant_pl = ["all", "few"]
+    pattern_q_sg = "(" + "|".join(quant_sg) + ")\s(" + "|".join(noun_pl) + r")\b"
+    pattern_q_pl = "(" + "|".join(quant_pl) + ")\s(" + "|".join(noun_sg) + r")\b"
+
+    pattern += f"|({pattern_q_sg})"
+    pattern += f"|({pattern_q_pl})"
+
+    mask = df["sentence"].str.contains(pattern)
     df = df[~mask]
 
     return df
