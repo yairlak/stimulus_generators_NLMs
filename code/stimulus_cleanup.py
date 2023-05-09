@@ -19,6 +19,7 @@ df = utils.add_sentence_length(df)
 df = utils.add_has_embedtype(df)
 df = utils.calc_incongruence_counts(df)
 df = utils.add_binding(df)
+df = utils.add_word_zipf(df)
 
 df = utils.remove_impossible_binding(df)
 
