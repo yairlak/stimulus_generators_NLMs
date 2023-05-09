@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from check_binding_conditions import calc_binding
 from lexicon_English import Words
-
+import wordfreq
 
 def sentences_to_df(sentences):
     sentences_txt = [" ".join(sentence) for sentence in sentences]
@@ -263,4 +263,18 @@ def sanity_checks(sentence, tree):
 
 def nan_NUM_of_you(df):
     df.loc[df.subj=='you', 'subj_NUM'] = np.nan
+    return df
+
+
+def compute_mean_zipf(row, words=['subj', 'embedsubj', 'verb', 'embedverb'],
+                      lang='en'):
+    zipfs = []
+    for word in words:
+        if not pd.isnull(row[word]):
+            zipfs.append(wordfreq.zipf_frequency(row[word],
+                                                 lang=lang))
+    return np.mean(zipfs)
+
+def add_word_zipf(df):   
+    df['mean_zipf'] = df.apply(lambda row: compute_mean_zipf(df), axis=1)
     return df
