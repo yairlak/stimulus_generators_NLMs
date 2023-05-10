@@ -9,7 +9,7 @@ import warnings
 import wordfreq
 
 
-from check_binding_conditions import calc_binding
+from check_binding_conditions import calc_simple_binding
 from lexicon_English import Words
 import wordfreq
 import warnings
@@ -405,8 +405,8 @@ def add_has_property(df, groups=['subjrel', 'objrel', 'embed_', 'quest_']):
         df[f'has_{group}'] = df.apply(lambda row:
                                       row['sentence_GROUP'].startswith(f'{group}'),
                                       axis=1)
-    
-    
+
+
     df['has_relative_clause'] = df.apply(lambda row:
                                          (row['has_subjrel'] or row['has_objrel']),
                                          axis=1)
@@ -414,7 +414,7 @@ def add_has_property(df, groups=['subjrel', 'objrel', 'embed_', 'quest_']):
 
 
 def add_binding(df):
-    binding_cols = df.apply(calc_binding, axis=1, result_type="expand")
+    binding_cols = df.apply(calc_simple_binding, axis=1, result_type="expand")
     df = pd.concat([df, binding_cols], axis=1)
     return df
 
@@ -456,12 +456,12 @@ def get_clause_type(row):
         return row['sentence_GROUP'].split('_')[1]
     else:
         return np.nan
-    
-    
+
+
 def add_clause_type(df):
     df['clause_type'] = df.apply(lambda row: get_clause_type(row), axis=1)
     return df
-    
+
 
 def get_aux_tense(row):
     if row['sentence_GROUP'].startswith("main_obj"):
@@ -488,4 +488,3 @@ def lr_agreement_with_attractor(df):
     df['long_range_agreement_with_attractor'] = df.apply(lambda row: check_lr_attractor(row),
                                                          axis=1)
     return df
-    

@@ -3,6 +3,38 @@ import pandas as pd
 import utils
 
 
+def calc_simple_binding(row):
+    if not (row["GROUP"] == "svo"):
+        bound_variable = np.nan
+        coref_variable = np.nan
+    elif pd.isnull(row['quantifier']):
+        bound_variable = np.nan
+        if (row['subj_type'] == "PRO"):
+            bound_variable = np.nan
+            coref_variable = (row[f"obj_REFL"] == "true")
+        elif (row['subj_type'] in "PRO"):
+            bound_variable = np.nan
+            coref_variable = False
+        elif (row['subj_type'] in "POSS"):
+            bound_variable = np.nan
+            coref_variable = utils.get_agreement_match(row, "poss_N", "obj")
+        elif (row['obj_type'] in "PRO"):
+            bound_variable = np.nan
+            coref_variable = False
+        elif (row['obj_type'] in "POSS"):
+            bound_variable = np.nan
+            coref_variable = utils.get_agreement_match(row, "poss_N", "subj")
+    elif not (pd.isnull(row['quantifier'])):
+        coref_variable = np.nan
+        if (row['obj_type'] in "POSS"):
+            bound_variable = utils.get_agreement_match(row, "poss_N", "obj")
+        elif (row['obj_type'] in "PRO"):
+            bound_variable = utils.get_agreement_match(row, "subj", "obj")
+    return {
+        'bound_variable': bound_variable,
+        'coref_variable': coref_variable}
+
+
 def calc_single_binding(row, pronoun_position: str, target_position: str):
     pronoun_type = np.nan
     agreement_match = np.nan

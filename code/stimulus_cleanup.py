@@ -10,9 +10,6 @@ fn_output = '../stimuli/stimuli.csv'
 df = pd.read_csv(fn_stimuli_from_fcfg)
 print(f'Loading dataframe: {fn_stimuli_from_fcfg}')
 
-print('Removing repeated lemmas...')
-df = utils.remove_sentences_with_repeated_lemma(df)
-
 print('Modifying columns...')
 df = utils.nan_NUM_of_you(df) # TODO: fix at the grammar level
 df = utils.modify_tense_of_obj_quest(df)
