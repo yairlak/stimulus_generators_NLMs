@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import re
-import pandas as pd
+import datetime
 import numpy as np
+import pandas as pd
+import re
+import warnings
+import wordfreq
+
+
 from check_binding_conditions import calc_binding
 from lexicon_English import Words
 import wordfreq
@@ -129,6 +134,133 @@ def extract_verb(POS, anim_feature, Wkey):
     return res
 
 
+warnings.filterwarnings("ignore", 'This pattern is interpreted as a regular expression, and has match groups.')
+
+def print_time():
+    now = datetime.datetime.now()
+    time_str = now.strftime('%H:%M:%S')
+    print(time_str, end="\t")
+
+
+def sentences_to_df(sentences):
+    sentences_txt = [" ".join(sentence) for sentence in sentences]
+    df = pd.DataFrame({"sentence": sentences_txt})
+    return df
+
+
+def df_to_sentences(df):
+    sentences_txt = df["sentence"]
+    sentences = [sentence_txt.split(" ") for sentence_txt in sentences_txt]
+    return sentences
+
+
+def godown_dict_keys(d, ks):
+    res = set()
+    if len(ks) == 0:
+        return d
+    elif (type(d) is list):
+        return d
+    elif (type(d) is not dict):
+        return res
+    else:
+        next_ds = [next_d for k, next_d in d.items() if re.search(ks[0], k)]
+        for next_d in next_ds:
+            res = res.union(godown_dict_keys(next_d, ks[1:]))
+    return res
+
+
+def reg_unigrams(w_list, border=r"\b"):
+    return "|".join(rf"{border}{w}{border}" for w in w_list)
+
+
+def reg_bigrams(w1_list, w2_list):
+    return f"({reg_unigrams(w1_list)})" + r"\s" + f"({reg_unigrams(w2_list)})"
+
+
+def remove_faulty_agreements(df):
+    # Warning: adjency between noun and verb does not guarantee agreement
+    # Here it is protected because we look at (noun, verb) pairs very early
+    # Beware of RC, auxiliaries, etc.
+
+    patterns_a = []
+
+    pro_inanimate = ["it"]
+    noun_inanimate = godown_dict_keys(Words, ['nouns_inanimate', '.*'])
+    verb_animate = godown_dict_keys(Words, [r'\bverbs\b|\bverbs_intran_anim\b|\bmatrix_verbs\b', '.*', '.*'])
+    pattern_animacy = "[A-Za-z]+\s" + reg_bigrams(noun_inanimate, verb_animate)
+    pattern_it_animacy = reg_bigrams(pro_inanimate, verb_animate)
+
+    patterns_a.append(pattern_it_animacy)
+    patterns_a.append(pattern_animacy)
+
+    pro_verb_s = ["he", "she", "it"]
+    noun_sg_anim = godown_dict_keys(Words, [r'(\bnouns\b|\bnouns_inanimate\b)', '.*', 'singular'])
+    noun_sg_inanim = godown_dict_keys(Words, [r'(\bnouns_inanimate\b)', 'singular'])
+    noun_sg = noun_sg_anim.union(noun_sg_inanim)
+    proper_names = godown_dict_keys(Words, [r'\bproper_names\b', '.*', '.*'])
+
+    pro_verb_no_s = ["I", "you", "we", "they"]
+    noun_pl = godown_dict_keys(Words, [r'\bnouns\b|\bnouns_inanimate\b', '.*', 'plural'])
+
+    verb_sg = godown_dict_keys(Words, ['verbs', 'present', 'singular'])
+    verb_pl = godown_dict_keys(Words, ['verbs', 'present', 'plural'])
+
+    pattern_PN_sg = reg_bigrams(proper_names, verb_pl)
+    pattern_noun_sg = "[A-Za-z]+\s" + reg_bigrams(noun_sg, verb_pl)
+    pattern_pro_sg = reg_bigrams(pro_verb_s, verb_pl)
+    pattern_pl = "[A-Za-z]+\s" + reg_bigrams(noun_pl, verb_sg)
+    pattern_pro_pl = reg_bigrams(pro_verb_no_s, verb_sg)
+
+    patterns_a.append(pattern_PN_sg)
+    patterns_a.append(pattern_noun_sg)
+    patterns_a.append(pattern_pro_sg)
+    patterns_a.append(pattern_pl)
+    patterns_a.append(pattern_pro_pl)
+
+    patterns = []
+    for pattern in patterns_a:
+        patterns.append(f"^{pattern}")
+        patterns.append(f"(that|whether)\s{pattern}")
+    patterns.append("which\s.*" + reg_bigrams(noun_sg, verb_pl))
+    patterns.append("which\s" + reg_bigrams(noun_pl, verb_sg))
+    patterns.append("which\s.*" + reg_bigrams(noun_inanimate, verb_animate))
+    patterns.append(reg_bigrams(["who"], verb_pl))
+
+    quant_sg = ["every", "no"]
+    quant_pl = ["all", "few"]
+    pattern_q_sg = reg_bigrams(quant_sg, noun_pl)
+    pattern_q_pl = reg_bigrams(quant_pl, noun_sg)
+    patterns.append(f"{pattern_q_sg}")
+    patterns.append(f"{pattern_q_pl}")
+
+    patterns.sort(key=len)
+
+    for pattern in patterns:
+        mask = df["sentence"].str.contains(pattern)
+        df = df[~mask]
+
+    return df
+
+
+def extract_verb(POS, anim_feature, Wkey):
+    if (POS == "embedverb_Matrix"):
+        return ""
+    W = Words[Wkey]
+    res = ""
+    res = f"""
+{POS}[finite=true, TENSE=pres, NUM=sg, PERS=1{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
+{POS}[finite=true, TENSE=pres, NUM=sg, PERS=2{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
+{POS}[finite=true, TENSE=pres, NUM=sg, PERS=3{anim_feature}] -> '{"'|'".join(W['present']['singular'])}'
+{POS}[finite=true, TENSE=pres, NUM=pl{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
+{POS}[finite=true, TENSE=past{anim_feature}] -> '{"'|'".join(W['past'])}'
+{POS}[finite=true, TENSE=future{anim_feature}] -> '{"'|'".join(W['future'])}'"""
+    if "-finite" in W.keys():
+        res += f"""
+{POS}[finite=false{anim_feature}] -> '{"'|'".join(W['-finite'])}'"""
+    res += "\n"
+    return res
+
+
 def add_features_to_dict(d, pos_tuple):
     word, pos = pos_tuple
     for i_item, (key, val) in enumerate(pos.items()):
@@ -195,8 +327,7 @@ def remove_repeated_sentences(df):
 def remove_sentences_with_repeated_lemma(df):
     # Remove sentences where a lemma is repeated
     # verbs are not included if one verb is trans and the other is intrans
-    SINGLE_STRINGS = Words['proper_names']['singular']['masculine'] + \
-                     Words['proper_names']['singular']['feminine']
+    SINGLE_STRINGS = godown_dict_keys(Words, ['proper_names', 'singular', '.*'])
     SINGLE_STRINGS = [rf"\b{w}\b" for w in SINGLE_STRINGS]
     SINGLE_PAIRS = ([
             Words['nouns']['masculine'][NUM] +
@@ -208,8 +339,9 @@ def remove_sentences_with_repeated_lemma(df):
         for (n_sg, n_pl) in zip(*SINGLE_PAIRS)]
     REG_EX = SINGLE_STRINGS + SINGLE_PAIRS
     for E in REG_EX:
-        mask = (df['sentence'].str.count(E) <= 1)
-        df = df[mask]
+        doubleE = f"({E}).*({E})"
+        mask = (df['sentence'].str.contains(doubleE))
+        df = df[~mask]
     df = df.reset_index(drop=True)
     return df
 
@@ -268,13 +400,13 @@ def add_sentence_length(df):
     return df
 
 
-def add_has_property(df, groups=['subjrel', 'objrel', 'embed', 'main']):
+def add_has_embedtype(df, groups=['subjrel', 'objrel', 'embed_', 'quest_']):
     for group in groups:
         df[f'has_{group}'] = df.apply(lambda row:
                                       row['sentence_GROUP'].startswith(f'{group}'),
                                       axis=1)
     
-    #
+    
     df['has_relative_clause'] = df.apply(lambda row:
                                          (row['has_subjrel'] or row['has_objrel']),
                                          axis=1)
