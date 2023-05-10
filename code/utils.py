@@ -259,11 +259,16 @@ def add_sentence_length(df):
     return df
 
 
-def add_has_embedtype(df, groups=['subjrel', 'objrel', 'embed_', 'quest_']):
+def add_has_property(df, groups=['subjrel', 'objrel', 'embed', 'main']):
     for group in groups:
         df[f'has_{group}'] = df.apply(lambda row:
                                       row['sentence_GROUP'].startswith(f'{group}'),
                                       axis=1)
+    
+    #
+    df['has_relative_clause'] = df.apply(lambda row:
+                                         (row['has_subjrel'] or row['has_objrel']),
+                                         axis=1)
     return df
 
 
@@ -302,3 +307,17 @@ def compute_mean_zipf(row, words=['subj', 'embedsubj', 'verb', 'embedverb'],
 def add_word_zipf(df):
     df['mean_zipf'] = df.apply(lambda row: compute_mean_zipf(row), axis=1)
     return df
+
+
+def get_clause_type(row):
+    if row['sentence_GROUP'].startswith(('main_', 'embed_')):
+        # remove prefix (embed_/main_) and suffix (_clause) from sentence_GROUP
+        return row['sentence_GROUP'].split('_')[1]
+    else:
+        return np.nan
+    
+    
+def add_clause_type(df):
+    df['clause_type'] = df.apply(lambda row: get_clause_type(row), axis=1)
+    return df
+    
