@@ -39,6 +39,10 @@ def process_sentence(s):
             d = utils.add_features_to_dict(d, pos)
 
         return d
+    if not (re.search("will|self|selves", sentence)):
+        f = open("../stimuli/temp/unparsable_sentences.txt", "a")
+        f.write(sentence+"\n")
+        f.close()
     return None
 
 
@@ -46,24 +50,29 @@ if __name__ == "__main__":
     if args.verbose:
         print(fcfg.grammar())
 
+    utils.print_time()
     print("Generating all sentences...")
     sentences = list(generate(fcfg.grammar()))  # Exhausting generator for tqdm counter.
     print(f"- Number of sentences: {len(sentences)}")
 
     df = utils.sentences_to_df(sentences)
 
+    utils.print_time()
     print("Removing duplicate sentences...")
     df = utils.remove_repeated_sentences(df)
     print(f"- Number of sentences: {len(df)}")
 
+    utils.print_time()
     print("Removing clearly faulty agreements...")
     df = utils.remove_faulty_agreements(df)
     print(f"- Number of sentences: {len(df)}")
 
+    utils.print_time()
     print("Removing sentences with duplicate lemmas...")
     df = utils.remove_sentences_with_repeated_lemma(df)
     print(f"- Number of sentences: {len(df)}")
 
+    utils.print_time()
     print("Parsing sentences...")
     sentences = utils.df_to_sentences(df)
     process_pool = multiprocessing.Pool(processes=os.cpu_count())

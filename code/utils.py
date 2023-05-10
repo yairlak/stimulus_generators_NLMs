@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import re
-import pandas as pd
+import datetime
 import numpy as np
+import pandas as pd
+import re
+import warnings
+import wordfreq
+
+
 from check_binding_conditions import calc_binding
 from lexicon_English import Words
-import wordfreq
-import warnings
+
+
 warnings.filterwarnings("ignore", 'This pattern is interpreted as a regular expression, and has match groups.')
+
+def print_time():
+    now = datetime.datetime.now()
+    time_str = now.strftime('%H:%M:%S')
+    print(time_str, end="\t")
 
 
 def sentences_to_df(sentences):
@@ -55,7 +65,7 @@ def remove_faulty_agreements(df):
 
     pro_inanimate = ["it"]
     noun_inanimate = godown_dict_keys(Words, ['nouns_inanimate', '.*'])
-    verb_animate = godown_dict_keys(Words, [r'\bverbs\b|\bverbs_intran_anim\b', '.*', '.*'])
+    verb_animate = godown_dict_keys(Words, [r'\bverbs\b|\bverbs_intran_anim\b|\bmatrix_verbs\b', '.*', '.*'])
     pattern_animacy = "[A-Za-z]+\s" + reg_bigrams(noun_inanimate, verb_animate)
     pattern_it_animacy = reg_bigrams(pro_inanimate, verb_animate)
 
@@ -90,9 +100,9 @@ def remove_faulty_agreements(df):
     for pattern in patterns_a:
         patterns.append(f"^{pattern}")
         patterns.append(f"(that|whether)\s{pattern}")
-    patterns.append("which\s" + reg_bigrams(noun_sg, verb_pl))
+    patterns.append("which\s.*" + reg_bigrams(noun_sg, verb_pl))
     patterns.append("which\s" + reg_bigrams(noun_pl, verb_sg))
-    patterns.append("which\s" + reg_bigrams(noun_inanimate, verb_animate))
+    patterns.append("which\s.*" + reg_bigrams(noun_inanimate, verb_animate))
     patterns.append(reg_bigrams(["who"], verb_pl))
 
     quant_sg = ["every", "no"]
@@ -102,10 +112,11 @@ def remove_faulty_agreements(df):
     patterns.append(f"{pattern_q_sg}")
     patterns.append(f"{pattern_q_pl}")
 
-    pattern = "|".join(rf"({p})" for p in patterns)
+    patterns.sort(key=len)
 
-    mask = df["sentence"].str.contains(pattern)
-    df = df[~mask]
+    for pattern in patterns:
+        mask = df["sentence"].str.contains(pattern)
+        df = df[~mask]
 
     return df
 
@@ -195,8 +206,7 @@ def remove_repeated_sentences(df):
 def remove_sentences_with_repeated_lemma(df):
     # Remove sentences where a lemma is repeated
     # verbs are not included if one verb is trans and the other is intrans
-    SINGLE_STRINGS = Words['proper_names']['singular']['masculine'] + \
-                     Words['proper_names']['singular']['feminine']
+    SINGLE_STRINGS = godown_dict_keys(Words, ['proper_names', 'singular', '.*'])
     SINGLE_STRINGS = [rf"\b{w}\b" for w in SINGLE_STRINGS]
     SINGLE_PAIRS = ([
             Words['nouns']['masculine'][NUM] +
@@ -208,8 +218,9 @@ def remove_sentences_with_repeated_lemma(df):
         for (n_sg, n_pl) in zip(*SINGLE_PAIRS)]
     REG_EX = SINGLE_STRINGS + SINGLE_PAIRS
     for E in REG_EX:
-        mask = (df['sentence'].str.count(E) <= 1)
-        df = df[mask]
+        doubleE = f"({E}).*({E})"
+        mask = (df['sentence'].str.contains(doubleE))
+        df = df[~mask]
     df = df.reset_index(drop=True)
     return df
 
