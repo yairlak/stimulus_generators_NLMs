@@ -7,6 +7,9 @@ import numpy as np
 from check_binding_conditions import calc_binding
 from lexicon_English import Words
 import wordfreq
+import warnings
+warnings.filterwarnings("ignore", 'This pattern is interpreted as a regular expression, and has match groups.')
+
 
 def sentences_to_df(sentences):
     sentences_txt = [" ".join(sentence) for sentence in sentences]
@@ -81,7 +84,7 @@ def remove_faulty_agreements(df):
     patterns = []
     for pattern in patterns_a:
         patterns.append(f"^{pattern}")
-        patterns.append(f"(that|whether){pattern}")
+        patterns.append(f"(that|whether)\s{pattern}")
 
     quant_sg = ["every", "no"]
     quant_pl = ["all", "few"]
@@ -296,6 +299,6 @@ def compute_mean_zipf(row, words=['subj', 'embedsubj', 'verb', 'embedverb'],
                                                  lang=lang))
     return np.mean(zipfs)
 
-def add_word_zipf(df):   
+def add_word_zipf(df):
     df['mean_zipf'] = df.apply(lambda row: compute_mean_zipf(row), axis=1)
     return df
