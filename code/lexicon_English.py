@@ -44,10 +44,10 @@ nouns = {}
 for gender in ['masculine', 'feminine']:
     nouns[gender] = {}
 # Tokens
-nouns['masculine']['singular'] = ['man', 'brother', 'actor']
-nouns['masculine']['plural'] = ['men', 'brothers', 'actors']
-nouns['feminine']['singular'] = ['woman', 'sister', 'actress']
-nouns['feminine']['plural'] = ['women', 'sisters', 'actresses']
+nouns['masculine']['singular'] = ['man', 'prince', 'actor'] # steward, waiter, 
+nouns['masculine']['plural'] = ['men', 'princess', 'actors']
+nouns['feminine']['singular'] = ['woman', 'princes', 'actress']
+nouns['feminine']['plural'] = ['women', 'princesses', 'actresses']
 
 
 nouns_inanimate = {}
@@ -63,10 +63,10 @@ verbs, verbs_intran_anim, verbs_intran_inanim, matrix_verbs, do_Aux = {}, {}, {}
 for tense in ['present']:
     verbs[tense], verbs_intran_anim[tense], verbs_intran_inanim[tense], matrix_verbs[tense], do_Aux[tense] = {}, {}, {}, {}, {}
 
-verbs['past'] = ['took', 'sold', 'utilized']
-verbs['present']['singular'] = ['takes', 'sells', 'utilizes']
-verbs['present']['plural'] = ['take', 'sell', 'utilize']
-verbs['future'] = ['will take', 'will sell', 'will utilize']
+verbs['past'] = ['saw', 'held', 'admired']
+verbs['present']['singular'] = ['sees', 'holds', 'admires']
+verbs['present']['plural'] = ['see', 'hold', 'admire']
+verbs['future'] = ['will see', 'will hold', 'will admire']
 verbs['-finite'] = verbs['present']['plural']
 
 verbs_intran_anim['past'] =                ['played', 'sang', 'sneezed']
