@@ -36,10 +36,18 @@ def remove_faulty_agreements(df):
     patterns.append(pattern_animacy)
 
     pro_verb_s = ["he", "she", "it"]
-    noun_sg = ["man", "brother", "actor", "woman", "sister", "actress", "book", "plate", "pencil"]
-    proper_names = ['John', 'Bob', 'Lex', 'Mary', 'Patricia', 'Lori']
+    # noun_sg = ["man", "brother", "actor", "woman", "sister", "actress", "book", "plate", "pencil"]
+    noun_sg =  Words['nouns']['masculine']['singular'] + \
+               Words['nouns']['feminine']['singular'] + \
+               Words['nouns_inanimate']['singular']    
+    proper_names = Words['proper_names']['singular']['masculine'] + Words['proper_names']['singular']['feminine']
 
-    verb_pl = ["see", "stop", "play", "sing", "sneeze", "fall", "disappear", "vanish", "know", "remember", "declare"]
+    # verb_pl = ["see", "stop", "play", "sing", "sneeze", "fall", "disappear", "vanish", "know", "remember", "declare"]
+    verb_pl = Words['verbs']['present']['plural'] + \
+              Words['verbs_intran_anim']['present']['plural'] + \
+              Words['verbs_intran_inanim']['present']['plural'] + \
+              Words['matrix_verbs']['present']['plural']
+              
     pattern_noun_sg = "([A-Za-z]+\s){0,1}(" + "|".join(noun_sg+proper_names) + ")\s(" + "|".join(verb_pl) + r")\b"
     pattern_pro_sg = "(" + "|".join(pro_verb_s) + ")\s(" + "|".join(verb_pl) + r")\b"
 

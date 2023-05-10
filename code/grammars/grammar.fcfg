@@ -186,7 +186,6 @@ verb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'|'vanish'
 verb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'|'vanished'
 verb_Intrans[finite=true, TENSE=future] -> 'will fall'|'will disappear'|'will vanish'
 
-<<<<<<< HEAD
 verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'take'|'sell'|'utilize'
 verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'take'|'sell'|'utilize'
 verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'takes'|'sells'|'utilizes'
@@ -194,15 +193,6 @@ verb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'take'|'sell'|'utilize
 verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'took'|'sold'|'utilized'
 verb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will take'|'will sell'|'will utilize'
 verb_Trans[finite=false, ANIM=true] -> 'take'|'sell'|'utilize'
-=======
-verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'stop'
-verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'stop'
-verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'stops'
-verb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'stop'
-verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'stopped'
-verb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will see'|'will stop'
-verb_Trans[finite=false, ANIM=true] -> 'see'|'stop'
->>>>>>> 331259416ef6a6ca17acd3765cc49f9d04fe6dce
 
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing'|'sneeze'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'|'sneeze'
@@ -218,7 +208,6 @@ embedverb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'|'vanish
 embedverb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'|'vanished'
 embedverb_Intrans[finite=true, TENSE=future] -> 'will fall'|'will disappear'|'will vanish'
 
-<<<<<<< HEAD
 embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'take'|'sell'|'utilize'
 embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'take'|'sell'|'utilize'
 embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'takes'|'sells'|'utilizes'
@@ -226,15 +215,6 @@ embedverb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'take'|'sell'|'ut
 embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'took'|'sold'|'utilized'
 embedverb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will take'|'will sell'|'will utilize'
 embedverb_Trans[finite=false, ANIM=true] -> 'take'|'sell'|'utilize'
-=======
-embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'stop'
-embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'stop'
-embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'stops'
-embedverb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'stop'
-embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'stopped'
-embedverb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will see'|'will stop'
-embedverb_Trans[finite=false, ANIM=true] -> 'see'|'stop'
->>>>>>> 331259416ef6a6ca17acd3765cc49f9d04fe6dce
 
 verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'know'|'remember'|'declare'
 verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'know'|'remember'|'declare'
