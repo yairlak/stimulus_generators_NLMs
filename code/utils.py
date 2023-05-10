@@ -27,6 +27,8 @@ def godown_dict_keys(d, ks):
     res = set()
     if len(ks) == 0:
         return d
+    elif (type(d) is list):
+        return d
     elif (type(d) is not dict):
         return res
     else:
@@ -51,10 +53,13 @@ def remove_faulty_agreements(df):
 
     patterns_a = []
 
+    pro_inanimate = ["it"]
     noun_inanimate = godown_dict_keys(Words, ['nouns_inanimate', '.*'])
     verb_animate = godown_dict_keys(Words, [r'\bverbs\b|\bverbs_intran_anim\b', '.*', '.*'])
     pattern_animacy = "[A-Za-z]+\s" + reg_bigrams(noun_inanimate, verb_animate)
+    pattern_it_animacy = reg_bigrams(pro_inanimate, verb_animate)
 
+    patterns_a.append(pattern_it_animacy)
     patterns_a.append(pattern_animacy)
 
     pro_verb_s = ["he", "she", "it"]
@@ -85,6 +90,10 @@ def remove_faulty_agreements(df):
     for pattern in patterns_a:
         patterns.append(f"^{pattern}")
         patterns.append(f"(that|whether)\s{pattern}")
+    patterns.append("which\s" + reg_bigrams(noun_sg, verb_pl))
+    patterns.append("which\s" + reg_bigrams(noun_pl, verb_sg))
+    patterns.append("which\s" + reg_bigrams(noun_inanimate, verb_animate))
+    patterns.append(reg_bigrams(["who"], verb_pl))
 
     quant_sg = ["every", "no"]
     quant_pl = ["all", "few"]
