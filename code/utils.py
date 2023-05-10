@@ -443,7 +443,7 @@ def compute_mean_zipf(row, words=['subj', 'embedsubj', 'verb', 'embedverb'],
         if not pd.isnull(row[word]):
             zipfs.append(wordfreq.zipf_frequency(row[word],
                                                  lang=lang))
-    return np.mean(zipfs)
+    return np.floor(np.mean(zipfs))
 
 def add_word_zipf(df):
     df['mean_zipf'] = df.apply(lambda row: compute_mean_zipf(row), axis=1)
@@ -460,5 +460,32 @@ def get_clause_type(row):
     
 def add_clause_type(df):
     df['clause_type'] = df.apply(lambda row: get_clause_type(row), axis=1)
+    return df
+    
+
+def get_aux_tense(row):
+    if row['sentence_GROUP'].startswith("main_obj"):
+        return row['do_TENSE']
+    else:
+        return row['verb_TENSE']
+
+
+def modify_tense_of_obj_quest(df):
+    df['verb_TENSE'] = df.apply(lambda row: get_aux_tense(row), axis=1)
+    return df
+
+
+def check_lr_attractor(row):
+    if row['sentence_GROUP'] in ['pp', 'objrel']:
+        return check_incongruence(row['subj_NUM'], row['embedsubj_NUM'])
+    elif row['sentence_GROUP'] == 'subjrel':
+        return check_incongruence(row['subj_NUM'], row['embedobj_NUM'])
+    else:
+        return np.nan
+
+
+def lr_agreement_with_attractor(df):
+    df['long_range_agreement_with_attractor'] = df.apply(lambda row: check_lr_attractor(row),
+                                                         axis=1)
     return df
     

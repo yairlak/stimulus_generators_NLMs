@@ -45,8 +45,8 @@ for gender in ['masculine', 'feminine']:
     nouns[gender] = {}
 # Tokens
 nouns['masculine']['singular'] = ['man', 'prince', 'actor'] # steward, waiter, 
-nouns['masculine']['plural'] = ['men', 'princess', 'actors']
-nouns['feminine']['singular'] = ['woman', 'princes', 'actress']
+nouns['masculine']['plural'] = ['men', 'princes', 'actors']
+nouns['feminine']['singular'] = ['woman', 'princess', 'actress']
 nouns['feminine']['plural'] = ['women', 'princesses', 'actresses']
 
 
