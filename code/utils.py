@@ -284,7 +284,7 @@ def add_sentence_length(df):
     return df
 
 
-def add_has_property(df, groups=['subjrel', 'objrel', 'embed_', 'quest_']):
+def add_has_property(df, groups=['subjrel', 'objrel', 'embed', 'main']):
     for group in groups:
         df[f'has_{group}'] = df.apply(lambda row:
                                       row['sentence_GROUP'].startswith(f'{group}'),
