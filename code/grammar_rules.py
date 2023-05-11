@@ -49,7 +49,7 @@ S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj
 embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Intrans[finite=?f, NUM=?n, ANIM=?a, PERS=?p]
 embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Trans[finite=?f, NUM=?n, ANIM=?a, PERS=?p] Det embedobj_N
 
-S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] embedS[GROUP=?g]
+S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true, TENSE=pres] embedS[GROUP=?g]
 
 embedS[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
 embedS[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, ANIM=?a, PERS=3]

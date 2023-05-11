@@ -9,7 +9,6 @@ import warnings
 import wordfreq
 
 
-from check_binding_conditions import calc_simple_binding
 from lexicon_English import Words
 
 
@@ -135,13 +134,17 @@ def extract_verb(POS, anim_feature, Wkey):
 {POS}[finite=true, TENSE=pres, NUM=sg, PERS=2{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
 {POS}[finite=true, TENSE=pres, NUM=sg, PERS=3{anim_feature}] -> '{"'|'".join(W['present']['singular'])}'
 {POS}[finite=true, TENSE=pres, NUM=pl{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
-{POS}[finite=true, TENSE=past{anim_feature}] -> '{"'|'".join(W['past'])}'
-#do not include future
+"""
+#block future for now:
 #{POS}[finite=true, TENSE=future{anim_feature}] -> '{"'|'".join(W['future'])}'"""
     if "-finite" in W.keys():
         res += f"""
-{POS}[finite=false{anim_feature}] -> '{"'|'".join(W['-finite'])}'"""
-    res += "\n"
+{POS}[finite=false{anim_feature}] -> '{"'|'".join(W['-finite'])}'\n"""
+        res += "\n"
+    if "past" in W.keys():
+        res += f"""
+{POS}[finite=true, TENSE=past{anim_feature}] -> '{"'|'".join(W['past'])}'\n"""
+        res += "\n"
     return res
 
 
@@ -178,7 +181,7 @@ def get_agreement_mismatch(row, role1, role2, agr_features=None):
     if agr_features is None:
         agr_features = ["GEN", "NUM", "PERS", "ANIM"]
     agreement_mismatch = {}
-    if pd.isnull(row[f"{role1}_type"]) or pd.isnull(row[f"{role1}_type"]):
+    if pd.isnull(row[f"{role1}_type"]) or pd.isnull(row[f"{role2}_type"]):
         # How do we mark that?
         # return np.nan?
         # agreement_match = {feature: np.nan for feature in agr_features}
@@ -188,7 +191,10 @@ def get_agreement_mismatch(row, role1, role2, agr_features=None):
             agreement_mismatch[feature] = check_incongruence(
                 row[f"{role1}_{feature}"],
                 row[f"{role2}_{feature}"])
-    agreement_mismatch["all"] = any(agreement_mismatch[feature] for feature in agr_features)
+    agreement_mismatch["overall"] = any(
+        agr_value for agr_value in agreement_mismatch.values()
+        if agr_value is not np.nan
+        )
     return agreement_mismatch
 
 
@@ -236,7 +242,7 @@ def remove_impossible_binding(df):
         (df["subj_type"] == "PRO") &
         (df["obj_type"] == "PRO") &
         (~(df["obj_REFL"] == True)) &
-        (df["obj_congruence_all"])
+        (df["incongruence_subj_obj_count"]==0)
     )
     for test_exclude in ["I saw me", "She saw her"]:
         assert (test_exclude in df[binding_problems]["sentence"]) or ( not (test_exclude in df["sentence"]) )
@@ -297,12 +303,6 @@ def add_has_property(df, groups=['subjrel', 'objrel', 'embed', 'main']):
     return df
 
 
-def add_binding(df):
-    binding_cols = df.apply(calc_simple_binding, axis=1, result_type="expand")
-    df = pd.concat([df, binding_cols], axis=1)
-    return df
-
-
 def sanity_checks(sentence, tree):
     for fragment_test in [
         "dog see ",  # not a perfect test: "The boy that saw the dogs see the man"
@@ -313,11 +313,6 @@ def sanity_checks(sentence, tree):
             print(sentence)
             print(tree)
         return
-
-
-def nan_NUM_of_you(df):
-    df.loc[df.subj=='you', 'subj_NUM'] = np.nan
-    return df
 
 
 def compute_mean_zipf(row, words=['subj', 'embedsubj', 'verb', 'embedverb'],
@@ -371,4 +366,35 @@ def check_lr_attractor(row):
 def lr_agreement_with_attractor(df):
     df['long_range_agreement_with_attractor'] = df.apply(lambda row: check_lr_attractor(row),
                                                          axis=1)
+    return df
+
+
+def calc_simple_binding(row):
+    bound_variable = np.nan
+    coref_variable = np.nan
+    if pd.isnull(row['quantifier']):
+        if (row['subj_type'] == "PRO"):
+            coref_variable = (row["obj_REFL"] == True)
+        elif (row['poss_type'] == "subj"):
+            agreement_mismatch = get_agreement_mismatch(row, "poss", "obj")
+            coref_variable = not agreement_mismatch["overall"]
+        elif (row['obj_type'] == "PRO"):
+            coref_variable = (row["obj_REFL"] == True)
+        elif (row['poss_type'] == "obj"):
+            agreement_mismatch = get_agreement_mismatch(row, "poss", "subj")
+            coref_variable = not agreement_mismatch["overall"]
+    elif not (pd.isnull(row['quantifier'])):
+        if (row['obj_type'] == "PRO"):
+            bound_variable = (row["obj_REFL"] == True)
+        elif (row['poss_type'] == "obj"):
+            agreement_mismatch = get_agreement_mismatch(row, "poss", "subj")
+            bound_variable = not agreement_mismatch["overall"]
+    return {
+        'bound_variable': bound_variable,
+        'coref_variable': coref_variable}
+
+
+def add_binding(df):
+    binding_cols = df.apply(calc_simple_binding, axis=1, result_type="expand")
+    df = pd.concat([df, binding_cols], axis=1)
     return df

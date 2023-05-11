@@ -13,8 +13,8 @@ poss_{role}[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
 poss_{role}[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
 poss_{role}[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
 poss_{role}[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_{role}[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_{role}[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_{role}[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH, ANIM=false] -> 'its'
+poss_{role}[NUM=pl, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
 """
 
 # prepositions, complementizers and question words
@@ -31,7 +31,7 @@ rel_Whether -> 'whether'
 # subject pronouns
 grammar_lexicon += """
 subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
-subj_PRO[NUM=pl, PERS=2, ANIM=true]->'you'
+subj_PRO[PERS=2, ANIM=true]->'you'
 subj_PRO[NUM=sg, PERS=3, GEN=m, ANIM=true]->'he'
 subj_PRO[NUM=sg, PERS=3, GEN=f, ANIM=true]->'she'
 subj_PRO[NUM=sg, PERS=3, ANIM=false]->'it'
