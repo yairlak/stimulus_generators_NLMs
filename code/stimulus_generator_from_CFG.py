@@ -57,23 +57,19 @@ if __name__ == "__main__":
 
     df = utils.sentences_to_df(sentences)
 
-    utils.print_time()
-    print("Removing duplicate sentences...")
+    utils.print_time("Removing duplicate sentences...")
     df = utils.remove_repeated_sentences(df)
     print(f"- Number of sentences: {len(df)}")
 
-    utils.print_time()
-    print("Removing clearly faulty agreements...")
+    utils.print_time("Removing clearly faulty agreements...")
     df = utils.remove_faulty_agreements(df)
     print(f"- Number of sentences: {len(df)}")
 
-    utils.print_time()
-    print("Removing sentences with duplicate lemmas...")
+    utils.print_time("Removing sentences with duplicate lemmas...")
     df = utils.remove_sentences_with_repeated_lemma(df)
     print(f"- Number of sentences: {len(df)}")
 
-    utils.print_time()
-    print("Parsing sentences...")
+    utils.print_time("Parsing sentences...")
     sentences = utils.df_to_sentences(df)
     process_pool = multiprocessing.Pool(processes=os.cpu_count())
     d_grammar = list(tqdm(process_pool.imap(process_sentence, sentences), total=len(sentences)))

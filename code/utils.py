@@ -136,10 +136,14 @@ def extract_verb(POS, anim_feature, Wkey):
 
 warnings.filterwarnings("ignore", 'This pattern is interpreted as a regular expression, and has match groups.')
 
-def print_time():
+
+def print_time(message=None):
     now = datetime.datetime.now()
     time_str = now.strftime('%H:%M:%S')
-    print(time_str, end="\t")
+    if message is None:
+        print(time_str, end="\t")
+    else:
+        print(f"{time_str}\t{message}")
 
 
 def sentences_to_df(sentences):
