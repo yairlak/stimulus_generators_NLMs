@@ -52,7 +52,7 @@ embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Trans[finite=?f, NU
 S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] embedS[GROUP=?g]
 
 embedS[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
-embedS[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=false, NUM=?n, ANIM=?a, PERS=3]
+embedS[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, ANIM=?a, PERS=3]
 embedS[GROUP=embed_subjwho_clause] -> subj_who embedVPthe[finite=true, NUM=sg, PERS=3]
 embedS[GROUP=embed_subjwhich_clause] -> subj_which embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
 embedS[GROUP=embed_objwho_clause] -> obj_who Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=true, NUM=?n, PERS=3, ANIM=?a]
