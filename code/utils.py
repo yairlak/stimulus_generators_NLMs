@@ -148,6 +148,12 @@ def extract_verb(POS, anim_feature, Wkey):
     return res
 
 
+def fix_poss_anim(df):
+    df.loc[df.poss=='her', 'poss_ANIM'] = True
+    df.loc[df.poss=='his', 'poss_ANIM'] = True
+    return df
+
+
 def add_features_to_dict(d, pos_tuple):
     word, pos = pos_tuple
     for i_item, (key, val) in enumerate(pos.items()):

@@ -10,6 +10,9 @@ fn_output = '../stimuli/stimuli.csv'
 df = pd.read_csv(fn_stimuli_from_fcfg)
 utils.print_time(f'> Loading dataframe: {fn_stimuli_from_fcfg}')
 
+# temporary fix, now fixed in grammar.py
+df = utils.fix_poss_anim(df)
+
 utils.print_time('> Modifying columns...')
 df = utils.modify_tense_of_obj_quest(df)
 

@@ -11,8 +11,8 @@ for role in ["subj", "obj"]:
 poss_{role}[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
 poss_{role}[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
 poss_{role}[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
-poss_{role}[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
-poss_{role}[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
+poss_{role}[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH, ANIM=true] -> 'her'
+poss_{role}[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH, ANIM=true] -> 'his'
 poss_{role}[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH, ANIM=false] -> 'its'
 poss_{role}[NUM=pl, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
 """
