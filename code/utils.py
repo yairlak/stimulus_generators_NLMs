@@ -136,7 +136,8 @@ def extract_verb(POS, anim_feature, Wkey):
 {POS}[finite=true, TENSE=pres, NUM=sg, PERS=3{anim_feature}] -> '{"'|'".join(W['present']['singular'])}'
 {POS}[finite=true, TENSE=pres, NUM=pl{anim_feature}] -> '{"'|'".join(W['present']['plural'])}'
 {POS}[finite=true, TENSE=past{anim_feature}] -> '{"'|'".join(W['past'])}'
-{POS}[finite=true, TENSE=future{anim_feature}] -> '{"'|'".join(W['future'])}'"""
+#do not include future
+#{POS}[finite=true, TENSE=future{anim_feature}] -> '{"'|'".join(W['future'])}'"""
     if "-finite" in W.keys():
         res += f"""
 {POS}[finite=false{anim_feature}] -> '{"'|'".join(W['-finite'])}'"""
