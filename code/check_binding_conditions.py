@@ -6,24 +6,25 @@ import utils
 def calc_simple_binding(row):
     bound_variable = np.nan
     coref_variable = np.nan
-    if not (row["sentence_GROUP"] == "svo"):
+    if not (row["sentence_GROUP"] in ["svo", "binding_reflexives", "possessive_obj", "possessive_subj"]):
         pass
     elif pd.isnull(row['quantifier']):
         if (row['subj_type'] == "PRO"):
             coref_variable = (row["obj_REFL"] == "True")
-        elif (row['subj_type'] in "PRO"):
-            coref_variable = False
-        elif (row['subj_type'] in "POSS"):
-            coref_variable = not (utils.get_agreement_mismatch(row, "poss_N", "obj")) # FIX
+        elif (row['poss_type'] == "subj"):
+            agreement_mismatch = utils.get_agreement_mismatch(row, "poss", "obj")
+            coref_variable = not agreement_mismatch["overall"]
         elif (row['obj_type'] in "PRO"):
-            coref_variable = False
-        elif (row['obj_type'] in "POSS"):
-            coref_variable = not (utils.get_agreement_mismatch(row, "poss_N", "subj")) # FIX
+            coref_variable = (row["obj_REFL"] == "True")
+        elif (row['poss_type'] == "obj"):
+            agreement_mismatch = utils.get_agreement_mismatch(row, "poss", "subj")
+            coref_variable = not agreement_mismatch["overall"]
     elif not (pd.isnull(row['quantifier'])):
-        if (row['obj_type'] in "POSS"):
-            bound_variable = not (utils.get_agreement_mismatch(row, "poss_N", "obj")) # FIX
-        elif (row['obj_type'] in "PRO"):
-            bound_variable = not (utils.get_agreement_mismatch(row, "subj", "obj")) # FIX
+        if (row['obj_type'] == "PRO"):
+            bound_variable = (row["obj_REFL"] == "True")
+        elif (row['poss_type'] == "obj"):
+            agreement_mismatch = utils.get_agreement_mismatch(row, "poss", "subj")
+            bound_variable = not agreement_mismatch["overall"]
     return {
         'bound_variable': bound_variable,
         'coref_variable': coref_variable}

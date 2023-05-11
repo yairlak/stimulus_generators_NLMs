@@ -44,7 +44,7 @@ nouns = {}
 for gender in ['masculine', 'feminine']:
     nouns[gender] = {}
 # Tokens
-nouns['masculine']['singular'] = ['man', 'prince', 'actor'] # steward, waiter, 
+nouns['masculine']['singular'] = ['man', 'prince', 'actor'] # steward, waiter,
 nouns['masculine']['plural'] = ['men', 'princes', 'actors']
 nouns['feminine']['singular'] = ['woman', 'princess', 'actress']
 nouns['feminine']['plural'] = ['women', 'princesses', 'actresses']
@@ -79,11 +79,11 @@ verbs_intran_inanim['present']['singular'] = ['falls', 'disappears', 'vanishes']
 verbs_intran_inanim['present']['plural'] =   ['fall', 'disappear', 'vanish']
 verbs_intran_inanim['future'] =          ['will fall', 'will disappear', 'will vanish']
 
-matrix_verbs['past'] =                ['knew', 'remembered', 'declared']
+#matrix_verbs['past'] =                ['knew', 'remembered', 'declared']
 matrix_verbs['present']['singular'] = ['knows', 'remembers', 'declares']
 matrix_verbs['present']['plural'] =   ['know', 'remember', 'declare']
 matrix_verbs['future'] =           ['will know', 'will remember', 'will declare']
-matrix_verbs['-finite'] = matrix_verbs['present']['plural']
+#matrix_verbs['-finite'] = matrix_verbs['present']['plural']
 
 copula = {}
 copula['singular'] = ['is']

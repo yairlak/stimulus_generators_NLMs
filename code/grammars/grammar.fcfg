@@ -52,7 +52,7 @@ S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj
 embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Intrans[finite=?f, NUM=?n, ANIM=?a, PERS=?p]
 embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Trans[finite=?f, NUM=?n, ANIM=?a, PERS=?p] Det embedobj_N
 
-S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true] embedS[GROUP=?g]
+S[GROUP=?g] -> Det subj_N[NUM=?n, PERS=?p, ANIM=true] verb_Matrix[finite=true, NUM=?n, PERS=?p, ANIM=true, TENSE=pres] embedS[GROUP=?g]
 
 embedS[GROUP=embed_that_clause] -> rel_That Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
 embedS[GROUP=embed_whether_clause] -> rel_Whether Det embedsubj_N[NUM=?n, ANIM=?a] embedVPthe[finite=true, NUM=?n, ANIM=?a, PERS=3]
@@ -87,16 +87,16 @@ poss_subj[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
 poss_subj[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
 poss_subj[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
 poss_subj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_subj[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_subj[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_subj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH, ANIM=false] -> 'its'
+poss_subj[NUM=pl, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
 
 poss_obj[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
 poss_obj[NUM=pl, PERS=1, BOUND=TESTFEATUREMATCH] -> 'our'
 poss_obj[PERS=2, BOUND=TESTFEATUREMATCH] -> 'your'
 poss_obj[NUM=sg, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'her'
 poss_obj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'his'
-poss_obj[NUM=pl, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
-poss_obj[NUM=pl, GEN=f, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
+poss_obj[NUM=sg, GEN=m, PERS=3, BOUND=TESTFEATUREMATCH, ANIM=false] -> 'its'
+poss_obj[NUM=pl, PERS=3, BOUND=TESTFEATUREMATCH] -> 'their'
 
 P -> 'near'|'behind'
 subj_who[ANIM=true] -> 'who'
@@ -107,7 +107,7 @@ rel_That -> 'that'
 rel_Whether -> 'whether'
 
 subj_PRO[NUM=sg, PERS=1, ANIM=true]->'I'
-subj_PRO[NUM=pl, PERS=2, ANIM=true]->'you'
+subj_PRO[PERS=2, ANIM=true]->'you'
 subj_PRO[NUM=sg, PERS=3, GEN=m, ANIM=true]->'he'
 subj_PRO[NUM=sg, PERS=3, GEN=f, ANIM=true]->'she'
 subj_PRO[NUM=sg, PERS=3, ANIM=false]->'it'
@@ -176,57 +176,65 @@ verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing
 verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'|'sneeze'
 verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'plays'|'sings'|'sneezes'
 verb_Intrans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'play'|'sing'|'sneeze'
+
 verb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'played'|'sang'|'sneezed'
-#verb_Intrans[finite=true, TENSE=future, ANIM=true] -> 'will play'|'will sing'|'will sneeze'
+
 
 verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'fall'|'disappear'|'vanish'
 verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'fall'|'disappear'|'vanish'
 verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'falls'|'disappears'|'vanishes'
 verb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'|'vanish'
+
 verb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'|'vanished'
-#verb_Intrans[finite=true, TENSE=future] -> 'will fall'|'will disappear'|'will vanish'
+
 
 verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'hold'|'admire'
 verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'hold'|'admire'
 verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'holds'|'admires'
 verb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'hold'|'admire'
-verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'|'admired'
-#verb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will see'|'will hold'|'will admire'
+
 verb_Trans[finite=false, ANIM=true] -> 'see'|'hold'|'admire'
+
+
+verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'|'admired'
+
 
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing'|'sneeze'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'|'sneeze'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'plays'|'sings'|'sneezes'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'play'|'sing'|'sneeze'
+
 embedverb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'played'|'sang'|'sneezed'
-#embedverb_Intrans[finite=true, TENSE=future, ANIM=true] -> 'will play'|'will sing'|'will sneeze'
+
 
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'fall'|'disappear'|'vanish'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'fall'|'disappear'|'vanish'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'falls'|'disappears'|'vanishes'
 embedverb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'|'vanish'
+
 embedverb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'|'vanished'
-#embedverb_Intrans[finite=true, TENSE=future] -> 'will fall'|'will disappear'|'will vanish'
+
 
 embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'hold'|'admire'
 embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'hold'|'admire'
 embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'holds'|'admires'
 embedverb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'hold'|'admire'
-embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'|'admired'
-#embedverb_Trans[finite=true, TENSE=future, ANIM=true] -> 'will see'|'will hold'|'will admire'
+
 embedverb_Trans[finite=false, ANIM=true] -> 'see'|'hold'|'admire'
+
+
+embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'|'admired'
+
 
 verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'know'|'remember'|'declare'
 verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'know'|'remember'|'declare'
 verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'knows'|'remembers'|'declares'
 verb_Matrix[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'know'|'remember'|'declare'
-verb_Matrix[finite=true, TENSE=past, ANIM=true] -> 'knew'|'remembered'|'declared'
-#verb_Matrix[finite=true, TENSE=future, ANIM=true] -> 'will know'|'will remember'|'will declare'
-verb_Matrix[finite=false, ANIM=true] -> 'know'|'remember'|'declare'
 
 do_Aux[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'do'
 do_Aux[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'do'
 do_Aux[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'does'
 do_Aux[finite=true, TENSE=pres, NUM=pl] -> 'do'
+
 do_Aux[finite=true, TENSE=past] -> 'did'
-#do_Aux[finite=true, TENSE=future] -> 'will'
+

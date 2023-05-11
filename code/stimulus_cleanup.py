@@ -11,7 +11,6 @@ df = pd.read_csv(fn_stimuli_from_fcfg)
 utils.print_time(f'> Loading dataframe: {fn_stimuli_from_fcfg}')
 
 utils.print_time('> Modifying columns...')
-df = utils.nan_NUM_of_you(df) # TODO: fix at the grammar level
 df = utils.modify_tense_of_obj_quest(df)
 
 utils.print_time(f'> Adding new columns...')
