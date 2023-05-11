@@ -290,10 +290,10 @@ def check_incongruence(f1, f2, role1=None, role2=None, poss_type=None):
         return (f1 != f2)
 
 
-def get_agreement_match(row, role1, role2, agr_features=None):
+def get_agreement_mismatch(row, role1, role2, agr_features=None):
     if agr_features is None:
         agr_features = ["GEN", "NUM", "PERS", "ANIM"]
-    agreement_match = {}
+    agreement_mismatch = {}
     if pd.isnull(row[f"{role1}_type"]) or pd.isnull(row[f"{role1}_type"]):
         # How do we mark that?
         # return np.nan?
@@ -301,11 +301,11 @@ def get_agreement_match(row, role1, role2, agr_features=None):
         pass
     else:
         for feature in agr_features:
-            agreement_match[feature] = check_incongruence(
+            agreement_mismatch[feature] = check_incongruence(
                 row[f"{role1}_{feature}"],
                 row[f"{role2}_{feature}"])
-    agreement_match["all"] = all(agreement_match[feature] for feature in agr_features)
-    return agreement_match
+    agreement_mismatch["all"] = any(agreement_mismatch[feature] for feature in agr_features)
+    return agreement_mismatch
 
 
 def order_columns(df, bring2front):

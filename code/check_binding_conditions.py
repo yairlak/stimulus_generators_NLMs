@@ -17,19 +17,19 @@ def calc_simple_binding(row):
             coref_variable = False
         elif (row['subj_type'] in "POSS"):
             bound_variable = np.nan
-            coref_variable = utils.get_agreement_match(row, "poss_N", "obj")
+            coref_variable = not (utils.get_agreement_mismatch(row, "poss_N", "obj"))
         elif (row['obj_type'] in "PRO"):
             bound_variable = np.nan
             coref_variable = False
         elif (row['obj_type'] in "POSS"):
             bound_variable = np.nan
-            coref_variable = utils.get_agreement_match(row, "poss_N", "subj")
+            coref_variable = not (utils.get_agreement_mismatch(row, "poss_N", "subj"))
     elif not (pd.isnull(row['quantifier'])):
         coref_variable = np.nan
         if (row['obj_type'] in "POSS"):
-            bound_variable = utils.get_agreement_match(row, "poss_N", "obj")
+            bound_variable = not (utils.get_agreement_mismatch(row, "poss_N", "obj"))
         elif (row['obj_type'] in "PRO"):
-            bound_variable = utils.get_agreement_match(row, "subj", "obj")
+            bound_variable = not (utils.get_agreement_mismatch(row, "subj", "obj"))
     return {
         'bound_variable': bound_variable,
         'coref_variable': coref_variable}
@@ -47,7 +47,8 @@ def calc_single_binding(row, pronoun_position: str, target_position: str):
     if row[f"{pronoun_position}_type"] == "PRO":
         pronoun_type = "PRO"
         if not pd.isnull(row[f"{target_position}_type"]):
-            agreement_match = utils.get_agreement_match(row, pronoun_position, target_position)
+            agreement_mismatch = utils.get_agreement_mismatch(row, pronoun_position, target_position)
+            agreement_match = not agreement_mismatch
             valid_conditionC = (pronoun_position == "subj")
             if (pronoun_position == "obj") and row[f"{pronoun_position}_REFL"] == "true":
                 pronoun_type = "REFL"
@@ -60,7 +61,8 @@ def calc_single_binding(row, pronoun_position: str, target_position: str):
     elif row[f"{pronoun_position}_type"] == "POSS":
         pronoun_type = "POSS"
         if not pd.isnull(row[f"{target_position}_type"]):
-            agreement_match = utils.get_agreement_match(row, "poss_N", target_position)
+            agreement_mismatch = utils.get_agreement_mismatch(row, "poss_N", target_position)
+            agreement_match = not agreement_mismatch
             valid_conditionC = True
             valid_conditionB = True
             binding_quantifier = (not pd.isnull(row["quantifier"]))
