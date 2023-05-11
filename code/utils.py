@@ -242,7 +242,7 @@ def remove_impossible_binding(df):
         (df["subj_type"] == "PRO") &
         (df["obj_type"] == "PRO") &
         (~(df["obj_REFL"] == True)) &
-        (df["obj_congruence_all"])
+        (df["incongruence_subj_obj_count"]==0)
     )
     for test_exclude in ["I saw me", "She saw her"]:
         assert (test_exclude in df[binding_problems]["sentence"]) or ( not (test_exclude in df["sentence"]) )
@@ -374,18 +374,18 @@ def calc_simple_binding(row):
     coref_variable = np.nan
     if pd.isnull(row['quantifier']):
         if (row['subj_type'] == "PRO"):
-            coref_variable = (row["obj_REFL"] == "True")
+            coref_variable = (row["obj_REFL"] == True)
         elif (row['poss_type'] == "subj"):
             agreement_mismatch = get_agreement_mismatch(row, "poss", "obj")
             coref_variable = not agreement_mismatch["overall"]
-        elif (row['obj_type'] in "PRO"):
-            coref_variable = (row["obj_REFL"] == "True")
+        elif (row['obj_type'] == "PRO"):
+            coref_variable = (row["obj_REFL"] == True)
         elif (row['poss_type'] == "obj"):
             agreement_mismatch = get_agreement_mismatch(row, "poss", "subj")
             coref_variable = not agreement_mismatch["overall"]
     elif not (pd.isnull(row['quantifier'])):
         if (row['obj_type'] == "PRO"):
-            bound_variable = (row["obj_REFL"] == "True")
+            bound_variable = (row["obj_REFL"] == True)
         elif (row['poss_type'] == "obj"):
             agreement_mismatch = get_agreement_mismatch(row, "poss", "subj")
             bound_variable = not agreement_mismatch["overall"]

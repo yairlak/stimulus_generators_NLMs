@@ -24,12 +24,10 @@ utils.print_time("Sentence length")
 df = utils.add_sentence_length(df)
 utils.print_time("has_property")
 df = utils.add_has_property(df)
-utils.print_time("Incongruence counts - again??")
-df = utils.calc_incongruence_counts(df)
 utils.print_time("LR agreements")
 df = utils.lr_agreement_with_attractor(df)
 utils.print_time("Binding")
-df = utils.add_binding(df) # TODO: fix
+df = utils.add_binding(df)
 
 utils.print_time("> Remove impossible binding")
 df = utils.remove_impossible_binding(df)
