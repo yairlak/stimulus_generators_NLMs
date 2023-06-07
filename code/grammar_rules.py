@@ -39,11 +39,11 @@ VPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Trans[finite=?f, NUM=?n, ANIM
 
 # Sentences of the first type below are already in:
 # S[GROUP=main_that_clause] -> Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
-S[GROUP=main_whether_clause] -> do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=false, NUM=?n, ANIM=?a, PERS=3]
-S[GROUP=main_subjwho_clause] -> subj_who VPthe[finite=true, NUM=sg, PERS=3]
-S[GROUP=main_subjwhich_clause] -> subj_which subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
-S[GROUP=main_objwho_clause] -> obj_who do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a]
-S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a]
+S[GROUP=main_whether_clause] -> do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=false, NUM=?n, ANIM=?a, PERS=3] QM
+S[GROUP=main_subjwho_clause] -> subj_who VPthe[finite=true, NUM=sg, PERS=3] QM
+S[GROUP=main_subjwhich_clause] -> subj_which subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a] QM
+S[GROUP=main_objwho_clause] -> obj_who do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a] QM
+S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a] QM
 
 # Embedded clause
 embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Intrans[finite=?f, NUM=?n, ANIM=?a, PERS=?p]

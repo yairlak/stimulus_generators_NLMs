@@ -3,6 +3,9 @@ from utils import extract_verb
 
 grammar_lexicon = ""
 
+# Question Mark
+grammar_lexicon += "QM -> '?'\n"
+
 # Det and possessives
 grammar_lexicon += "Det -> 'the'\n"
 

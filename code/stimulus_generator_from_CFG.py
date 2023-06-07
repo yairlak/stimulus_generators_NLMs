@@ -26,6 +26,8 @@ def process_sentence(s):
     sentence = ' '.join(s)
     for tree in fcfg.parse(s):  # enter loop only if parsable
         d = {}
+        if sentence.split()[-1] != '?':
+            sentence += ' .'
         d['sentence'] = sentence
         sanity_checks(sentence, tree)  # e.g., agreement ('dog see') - not a full proof test
 

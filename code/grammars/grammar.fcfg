@@ -42,11 +42,11 @@ VPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> verb_Trans[finite=?f, NUM=?n, ANIM
 
 # Sentences of the first type below are already in:
 # S[GROUP=main_that_clause] -> Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
-S[GROUP=main_whether_clause] -> do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=false, NUM=?n, ANIM=?a, PERS=3]
-S[GROUP=main_subjwho_clause] -> subj_who VPthe[finite=true, NUM=sg, PERS=3]
-S[GROUP=main_subjwhich_clause] -> subj_which subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a]
-S[GROUP=main_objwho_clause] -> obj_who do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a]
-S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a]
+S[GROUP=main_whether_clause] -> do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] VPthe[finite=false, NUM=?n, ANIM=?a, PERS=3] QM
+S[GROUP=main_subjwho_clause] -> subj_who VPthe[finite=true, NUM=sg, PERS=3] QM
+S[GROUP=main_subjwhich_clause] -> subj_which subj_N[NUM=?n, ANIM=?a] VPthe[finite=true, NUM=?n, PERS=3, ANIM=?a] QM
+S[GROUP=main_objwho_clause] -> obj_who do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a] QM
+S[GROUP=main_objwhich_clause] -> obj_which obj_N do_Aux[NUM=?n, PERS=3] Det subj_N[NUM=?n, ANIM=?a] verb_Trans[finite=false, ANIM=?a] QM
 
 # Embedded clause
 embedVPthe[finite=?f, NUM=?n, ANIM=?a, PERS=?p] -> embedverb_Intrans[finite=?f, NUM=?n, ANIM=?a, PERS=?p]
@@ -80,6 +80,7 @@ Subjrel[NUM=?n, PERS=3, ANIM=true, GROUP=subjrel] -> embedverb_Trans[finite=true
 # LEXICAL RULES #
 #################
 
+QM -> '?'
 Det -> 'the'
 
 poss_subj[NUM=sg, PERS=1, BOUND=TESTFEATUREMATCH] -> 'my'
@@ -137,99 +138,99 @@ quantifier_obj[NUM=sg] -> 'every'|'no'
 quantifier_obj[NUM=pl] -> 'all'|'few'
 
 
-subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'|'actress'
-subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'|'actor'
-subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'|'actresses'
-subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'|'actors'
-obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'|'actress'
-obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'|'actor'
-obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'|'actresses'
-obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'|'actors'
-embedsubj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'|'actress'
-embedsubj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'|'actor'
-embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'|'actresses'
-embedsubj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'|'actors'
-embedobj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'|'actress'
-embedobj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'|'actor'
-embedobj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'|'actresses'
-embedobj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'|'actors'
+subj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'
+subj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'
+subj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'
+subj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'
+obj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'
+obj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'
+obj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'
+obj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'
+embedsubj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'
+embedsubj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'
+embedsubj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'
+embedsubj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'
+embedobj_N[NUM=sg, GEN=f, PERS=3, ANIM=true] -> 'woman'|'princess'
+embedobj_N[NUM=sg, GEN=m, PERS=3, ANIM=true] -> 'man'|'prince'
+embedobj_N[NUM=pl, GEN=f, PERS=3, ANIM=true] -> 'women'|'princesses'
+embedobj_N[NUM=pl, GEN=m, PERS=3, ANIM=true] -> 'men'|'princes'
 
-subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'|'Lori'
-subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'|'Lex'
-obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'|'Lori'
-obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'|'Lex'
-embedsubj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'|'Lori'
-embedsubj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'|'Lex'
-embedobj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'|'Lori'
-embedobj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'|'Lex'
+subj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'
+subj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'
+obj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'
+obj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'
+embedsubj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'
+embedsubj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'
+embedobj_PropN[NUM=sg, GEN=f, PERS=3, ANIM=true]-> 'Mary'|'Patricia'
+embedobj_PropN[NUM=sg, GEN=m, PERS=3, ANIM=true]-> 'John'|'Bob'
 
-subj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'|'pencil'
-subj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'|'pencils'
-obj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'|'pencil'
-obj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'|'pencils'
-embedsubj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'|'pencil'
-embedsubj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'|'pencils'
-embedobj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'|'pencil'
-embedobj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'|'pencils'
+subj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'
+subj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'
+obj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'
+obj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'
+embedsubj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'
+embedsubj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'
+embedobj_N[NUM=sg, PERS=3, ANIM=false] -> 'book'|'plate'
+embedobj_N[NUM=pl, PERS=3, ANIM=false] -> 'books'|'plates'
 
-verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing'|'sneeze'
-verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'|'sneeze'
-verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'plays'|'sings'|'sneezes'
-verb_Intrans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'play'|'sing'|'sneeze'
+verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing'
+verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'
+verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'plays'|'sings'
+verb_Intrans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'play'|'sing'
 
-verb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'played'|'sang'|'sneezed'
-
-
-verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'fall'|'disappear'|'vanish'
-verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'fall'|'disappear'|'vanish'
-verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'falls'|'disappears'|'vanishes'
-verb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'|'vanish'
-
-verb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'|'vanished'
+verb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'played'|'sang'
 
 
-verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'hold'|'admire'
-verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'hold'|'admire'
-verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'holds'|'admires'
-verb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'hold'|'admire'
+verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'fall'|'disappear'
+verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'fall'|'disappear'
+verb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'falls'|'disappears'
+verb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'
 
-verb_Trans[finite=false, ANIM=true] -> 'see'|'hold'|'admire'
-
-
-verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'|'admired'
+verb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'
 
 
-embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing'|'sneeze'
-embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'|'sneeze'
-embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'plays'|'sings'|'sneezes'
-embedverb_Intrans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'play'|'sing'|'sneeze'
+verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'hold'
+verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'hold'
+verb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'holds'
+verb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'hold'
 
-embedverb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'played'|'sang'|'sneezed'
-
-
-embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'fall'|'disappear'|'vanish'
-embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'fall'|'disappear'|'vanish'
-embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'falls'|'disappears'|'vanishes'
-embedverb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'|'vanish'
-
-embedverb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'|'vanished'
+verb_Trans[finite=false, ANIM=true] -> 'see'|'hold'
 
 
-embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'hold'|'admire'
-embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'hold'|'admire'
-embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'holds'|'admires'
-embedverb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'hold'|'admire'
-
-embedverb_Trans[finite=false, ANIM=true] -> 'see'|'hold'|'admire'
+verb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'
 
 
-embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'|'admired'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'play'|'sing'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'play'|'sing'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'plays'|'sings'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'play'|'sing'
+
+embedverb_Intrans[finite=true, TENSE=past, ANIM=true] -> 'played'|'sang'
 
 
-verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'know'|'remember'|'declare'
-verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'know'|'remember'|'declare'
-verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'knows'|'remembers'|'declares'
-verb_Matrix[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'know'|'remember'|'declare'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'fall'|'disappear'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'fall'|'disappear'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=sg, PERS=3] -> 'falls'|'disappears'
+embedverb_Intrans[finite=true, TENSE=pres, NUM=pl] -> 'fall'|'disappear'
+
+embedverb_Intrans[finite=true, TENSE=past] -> 'fell'|'disappeared'
+
+
+embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'see'|'hold'
+embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'see'|'hold'
+embedverb_Trans[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'sees'|'holds'
+embedverb_Trans[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'see'|'hold'
+
+embedverb_Trans[finite=false, ANIM=true] -> 'see'|'hold'
+
+
+embedverb_Trans[finite=true, TENSE=past, ANIM=true] -> 'saw'|'held'
+
+
+verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=1, ANIM=true] -> 'know'|'remember'
+verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=2, ANIM=true] -> 'know'|'remember'
+verb_Matrix[finite=true, TENSE=pres, NUM=sg, PERS=3, ANIM=true] -> 'knows'|'remembers'
+verb_Matrix[finite=true, TENSE=pres, NUM=pl, ANIM=true] -> 'know'|'remember'
 
 do_Aux[finite=true, TENSE=pres, NUM=sg, PERS=1] -> 'do'
 do_Aux[finite=true, TENSE=pres, NUM=sg, PERS=2] -> 'do'

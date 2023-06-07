@@ -1,15 +1,15 @@
-DEBUG = False
+DEBUG = True
+first_k = 2
 
-
-def keep_first_element(d):
+def keep_first_k_elements(d, first_k=1):
     new_dict = {}
     for k, v in d.items():
         if isinstance(v, dict):
             # if value is a dictionary, recursively call the function
-            new_dict[k] = keep_first_element(v)
+            new_dict[k] = keep_first_k_elements(v, first_k)
         elif isinstance(v, list):
             # if value is a list, keep only the first element
-            new_dict[k] = v[:1]
+            new_dict[k] = v[:first_k]
         else:
             # for other types of values, just copy the value as is
             new_dict[k] = v
@@ -117,4 +117,4 @@ Words = {
     }
 
 if DEBUG is True:
-    Words = keep_first_element(Words)
+    Words = keep_first_k_elements(Words, first_k)
